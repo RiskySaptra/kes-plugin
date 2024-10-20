@@ -223,9 +223,9 @@ registerBlockType(metadata.name, {
 				<h2 className="text-center text-[20px] md:text-[36px] text-[#354052] font-bold not-prose mt-2 md:mt-10">
 					Profil Perusahaan
 				</h2>
-				<div className="grid grid-flow-col grid-cols-1 md:grid-cols-2 rounded-md my-[10px] px-[15px]">
+				<div className="flex rounded-md my-[10px] px-[15px]">
 					{/* Image Section */}
-					<div className="flex justify-center items-center py-5">
+					<div className="basis-2/5 flex justify-center items-center py-5">
 						{image && image.url ? (
 							<img
 								src={image.url}
@@ -240,14 +240,14 @@ registerBlockType(metadata.name, {
 					</div>
 
 					{/* Text Section */}
-					<div className="flex justify-center items-center flex-col py-5 md:px-10 not-prose">
-						<h3 className="text-[12px] md:text-[20px] font-semibold  leading-normal">
-							{text}
-						</h3>
+					<div className="basis-3/5 flex justify-center items-center flex-col py-5 md:px-10 not-prose">
+						<RichText.Content
+							tagName="span"
+							value={text}
+							className="text-[12px] md:text-[18px] font-medium leading-normal"
+						/>
+
 						<div className="flex justify-between md:flex-row flex-col mt-[25px] w-full gap-2 md:gap-0">
-							{/* <button className="bg-blue-500 text-white md:py-3 py-2 md:w-[250px] w-[150px] rounded-lg font-medium hover:bg-blue-600 md:text-[20px] text-[12px]">
-								Unduh Company Profile
-							</button> */}
 							{pdfFile && pdfFile.url ? (
 								<div className="flex justify-center">
 									<a

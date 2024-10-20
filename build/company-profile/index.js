@@ -236,9 +236,9 @@ __webpack_require__.r(__webpack_exports__);
         className: "text-center text-[20px] md:text-[36px] text-[#354052] font-bold not-prose mt-2 md:mt-10",
         children: "Profil Perusahaan"
       }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsxs)("div", {
-        className: "grid grid-flow-col grid-cols-1 md:grid-cols-2 rounded-md my-[10px] px-[15px]",
+        className: "flex rounded-md my-[10px] px-[15px]",
         children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)("div", {
-          className: "flex justify-center items-center py-5",
+          className: "basis-2/5 flex justify-center items-center py-5",
           children: image && image.url ? /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)("img", {
             src: image.url,
             alt: image.alt,
@@ -251,10 +251,11 @@ __webpack_require__.r(__webpack_exports__);
             })
           })
         }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsxs)("div", {
-          className: "flex justify-center items-center flex-col py-5 md:px-10 not-prose",
-          children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)("h3", {
-            className: "text-[12px] md:text-[20px] font-semibold  leading-normal",
-            children: text
+          className: "basis-3/5 flex justify-center items-center flex-col py-5 md:px-10 not-prose",
+          children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_1__.RichText.Content, {
+            tagName: "span",
+            value: text,
+            className: "text-[12px] md:text-[18px] font-medium leading-normal"
           }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsxs)("div", {
             className: "flex justify-between md:flex-row flex-col mt-[25px] w-full gap-2 md:gap-0",
             children: [pdfFile && pdfFile.url ? /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)("div", {
