@@ -37,7 +37,7 @@ registerBlockType(metadata.name, {
 
 		return (
 			<div {...blockProps}>
-				<div className="container p-5 mx-auto bg-gray-100 rounded-md">
+				<div className="container p-5 mx-auto bg-gray-100 rounded-md my-[10px]">
 					<p className="text-lg font-medium text-gray-900 dark:text-white">
 						Select Banner Images
 					</p>
@@ -87,7 +87,9 @@ registerBlockType(metadata.name, {
 	},
 
 	save: (props) => {
-		const blockProps = useBlockProps.save();
+		const blockProps = useBlockProps.save({
+			className: "not-prose !max-w-none",
+		});
 		return (
 			<div {...blockProps}>
 				<div
@@ -95,7 +97,7 @@ registerBlockType(metadata.name, {
 					className="relative w-full"
 					data-carousel="slide"
 				>
-					<div className="relative h-[280px] md:h-screen overflow-hidden">
+					<div className="relative h-[240px] md:h-screen overflow-hidden">
 						{props.attributes.images.length > 0 && (
 							<>
 								{props.attributes.images.map((image, index) => {
@@ -107,7 +109,7 @@ registerBlockType(metadata.name, {
 										>
 											<img
 												src={image.url}
-												className="absolute block w-full -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2"
+												className="absolute block w-full h-full -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2"
 												alt={image.alt || "Image placeholder"}
 											/>
 										</div>

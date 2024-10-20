@@ -1,9 +1,9 @@
 {
 	"$schema": "https://schemas.wp.org/trunk/block.json",
 	"apiVersion": 3,
-	"name": "kes-internal-block/kes-block",
+	"name": "kes-internal-block/company-profile-block",
 	"version": "0.1.0",
-	"title": "Static-kes-block",
+	"title": "Company Profile Block",
 	"category": "theme",
 	"icon": "smiley",
 	"description": "Custom kes internal block",
