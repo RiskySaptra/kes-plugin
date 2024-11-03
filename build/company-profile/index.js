@@ -102,7 +102,7 @@ __webpack_require__.r(__webpack_exports__);
     return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)("div", {
       ...blockProps,
       children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsxs)("div", {
-        className: "grid grid-flow-col grid-cols-2 bg-gray-100 rounded-md my-[10px] p-[10px]",
+        className: "container p-5 mx-auto grid grid-flow-col grid-cols-2 bg-gray-100 rounded-md my-[10px]",
         children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsxs)("div", {
           className: "flex flex-col items-center p-5",
           children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsxs)("div", {
@@ -236,9 +236,9 @@ __webpack_require__.r(__webpack_exports__);
         className: "text-center text-[20px] md:text-[36px] text-[#354052] font-bold not-prose mt-2 md:mt-10",
         children: "Profil Perusahaan"
       }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsxs)("div", {
-        className: "flex rounded-md my-[10px] px-[15px]",
+        className: "flex flex-col md:flex-row rounded-md md:my-[10px] px-[15px]",
         children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)("div", {
-          className: "basis-2/5 flex justify-center items-center py-5",
+          className: "md:basis-2/5 flex justify-center items-center md:py-5",
           children: image && image.url ? /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)("img", {
             src: image.url,
             alt: image.alt,
@@ -251,9 +251,9 @@ __webpack_require__.r(__webpack_exports__);
             })
           })
         }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsxs)("div", {
-          className: "basis-3/5 flex justify-center items-center flex-col py-5 md:px-10 not-prose",
+          className: "md:basis-3/5 flex justify-center items-center flex-col md:py-5 md:px-10 not-prose",
           children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_1__.RichText.Content, {
-            tagName: "span",
+            tagName: "h3",
             value: text,
             className: "text-[12px] md:text-[18px] font-medium leading-normal"
           }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsxs)("div", {

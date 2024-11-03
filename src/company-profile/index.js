@@ -76,7 +76,7 @@ registerBlockType(metadata.name, {
 
 		return (
 			<div {...blockProps}>
-				<div className="grid grid-flow-col grid-cols-2 bg-gray-100 rounded-md my-[10px] p-[10px]">
+				<div className="container p-5 mx-auto grid grid-flow-col grid-cols-2 bg-gray-100 rounded-md my-[10px]">
 					{/* Image Section */}
 					<div className="flex flex-col items-center p-5">
 						<div className="not-prose">
@@ -223,9 +223,9 @@ registerBlockType(metadata.name, {
 				<h2 className="text-center text-[20px] md:text-[36px] text-[#354052] font-bold not-prose mt-2 md:mt-10">
 					Profil Perusahaan
 				</h2>
-				<div className="flex rounded-md my-[10px] px-[15px]">
+				<div className="flex flex-col md:flex-row rounded-md md:my-[10px] px-[15px]">
 					{/* Image Section */}
-					<div className="basis-2/5 flex justify-center items-center py-5">
+					<div className="md:basis-2/5 flex justify-center items-center md:py-5">
 						{image && image.url ? (
 							<img
 								src={image.url}
@@ -240,9 +240,9 @@ registerBlockType(metadata.name, {
 					</div>
 
 					{/* Text Section */}
-					<div className="basis-3/5 flex justify-center items-center flex-col py-5 md:px-10 not-prose">
+					<div className="md:basis-3/5 flex justify-center items-center flex-col md:py-5 md:px-10 not-prose">
 						<RichText.Content
-							tagName="span"
+							tagName="h3"
 							value={text}
 							className="text-[12px] md:text-[18px] font-medium leading-normal"
 						/>
