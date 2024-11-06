@@ -1179,6 +1179,9 @@ input:checked + .toggle-bg {
 .h-full {
   height: 100%;
 }
+.h-\[200px\] {
+  height: 200px;
+}
 .max-h-\[620px\] {
   max-height: 620px;
 }
@@ -1461,6 +1464,10 @@ input:checked + .toggle-bg {
 .bg-white\/50 {
   background-color: rgb(255 255 255 / 0.5);
 }
+.bg-black {
+  --tw-bg-opacity: 1;
+  background-color: rgb(0 0 0 / var(--tw-bg-opacity));
+}
 .object-cover {
   -o-object-fit: cover;
      object-fit: cover;
@@ -1549,6 +1556,15 @@ input:checked + .toggle-bg {
 }
 .pt-5 {
   padding-top: 1.25rem;
+}
+.pb-\[200px\] {
+  padding-bottom: 200px;
+}
+.pt-\[200px\] {
+  padding-top: 200px;
+}
+.pt-\[500px\] {
+  padding-top: 500px;
 }
 .text-center {
   text-align: center;

@@ -30,7 +30,8 @@ function kes_internal_block_kes_block_block_init() {
 	register_block_type( __DIR__ . '/build/our-product' );
 	register_block_type( __DIR__ . '/build/why-us' );
 
-
+	// product page
+	register_block_type( __DIR__ . '/build/products-catalog' );
 }
 add_action( 'init', 'kes_internal_block_kes_block_block_init' );
 
