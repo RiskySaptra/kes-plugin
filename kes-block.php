@@ -28,6 +28,8 @@ function kes_internal_block_kes_block_block_init() {
 	register_block_type( __DIR__ . '/build/banner-carousel' );
 	register_block_type( __DIR__ . '/build/company-profile' );
 	register_block_type( __DIR__ . '/build/our-product' );
+	register_block_type( __DIR__ . '/build/why-us' );
+
 
 }
 add_action( 'init', 'kes_internal_block_kes_block_block_init' );

@@ -1,6 +1,6 @@
-/*!*******************************************************************************************************************************************************************************************************************************************************!*\
-  !*** css ./node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[4].use[1]!./node_modules/postcss-loader/dist/cjs.js??ruleSet[1].rules[4].use[2]!./node_modules/sass-loader/dist/cjs.js??ruleSet[1].rules[4].use[3]!./src/banner-carousel/style.scss ***!
-  \*******************************************************************************************************************************************************************************************************************************************************/
+/*!**********************************************************************************************************************************************************************************************************************************************!*\
+  !*** css ./node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[4].use[1]!./node_modules/postcss-loader/dist/cjs.js??ruleSet[1].rules[4].use[2]!./node_modules/sass-loader/dist/cjs.js??ruleSet[1].rules[4].use[3]!./src/why-us/style.scss ***!
+  \**********************************************************************************************************************************************************************************************************************************************/
 *, ::before, ::after {
   --tw-border-spacing-x: 0;
   --tw-border-spacing-y: 0;
@@ -517,7 +517,7 @@ video {
 .tooltip-arrow:before {
   content: "";
   visibility: visible;
-  transform: rotate(-45deg);
+  transform: rotate(45deg);
 }
 
 [data-tooltip-style^='light'] + .tooltip > .tooltip-arrow:before {
@@ -527,22 +527,22 @@ video {
 
 [data-tooltip-style^='light'] + .tooltip[data-popper-placement^='top'] > .tooltip-arrow:before {
   border-bottom-width: 1px;
-  border-left-width: 1px;
+  border-right-width: 1px;
 }
 
 [data-tooltip-style^='light'] + .tooltip[data-popper-placement^='right'] > .tooltip-arrow:before {
   border-bottom-width: 1px;
-  border-right-width: 1px;
+  border-left-width: 1px;
 }
 
 [data-tooltip-style^='light'] + .tooltip[data-popper-placement^='bottom'] > .tooltip-arrow:before {
   border-top-width: 1px;
-  border-right-width: 1px;
+  border-left-width: 1px;
 }
 
 [data-tooltip-style^='light'] + .tooltip[data-popper-placement^='left'] > .tooltip-arrow:before {
   border-top-width: 1px;
-  border-left-width: 1px;
+  border-right-width: 1px;
 }
 
 .tooltip[data-popper-placement^='top'] > .tooltip-arrow {
@@ -554,11 +554,11 @@ video {
 }
 
 .tooltip[data-popper-placement^='left'] > .tooltip-arrow {
-  left: -4px;
+  right: -4px;
 }
 
 .tooltip[data-popper-placement^='right'] > .tooltip-arrow {
-  right: -4px;
+  left: -4px;
 }
 
 .tooltip.invisible > .tooltip-arrow:before {
@@ -579,13 +579,13 @@ video {
 [data-popper-arrow]:before {
   content: "";
   visibility: visible;
-  transform: rotate(-45deg);
+  transform: rotate(45deg);
 }
 
 [data-popper-arrow]:after {
   content: "";
   visibility: visible;
-  transform: rotate(-45deg);
+  transform: rotate(45deg);
   position: absolute;
   width: 9px;
   height: 9px;
@@ -614,42 +614,42 @@ video {
 
 [data-popover][role="tooltip"][data-popper-placement^='top'] > [data-popper-arrow]:before {
   border-bottom-width: 1px;
-  border-left-width: 1px;
+  border-right-width: 1px;
 }
 
 [data-popover][role="tooltip"][data-popper-placement^='top'] > [data-popper-arrow]:after {
   border-bottom-width: 1px;
-  border-left-width: 1px;
+  border-right-width: 1px;
 }
 
 [data-popover][role="tooltip"][data-popper-placement^='right'] > [data-popper-arrow]:before {
   border-bottom-width: 1px;
-  border-right-width: 1px;
+  border-left-width: 1px;
 }
 
 [data-popover][role="tooltip"][data-popper-placement^='right'] > [data-popper-arrow]:after {
   border-bottom-width: 1px;
-  border-right-width: 1px;
+  border-left-width: 1px;
 }
 
 [data-popover][role="tooltip"][data-popper-placement^='bottom'] > [data-popper-arrow]:before {
   border-top-width: 1px;
-  border-right-width: 1px;
+  border-left-width: 1px;
 }
 
 [data-popover][role="tooltip"][data-popper-placement^='bottom'] > [data-popper-arrow]:after {
   border-top-width: 1px;
-  border-right-width: 1px;
+  border-left-width: 1px;
 }
 
 [data-popover][role="tooltip"][data-popper-placement^='left'] > [data-popper-arrow]:before {
   border-top-width: 1px;
-  border-left-width: 1px;
+  border-right-width: 1px;
 }
 
 [data-popover][role="tooltip"][data-popper-placement^='left'] > [data-popper-arrow]:after {
   border-top-width: 1px;
-  border-left-width: 1px;
+  border-right-width: 1px;
 }
 
 [data-popover][role="tooltip"][data-popper-placement^='top'] > [data-popper-arrow] {
@@ -661,11 +661,11 @@ video {
 }
 
 [data-popover][role="tooltip"][data-popper-placement^='left'] > [data-popper-arrow] {
-  left: -5px;
+  right: -5px;
 }
 
 [data-popover][role="tooltip"][data-popper-placement^='right'] > [data-popper-arrow] {
-  right: -5px;
+  left: -5px;
 }
 
 [role="tooltip"].invisible > [data-popper-arrow]:before {
@@ -685,9 +685,9 @@ video {
   border-width: 1px;
   border-radius: 0px;
   padding-top: 0.5rem;
-  padding-left: 0.75rem;
-  padding-bottom: 0.5rem;
   padding-right: 0.75rem;
+  padding-bottom: 0.5rem;
+  padding-left: 0.75rem;
   font-size: 1rem;
   line-height: 1.5rem;
   --tw-shadow: 0 0 #0000;
@@ -726,18 +726,18 @@ input[type="time"]::-webkit-calendar-picker-indicator {
 
 select:not([size]) {
   background-image: url("data:image/svg+xml,%3csvg aria-hidden=%27true%27 xmlns=%27http://www.w3.org/2000/svg%27 fill=%27none%27 viewBox=%270 0 10 6%27%3e %3cpath stroke=%27%236B7280%27 stroke-linecap=%27round%27 stroke-linejoin=%27round%27 stroke-width=%272%27 d=%27m1 1 4 4 4-4%27/%3e %3c/svg%3e");
-  background-position: left 0.75rem center;
+  background-position: right 0.75rem center;
   background-repeat: no-repeat;
   background-size: 0.75em 0.75em;
-  padding-left: 2.5rem;
+  padding-right: 2.5rem;
   -webkit-print-color-adjust: exact;
           print-color-adjust: exact;
 }
 
 :is([dir=rtl]) select:not([size]) {
-  background-position: right 0.75rem center;
-  padding-left: 0.75rem;
-  padding-right: 0;
+  background-position: left 0.75rem center;
+  padding-right: 0.75rem;
+  padding-left: 0;
 }
 
 [multiple] {
@@ -745,7 +745,7 @@ select:not([size]) {
   background-position: initial;
   background-repeat: unset;
   background-size: initial;
-  padding-left: 0.75rem;
+  padding-right: 0.75rem;
   -webkit-print-color-adjust: unset;
           print-color-adjust: unset;
 }
@@ -858,8 +858,8 @@ input[type=file]::file-selector-button {
   cursor: pointer;
   padding-top: 0.625rem;
   padding-bottom: 0.625rem;
-  padding-right: 2rem;
-  padding-left: 1rem;
+  padding-left: 2rem;
+  padding-right: 1rem;
   margin-inline-start: -1rem;
   margin-inline-end: 1rem;
 }
@@ -869,8 +869,8 @@ input[type=file]::file-selector-button:hover {
 }
 
 :is([dir=rtl]) input[type=file]::file-selector-button {
-  padding-left: 2rem;
-  padding-right: 1rem;
+  padding-right: 2rem;
+  padding-left: 1rem;
 }
 
 .dark input[type=file]::file-selector-button {
@@ -944,7 +944,7 @@ input[type="range"]::-ms-fill-lower {
   content: "";
   position: absolute;
   top: 0.125rem;
-  right: 0.125rem;
+  left: 0.125rem;
   background: white;
   border-color: #D1D5DB;
   border-width: 1px;
@@ -957,7 +957,7 @@ input[type="range"]::-ms-fill-lower {
 }
 
 input:checked + .toggle-bg:after {
-  transform: translateX(-100%);;
+  transform: translateX(100%);;
   border-color: white;
 }
 
@@ -1046,13 +1046,13 @@ input:checked + .toggle-bg {
   inset-inline-end: 0px;
 }
 .left-0 {
-  right: 0px;
+  left: 0px;
 }
 .left-1\/2 {
-  right: 50%;
+  left: 50%;
 }
 .right-0 {
-  left: 0px;
+  right: 0px;
 }
 .start-0 {
   inset-inline-start: 0px;
@@ -1085,8 +1085,8 @@ input:checked + .toggle-bg {
   grid-column: span 4 / span 4;
 }
 .mx-auto {
-  margin-right: auto;
   margin-left: auto;
+  margin-right: auto;
 }
 .my-\[10px\] {
   margin-top: 10px;
@@ -1334,13 +1334,13 @@ input:checked + .toggle-bg {
 }
 .space-x-2 > :not([hidden]) ~ :not([hidden]) {
   --tw-space-x-reverse: 0;
-  margin-left: calc(0.5rem * var(--tw-space-x-reverse));
-  margin-right: calc(0.5rem * calc(1 - var(--tw-space-x-reverse)));
+  margin-right: calc(0.5rem * var(--tw-space-x-reverse));
+  margin-left: calc(0.5rem * calc(1 - var(--tw-space-x-reverse)));
 }
 .space-x-3 > :not([hidden]) ~ :not([hidden]) {
   --tw-space-x-reverse: 0;
-  margin-left: calc(0.75rem * var(--tw-space-x-reverse));
-  margin-right: calc(0.75rem * calc(1 - var(--tw-space-x-reverse)));
+  margin-right: calc(0.75rem * var(--tw-space-x-reverse));
+  margin-left: calc(0.75rem * calc(1 - var(--tw-space-x-reverse)));
 }
 .overflow-hidden {
   overflow: hidden;
@@ -1371,12 +1371,12 @@ input:checked + .toggle-bg {
   border-end-end-radius: 0.5rem;
 }
 .rounded-l-lg {
-  border-top-right-radius: 0.5rem;
-  border-bottom-right-radius: 0.5rem;
-}
-.rounded-r-lg {
   border-top-left-radius: 0.5rem;
   border-bottom-left-radius: 0.5rem;
+}
+.rounded-r-lg {
+  border-top-right-radius: 0.5rem;
+  border-bottom-right-radius: 0.5rem;
 }
 .rounded-s-lg {
   border-start-start-radius: 0.5rem;
@@ -1493,28 +1493,28 @@ input:checked + .toggle-bg {
   padding: 1.25rem;
 }
 .px-2 {
-  padding-right: 0.5rem;
   padding-left: 0.5rem;
+  padding-right: 0.5rem;
 }
 .px-3 {
-  padding-right: 0.75rem;
   padding-left: 0.75rem;
+  padding-right: 0.75rem;
 }
 .px-4 {
-  padding-right: 1rem;
   padding-left: 1rem;
+  padding-right: 1rem;
 }
 .px-5 {
-  padding-right: 1.25rem;
   padding-left: 1.25rem;
+  padding-right: 1.25rem;
 }
 .px-8 {
-  padding-right: 2rem;
   padding-left: 2rem;
+  padding-right: 2rem;
 }
 .px-\[15px\] {
-  padding-right: 15px;
   padding-left: 15px;
+  padding-right: 15px;
 }
 .py-1 {
   padding-top: 0.25rem;
@@ -1896,18 +1896,18 @@ input:checked + .toggle-bg {
   }
 
   .md\:px-10 {
-    padding-right: 2.5rem;
     padding-left: 2.5rem;
+    padding-right: 2.5rem;
   }
 
   .md\:px-20 {
-    padding-right: 5rem;
     padding-left: 5rem;
+    padding-right: 5rem;
   }
 
   .md\:px-\[10\%\] {
-    padding-right: 10%;
     padding-left: 10%;
+    padding-right: 10%;
   }
 
   .md\:py-3 {
@@ -1935,3 +1935,5 @@ input:checked + .toggle-bg {
 .rtl\:space-x-reverse:where([dir="rtl"], [dir="rtl"] *) > :not([hidden]) ~ :not([hidden]) {
   --tw-space-x-reverse: 1;
 }
+
+/*# sourceMappingURL=style-index.css.map*/

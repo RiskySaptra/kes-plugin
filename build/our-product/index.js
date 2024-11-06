@@ -125,22 +125,22 @@ __webpack_require__.r(__webpack_exports__);
   },
   save: props => {
     const blockProps = _wordpress_block_editor__WEBPACK_IMPORTED_MODULE_1__.useBlockProps.save({
-      className: "not-prose !max-w-none bg-gray-200 shadow-[inset_0_4px_4px_rgba(0,0,0,0.04),_inset_0_-4px_4px_rgba(0,0,0,0.04)]"
+      className: "not-prose !max-w-none bg-[#F8F8F9] shadow-[inset_0_4px_4px_rgba(0,0,0,0.04),_inset_0_-4px_4px_rgba(0,0,0,0.04)]"
     });
     console.log(props);
     return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("div", {
       ...blockProps,
       children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsxs)("div", {
-        className: "container mx-auto max-w-[1280px] pt-5 pb-10",
+        className: "container mx-auto max-w-[1280px] pt-10 pb-14 px-5",
         children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("h2", {
           className: "text-center text-[20px] md:text-[36px] text-[#354052] font-bold not-prose mb-5",
           children: "Produk Kami"
         }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_1__.RichText.Content, {
           tagName: "h3",
           value: props.attributes.text,
-          className: "text-[12px] md:text-[18px] font-medium leading-normal not-prose mb-5 text-center"
+          className: "text-[12px] md:text-[18px] font-medium leading-normal not-prose mb-10 text-center"
         }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("div", {
-          className: "px-[10%]",
+          className: "md:px-[10%]",
           children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("div", {
             className: "grid grid-cols-4 gap-4",
             children: props.attributes.images.map((image, index) => {
