@@ -2,80 +2,351 @@
 /******/ 	"use strict";
 /******/ 	var __webpack_modules__ = ({
 
-/***/ "./src/our-product/view.js":
-/*!*********************************!*\
-  !*** ./src/our-product/view.js ***!
-  \*********************************/
+/***/ "./src/main-page/component/BannerSlider.js":
+/*!*************************************************!*\
+  !*** ./src/main-page/component/BannerSlider.js ***!
+  \*************************************************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 __webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
 /* harmony import */ var _wordpress_element__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @wordpress/element */ "@wordpress/element");
 /* harmony import */ var _wordpress_element__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var framer_motion__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! framer-motion */ "./node_modules/framer-motion/dist/es/components/AnimatePresence/index.mjs");
 /* harmony import */ var framer_motion__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! framer-motion */ "./node_modules/framer-motion/dist/es/render/components/motion/proxy.mjs");
-/* harmony import */ var framer_motion__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! framer-motion */ "./node_modules/framer-motion/dist/es/components/AnimatePresence/index.mjs");
-/* harmony import */ var _wordpress_block_editor__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @wordpress/block-editor */ "@wordpress/block-editor");
-/* harmony import */ var _wordpress_block_editor__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_1__);
-/* harmony import */ var _style_scss__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./style.scss */ "./src/our-product/style.scss");
-/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! react/jsx-runtime */ "react/jsx-runtime");
-/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__);
+/* harmony import */ var popmotion__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! popmotion */ "./node_modules/popmotion/dist/es/utils/wrap.mjs");
+/* harmony import */ var _tabler_icons_react__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! @tabler/icons-react */ "./node_modules/@tabler/icons-react/dist/esm/icons/IconChevronLeft.mjs");
+/* harmony import */ var _tabler_icons_react__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! @tabler/icons-react */ "./node_modules/@tabler/icons-react/dist/esm/icons/IconChevronRight.mjs");
+/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react/jsx-runtime */ "react/jsx-runtime");
+/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__);
 
 
+ // Helps to loop indexes in a circular manner
 
 
+const BannerCarousel = ({
+  banners,
+  interval = 2000
+}) => {
+  const [[current, direction], setCurrent] = (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.useState)([0, 0]);
+  const [isPaused, setIsPaused] = (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.useState)(false); // State to track if the carousel is paused
 
-// Define the container outside the component
-
-const container = document.getElementById("our-product");
-const ProductCatalog = () => {
-  const [activeImage, setActiveImage] = (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.useState)(0);
-  const [blockAttributes, setBlockAttributes] = (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.useState)({
-    text: "Produk Kami",
-    images: []
-  });
-  const {
-    text,
-    images
-  } = blockAttributes;
+  // Auto-play timer
   (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.useEffect)(() => {
-    if (container) {
-      const attributes = container.getAttribute("data-block-attributes");
-      if (attributes) {
-        try {
-          setBlockAttributes(JSON.parse(attributes));
-        } catch (error) {
-          console.error("Failed to parse block attributes:", error);
+    if (isPaused) return; // Do nothing if paused
+
+    const timer = setInterval(() => {
+      paginate(1); // Move to the next banner
+    }, interval); // Change every 3.5 seconds
+
+    return () => clearInterval(timer); // Clean up the timer when component is unmounted
+  }, [isPaused]); // Re-run when pause state changes
+
+  // Paginate to the next or previous banner
+  const paginate = newDirection => {
+    setCurrent(([prevIndex]) => [prevIndex + newDirection, newDirection]);
+  };
+
+  // Loop the index with `wrap` to make it circular
+  const bannerIndex = (0,popmotion__WEBPACK_IMPORTED_MODULE_2__.wrap)(0, banners.length, current);
+
+  // Sliding animation variants
+  const variants = {
+    enter: direction => ({
+      x: direction > 0 ? "100%" : "-100%",
+      // Slide from right or left
+      opacity: 0,
+      transition: {
+        x: {
+          duration: 0.6,
+          ease: "easeOut"
+        },
+        opacity: {
+          duration: 0.3
         }
       }
-    }
-  }, []);
-  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("div", {
-    children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsxs)("div", {
-      className: "container mx-auto max-w-[1280px] pt-10 pb-14 px-5",
-      children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)(framer_motion__WEBPACK_IMPORTED_MODULE_4__.motion.h2, {
+    }),
+    center: {
+      x: 0,
+      opacity: 1,
+      transition: {
+        x: {
+          duration: 0.6,
+          ease: "easeOut"
+        },
+        opacity: {
+          duration: 0.3
+        }
+      }
+    },
+    exit: direction => ({
+      x: direction < 0 ? "100%" : "-100%",
+      // Slide out to right or left
+      opacity: 0,
+      transition: {
+        x: {
+          duration: 0.6,
+          ease: "easeOut"
+        },
+        opacity: {
+          duration: 0.3
+        }
+      }
+    })
+  };
+
+  // Handle click on indicator dot
+  const handleIndicatorClick = index => {
+    setCurrent([index, 0]); // Jump to the clicked index
+  };
+
+  // Pause and resume carousel on hover
+  const handleMouseEnter = () => setIsPaused(true); // Pause on hover
+  const handleMouseLeave = () => setIsPaused(false); // Resume when mouse leaves
+
+  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsxs)("div", {
+    className: "relative w-full h-[240px] md:h-screen overflow-hidden",
+    onMouseEnter: handleMouseEnter // Set hover event handlers
+    ,
+    onMouseLeave: handleMouseLeave,
+    children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)(framer_motion__WEBPACK_IMPORTED_MODULE_3__.AnimatePresence, {
+      initial: false,
+      custom: direction,
+      children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)(framer_motion__WEBPACK_IMPORTED_MODULE_4__.motion.img, {
+        src: banners[bannerIndex].url,
+        alt: banners[bannerIndex].alt || `Banner ${bannerIndex + 1}`,
+        custom: direction,
+        variants: variants,
+        initial: "enter",
+        animate: "center",
+        exit: "exit",
+        className: "absolute inset-0 w-full h-full object-cover"
+      }, current)
+    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("button", {
+      onClick: () => paginate(-1),
+      className: "absolute top-1/2 left-4 transform -translate-y-1/2 bg-opacity-70 text-white p-3 rounded-full bg-gray-800 hover:bg-opacity-90 focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 transition-all duration-300 sm:p-5 sm:text-3xl text-xl",
+      "aria-label": "Previous Banner",
+      children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)(_tabler_icons_react__WEBPACK_IMPORTED_MODULE_5__["default"], {})
+    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("button", {
+      onClick: () => paginate(1),
+      className: "absolute top-1/2 right-4 transform -translate-y-1/2 bg-opacity-70 text-white p-3 rounded-full bg-gray-800 hover:bg-opacity-90 focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 transition-all duration-300 sm:p-5 sm:text-3xl text-xl",
+      "aria-label": "Next Banner",
+      children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)(_tabler_icons_react__WEBPACK_IMPORTED_MODULE_6__["default"], {})
+    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("div", {
+      className: "absolute bottom-4 w-full flex justify-center gap-3",
+      children: banners.map((_, index) => /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("div", {
+        onClick: () => handleIndicatorClick(index) // Handle dot click
+        ,
+        className: `w-3 h-3 md:w-4 md:h-4 rounded-full cursor-pointer transition-all duration-300 ease-in-out ${index === bannerIndex ? "bg-white scale-125" : "bg-gray-400"}`
+      }, index))
+    })]
+  });
+};
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (BannerCarousel);
+
+/***/ }),
+
+/***/ "./src/main-page/component/CompanyProfile.js":
+/*!***************************************************!*\
+  !*** ./src/main-page/component/CompanyProfile.js ***!
+  \***************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony import */ var _tabler_icons_react__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @tabler/icons-react */ "./node_modules/@tabler/icons-react/dist/esm/icons/IconDownload.mjs");
+/* harmony import */ var _tabler_icons_react__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @tabler/icons-react */ "./node_modules/@tabler/icons-react/dist/esm/icons/IconBrandWhatsapp.mjs");
+/* harmony import */ var framer_motion__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! framer-motion */ "./node_modules/framer-motion/dist/es/render/components/motion/proxy.mjs");
+/* harmony import */ var _wordpress_block_editor__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @wordpress/block-editor */ "@wordpress/block-editor");
+/* harmony import */ var _wordpress_block_editor__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react/jsx-runtime */ "react/jsx-runtime");
+/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__);
+ // Assuming you are using these icons
+
+
+
+const CompanyProfile = ({
+  companyProfileDesc,
+  pdfFile,
+  whatsAppUrl,
+  companyProfileImage
+}) => {
+  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsxs)(framer_motion__WEBPACK_IMPORTED_MODULE_2__.motion.div, {
+    initial: {
+      opacity: 0,
+      y: -50
+    },
+    whileInView: {
+      opacity: 1,
+      y: 0
+    },
+    transition: {
+      duration: 0.5
+    },
+    viewport: {
+      once: true,
+      // Trigger only once
+      amount: 0.5,
+      // Trigger when 50% of the element is in the viewport
+      margin: "100px" // Set the margin around the element (can be a string or number)
+    },
+    className: "mx-auto max-w-[1280px] md:pt-10 md:pb-14 md:px-0",
+    children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)(framer_motion__WEBPACK_IMPORTED_MODULE_2__.motion.h2, {
+      initial: {
+        opacity: 0,
+        y: -50
+      },
+      whileInView: {
+        opacity: 1,
+        y: 0
+      },
+      transition: {
+        duration: 0.5
+      },
+      viewport: {
+        once: true
+      },
+      className: "text-center text-[20px] md:text-[36px] text-[#354052] font-bold not-prose mb-5",
+      children: "Profil Perusahaan"
+    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsxs)("div", {
+      className: "flex flex-col md:flex-row rounded-md md:my-[10px] px-5 gap-y-2",
+      children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("div", {
+        className: "md:basis-2/5 flex justify-center items-center md:py-5",
+        children: companyProfileImage && companyProfileImage.url ? /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("img", {
+          src: companyProfileImage.url,
+          alt: companyProfileImage.alt,
+          className: "rounded-lg w-full h-auto object-cover"
+        }) : /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("div", {
+          className: "w-[590px] h-[337px] bg-slate-800 rounded-xl flex justify-center items-center",
+          children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("p", {
+            className: "text-white",
+            children: "No Image Selected"
+          })
+        })
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsxs)("div", {
+        className: "md:basis-3/5 flex justify-center items-center flex-col md:py-5 md:px-10 not-prose",
+        children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_0__.RichText.Content, {
+          tagName: "h3",
+          value: companyProfileDesc,
+          className: "text-[12px] md:text-[18px] font-medium leading-normal"
+        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsxs)("div", {
+          className: "flex justify-between md:flex-row flex-col mt-[25px] w-full gap-2 md:gap-0",
+          children: [pdfFile && pdfFile.url ? /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("div", {
+            className: "flex justify-center",
+            children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsxs)("a", {
+              href: pdfFile.url,
+              className: "bg-[#0100B1] text-white md:py-3 py-2 px-4 justify-center rounded-lg hover:bg-[#01009B] font-medium flex items-center gap-2 md:w-[250px] w-full md:text-[18px] text-[12px]",
+              download: true,
+              children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)(_tabler_icons_react__WEBPACK_IMPORTED_MODULE_3__["default"], {
+                size: 20
+              }), "Unduh Company Profile"]
+            })
+          }) : /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("p", {
+            children: "No PDF uploaded."
+          }), whatsAppUrl ? /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("div", {
+            className: "flex justify-center",
+            children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsxs)("a", {
+              href: whatsAppUrl,
+              target: "_blank",
+              rel: "noopener noreferrer",
+              className: "bg-green-500 text-white md:py-3 py-2 px-3 justify-center rounded-lg hover:bg-green-600 font-medium flex items-center gap-2 md:w-[250px] w-full md:text-[18px] text-[12px]",
+              children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)(_tabler_icons_react__WEBPACK_IMPORTED_MODULE_4__["default"], {
+                size: 20
+              }), " Hubungi kita Sekarang"]
+            })
+          }) : /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("p", {
+            children: "No WhatsApp link provided."
+          })]
+        })]
+      })]
+    })]
+  });
+};
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (CompanyProfile);
+
+/***/ }),
+
+/***/ "./src/main-page/component/OurProduct.js":
+/*!***********************************************!*\
+  !*** ./src/main-page/component/OurProduct.js ***!
+  \***********************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony import */ var _wordpress_element__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @wordpress/element */ "@wordpress/element");
+/* harmony import */ var _wordpress_element__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var framer_motion__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! framer-motion */ "./node_modules/framer-motion/dist/es/render/components/motion/proxy.mjs");
+/* harmony import */ var framer_motion__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! framer-motion */ "./node_modules/framer-motion/dist/es/components/AnimatePresence/index.mjs");
+/* harmony import */ var _wordpress_block_editor__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @wordpress/block-editor */ "@wordpress/block-editor");
+/* harmony import */ var _wordpress_block_editor__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_1__);
+/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! react/jsx-runtime */ "react/jsx-runtime");
+/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__);
+
+
+
+
+const OurProducts = ({
+  text,
+  images
+}) => {
+  const [activeImage, setActiveImage] = (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.useState)(0);
+  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("div", {
+    className: "bg-[#F8F8F9]",
+    children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)(framer_motion__WEBPACK_IMPORTED_MODULE_3__.motion.div, {
+      initial: {
+        opacity: 0,
+        y: -50
+      },
+      whileInView: {
+        opacity: 1,
+        y: 0
+      },
+      transition: {
+        duration: 0.5
+      },
+      viewport: {
+        once: true,
+        // Trigger only once
+        amount: 0.5,
+        // Trigger when 50% of the element is in the viewport
+        margin: "100px" // Set the margin around the element (can be a string or number)
+      },
+      className: "mx-auto max-w-[1280px] md:pt-10 md:pb-14 p-5 md:px-0 md:py-1",
+      children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)(framer_motion__WEBPACK_IMPORTED_MODULE_3__.motion.h2, {
         initial: {
           opacity: 0,
           y: -50
         },
-        animate: {
+        whileInView: {
           opacity: 1,
           y: 0
         },
         transition: {
           duration: 0.5
         },
+        viewport: {
+          once: true
+        },
         className: "text-center text-[20px] md:text-[36px] text-[#354052] font-bold not-prose mb-5",
         children: "Produk Kami"
-      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_1__.RichText.Content, {
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_1__.RichText.Content, {
         tagName: "h3",
         value: text,
         className: "text-[12px] md:text-[18px] font-medium leading-normal not-prose mb-10 text-center"
-      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("div", {
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("div", {
         className: "md:px-[10%]",
-        children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsxs)("div", {
+        children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)("div", {
           className: "grid grid-cols-4 gap-4",
-          children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)(framer_motion__WEBPACK_IMPORTED_MODULE_5__.AnimatePresence, {
+          children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)(framer_motion__WEBPACK_IMPORTED_MODULE_4__.AnimatePresence, {
             mode: "wait",
-            children: images.length > 0 && images[activeImage]?.url && /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)(framer_motion__WEBPACK_IMPORTED_MODULE_4__.motion.div, {
+            children: images.length > 0 && images[activeImage]?.url && /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)(framer_motion__WEBPACK_IMPORTED_MODULE_3__.motion.div, {
               className: "col-span-4",
               initial: {
                 opacity: 0,
@@ -92,26 +363,24 @@ const ProductCatalog = () => {
               transition: {
                 duration: 0.3
               },
-              children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)(framer_motion__WEBPACK_IMPORTED_MODULE_4__.motion.img, {
+              children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)(framer_motion__WEBPACK_IMPORTED_MODULE_3__.motion.img, {
                 src: images[activeImage].url,
-                className: "w-full rounded-lg not-prose max-h-[620px] object-fill",
+                className: "w-full rounded-lg not-prose h-[180px] md:h-[580px] object-fill",
                 alt: images[activeImage].alt || "Image placeholder"
               })
             }, activeImage)
-          }), images.length > 0 ? images.map((image, index) => /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsxs)(framer_motion__WEBPACK_IMPORTED_MODULE_4__.motion.div, {
-            className: "col-span-1 relative rounded-lg overflow-hidden" // Added classes for clean overlay positioning
-            ,
+          }), images.length > 0 ? images.map((image, index) => /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)(framer_motion__WEBPACK_IMPORTED_MODULE_3__.motion.div, {
+            className: "col-span-1 relative rounded-lg overflow-hidden",
             onMouseEnter: () => setActiveImage(index),
             whileHover: {
               scale: 1.05
-            } // Slightly enlarges the entire container on hover
-            ,
+            },
             transition: {
               type: "spring",
               stiffness: 300,
               damping: 20
             },
-            children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)(framer_motion__WEBPACK_IMPORTED_MODULE_4__.motion.img, {
+            children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)(framer_motion__WEBPACK_IMPORTED_MODULE_3__.motion.img, {
               src: image.url,
               className: "w-full h-full object-cover",
               alt: image.alt || "Image placeholder",
@@ -129,8 +398,8 @@ const ProductCatalog = () => {
               transition: {
                 duration: 0.3
               }
-            }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)(framer_motion__WEBPACK_IMPORTED_MODULE_4__.motion.div, {
-              className: "absolute inset-0 flex justify-center items-center bg-black text-white font-semibold",
+            }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)(framer_motion__WEBPACK_IMPORTED_MODULE_3__.motion.div, {
+              className: "absolute inset-0 flex justify-center items-center bg-black/50 ",
               initial: {
                 opacity: 0,
                 scale: 0.95
@@ -147,9 +416,12 @@ const ProductCatalog = () => {
               transition: {
                 duration: 0.3
               },
-              children: "Copywriting"
+              children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("p", {
+                className: "text-center break-words w-full text-[10px] font-semibold text-white md:text-[12px] leading-tight",
+                children: image.description
+              })
             })]
-          }, index)) : /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("p", {
+          }, index)) : /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("p", {
             children: "No images available"
           })]
         })
@@ -157,21 +429,95 @@ const ProductCatalog = () => {
     })
   });
 };
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (OurProducts);
 
-// Render the block dynamically if the container exists
+/***/ }),
+
+/***/ "./src/main-page/view.js":
+/*!*******************************!*\
+  !*** ./src/main-page/view.js ***!
+  \*******************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _wordpress_element__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @wordpress/element */ "@wordpress/element");
+/* harmony import */ var _wordpress_element__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var _component_BannerSlider__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./component/BannerSlider */ "./src/main-page/component/BannerSlider.js");
+/* harmony import */ var _component_CompanyProfile__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./component/CompanyProfile */ "./src/main-page/component/CompanyProfile.js");
+/* harmony import */ var _style_scss__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./style.scss */ "./src/main-page/style.scss");
+/* harmony import */ var _component_OurProduct__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./component/OurProduct */ "./src/main-page/component/OurProduct.js");
+/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! react/jsx-runtime */ "react/jsx-runtime");
+/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5___default = /*#__PURE__*/__webpack_require__.n(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__);
+
+
+
+
+
+
+const MainPage = () => {
+  const [pageAttributes, setPageAttributes] = (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.useState)(null); // Directly store images in state
+
+  (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.useEffect)(() => {
+    // Only access the DOM once during the component's mount phase
+    const container = document.getElementById("main-page");
+    if (container) {
+      const attributes = container.getAttribute("data-block-attributes");
+      if (attributes) {
+        try {
+          const parsedAttributes = JSON.parse(attributes);
+          setPageAttributes(parsedAttributes); // Directly set images
+        } catch (error) {
+          console.error("Failed to parse block attributes:", error);
+        }
+      }
+    }
+  }, []);
+
+  // Return early if images are not yet available
+  if (!pageAttributes) return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)("div", {
+    className: "h-screen w-screen flex justify-center items-center",
+    children: "Loading..."
+  });
+  console.log(pageAttributes);
+  const {
+    companyProfileDesc,
+    companyProfileImage,
+    images,
+    pdfFile,
+    phoneNumber,
+    message,
+    ourProductsDesc,
+    ourProductsImages
+  } = pageAttributes;
+  const whatsAppUrl = `https://wa.me/${phoneNumber}?text=${encodeURIComponent(message)}`;
+  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsxs)("div", {
+    children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)(_component_BannerSlider__WEBPACK_IMPORTED_MODULE_1__["default"], {
+      banners: images
+    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)(_component_CompanyProfile__WEBPACK_IMPORTED_MODULE_2__["default"], {
+      companyProfileImage: companyProfileImage,
+      companyProfileDesc: companyProfileDesc,
+      pdfFile: pdfFile,
+      whatsAppUrl: whatsAppUrl
+    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)(_component_OurProduct__WEBPACK_IMPORTED_MODULE_4__["default"], {
+      images: ourProductsImages,
+      text: ourProductsDesc
+    })]
+  });
+};
+
+// Get the container element and render the block dynamically
+const container = document.getElementById("main-page");
 if (container) {
   const root = (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createRoot)(container);
-  root.render(/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)(ProductCatalog, {}));
-} else {
-  console.error("Container element with ID 'our-product' not found.");
+  root.render(/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)(MainPage, {}));
 }
 
 /***/ }),
 
-/***/ "./src/our-product/style.scss":
-/*!************************************!*\
-  !*** ./src/our-product/style.scss ***!
-  \************************************/
+/***/ "./src/main-page/style.scss":
+/*!**********************************!*\
+  !*** ./src/main-page/style.scss ***!
+  \**********************************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 __webpack_require__.r(__webpack_exports__);
@@ -217,6 +563,220 @@ module.exports = window["wp"]["blockEditor"];
 /***/ ((module) => {
 
 module.exports = window["wp"]["element"];
+
+/***/ }),
+
+/***/ "./node_modules/@tabler/icons-react/dist/esm/createReactComponent.mjs":
+/*!****************************************************************************!*\
+  !*** ./node_modules/@tabler/icons-react/dist/esm/createReactComponent.mjs ***!
+  \****************************************************************************/
+/***/ ((__unused_webpack___webpack_module__, __webpack_exports__, __webpack_require__) => {
+
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (/* binding */ createReactComponent)
+/* harmony export */ });
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "react");
+/* harmony import */ var _defaultAttributes_mjs__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./defaultAttributes.mjs */ "./node_modules/@tabler/icons-react/dist/esm/defaultAttributes.mjs");
+/**
+ * @license @tabler/icons-react v3.19.0 - MIT
+ *
+ * This source code is licensed under the MIT license.
+ * See the LICENSE file in the root directory of this source tree.
+ */
+
+
+
+
+const createReactComponent = (type, iconName, iconNamePascal, iconNode) => {
+  const Component = (0,react__WEBPACK_IMPORTED_MODULE_0__.forwardRef)(
+    ({ color = "currentColor", size = 24, stroke = 2, title, className, children, ...rest }, ref) => (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(
+      "svg",
+      {
+        ref,
+        ..._defaultAttributes_mjs__WEBPACK_IMPORTED_MODULE_1__["default"][type],
+        width: size,
+        height: size,
+        className: [`tabler-icon`, `tabler-icon-${iconName}`, className].join(" "),
+        ...type === "filled" ? {
+          fill: color
+        } : {
+          strokeWidth: stroke,
+          stroke: color
+        },
+        ...rest
+      },
+      [
+        title && (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("title", { key: "svg-title" }, title),
+        ...iconNode.map(([tag, attrs]) => (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(tag, attrs)),
+        ...Array.isArray(children) ? children : [children]
+      ]
+    )
+  );
+  Component.displayName = `${iconNamePascal}`;
+  return Component;
+};
+
+
+//# sourceMappingURL=createReactComponent.mjs.map
+
+
+/***/ }),
+
+/***/ "./node_modules/@tabler/icons-react/dist/esm/defaultAttributes.mjs":
+/*!*************************************************************************!*\
+  !*** ./node_modules/@tabler/icons-react/dist/esm/defaultAttributes.mjs ***!
+  \*************************************************************************/
+/***/ ((__unused_webpack___webpack_module__, __webpack_exports__, __webpack_require__) => {
+
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (/* binding */ defaultAttributes)
+/* harmony export */ });
+/**
+ * @license @tabler/icons-react v3.19.0 - MIT
+ *
+ * This source code is licensed under the MIT license.
+ * See the LICENSE file in the root directory of this source tree.
+ */
+
+var defaultAttributes = {
+  outline: {
+    xmlns: "http://www.w3.org/2000/svg",
+    width: 24,
+    height: 24,
+    viewBox: "0 0 24 24",
+    fill: "none",
+    stroke: "currentColor",
+    strokeWidth: 2,
+    strokeLinecap: "round",
+    strokeLinejoin: "round"
+  },
+  filled: {
+    xmlns: "http://www.w3.org/2000/svg",
+    width: 24,
+    height: 24,
+    viewBox: "0 0 24 24",
+    fill: "currentColor",
+    stroke: "none"
+  }
+};
+
+
+//# sourceMappingURL=defaultAttributes.mjs.map
+
+
+/***/ }),
+
+/***/ "./node_modules/@tabler/icons-react/dist/esm/icons/IconBrandWhatsapp.mjs":
+/*!*******************************************************************************!*\
+  !*** ./node_modules/@tabler/icons-react/dist/esm/icons/IconBrandWhatsapp.mjs ***!
+  \*******************************************************************************/
+/***/ ((__unused_webpack___webpack_module__, __webpack_exports__, __webpack_require__) => {
+
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (/* binding */ IconBrandWhatsapp)
+/* harmony export */ });
+/* harmony import */ var _createReactComponent_mjs__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../createReactComponent.mjs */ "./node_modules/@tabler/icons-react/dist/esm/createReactComponent.mjs");
+/**
+ * @license @tabler/icons-react v3.19.0 - MIT
+ *
+ * This source code is licensed under the MIT license.
+ * See the LICENSE file in the root directory of this source tree.
+ */
+
+
+
+var IconBrandWhatsapp = (0,_createReactComponent_mjs__WEBPACK_IMPORTED_MODULE_0__["default"])("outline", "brand-whatsapp", "IconBrandWhatsapp", [["path", { "d": "M3 21l1.65 -3.8a9 9 0 1 1 3.4 2.9l-5.05 .9", "key": "svg-0" }], ["path", { "d": "M9 10a.5 .5 0 0 0 1 0v-1a.5 .5 0 0 0 -1 0v1a5 5 0 0 0 5 5h1a.5 .5 0 0 0 0 -1h-1a.5 .5 0 0 0 0 1", "key": "svg-1" }]]);
+
+
+//# sourceMappingURL=IconBrandWhatsapp.mjs.map
+
+
+/***/ }),
+
+/***/ "./node_modules/@tabler/icons-react/dist/esm/icons/IconChevronLeft.mjs":
+/*!*****************************************************************************!*\
+  !*** ./node_modules/@tabler/icons-react/dist/esm/icons/IconChevronLeft.mjs ***!
+  \*****************************************************************************/
+/***/ ((__unused_webpack___webpack_module__, __webpack_exports__, __webpack_require__) => {
+
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (/* binding */ IconChevronLeft)
+/* harmony export */ });
+/* harmony import */ var _createReactComponent_mjs__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../createReactComponent.mjs */ "./node_modules/@tabler/icons-react/dist/esm/createReactComponent.mjs");
+/**
+ * @license @tabler/icons-react v3.19.0 - MIT
+ *
+ * This source code is licensed under the MIT license.
+ * See the LICENSE file in the root directory of this source tree.
+ */
+
+
+
+var IconChevronLeft = (0,_createReactComponent_mjs__WEBPACK_IMPORTED_MODULE_0__["default"])("outline", "chevron-left", "IconChevronLeft", [["path", { "d": "M15 6l-6 6l6 6", "key": "svg-0" }]]);
+
+
+//# sourceMappingURL=IconChevronLeft.mjs.map
+
+
+/***/ }),
+
+/***/ "./node_modules/@tabler/icons-react/dist/esm/icons/IconChevronRight.mjs":
+/*!******************************************************************************!*\
+  !*** ./node_modules/@tabler/icons-react/dist/esm/icons/IconChevronRight.mjs ***!
+  \******************************************************************************/
+/***/ ((__unused_webpack___webpack_module__, __webpack_exports__, __webpack_require__) => {
+
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (/* binding */ IconChevronRight)
+/* harmony export */ });
+/* harmony import */ var _createReactComponent_mjs__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../createReactComponent.mjs */ "./node_modules/@tabler/icons-react/dist/esm/createReactComponent.mjs");
+/**
+ * @license @tabler/icons-react v3.19.0 - MIT
+ *
+ * This source code is licensed under the MIT license.
+ * See the LICENSE file in the root directory of this source tree.
+ */
+
+
+
+var IconChevronRight = (0,_createReactComponent_mjs__WEBPACK_IMPORTED_MODULE_0__["default"])("outline", "chevron-right", "IconChevronRight", [["path", { "d": "M9 6l6 6l-6 6", "key": "svg-0" }]]);
+
+
+//# sourceMappingURL=IconChevronRight.mjs.map
+
+
+/***/ }),
+
+/***/ "./node_modules/@tabler/icons-react/dist/esm/icons/IconDownload.mjs":
+/*!**************************************************************************!*\
+  !*** ./node_modules/@tabler/icons-react/dist/esm/icons/IconDownload.mjs ***!
+  \**************************************************************************/
+/***/ ((__unused_webpack___webpack_module__, __webpack_exports__, __webpack_require__) => {
+
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (/* binding */ IconDownload)
+/* harmony export */ });
+/* harmony import */ var _createReactComponent_mjs__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../createReactComponent.mjs */ "./node_modules/@tabler/icons-react/dist/esm/createReactComponent.mjs");
+/**
+ * @license @tabler/icons-react v3.19.0 - MIT
+ *
+ * This source code is licensed under the MIT license.
+ * See the LICENSE file in the root directory of this source tree.
+ */
+
+
+
+var IconDownload = (0,_createReactComponent_mjs__WEBPACK_IMPORTED_MODULE_0__["default"])("outline", "download", "IconDownload", [["path", { "d": "M4 17v2a2 2 0 0 0 2 2h12a2 2 0 0 0 2 -2v-2", "key": "svg-0" }], ["path", { "d": "M7 11l5 5l5 -5", "key": "svg-1" }], ["path", { "d": "M12 4l0 12", "key": "svg-2" }]]);
+
+
+//# sourceMappingURL=IconDownload.mjs.map
+
 
 /***/ }),
 
@@ -15221,6 +15781,26 @@ function resolveMotionValue(value) {
 
 
 
+/***/ }),
+
+/***/ "./node_modules/popmotion/dist/es/utils/wrap.mjs":
+/*!*******************************************************!*\
+  !*** ./node_modules/popmotion/dist/es/utils/wrap.mjs ***!
+  \*******************************************************/
+/***/ ((__unused_webpack___webpack_module__, __webpack_exports__, __webpack_require__) => {
+
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   wrap: () => (/* binding */ wrap)
+/* harmony export */ });
+const wrap = (min, max, v) => {
+    const rangeSize = max - min;
+    return ((((v - min) % rangeSize) + rangeSize) % rangeSize) + min;
+};
+
+
+
+
 /***/ })
 
 /******/ 	});
@@ -15335,8 +15915,8 @@ function resolveMotionValue(value) {
 /******/ 		// undefined = chunk not loaded, null = chunk preloaded/prefetched
 /******/ 		// [resolve, reject, Promise] = chunk loading, 0 = chunk loaded
 /******/ 		var installedChunks = {
-/******/ 			"our-product/view": 0,
-/******/ 			"our-product/style-view": 0
+/******/ 			"main-page/view": 0,
+/******/ 			"main-page/style-view": 0
 /******/ 		};
 /******/ 		
 /******/ 		// no chunk on demand loading
@@ -15388,7 +15968,7 @@ function resolveMotionValue(value) {
 /******/ 	// startup
 /******/ 	// Load entry module and return exports
 /******/ 	// This entry module depends on other loaded chunks and execution need to be delayed
-/******/ 	var __webpack_exports__ = __webpack_require__.O(undefined, ["our-product/style-view"], () => (__webpack_require__("./src/our-product/view.js")))
+/******/ 	var __webpack_exports__ = __webpack_require__.O(undefined, ["main-page/style-view"], () => (__webpack_require__("./src/main-page/view.js")))
 /******/ 	__webpack_exports__ = __webpack_require__.O(__webpack_exports__);
 /******/ 	
 /******/ })()
