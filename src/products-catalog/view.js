@@ -1,5 +1,6 @@
 import { createRoot, useState, useEffect } from "@wordpress/element";
 import "./style.scss";
+import { motion } from "framer-motion";
 
 // ProductCatalog component that renders the product list dynamically
 const ProductCatalog = () => {
@@ -27,8 +28,15 @@ const ProductCatalog = () => {
 	}
 
 	return (
-		<div className="product-catalog">
-			<h3 className="pt-[500px]">{catalogTitle}</h3>
+		<div className="pt-10">
+			<motion.div
+				initial={{ opacity: 0, y: -50 }}
+				animate={{ opacity: 1, y: 0 }}
+				transition={{ duration: 0.5 }}
+				className="animated-block"
+			>
+				<h2>{catalogTitle}</h2>
+			</motion.div>
 			<ul>
 				{productList.map((product, index) => (
 					<li key={index}>{product}</li>

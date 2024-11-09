@@ -2,126 +2,46 @@
 /******/ 	"use strict";
 /******/ 	var __webpack_modules__ = ({
 
-/***/ "./src/products-catalog/index.js":
-/*!***************************************!*\
-  !*** ./src/products-catalog/index.js ***!
-  \***************************************/
+/***/ "./src/banner-reguler/view.js":
+/*!************************************!*\
+  !*** ./src/banner-reguler/view.js ***!
+  \************************************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 __webpack_require__.r(__webpack_exports__);
-/* harmony import */ var _wordpress_blocks__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @wordpress/blocks */ "@wordpress/blocks");
-/* harmony import */ var _wordpress_blocks__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_wordpress_blocks__WEBPACK_IMPORTED_MODULE_0__);
-/* harmony import */ var _wordpress_block_editor__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @wordpress/block-editor */ "@wordpress/block-editor");
-/* harmony import */ var _wordpress_block_editor__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_1__);
-/* harmony import */ var _wordpress_element__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @wordpress/element */ "@wordpress/element");
-/* harmony import */ var _wordpress_element__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(_wordpress_element__WEBPACK_IMPORTED_MODULE_2__);
-/* harmony import */ var _block_json__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./block.json */ "./src/products-catalog/block.json");
-/* harmony import */ var _style_scss__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./style.scss */ "./src/products-catalog/style.scss");
-/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! react/jsx-runtime */ "react/jsx-runtime");
-/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5___default = /*#__PURE__*/__webpack_require__.n(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__);
+/* harmony import */ var _wordpress_element__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @wordpress/element */ "@wordpress/element");
+/* harmony import */ var _wordpress_element__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var _style_scss__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./style.scss */ "./src/banner-reguler/style.scss");
+/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! react/jsx-runtime */ "react/jsx-runtime");
+/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__);
 
 
 
+// ProductCatalog component that renders the product list dynamically
 
+const ProductCatalog = () => {
+  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("div", {
+    className: "pt-[200px]",
+    children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("p", {
+      className: "text-black",
+      children: "banner-reguler-block"
+    })
+  });
+};
 
+// Get the container element in which the block should be rendered
+const container = document.getElementById("banner-reguler-block");
+const root = (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createRoot)(container);
 
-(0,_wordpress_blocks__WEBPACK_IMPORTED_MODULE_0__.registerBlockType)(_block_json__WEBPACK_IMPORTED_MODULE_3__.name, {
-  // Define attributes for saving the data
-  attributes: {
-    catalogTitle: {
-      type: "string",
-      default: ""
-    },
-    productList: {
-      type: "array",
-      default: []
-    }
-  },
-  edit: props => {
-    const {
-      attributes,
-      setAttributes
-    } = props;
-    const {
-      catalogTitle,
-      productList
-    } = attributes;
-
-    // Manage local state for product list and catalog title
-    const [localCatalogTitle, setLocalCatalogTitle] = (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_2__.useState)(catalogTitle);
-    const [localProductList, setLocalProductList] = (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_2__.useState)(productList);
-
-    // Update catalog title both in local state and attributes
-    const updateCatalogTitle = newTitle => {
-      setLocalCatalogTitle(newTitle);
-      setAttributes({
-        catalogTitle: newTitle
-      });
-    };
-
-    // Update product list both in local state and attributes
-    const updateProductList = (index, newProduct) => {
-      const updatedProducts = [...localProductList];
-      updatedProducts[index] = newProduct;
-      setLocalProductList(updatedProducts);
-      setAttributes({
-        productList: updatedProducts
-      });
-    };
-
-    // Add a new product to the list
-    const addProduct = () => {
-      const newProductList = [...localProductList, "New Product"];
-      setLocalProductList(newProductList);
-      setAttributes({
-        productList: newProductList
-      });
-    };
-
-    // Remove a product from the list
-    const removeProduct = index => {
-      const updatedProducts = localProductList.filter((_, i) => i !== index);
-      setLocalProductList(updatedProducts);
-      setAttributes({
-        productList: updatedProducts
-      });
-    };
-
-    // Return the block UI for editing
-    return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)("div", {
-      className: "product-catalog-block",
-      children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsxs)("div", {
-        children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_1__.RichText, {
-          tagName: "h3",
-          value: localCatalogTitle,
-          onChange: updateCatalogTitle,
-          placeholder: "Enter catalog title..."
-        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)("ul", {
-          children: localProductList.map((product, index) => /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsxs)("li", {
-            children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)("input", {
-              value: product,
-              onChange: e => updateProductList(index, e.target.value),
-              placeholder: "Enter product name..."
-            }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)("button", {
-              onClick: () => removeProduct(index),
-              children: "-"
-            })]
-          }, index))
-        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)("button", {
-          onClick: addProduct,
-          children: "Add Product"
-        })]
-      })
-    });
-  }
-});
+// Render the block dynamically with attributes
+root.render(/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)(ProductCatalog, {}));
 
 /***/ }),
 
-/***/ "./src/products-catalog/style.scss":
-/*!*****************************************!*\
-  !*** ./src/products-catalog/style.scss ***!
-  \*****************************************/
+/***/ "./src/banner-reguler/style.scss":
+/*!***************************************!*\
+  !*** ./src/banner-reguler/style.scss ***!
+  \***************************************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 __webpack_require__.r(__webpack_exports__);
@@ -140,26 +60,6 @@ module.exports = window["ReactJSXRuntime"];
 
 /***/ }),
 
-/***/ "@wordpress/block-editor":
-/*!*************************************!*\
-  !*** external ["wp","blockEditor"] ***!
-  \*************************************/
-/***/ ((module) => {
-
-module.exports = window["wp"]["blockEditor"];
-
-/***/ }),
-
-/***/ "@wordpress/blocks":
-/*!********************************!*\
-  !*** external ["wp","blocks"] ***!
-  \********************************/
-/***/ ((module) => {
-
-module.exports = window["wp"]["blocks"];
-
-/***/ }),
-
 /***/ "@wordpress/element":
 /*!*********************************!*\
   !*** external ["wp","element"] ***!
@@ -167,16 +67,6 @@ module.exports = window["wp"]["blocks"];
 /***/ ((module) => {
 
 module.exports = window["wp"]["element"];
-
-/***/ }),
-
-/***/ "./src/products-catalog/block.json":
-/*!*****************************************!*\
-  !*** ./src/products-catalog/block.json ***!
-  \*****************************************/
-/***/ ((module) => {
-
-module.exports = /*#__PURE__*/JSON.parse('{"$schema":"https://schemas.wp.org/trunk/block.json","apiVersion":3,"name":"kes-internal-block/product-catalog-block","version":"0.1.0","title":"Product Catalog Block","category":"theme","icon":"smiley","description":"Custom kes internal block","example":{},"supports":{"html":false},"textdomain":"kes-block","editorScript":"file:./index.js","editorStyle":"file:./index.css","style":"file:./style-index.css","viewScript":"file:./view.js","render":"file:./render.php"}');
 
 /***/ })
 
@@ -292,8 +182,8 @@ module.exports = /*#__PURE__*/JSON.parse('{"$schema":"https://schemas.wp.org/tru
 /******/ 		// undefined = chunk not loaded, null = chunk preloaded/prefetched
 /******/ 		// [resolve, reject, Promise] = chunk loading, 0 = chunk loaded
 /******/ 		var installedChunks = {
-/******/ 			"products-catalog/index": 0,
-/******/ 			"products-catalog/style-view": 0
+/******/ 			"banner-reguler/view": 0,
+/******/ 			"banner-reguler/style-view": 0
 /******/ 		};
 /******/ 		
 /******/ 		// no chunk on demand loading
@@ -345,9 +235,9 @@ module.exports = /*#__PURE__*/JSON.parse('{"$schema":"https://schemas.wp.org/tru
 /******/ 	// startup
 /******/ 	// Load entry module and return exports
 /******/ 	// This entry module depends on other loaded chunks and execution need to be delayed
-/******/ 	var __webpack_exports__ = __webpack_require__.O(undefined, ["products-catalog/style-view"], () => (__webpack_require__("./src/products-catalog/index.js")))
+/******/ 	var __webpack_exports__ = __webpack_require__.O(undefined, ["banner-reguler/style-view"], () => (__webpack_require__("./src/banner-reguler/view.js")))
 /******/ 	__webpack_exports__ = __webpack_require__.O(__webpack_exports__);
 /******/ 	
 /******/ })()
 ;
-//# sourceMappingURL=index.js.map
+//# sourceMappingURL=view.js.map

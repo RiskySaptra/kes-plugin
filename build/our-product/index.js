@@ -32,10 +32,7 @@ __webpack_require__.r(__webpack_exports__);
       default: []
     },
     text: {
-      type: "string",
-      source: "html",
-      selector: "h3",
-      default: ""
+      type: "string"
     }
   },
   edit: props => {
@@ -46,9 +43,6 @@ __webpack_require__.r(__webpack_exports__);
       },
       setAttributes
     } = props;
-    const blockProps = (0,_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_1__.useBlockProps)({
-      className: ""
-    });
 
     // Function to handle image selection
     const onSelectImages = newImages => {
@@ -62,7 +56,6 @@ __webpack_require__.r(__webpack_exports__);
       });
     };
     return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("div", {
-      ...blockProps,
       children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsxs)("div", {
         className: "container p-5 mx-auto bg-gray-100 rounded-md my-[10px]",
         children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("p", {
@@ -73,7 +66,8 @@ __webpack_require__.r(__webpack_exports__);
           children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_1__.RichText, {
             tagName: "h3",
             placeholder: "Enter your text here...",
-            value: text,
+            value: text || "" // Ensure the text value is always a string
+            ,
             onChange: newText => setAttributes({
               text: newText
             })
@@ -123,53 +117,7 @@ __webpack_require__.r(__webpack_exports__);
       })
     });
   },
-  save: props => {
-    const blockProps = _wordpress_block_editor__WEBPACK_IMPORTED_MODULE_1__.useBlockProps.save({
-      className: "not-prose !max-w-none bg-[#F8F8F9] shadow-[inset_0_4px_4px_rgba(0,0,0,0.04),_inset_0_-4px_4px_rgba(0,0,0,0.04)]"
-    });
-    console.log(props);
-    return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("div", {
-      ...blockProps,
-      children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsxs)("div", {
-        className: "container mx-auto max-w-[1280px] pt-10 pb-14 px-5",
-        children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("h2", {
-          className: "text-center text-[20px] md:text-[36px] text-[#354052] font-bold not-prose mb-5",
-          children: "Produk Kami"
-        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_1__.RichText.Content, {
-          tagName: "h3",
-          value: props.attributes.text,
-          className: "text-[12px] md:text-[18px] font-medium leading-normal not-prose mb-10 text-center"
-        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("div", {
-          className: "md:px-[10%]",
-          children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("div", {
-            className: "grid grid-cols-4 gap-4",
-            children: props.attributes.images.map((image, index) => {
-              if (index === 0) {
-                return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("div", {
-                  className: "col-span-4",
-                  "data-carousel-item": true,
-                  children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("img", {
-                    src: image.url,
-                    className: "w-full max-h-[620px] rounded-lg not-prose object-fill",
-                    alt: image.alt || "Image placeholder"
-                  })
-                }, index);
-              }
-              return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("div", {
-                className: "col-span-1",
-                "data-carousel-item": true,
-                children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("img", {
-                  src: image.url,
-                  className: "w-full h-auto rounded-lg not-prose object-center object-scale-down",
-                  alt: image.alt || "Image placeholder"
-                })
-              }, index);
-            })
-          })
-        })]
-      })
-    });
-  }
+  save: props => null
 });
 
 /***/ }),
@@ -390,7 +338,7 @@ var IconPencilPlus = (0,_createReactComponent_mjs__WEBPACK_IMPORTED_MODULE_0__["
   \************************************/
 /***/ ((module) => {
 
-module.exports = /*#__PURE__*/JSON.parse('{"$schema":"https://schemas.wp.org/trunk/block.json","apiVersion":3,"name":"kes-internal-block/our-product-block","version":"0.1.0","title":"Our Product Block","category":"theme","icon":"smiley","description":"Custom kes internal block","example":{},"supports":{"html":false},"textdomain":"kes-block","editorScript":"file:./index.js","editorStyle":"file:./index.css","style":"file:./style-index.css","viewScript":"file:./view.js"}');
+module.exports = /*#__PURE__*/JSON.parse('{"$schema":"https://schemas.wp.org/trunk/block.json","apiVersion":3,"name":"kes-internal-block/our-product-block","version":"0.1.0","title":"Our Product Block","category":"theme","icon":"smiley","description":"Custom kes internal block","example":{},"supports":{"html":false},"textdomain":"kes-block","editorScript":"file:./index.js","editorStyle":"file:./index.css","style":"file:./style-index.css","viewScript":"file:./view.js","render":"file:./render.php"}');
 
 /***/ })
 
@@ -507,7 +455,7 @@ module.exports = /*#__PURE__*/JSON.parse('{"$schema":"https://schemas.wp.org/tru
 /******/ 		// [resolve, reject, Promise] = chunk loading, 0 = chunk loaded
 /******/ 		var installedChunks = {
 /******/ 			"our-product/index": 0,
-/******/ 			"our-product/style-index": 0
+/******/ 			"our-product/style-view": 0
 /******/ 		};
 /******/ 		
 /******/ 		// no chunk on demand loading
@@ -559,7 +507,7 @@ module.exports = /*#__PURE__*/JSON.parse('{"$schema":"https://schemas.wp.org/tru
 /******/ 	// startup
 /******/ 	// Load entry module and return exports
 /******/ 	// This entry module depends on other loaded chunks and execution need to be delayed
-/******/ 	var __webpack_exports__ = __webpack_require__.O(undefined, ["our-product/style-index"], () => (__webpack_require__("./src/our-product/index.js")))
+/******/ 	var __webpack_exports__ = __webpack_require__.O(undefined, ["our-product/style-view"], () => (__webpack_require__("./src/our-product/index.js")))
 /******/ 	__webpack_exports__ = __webpack_require__.O(__webpack_exports__);
 /******/ 	
 /******/ })()

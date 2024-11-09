@@ -1,9 +1,9 @@
 {
 	"$schema": "https://schemas.wp.org/trunk/block.json",
 	"apiVersion": 3,
-	"name": "kes-internal-block/our-product-block",
+	"name": "kes-internal-block/banner-reguler-block",
 	"version": "0.1.0",
-	"title": "Our Product Block",
+	"title": "Banner Reguler Block",
 	"category": "theme",
 	"icon": "smiley",
 	"description": "Custom kes internal block",

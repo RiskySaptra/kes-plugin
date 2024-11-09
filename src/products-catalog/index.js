@@ -81,9 +81,4 @@ registerBlockType(metadata.name, {
 			</div>
 		);
 	},
-
-	save: (props) => {
-		// Return null to prevent static save rendering; let render.js handle it
-		return <script>{`var testimonialsSlides=${JSON.stringify(props)}`}</script>;
-	},
 });

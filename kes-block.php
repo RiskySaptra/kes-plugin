@@ -25,6 +25,10 @@ if ( ! defined( 'ABSPATH' ) ) {
  * @see https://developer.wordpress.org/reference/functions/register_block_type/
  */
 function kes_internal_block_kes_block_block_init() {
+	// common
+	register_block_type( __DIR__ . '/build/banner-reguler' );
+	
+	// homepage
 	register_block_type( __DIR__ . '/build/banner-carousel' );
 	register_block_type( __DIR__ . '/build/company-profile' );
 	register_block_type( __DIR__ . '/build/our-product' );
