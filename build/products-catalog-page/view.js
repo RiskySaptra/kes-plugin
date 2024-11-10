@@ -2,560 +2,335 @@
 /******/ 	"use strict";
 /******/ 	var __webpack_modules__ = ({
 
-/***/ "./src/main-page/component/BannerSlider.js":
-/*!*************************************************!*\
-  !*** ./src/main-page/component/BannerSlider.js ***!
-  \*************************************************/
+/***/ "./src/products-catalog-page/constanta.js":
+/*!************************************************!*\
+  !*** ./src/products-catalog-page/constanta.js ***!
+  \************************************************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */   sampleProducts: () => (/* binding */ sampleProducts)
 /* harmony export */ });
-/* harmony import */ var _wordpress_element__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @wordpress/element */ "@wordpress/element");
-/* harmony import */ var _wordpress_element__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__);
-/* harmony import */ var framer_motion__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! framer-motion */ "./node_modules/framer-motion/dist/es/components/AnimatePresence/index.mjs");
-/* harmony import */ var framer_motion__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! framer-motion */ "./node_modules/framer-motion/dist/es/render/components/motion/proxy.mjs");
-/* harmony import */ var popmotion__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! popmotion */ "./node_modules/popmotion/dist/es/utils/wrap.mjs");
-/* harmony import */ var _tabler_icons_react__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! @tabler/icons-react */ "./node_modules/@tabler/icons-react/dist/esm/icons/IconChevronLeft.mjs");
-/* harmony import */ var _tabler_icons_react__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! @tabler/icons-react */ "./node_modules/@tabler/icons-react/dist/esm/icons/IconChevronRight.mjs");
-/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react/jsx-runtime */ "react/jsx-runtime");
-/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__);
-
-
- // Helps to loop indexes in a circular manner
-
-
-const BannerCarousel = ({
-  banners,
-  interval = 2000
-}) => {
-  const [[current, direction], setCurrent] = (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.useState)([0, 0]);
-  const [isPaused, setIsPaused] = (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.useState)(false); // State to track if the carousel is paused
-
-  // Auto-play timer
-  (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.useEffect)(() => {
-    if (isPaused) return; // Do nothing if paused
-
-    const timer = setInterval(() => {
-      paginate(1); // Move to the next banner
-    }, interval); // Change every 3.5 seconds
-
-    return () => clearInterval(timer); // Clean up the timer when component is unmounted
-  }, [isPaused]); // Re-run when pause state changes
-
-  // Paginate to the next or previous banner
-  const paginate = newDirection => {
-    setCurrent(([prevIndex]) => [prevIndex + newDirection, newDirection]);
-  };
-
-  // Loop the index with `wrap` to make it circular
-  const bannerIndex = (0,popmotion__WEBPACK_IMPORTED_MODULE_2__.wrap)(0, banners.length, current);
-
-  // Sliding animation variants
-  const variants = {
-    enter: direction => ({
-      x: direction > 0 ? "100%" : "-100%",
-      // Slide from right or left
-      opacity: 0,
-      transition: {
-        x: {
-          duration: 0.6,
-          ease: "easeOut"
-        },
-        opacity: {
-          duration: 0.3
-        }
-      }
-    }),
-    center: {
-      x: 0,
-      opacity: 1,
-      transition: {
-        x: {
-          duration: 0.6,
-          ease: "easeOut"
-        },
-        opacity: {
-          duration: 0.3
-        }
-      }
-    },
-    exit: direction => ({
-      x: direction < 0 ? "100%" : "-100%",
-      // Slide out to right or left
-      opacity: 0,
-      transition: {
-        x: {
-          duration: 0.6,
-          ease: "easeOut"
-        },
-        opacity: {
-          duration: 0.3
-        }
-      }
-    })
-  };
-
-  // Handle click on indicator dot
-  const handleIndicatorClick = index => {
-    setCurrent([index, 0]); // Jump to the clicked index
-  };
-
-  // Pause and resume carousel on hover
-  const handleMouseEnter = () => setIsPaused(true); // Pause on hover
-  const handleMouseLeave = () => setIsPaused(false); // Resume when mouse leaves
-
-  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsxs)("div", {
-    className: "relative w-full h-[240px] md:h-screen overflow-hidden",
-    onMouseEnter: handleMouseEnter // Set hover event handlers
-    ,
-    onMouseLeave: handleMouseLeave,
-    children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)(framer_motion__WEBPACK_IMPORTED_MODULE_3__.AnimatePresence, {
-      initial: false,
-      custom: direction,
-      children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)(framer_motion__WEBPACK_IMPORTED_MODULE_4__.motion.img, {
-        src: banners[bannerIndex].url,
-        alt: banners[bannerIndex].alt || `Banner ${bannerIndex + 1}`,
-        custom: direction,
-        variants: variants,
-        initial: "enter",
-        animate: "center",
-        exit: "exit",
-        className: "absolute inset-0 w-full h-full object-cover"
-      }, current)
-    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("button", {
-      onClick: () => paginate(-1),
-      className: "absolute top-1/2 left-4 transform -translate-y-1/2 bg-opacity-70 text-white p-3 rounded-full bg-gray-800 hover:bg-opacity-90 focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 transition-all duration-300 sm:p-5 sm:text-3xl text-xl",
-      "aria-label": "Previous Banner",
-      children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)(_tabler_icons_react__WEBPACK_IMPORTED_MODULE_5__["default"], {})
-    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("button", {
-      onClick: () => paginate(1),
-      className: "absolute top-1/2 right-4 transform -translate-y-1/2 bg-opacity-70 text-white p-3 rounded-full bg-gray-800 hover:bg-opacity-90 focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 transition-all duration-300 sm:p-5 sm:text-3xl text-xl",
-      "aria-label": "Next Banner",
-      children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)(_tabler_icons_react__WEBPACK_IMPORTED_MODULE_6__["default"], {})
-    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("div", {
-      className: "absolute bottom-4 w-full flex justify-center gap-3",
-      children: banners.map((_, index) => /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("div", {
-        onClick: () => handleIndicatorClick(index) // Handle dot click
-        ,
-        className: `w-3 h-3 md:w-4 md:h-4 rounded-full cursor-pointer transition-all duration-300 ease-in-out ${index === bannerIndex ? "bg-white scale-125" : "bg-gray-400"}`
-      }, index))
-    })]
-  });
-};
-/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (BannerCarousel);
+const sampleProducts = [{
+  id: 1,
+  imageUrl: "image1.jpg",
+  title: "Kabel NYAF",
+  description: "Kabel tembaga serabut dengan isolasi PVC berbagai warna seperti biru, merah, hitam, kuning, kuning-hijau.",
+  spec: "NYAF 1X0.75 mm (fx) 500V SNI04-6629.3 :C10",
+  specDesc: "Flexible copper cable with PVC insulation, suitable for general electrical installations.",
+  category: "Low Voltage Cables",
+  linkTokopedia: "#",
+  linkShopee: "#",
+  catalogLink: "#"
+}, {
+  id: 2,
+  imageUrl: "image2.jpg",
+  title: "Kabel Tembaga",
+  description: "Kabel tembaga berkualitas tinggi untuk penggunaan rumah dan industri.",
+  spec: "NYA 1X2.5 mm 500V",
+  specDesc: "High-quality copper cable for residential and industrial use.",
+  category: "Low Voltage Cables",
+  linkTokopedia: "#",
+  linkShopee: "#",
+  catalogLink: "#"
+}, {
+  id: 3,
+  imageUrl: "image3.jpg",
+  title: "Kabel PVC",
+  description: "Kabel dengan isolasi PVC untuk instalasi listrik indoor dan outdoor.",
+  spec: "PVC 1X4 mm 600V",
+  specDesc: "PVC insulated cable for indoor and outdoor electrical installations.",
+  category: "Low Voltage Cables",
+  linkTokopedia: "#",
+  linkShopee: "#",
+  catalogLink: "#"
+}, {
+  id: 4,
+  imageUrl: "image4.jpg",
+  title: "Kabel NYAF 2",
+  description: "Kabel fleksibel dengan lapisan PVC yang cocok untuk panel listrik.",
+  spec: "NYAF 2X0.75 mm 500V",
+  specDesc: "Flexible cable with PVC insulation, ideal for electrical panel installations.",
+  category: "Low Voltage Cables",
+  linkTokopedia: "#",
+  linkShopee: "#",
+  catalogLink: "#"
+}, {
+  id: 5,
+  imageUrl: "image5.jpg",
+  title: "Kabel Listrik Panel",
+  description: "Kabel listrik untuk panel distribusi dengan pelindung PVC.",
+  spec: "NYAF 3X1.5 mm 500V",
+  specDesc: "Electrical cable for distribution panels with PVC insulation.",
+  category: "Low Voltage Cables",
+  linkTokopedia: "#",
+  linkShopee: "#",
+  catalogLink: "#"
+}, {
+  id: 6,
+  imageUrl: "image6.jpg",
+  title: "Kabel Shielded",
+  description: "Kabel tembaga terkelupas dan dilapisi isolasi PVC untuk proteksi tambahan.",
+  spec: "Shielded Cable 2X1 mm",
+  specDesc: "Shielded copper cable with PVC insulation for additional protection.",
+  category: "Medium Voltage Cables",
+  linkTokopedia: "#",
+  linkShopee: "#",
+  catalogLink: "#"
+}, {
+  id: 7,
+  imageUrl: "image7.jpg",
+  title: "Kabel Solar Panel",
+  description: "Kabel tahan cuaca yang cocok untuk penggunaan di sistem tenaga surya.",
+  spec: "Kabel PV 6mm 1000V",
+  specDesc: "Weather-resistant cable for solar panel systems.",
+  category: "Medium Voltage Cables",
+  linkTokopedia: "#",
+  linkShopee: "#",
+  catalogLink: "#"
+}, {
+  id: 8,
+  imageUrl: "image8.jpg",
+  title: "Kabel Kontrol",
+  description: "Kabel kontrol dengan beberapa konduktor untuk penggunaan industri.",
+  spec: "Kontrol 5X0.75 mm",
+  specDesc: "Control cable with multiple conductors for industrial applications.",
+  category: "Medium Voltage Cables",
+  linkTokopedia: "#",
+  linkShopee: "#",
+  catalogLink: "#"
+}, {
+  id: 9,
+  imageUrl: "image9.jpg",
+  title: "Kabel Tahan Api",
+  description: "Kabel listrik dengan isolasi tahan api untuk instalasi gedung.",
+  spec: "Kabel Tahan Api 1X2.5 mm",
+  specDesc: "Fire-resistant cable for building installations.",
+  category: "Fire Resistant Cables",
+  linkTokopedia: "#",
+  linkShopee: "#",
+  catalogLink: "#"
+}, {
+  id: 10,
+  imageUrl: "image10.jpg",
+  title: "Kabel NYY",
+  description: "Kabel NYY dengan pelindung isolasi untuk aplikasi outdoor.",
+  spec: "NYY 2X1.5 mm",
+  specDesc: "NYY cable with insulation protection for outdoor applications.",
+  category: "Low Voltage Cables",
+  linkTokopedia: "#",
+  linkShopee: "#",
+  catalogLink: "#"
+}, {
+  id: 11,
+  imageUrl: "image11.jpg",
+  title: "Kabel Flex",
+  description: "Kabel fleksibel untuk instalasi elektronik dan peralatan.",
+  spec: "Flex 3X0.75 mm",
+  specDesc: "Flexible cable for electronics and equipment installations.",
+  category: "Flexible Cables",
+  linkTokopedia: "#",
+  linkShopee: "#",
+  catalogLink: "#"
+}, {
+  id: 12,
+  imageUrl: "image12.jpg",
+  title: "Kabel Suplai Daya",
+  description: "Kabel daya untuk panel distribusi dan perangkat berat.",
+  spec: "NYA 4X2.5 mm",
+  specDesc: "Power supply cable for distribution panels and heavy equipment.",
+  category: "Low Voltage Cables",
+  linkTokopedia: "#",
+  linkShopee: "#",
+  catalogLink: "#"
+}, {
+  id: 13,
+  imageUrl: "image13.jpg",
+  title: "Kabel Instalasi Rumah",
+  description: "Kabel untuk instalasi listrik di rumah dengan isolasi PVC.",
+  spec: "NYAF 3X1.5 mm 500V",
+  specDesc: "Cable for home electrical installations with PVC insulation.",
+  category: "Low Voltage Cables",
+  linkTokopedia: "#",
+  linkShopee: "#",
+  catalogLink: "#"
+}, {
+  id: 13,
+  imageUrl: "image13.jpg",
+  title: "Kabel Instalasi Rumah",
+  description: "Kabel untuk instalasi listrik di rumah dengan isolasi PVC.",
+  spec: "NYAF 3X1.5 mm 500V",
+  specDesc: "Cable for home electrical installations with PVC insulation.",
+  category: "Low Voltage Cables",
+  linkTokopedia: "#",
+  linkShopee: "#",
+  catalogLink: "#"
+}, {
+  id: 13,
+  imageUrl: "image13.jpg",
+  title: "Kabel Instalasi Rumah",
+  description: "Kabel untuk instalasi listrik di rumah dengan isolasi PVC.",
+  spec: "NYAF 3X1.5 mm 500V",
+  specDesc: "Cable for home electrical installations with PVC insulation.",
+  category: "Low Voltage Cables",
+  linkTokopedia: "#",
+  linkShopee: "#",
+  catalogLink: "#"
+}, {
+  id: 13,
+  imageUrl: "image13.jpg",
+  title: "Kabel Instalasi Rumah",
+  description: "Kabel untuk instalasi listrik di rumah dengan isolasi PVC.",
+  spec: "NYAF 3X1.5 mm 500V",
+  specDesc: "Cable for home electrical installations with PVC insulation.",
+  category: "Low Voltage Cables",
+  linkTokopedia: "#",
+  linkShopee: "#",
+  catalogLink: "#"
+}, {
+  id: 13,
+  imageUrl: "image13.jpg",
+  title: "Kabel Instalasi Rumah",
+  description: "Kabel untuk instalasi listrik di rumah dengan isolasi PVC.",
+  spec: "NYAF 3X1.5 mm 500V",
+  specDesc: "Cable for home electrical installations with PVC insulation.",
+  category: "Low Voltage Cables",
+  linkTokopedia: "#",
+  linkShopee: "#",
+  catalogLink: "#"
+}, {
+  id: 13,
+  imageUrl: "image13.jpg",
+  title: "Kabel Instalasi Rumah",
+  description: "Kabel untuk instalasi listrik di rumah dengan isolasi PVC.",
+  spec: "NYAF 3X1.5 mm 500V",
+  specDesc: "Cable for home electrical installations with PVC insulation.",
+  category: "Low Voltage Cables",
+  linkTokopedia: "#",
+  linkShopee: "#",
+  catalogLink: "#"
+}, {
+  id: 13,
+  imageUrl: "image13.jpg",
+  title: "Kabel Instalasi Rumah",
+  description: "Kabel untuk instalasi listrik di rumah dengan isolasi PVC.",
+  spec: "NYAF 3X1.5 mm 500V",
+  specDesc: "Cable for home electrical installations with PVC insulation.",
+  category: "Low Voltage Cables",
+  linkTokopedia: "#",
+  linkShopee: "#",
+  catalogLink: "#"
+}, {
+  id: 13,
+  imageUrl: "image13.jpg",
+  title: "Kabel Instalasi Rumah",
+  description: "Kabel untuk instalasi listrik di rumah dengan isolasi PVC.",
+  spec: "NYAF 3X1.5 mm 500V",
+  specDesc: "Cable for home electrical installations with PVC insulation.",
+  category: "Low Voltage Cables",
+  linkTokopedia: "#",
+  linkShopee: "#",
+  catalogLink: "#"
+}, {
+  id: 13,
+  imageUrl: "image13.jpg",
+  title: "Kabel Instalasi Rumah",
+  description: "Kabel untuk instalasi listrik di rumah dengan isolasi PVC.",
+  spec: "NYAF 3X1.5 mm 500V",
+  specDesc: "Cable for home electrical installations with PVC insulation.",
+  category: "Low Voltage Cables",
+  linkTokopedia: "#",
+  linkShopee: "#",
+  catalogLink: "#"
+}, {
+  id: 13,
+  imageUrl: "image13.jpg",
+  title: "Kabel Instalasi Rumah",
+  description: "Kabel untuk instalasi listrik di rumah dengan isolasi PVC.",
+  spec: "NYAF 3X1.5 mm 500V",
+  specDesc: "Cable for home electrical installations with PVC insulation.",
+  category: "Low Voltage Cables",
+  linkTokopedia: "#",
+  linkShopee: "#",
+  catalogLink: "#"
+}, {
+  id: 13,
+  imageUrl: "image13.jpg",
+  title: "Kabel Instalasi Rumah",
+  description: "Kabel untuk instalasi listrik di rumah dengan isolasi PVC.",
+  spec: "NYAF 3X1.5 mm 500V",
+  specDesc: "Cable for home electrical installations with PVC insulation.",
+  category: "Low Voltage Cables",
+  linkTokopedia: "#",
+  linkShopee: "#",
+  catalogLink: "#"
+}, {
+  id: 13,
+  imageUrl: "image13.jpg",
+  title: "Kabel Instalasi Rumah",
+  description: "Kabel untuk instalasi listrik di rumah dengan isolasi PVC.",
+  spec: "NYAF 3X1.5 mm 500V",
+  specDesc: "Cable for home electrical installations with PVC insulation.",
+  category: "Low Voltage Cables",
+  linkTokopedia: "#",
+  linkShopee: "#",
+  catalogLink: "#"
+}, {
+  id: 13,
+  imageUrl: "image13.jpg",
+  title: "Kabel Instalasi Rumah",
+  description: "Kabel untuk instalasi listrik di rumah dengan isolasi PVC.",
+  spec: "NYAF 3X1.5 mm 500V",
+  specDesc: "Cable for home electrical installations with PVC insulation.",
+  category: "Low Voltage Cables",
+  linkTokopedia: "#",
+  linkShopee: "#",
+  catalogLink: "#"
+}, {
+  id: 13,
+  imageUrl: "image13.jpg",
+  title: "Kabel Instalasi Rumah",
+  description: "Kabel untuk instalasi listrik di rumah dengan isolasi PVC.",
+  spec: "NYAF 3X1.5 mm 500V",
+  specDesc: "Cable for home electrical installations with PVC insulation.",
+  category: "Low Voltage Cables",
+  linkTokopedia: "#",
+  linkShopee: "#",
+  catalogLink: "#"
+}];
 
 /***/ }),
 
-/***/ "./src/main-page/component/CompanyProfile.js":
-/*!***************************************************!*\
-  !*** ./src/main-page/component/CompanyProfile.js ***!
-  \***************************************************/
-/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
-
-__webpack_require__.r(__webpack_exports__);
-/* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
-/* harmony export */ });
-/* harmony import */ var _tabler_icons_react__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @tabler/icons-react */ "./node_modules/@tabler/icons-react/dist/esm/icons/IconDownload.mjs");
-/* harmony import */ var _tabler_icons_react__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @tabler/icons-react */ "./node_modules/@tabler/icons-react/dist/esm/icons/IconBrandWhatsapp.mjs");
-/* harmony import */ var framer_motion__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! framer-motion */ "./node_modules/framer-motion/dist/es/render/components/motion/proxy.mjs");
-/* harmony import */ var _wordpress_block_editor__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @wordpress/block-editor */ "@wordpress/block-editor");
-/* harmony import */ var _wordpress_block_editor__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_0__);
-/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react/jsx-runtime */ "react/jsx-runtime");
-/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__);
-
-
-
-
-const CompanyProfile = ({
-  companyProfileDesc,
-  pdfFile,
-  whatsAppUrl,
-  companyProfileImage
-}) => {
-  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsxs)(framer_motion__WEBPACK_IMPORTED_MODULE_2__.motion.div, {
-    initial: {
-      opacity: 0,
-      y: -50
-    },
-    whileInView: {
-      opacity: 1,
-      y: 0
-    },
-    transition: {
-      duration: 0.5
-    },
-    viewport: {
-      once: true,
-      amount: 0.5,
-      margin: "100px"
-    },
-    className: "mx-auto max-w-[1280px] p-5 md:py-10 md:px-0",
-    children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)(framer_motion__WEBPACK_IMPORTED_MODULE_2__.motion.h2, {
-      initial: {
-        opacity: 0,
-        y: -30
-      },
-      whileInView: {
-        opacity: 1,
-        y: 0
-      },
-      transition: {
-        duration: 0.5
-      },
-      viewport: {
-        once: true,
-        amount: 0.5,
-        margin: "100px"
-      },
-      className: "text-center text-[20px] md:text-[36px] text-[#354052] font-bold mb-6",
-      children: "Profil Perusahaan"
-    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsxs)("div", {
-      className: "flex flex-col md:flex-row rounded-md gap-6 md:gap-8 md:my-4 md:px-8",
-      children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("div", {
-        className: "md:basis-2/5 flex justify-center items-center md:py-5",
-        children: companyProfileImage && companyProfileImage.url ? /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("img", {
-          src: companyProfileImage.url,
-          alt: companyProfileImage.alt || "Company profile image",
-          className: "rounded-lg w-full h-auto object-cover shadow-md"
-        }) : /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("div", {
-          className: "w-[590px] h-[337px] bg-slate-800 rounded-lg flex justify-center items-center",
-          children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("p", {
-            className: "text-white",
-            children: "No Image Selected"
-          })
-        })
-      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsxs)("div", {
-        className: "md:basis-3/5 flex flex-col justify-center md:px-10",
-        children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_0__.RichText.Content, {
-          tagName: "h3",
-          value: companyProfileDesc,
-          className: "text-[14px] md:text-[18px] font-medium leading-relaxed text-gray-700 mb-4"
-        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsxs)("div", {
-          className: "flex flex-col md:flex-row mt-6 w-full gap-3 md:gap-4",
-          children: [pdfFile && pdfFile.url ? /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsxs)("a", {
-            href: pdfFile.url,
-            className: "bg-blue-600 text-white py-2 md:py-3 px-4 rounded-lg flex items-center gap-2 justify-center hover:bg-blue-700 transition-colors font-medium md:w-[250px] w-full text-[14px] md:text-[16px]",
-            download: true,
-            "aria-label": "Download company profile PDF",
-            children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)(_tabler_icons_react__WEBPACK_IMPORTED_MODULE_3__["default"], {
-              size: 22
-            }), "Unduh Company Profile"]
-          }) : /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("p", {
-            className: "text-gray-500 italic",
-            children: "No PDF uploaded."
-          }), whatsAppUrl ? /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsxs)("a", {
-            href: whatsAppUrl,
-            target: "_blank",
-            rel: "noopener noreferrer",
-            className: "bg-green-500 text-white py-2 md:py-3 px-4 rounded-lg flex items-center gap-2 justify-center hover:bg-green-600 transition-colors font-medium md:w-[250px] w-full text-[14px] md:text-[16px]",
-            "aria-label": "Contact us on WhatsApp",
-            children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)(_tabler_icons_react__WEBPACK_IMPORTED_MODULE_4__["default"], {
-              size: 22
-            }), "Hubungi Kita Sekarang"]
-          }) : /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("p", {
-            className: "text-gray-500 italic",
-            children: "No WhatsApp link provided."
-          })]
-        })]
-      })]
-    })]
-  });
-};
-/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (CompanyProfile);
-
-/***/ }),
-
-/***/ "./src/main-page/component/OurProduct.js":
-/*!***********************************************!*\
-  !*** ./src/main-page/component/OurProduct.js ***!
-  \***********************************************/
-/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
-
-__webpack_require__.r(__webpack_exports__);
-/* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
-/* harmony export */ });
-/* harmony import */ var _wordpress_element__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @wordpress/element */ "@wordpress/element");
-/* harmony import */ var _wordpress_element__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__);
-/* harmony import */ var framer_motion__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! framer-motion */ "./node_modules/framer-motion/dist/es/render/components/motion/proxy.mjs");
-/* harmony import */ var framer_motion__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! framer-motion */ "./node_modules/framer-motion/dist/es/components/AnimatePresence/index.mjs");
-/* harmony import */ var _wordpress_block_editor__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @wordpress/block-editor */ "@wordpress/block-editor");
-/* harmony import */ var _wordpress_block_editor__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_1__);
-/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! react/jsx-runtime */ "react/jsx-runtime");
-/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__);
-
-
-
-
-const OurProducts = ({
-  text,
-  images
-}) => {
-  const [activeImage, setActiveImage] = (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.useState)(0);
-  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("div", {
-    className: "bg-[#F8F8F9]",
-    children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)(framer_motion__WEBPACK_IMPORTED_MODULE_3__.motion.div, {
-      initial: {
-        opacity: 0,
-        y: -50
-      },
-      whileInView: {
-        opacity: 1,
-        y: 0
-      },
-      transition: {
-        duration: 0.5
-      },
-      viewport: {
-        once: true,
-        // Trigger only once
-        amount: 0.5,
-        // Trigger when 50% of the element is in the viewport
-        margin: "100px" // Set the margin around the element (can be a string or number)
-      },
-      className: "mx-auto max-w-[1280px] md:pt-10 md:pb-14 p-5 md:px-0 md:py-1",
-      children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)(framer_motion__WEBPACK_IMPORTED_MODULE_3__.motion.h2, {
-        initial: {
-          opacity: 0,
-          y: -50
-        },
-        whileInView: {
-          opacity: 1,
-          y: 0
-        },
-        transition: {
-          duration: 0.5
-        },
-        viewport: {
-          once: true
-        },
-        className: "text-center text-[20px] md:text-[36px] text-[#354052] font-bold not-prose mb-5",
-        children: "Produk Kami"
-      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_1__.RichText.Content, {
-        tagName: "h3",
-        value: text,
-        className: "text-[12px] md:text-[18px] font-medium leading-normal not-prose mb-10 text-center"
-      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("div", {
-        className: "md:px-[10%]",
-        children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)("div", {
-          className: "grid grid-cols-4 gap-4",
-          children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)(framer_motion__WEBPACK_IMPORTED_MODULE_4__.AnimatePresence, {
-            mode: "wait",
-            children: images.length > 0 && images[activeImage]?.url && /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)(framer_motion__WEBPACK_IMPORTED_MODULE_3__.motion.div, {
-              className: "col-span-4",
-              initial: {
-                opacity: 0,
-                scale: 0.95
-              },
-              animate: {
-                opacity: 1,
-                scale: 1
-              },
-              exit: {
-                opacity: 0,
-                scale: 0.95
-              },
-              transition: {
-                duration: 0.3
-              },
-              children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)(framer_motion__WEBPACK_IMPORTED_MODULE_3__.motion.img, {
-                src: images[activeImage].url,
-                className: "w-full rounded-lg not-prose h-[180px] md:h-[580px] object-fill",
-                alt: images[activeImage].alt || "Image placeholder"
-              })
-            }, activeImage)
-          }), images.length > 0 ? images.map((image, index) => /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)(framer_motion__WEBPACK_IMPORTED_MODULE_3__.motion.div, {
-            className: "col-span-1 relative rounded-lg overflow-hidden",
-            onMouseEnter: () => setActiveImage(index),
-            whileHover: {
-              scale: 1.05
-            },
-            transition: {
-              type: "spring",
-              stiffness: 300,
-              damping: 20
-            },
-            children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)(framer_motion__WEBPACK_IMPORTED_MODULE_3__.motion.img, {
-              src: image.url,
-              className: "w-full h-full object-cover",
-              alt: image.alt || "Image placeholder",
-              layoutId: `thumbnail-${index}`,
-              initial: {
-                opacity: 1
-              },
-              animate: {
-                opacity: 1
-              },
-              whileHover: {
-                opacity: 0.3
-              } // Fades out the image slightly on hover
-              ,
-              transition: {
-                duration: 0.3
-              }
-            }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)(framer_motion__WEBPACK_IMPORTED_MODULE_3__.motion.div, {
-              className: "absolute inset-0 flex justify-center items-center bg-black/50 ",
-              initial: {
-                opacity: 0,
-                scale: 0.95
-              },
-              animate: {
-                opacity: 0
-              } // Overlay starts hidden
-              ,
-              whileHover: {
-                opacity: 1,
-                scale: 1
-              } // Fades in and scales up slightly on hover
-              ,
-              transition: {
-                duration: 0.3
-              },
-              children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("p", {
-                className: "text-center break-words w-full text-[10px] font-semibold text-white md:text-[12px] leading-tight",
-                children: image.description
-              })
-            })]
-          }, index)) : /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("p", {
-            children: "No images available"
-          })]
-        })
-      })]
-    })
-  });
-};
-/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (OurProducts);
-
-/***/ }),
-
-/***/ "./src/main-page/component/WhyUs.js":
+/***/ "./node_modules/react-dom/client.js":
 /*!******************************************!*\
-  !*** ./src/main-page/component/WhyUs.js ***!
+  !*** ./node_modules/react-dom/client.js ***!
   \******************************************/
-/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
-
-__webpack_require__.r(__webpack_exports__);
-/* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
-/* harmony export */ });
-/* harmony import */ var framer_motion__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! framer-motion */ "./node_modules/framer-motion/dist/es/render/components/motion/proxy.mjs");
-/* harmony import */ var _tabler_icons_react__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @tabler/icons-react */ "./node_modules/@tabler/icons-react/dist/esm/icons/IconShoppingBag.mjs");
-/* harmony import */ var _tabler_icons_react__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @tabler/icons-react */ "./node_modules/@tabler/icons-react/dist/esm/icons/IconCertificate.mjs");
-/* harmony import */ var _tabler_icons_react__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @tabler/icons-react */ "./node_modules/@tabler/icons-react/dist/esm/icons/IconTruckDelivery.mjs");
-/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react/jsx-runtime */ "react/jsx-runtime");
-/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__);
+/***/ ((__unused_webpack_module, exports, __webpack_require__) => {
 
 
 
-const WhyUs = () => {
-  const items = [{
-    title: "Melayani Pembelian Ecer maupun Grosir",
-    text: "Kami melayani pembelian tanpa minimal qty* dan menerima permintaan kabel potongan dan produksi. Untuk pembelian grosir dan proyek, harga khusus tersedia.",
-    icon: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)(_tabler_icons_react__WEBPACK_IMPORTED_MODULE_1__["default"], {
-      size: 48,
-      stroke: 1.5,
-      className: "text-blue-600"
-    })
-  }, {
-    title: "Jaminan Produk Asli, Baru, dan Bergaransi",
-    text: "Produk kami dijamin asli, baru, dan bergaransi, dengan data teknis, TKDN, COO, dan dokumen lainnya yang tersedia jika diperlukan.",
-    icon: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)(_tabler_icons_react__WEBPACK_IMPORTED_MODULE_2__["default"], {
-      size: 48,
-      stroke: 1.5,
-      className: "text-blue-600"
-    })
-  }, {
-    title: "Gratis Biaya Kirim*",
-    text: "Untuk pembelian grosir, kami siap antarkan gratis ke site proyek atau kantor dalam 1-3 hari untuk area Jakarta dan sekitarnya.*",
-    icon: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)(_tabler_icons_react__WEBPACK_IMPORTED_MODULE_3__["default"], {
-      size: 48,
-      stroke: 1.5,
-      className: "text-blue-600"
-    })
-  }];
-  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)(framer_motion__WEBPACK_IMPORTED_MODULE_4__.motion.div, {
-    initial: {
-      opacity: 0,
-      y: -50
-    },
-    whileInView: {
-      opacity: 1,
-      y: 0
-    },
-    transition: {
-      duration: 0.5
-    },
-    viewport: {
-      once: true,
-      amount: 0.5,
-      margin: "100px"
-    },
-    className: "mx-auto max-w-[1280px] md:pt-10 md:pb-14 p-5 md:px-0",
-    children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsxs)("div", {
-      className: "px-5 md:px-20 pb-14",
-      children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)(framer_motion__WEBPACK_IMPORTED_MODULE_4__.motion.h3, {
-        initial: {
-          opacity: 0,
-          y: -30
-        },
-        whileInView: {
-          opacity: 1,
-          y: 0
-        },
-        transition: {
-          duration: 0.6
-        },
-        viewport: {
-          once: true,
-          amount: 0.5,
-          margin: "100px"
-        },
-        className: "text-center text-[20px] md:text-[36px] text-[#354052] font-bold mb-5",
-        children: "Mengapa Memilih PT KMI Electric Solution?"
-      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)("div", {
-        className: "grid md:grid-cols-3 gap-12 pt-5 pb-10",
-        children: items.map((item, index) => /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsxs)(framer_motion__WEBPACK_IMPORTED_MODULE_4__.motion.div, {
-          initial: {
-            opacity: 0,
-            y: 50
-          },
-          whileInView: {
-            opacity: 1,
-            y: 0
-          },
-          transition: {
-            duration: 0.5,
-            delay: 0.1 * index
-          },
-          whileHover: {
-            scale: 1.05,
-            y: -10
-          },
-          viewport: {
-            once: true,
-            amount: 0.5,
-            margin: "100px"
-          },
-          className: "bg-white shadow-lg rounded-3xl flex items-center flex-col p-10 gap-y-6 text-center min-h-[400px] transition-shadow hover:shadow-2xl",
-          children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)("div", {
-            className: "p-4",
-            children: item.icon
-          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)("p", {
-            className: "text-[20px] font-bold",
-            children: item.title
-          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)("p", {
-            className: "text-[13px] font-medium",
-            children: item.text
-          })]
-        }, index))
-      })]
-    })
-  });
-};
-/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (WhyUs);
+var m = __webpack_require__(/*! react-dom */ "react-dom");
+if (false) {} else {
+  var i = m.__SECRET_INTERNALS_DO_NOT_USE_OR_YOU_WILL_BE_FIRED;
+  exports.createRoot = function(c, o) {
+    i.usingClientEntryPoint = true;
+    try {
+      return m.createRoot(c, o);
+    } finally {
+      i.usingClientEntryPoint = false;
+    }
+  };
+  exports.hydrateRoot = function(c, h, o) {
+    i.usingClientEntryPoint = true;
+    try {
+      return m.hydrateRoot(c, h, o);
+    } finally {
+      i.usingClientEntryPoint = false;
+    }
+  };
+}
+
 
 /***/ }),
 
@@ -569,6 +344,16 @@ module.exports = window["React"];
 
 /***/ }),
 
+/***/ "react-dom":
+/*!***************************!*\
+  !*** external "ReactDOM" ***!
+  \***************************/
+/***/ ((module) => {
+
+module.exports = window["ReactDOM"];
+
+/***/ }),
+
 /***/ "react/jsx-runtime":
 /*!**********************************!*\
   !*** external "ReactJSXRuntime" ***!
@@ -579,16 +364,6 @@ module.exports = window["ReactJSXRuntime"];
 
 /***/ }),
 
-/***/ "@wordpress/block-editor":
-/*!*************************************!*\
-  !*** external ["wp","blockEditor"] ***!
-  \*************************************/
-/***/ ((module) => {
-
-module.exports = window["wp"]["blockEditor"];
-
-/***/ }),
-
 /***/ "@wordpress/element":
 /*!*********************************!*\
   !*** external ["wp","element"] ***!
@@ -596,304 +371,6 @@ module.exports = window["wp"]["blockEditor"];
 /***/ ((module) => {
 
 module.exports = window["wp"]["element"];
-
-/***/ }),
-
-/***/ "./node_modules/@tabler/icons-react/dist/esm/createReactComponent.mjs":
-/*!****************************************************************************!*\
-  !*** ./node_modules/@tabler/icons-react/dist/esm/createReactComponent.mjs ***!
-  \****************************************************************************/
-/***/ ((__unused_webpack___webpack_module__, __webpack_exports__, __webpack_require__) => {
-
-__webpack_require__.r(__webpack_exports__);
-/* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   "default": () => (/* binding */ createReactComponent)
-/* harmony export */ });
-/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "react");
-/* harmony import */ var _defaultAttributes_mjs__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./defaultAttributes.mjs */ "./node_modules/@tabler/icons-react/dist/esm/defaultAttributes.mjs");
-/**
- * @license @tabler/icons-react v3.19.0 - MIT
- *
- * This source code is licensed under the MIT license.
- * See the LICENSE file in the root directory of this source tree.
- */
-
-
-
-
-const createReactComponent = (type, iconName, iconNamePascal, iconNode) => {
-  const Component = (0,react__WEBPACK_IMPORTED_MODULE_0__.forwardRef)(
-    ({ color = "currentColor", size = 24, stroke = 2, title, className, children, ...rest }, ref) => (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(
-      "svg",
-      {
-        ref,
-        ..._defaultAttributes_mjs__WEBPACK_IMPORTED_MODULE_1__["default"][type],
-        width: size,
-        height: size,
-        className: [`tabler-icon`, `tabler-icon-${iconName}`, className].join(" "),
-        ...type === "filled" ? {
-          fill: color
-        } : {
-          strokeWidth: stroke,
-          stroke: color
-        },
-        ...rest
-      },
-      [
-        title && (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("title", { key: "svg-title" }, title),
-        ...iconNode.map(([tag, attrs]) => (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(tag, attrs)),
-        ...Array.isArray(children) ? children : [children]
-      ]
-    )
-  );
-  Component.displayName = `${iconNamePascal}`;
-  return Component;
-};
-
-
-//# sourceMappingURL=createReactComponent.mjs.map
-
-
-/***/ }),
-
-/***/ "./node_modules/@tabler/icons-react/dist/esm/defaultAttributes.mjs":
-/*!*************************************************************************!*\
-  !*** ./node_modules/@tabler/icons-react/dist/esm/defaultAttributes.mjs ***!
-  \*************************************************************************/
-/***/ ((__unused_webpack___webpack_module__, __webpack_exports__, __webpack_require__) => {
-
-__webpack_require__.r(__webpack_exports__);
-/* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   "default": () => (/* binding */ defaultAttributes)
-/* harmony export */ });
-/**
- * @license @tabler/icons-react v3.19.0 - MIT
- *
- * This source code is licensed under the MIT license.
- * See the LICENSE file in the root directory of this source tree.
- */
-
-var defaultAttributes = {
-  outline: {
-    xmlns: "http://www.w3.org/2000/svg",
-    width: 24,
-    height: 24,
-    viewBox: "0 0 24 24",
-    fill: "none",
-    stroke: "currentColor",
-    strokeWidth: 2,
-    strokeLinecap: "round",
-    strokeLinejoin: "round"
-  },
-  filled: {
-    xmlns: "http://www.w3.org/2000/svg",
-    width: 24,
-    height: 24,
-    viewBox: "0 0 24 24",
-    fill: "currentColor",
-    stroke: "none"
-  }
-};
-
-
-//# sourceMappingURL=defaultAttributes.mjs.map
-
-
-/***/ }),
-
-/***/ "./node_modules/@tabler/icons-react/dist/esm/icons/IconBrandWhatsapp.mjs":
-/*!*******************************************************************************!*\
-  !*** ./node_modules/@tabler/icons-react/dist/esm/icons/IconBrandWhatsapp.mjs ***!
-  \*******************************************************************************/
-/***/ ((__unused_webpack___webpack_module__, __webpack_exports__, __webpack_require__) => {
-
-__webpack_require__.r(__webpack_exports__);
-/* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   "default": () => (/* binding */ IconBrandWhatsapp)
-/* harmony export */ });
-/* harmony import */ var _createReactComponent_mjs__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../createReactComponent.mjs */ "./node_modules/@tabler/icons-react/dist/esm/createReactComponent.mjs");
-/**
- * @license @tabler/icons-react v3.19.0 - MIT
- *
- * This source code is licensed under the MIT license.
- * See the LICENSE file in the root directory of this source tree.
- */
-
-
-
-var IconBrandWhatsapp = (0,_createReactComponent_mjs__WEBPACK_IMPORTED_MODULE_0__["default"])("outline", "brand-whatsapp", "IconBrandWhatsapp", [["path", { "d": "M3 21l1.65 -3.8a9 9 0 1 1 3.4 2.9l-5.05 .9", "key": "svg-0" }], ["path", { "d": "M9 10a.5 .5 0 0 0 1 0v-1a.5 .5 0 0 0 -1 0v1a5 5 0 0 0 5 5h1a.5 .5 0 0 0 0 -1h-1a.5 .5 0 0 0 0 1", "key": "svg-1" }]]);
-
-
-//# sourceMappingURL=IconBrandWhatsapp.mjs.map
-
-
-/***/ }),
-
-/***/ "./node_modules/@tabler/icons-react/dist/esm/icons/IconCertificate.mjs":
-/*!*****************************************************************************!*\
-  !*** ./node_modules/@tabler/icons-react/dist/esm/icons/IconCertificate.mjs ***!
-  \*****************************************************************************/
-/***/ ((__unused_webpack___webpack_module__, __webpack_exports__, __webpack_require__) => {
-
-__webpack_require__.r(__webpack_exports__);
-/* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   "default": () => (/* binding */ IconCertificate)
-/* harmony export */ });
-/* harmony import */ var _createReactComponent_mjs__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../createReactComponent.mjs */ "./node_modules/@tabler/icons-react/dist/esm/createReactComponent.mjs");
-/**
- * @license @tabler/icons-react v3.19.0 - MIT
- *
- * This source code is licensed under the MIT license.
- * See the LICENSE file in the root directory of this source tree.
- */
-
-
-
-var IconCertificate = (0,_createReactComponent_mjs__WEBPACK_IMPORTED_MODULE_0__["default"])("outline", "certificate", "IconCertificate", [["path", { "d": "M15 15m-3 0a3 3 0 1 0 6 0a3 3 0 1 0 -6 0", "key": "svg-0" }], ["path", { "d": "M13 17.5v4.5l2 -1.5l2 1.5v-4.5", "key": "svg-1" }], ["path", { "d": "M10 19h-5a2 2 0 0 1 -2 -2v-10c0 -1.1 .9 -2 2 -2h14a2 2 0 0 1 2 2v10a2 2 0 0 1 -1 1.73", "key": "svg-2" }], ["path", { "d": "M6 9l12 0", "key": "svg-3" }], ["path", { "d": "M6 12l3 0", "key": "svg-4" }], ["path", { "d": "M6 15l2 0", "key": "svg-5" }]]);
-
-
-//# sourceMappingURL=IconCertificate.mjs.map
-
-
-/***/ }),
-
-/***/ "./node_modules/@tabler/icons-react/dist/esm/icons/IconChevronLeft.mjs":
-/*!*****************************************************************************!*\
-  !*** ./node_modules/@tabler/icons-react/dist/esm/icons/IconChevronLeft.mjs ***!
-  \*****************************************************************************/
-/***/ ((__unused_webpack___webpack_module__, __webpack_exports__, __webpack_require__) => {
-
-__webpack_require__.r(__webpack_exports__);
-/* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   "default": () => (/* binding */ IconChevronLeft)
-/* harmony export */ });
-/* harmony import */ var _createReactComponent_mjs__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../createReactComponent.mjs */ "./node_modules/@tabler/icons-react/dist/esm/createReactComponent.mjs");
-/**
- * @license @tabler/icons-react v3.19.0 - MIT
- *
- * This source code is licensed under the MIT license.
- * See the LICENSE file in the root directory of this source tree.
- */
-
-
-
-var IconChevronLeft = (0,_createReactComponent_mjs__WEBPACK_IMPORTED_MODULE_0__["default"])("outline", "chevron-left", "IconChevronLeft", [["path", { "d": "M15 6l-6 6l6 6", "key": "svg-0" }]]);
-
-
-//# sourceMappingURL=IconChevronLeft.mjs.map
-
-
-/***/ }),
-
-/***/ "./node_modules/@tabler/icons-react/dist/esm/icons/IconChevronRight.mjs":
-/*!******************************************************************************!*\
-  !*** ./node_modules/@tabler/icons-react/dist/esm/icons/IconChevronRight.mjs ***!
-  \******************************************************************************/
-/***/ ((__unused_webpack___webpack_module__, __webpack_exports__, __webpack_require__) => {
-
-__webpack_require__.r(__webpack_exports__);
-/* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   "default": () => (/* binding */ IconChevronRight)
-/* harmony export */ });
-/* harmony import */ var _createReactComponent_mjs__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../createReactComponent.mjs */ "./node_modules/@tabler/icons-react/dist/esm/createReactComponent.mjs");
-/**
- * @license @tabler/icons-react v3.19.0 - MIT
- *
- * This source code is licensed under the MIT license.
- * See the LICENSE file in the root directory of this source tree.
- */
-
-
-
-var IconChevronRight = (0,_createReactComponent_mjs__WEBPACK_IMPORTED_MODULE_0__["default"])("outline", "chevron-right", "IconChevronRight", [["path", { "d": "M9 6l6 6l-6 6", "key": "svg-0" }]]);
-
-
-//# sourceMappingURL=IconChevronRight.mjs.map
-
-
-/***/ }),
-
-/***/ "./node_modules/@tabler/icons-react/dist/esm/icons/IconDownload.mjs":
-/*!**************************************************************************!*\
-  !*** ./node_modules/@tabler/icons-react/dist/esm/icons/IconDownload.mjs ***!
-  \**************************************************************************/
-/***/ ((__unused_webpack___webpack_module__, __webpack_exports__, __webpack_require__) => {
-
-__webpack_require__.r(__webpack_exports__);
-/* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   "default": () => (/* binding */ IconDownload)
-/* harmony export */ });
-/* harmony import */ var _createReactComponent_mjs__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../createReactComponent.mjs */ "./node_modules/@tabler/icons-react/dist/esm/createReactComponent.mjs");
-/**
- * @license @tabler/icons-react v3.19.0 - MIT
- *
- * This source code is licensed under the MIT license.
- * See the LICENSE file in the root directory of this source tree.
- */
-
-
-
-var IconDownload = (0,_createReactComponent_mjs__WEBPACK_IMPORTED_MODULE_0__["default"])("outline", "download", "IconDownload", [["path", { "d": "M4 17v2a2 2 0 0 0 2 2h12a2 2 0 0 0 2 -2v-2", "key": "svg-0" }], ["path", { "d": "M7 11l5 5l5 -5", "key": "svg-1" }], ["path", { "d": "M12 4l0 12", "key": "svg-2" }]]);
-
-
-//# sourceMappingURL=IconDownload.mjs.map
-
-
-/***/ }),
-
-/***/ "./node_modules/@tabler/icons-react/dist/esm/icons/IconShoppingBag.mjs":
-/*!*****************************************************************************!*\
-  !*** ./node_modules/@tabler/icons-react/dist/esm/icons/IconShoppingBag.mjs ***!
-  \*****************************************************************************/
-/***/ ((__unused_webpack___webpack_module__, __webpack_exports__, __webpack_require__) => {
-
-__webpack_require__.r(__webpack_exports__);
-/* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   "default": () => (/* binding */ IconShoppingBag)
-/* harmony export */ });
-/* harmony import */ var _createReactComponent_mjs__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../createReactComponent.mjs */ "./node_modules/@tabler/icons-react/dist/esm/createReactComponent.mjs");
-/**
- * @license @tabler/icons-react v3.19.0 - MIT
- *
- * This source code is licensed under the MIT license.
- * See the LICENSE file in the root directory of this source tree.
- */
-
-
-
-var IconShoppingBag = (0,_createReactComponent_mjs__WEBPACK_IMPORTED_MODULE_0__["default"])("outline", "shopping-bag", "IconShoppingBag", [["path", { "d": "M6.331 8h11.339a2 2 0 0 1 1.977 2.304l-1.255 8.152a3 3 0 0 1 -2.966 2.544h-6.852a3 3 0 0 1 -2.965 -2.544l-1.255 -8.152a2 2 0 0 1 1.977 -2.304z", "key": "svg-0" }], ["path", { "d": "M9 11v-5a3 3 0 0 1 6 0v5", "key": "svg-1" }]]);
-
-
-//# sourceMappingURL=IconShoppingBag.mjs.map
-
-
-/***/ }),
-
-/***/ "./node_modules/@tabler/icons-react/dist/esm/icons/IconTruckDelivery.mjs":
-/*!*******************************************************************************!*\
-  !*** ./node_modules/@tabler/icons-react/dist/esm/icons/IconTruckDelivery.mjs ***!
-  \*******************************************************************************/
-/***/ ((__unused_webpack___webpack_module__, __webpack_exports__, __webpack_require__) => {
-
-__webpack_require__.r(__webpack_exports__);
-/* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   "default": () => (/* binding */ IconTruckDelivery)
-/* harmony export */ });
-/* harmony import */ var _createReactComponent_mjs__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../createReactComponent.mjs */ "./node_modules/@tabler/icons-react/dist/esm/createReactComponent.mjs");
-/**
- * @license @tabler/icons-react v3.19.0 - MIT
- *
- * This source code is licensed under the MIT license.
- * See the LICENSE file in the root directory of this source tree.
- */
-
-
-
-var IconTruckDelivery = (0,_createReactComponent_mjs__WEBPACK_IMPORTED_MODULE_0__["default"])("outline", "truck-delivery", "IconTruckDelivery", [["path", { "d": "M7 17m-2 0a2 2 0 1 0 4 0a2 2 0 1 0 -4 0", "key": "svg-0" }], ["path", { "d": "M17 17m-2 0a2 2 0 1 0 4 0a2 2 0 1 0 -4 0", "key": "svg-1" }], ["path", { "d": "M5 17h-2v-4m-1 -8h11v12m-4 0h6m4 0h2v-6h-8m0 -5h5l3 5", "key": "svg-2" }], ["path", { "d": "M3 9l4 0", "key": "svg-3" }]]);
-
-
-//# sourceMappingURL=IconTruckDelivery.mjs.map
-
 
 /***/ }),
 
@@ -3435,365 +2912,6 @@ function isTransitionDefined({ when, delay: _delay, delayChildren, staggerChildr
 
 /***/ }),
 
-/***/ "./node_modules/framer-motion/dist/es/components/AnimatePresence/PopChild.mjs":
-/*!************************************************************************************!*\
-  !*** ./node_modules/framer-motion/dist/es/components/AnimatePresence/PopChild.mjs ***!
-  \************************************************************************************/
-/***/ ((__unused_webpack___webpack_module__, __webpack_exports__, __webpack_require__) => {
-
-__webpack_require__.r(__webpack_exports__);
-/* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   PopChild: () => (/* binding */ PopChild)
-/* harmony export */ });
-/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react/jsx-runtime */ "react/jsx-runtime");
-/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react */ "react");
-/* harmony import */ var _context_MotionConfigContext_mjs__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../context/MotionConfigContext.mjs */ "./node_modules/framer-motion/dist/es/context/MotionConfigContext.mjs");
-"use client";
-
-
-
-
-
-/**
- * Measurement functionality has to be within a separate component
- * to leverage snapshot lifecycle.
- */
-class PopChildMeasure extends react__WEBPACK_IMPORTED_MODULE_1__.Component {
-    getSnapshotBeforeUpdate(prevProps) {
-        const element = this.props.childRef.current;
-        if (element && prevProps.isPresent && !this.props.isPresent) {
-            const size = this.props.sizeRef.current;
-            size.height = element.offsetHeight || 0;
-            size.width = element.offsetWidth || 0;
-            size.top = element.offsetTop;
-            size.left = element.offsetLeft;
-        }
-        return null;
-    }
-    /**
-     * Required with getSnapshotBeforeUpdate to stop React complaining.
-     */
-    componentDidUpdate() { }
-    render() {
-        return this.props.children;
-    }
-}
-function PopChild({ children, isPresent }) {
-    const id = (0,react__WEBPACK_IMPORTED_MODULE_1__.useId)();
-    const ref = (0,react__WEBPACK_IMPORTED_MODULE_1__.useRef)(null);
-    const size = (0,react__WEBPACK_IMPORTED_MODULE_1__.useRef)({
-        width: 0,
-        height: 0,
-        top: 0,
-        left: 0,
-    });
-    const { nonce } = (0,react__WEBPACK_IMPORTED_MODULE_1__.useContext)(_context_MotionConfigContext_mjs__WEBPACK_IMPORTED_MODULE_2__.MotionConfigContext);
-    /**
-     * We create and inject a style block so we can apply this explicit
-     * sizing in a non-destructive manner by just deleting the style block.
-     *
-     * We can't apply size via render as the measurement happens
-     * in getSnapshotBeforeUpdate (post-render), likewise if we apply the
-     * styles directly on the DOM node, we might be overwriting
-     * styles set via the style prop.
-     */
-    (0,react__WEBPACK_IMPORTED_MODULE_1__.useInsertionEffect)(() => {
-        const { width, height, top, left } = size.current;
-        if (isPresent || !ref.current || !width || !height)
-            return;
-        ref.current.dataset.motionPopId = id;
-        const style = document.createElement("style");
-        if (nonce)
-            style.nonce = nonce;
-        document.head.appendChild(style);
-        if (style.sheet) {
-            style.sheet.insertRule(`
-          [data-motion-pop-id="${id}"] {
-            position: absolute !important;
-            width: ${width}px !important;
-            height: ${height}px !important;
-            top: ${top}px !important;
-            left: ${left}px !important;
-          }
-        `);
-        }
-        return () => {
-            document.head.removeChild(style);
-        };
-    }, [isPresent]);
-    return ((0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)(PopChildMeasure, { isPresent: isPresent, childRef: ref, sizeRef: size, children: react__WEBPACK_IMPORTED_MODULE_1__.cloneElement(children, { ref }) }));
-}
-
-
-
-
-/***/ }),
-
-/***/ "./node_modules/framer-motion/dist/es/components/AnimatePresence/PresenceChild.mjs":
-/*!*****************************************************************************************!*\
-  !*** ./node_modules/framer-motion/dist/es/components/AnimatePresence/PresenceChild.mjs ***!
-  \*****************************************************************************************/
-/***/ ((__unused_webpack___webpack_module__, __webpack_exports__, __webpack_require__) => {
-
-__webpack_require__.r(__webpack_exports__);
-/* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   PresenceChild: () => (/* binding */ PresenceChild)
-/* harmony export */ });
-/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react/jsx-runtime */ "react/jsx-runtime");
-/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react */ "react");
-/* harmony import */ var _context_PresenceContext_mjs__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../../context/PresenceContext.mjs */ "./node_modules/framer-motion/dist/es/context/PresenceContext.mjs");
-/* harmony import */ var _utils_use_constant_mjs__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../utils/use-constant.mjs */ "./node_modules/framer-motion/dist/es/utils/use-constant.mjs");
-/* harmony import */ var _PopChild_mjs__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./PopChild.mjs */ "./node_modules/framer-motion/dist/es/components/AnimatePresence/PopChild.mjs");
-"use client";
-
-
-
-
-
-
-
-const PresenceChild = ({ children, initial, isPresent, onExitComplete, custom, presenceAffectsLayout, mode, }) => {
-    const presenceChildren = (0,_utils_use_constant_mjs__WEBPACK_IMPORTED_MODULE_2__.useConstant)(newChildrenMap);
-    const id = (0,react__WEBPACK_IMPORTED_MODULE_1__.useId)();
-    const memoizedOnExitComplete = (0,react__WEBPACK_IMPORTED_MODULE_1__.useCallback)((childId) => {
-        presenceChildren.set(childId, true);
-        for (const isComplete of presenceChildren.values()) {
-            if (!isComplete)
-                return; // can stop searching when any is incomplete
-        }
-        onExitComplete && onExitComplete();
-    }, [presenceChildren, onExitComplete]);
-    const context = (0,react__WEBPACK_IMPORTED_MODULE_1__.useMemo)(() => ({
-        id,
-        initial,
-        isPresent,
-        custom,
-        onExitComplete: memoizedOnExitComplete,
-        register: (childId) => {
-            presenceChildren.set(childId, false);
-            return () => presenceChildren.delete(childId);
-        },
-    }), 
-    /**
-     * If the presence of a child affects the layout of the components around it,
-     * we want to make a new context value to ensure they get re-rendered
-     * so they can detect that layout change.
-     */
-    presenceAffectsLayout
-        ? [Math.random(), memoizedOnExitComplete]
-        : [isPresent, memoizedOnExitComplete]);
-    (0,react__WEBPACK_IMPORTED_MODULE_1__.useMemo)(() => {
-        presenceChildren.forEach((_, key) => presenceChildren.set(key, false));
-    }, [isPresent]);
-    /**
-     * If there's no `motion` components to fire exit animations, we want to remove this
-     * component immediately.
-     */
-    react__WEBPACK_IMPORTED_MODULE_1__.useEffect(() => {
-        !isPresent &&
-            !presenceChildren.size &&
-            onExitComplete &&
-            onExitComplete();
-    }, [isPresent]);
-    if (mode === "popLayout") {
-        children = (0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)(_PopChild_mjs__WEBPACK_IMPORTED_MODULE_3__.PopChild, { isPresent: isPresent, children: children });
-    }
-    return ((0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)(_context_PresenceContext_mjs__WEBPACK_IMPORTED_MODULE_4__.PresenceContext.Provider, { value: context, children: children }));
-};
-function newChildrenMap() {
-    return new Map();
-}
-
-
-
-
-/***/ }),
-
-/***/ "./node_modules/framer-motion/dist/es/components/AnimatePresence/index.mjs":
-/*!*********************************************************************************!*\
-  !*** ./node_modules/framer-motion/dist/es/components/AnimatePresence/index.mjs ***!
-  \*********************************************************************************/
-/***/ ((__unused_webpack___webpack_module__, __webpack_exports__, __webpack_require__) => {
-
-__webpack_require__.r(__webpack_exports__);
-/* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   AnimatePresence: () => (/* binding */ AnimatePresence)
-/* harmony export */ });
-/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react/jsx-runtime */ "react/jsx-runtime");
-/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react */ "react");
-/* harmony import */ var _PresenceChild_mjs__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ./PresenceChild.mjs */ "./node_modules/framer-motion/dist/es/components/AnimatePresence/PresenceChild.mjs");
-/* harmony import */ var _context_LayoutGroupContext_mjs__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ../../context/LayoutGroupContext.mjs */ "./node_modules/framer-motion/dist/es/context/LayoutGroupContext.mjs");
-/* harmony import */ var _utils_errors_mjs__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../utils/errors.mjs */ "./node_modules/framer-motion/dist/es/utils/errors.mjs");
-/* harmony import */ var _utils_use_constant_mjs__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../../utils/use-constant.mjs */ "./node_modules/framer-motion/dist/es/utils/use-constant.mjs");
-/* harmony import */ var _utils_mjs__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./utils.mjs */ "./node_modules/framer-motion/dist/es/components/AnimatePresence/utils.mjs");
-/* harmony import */ var _utils_use_isomorphic_effect_mjs__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ../../utils/use-isomorphic-effect.mjs */ "./node_modules/framer-motion/dist/es/utils/use-isomorphic-effect.mjs");
-"use client";
-
-
-
-
-
-
-
-
-
-/**
- * `AnimatePresence` enables the animation of components that have been removed from the tree.
- *
- * When adding/removing more than a single child, every child **must** be given a unique `key` prop.
- *
- * Any `motion` components that have an `exit` property defined will animate out when removed from
- * the tree.
- *
- * ```jsx
- * import { motion, AnimatePresence } from 'framer-motion'
- *
- * export const Items = ({ items }) => (
- *   <AnimatePresence>
- *     {items.map(item => (
- *       <motion.div
- *         key={item.id}
- *         initial={{ opacity: 0 }}
- *         animate={{ opacity: 1 }}
- *         exit={{ opacity: 0 }}
- *       />
- *     ))}
- *   </AnimatePresence>
- * )
- * ```
- *
- * You can sequence exit animations throughout a tree using variants.
- *
- * If a child contains multiple `motion` components with `exit` props, it will only unmount the child
- * once all `motion` components have finished animating out. Likewise, any components using
- * `usePresence` all need to call `safeToRemove`.
- *
- * @public
- */
-const AnimatePresence = ({ children, exitBeforeEnter, custom, initial = true, onExitComplete, presenceAffectsLayout = true, mode = "sync", }) => {
-    (0,_utils_errors_mjs__WEBPACK_IMPORTED_MODULE_2__.invariant)(!exitBeforeEnter, "Replace exitBeforeEnter with mode='wait'");
-    /**
-     * Filter any children that aren't ReactElements. We can only track components
-     * between renders with a props.key.
-     */
-    const presentChildren = (0,react__WEBPACK_IMPORTED_MODULE_1__.useMemo)(() => (0,_utils_mjs__WEBPACK_IMPORTED_MODULE_3__.onlyElements)(children), [children]);
-    /**
-     * Track the keys of the currently rendered children. This is used to
-     * determine which children are exiting.
-     */
-    const presentKeys = presentChildren.map(_utils_mjs__WEBPACK_IMPORTED_MODULE_3__.getChildKey);
-    /**
-     * If `initial={false}` we only want to pass this to components in the first render.
-     */
-    const isInitialRender = (0,react__WEBPACK_IMPORTED_MODULE_1__.useRef)(true);
-    /**
-     * A ref containing the currently present children. When all exit animations
-     * are complete, we use this to re-render the component with the latest children
-     * *committed* rather than the latest children *rendered*.
-     */
-    const pendingPresentChildren = (0,react__WEBPACK_IMPORTED_MODULE_1__.useRef)(presentChildren);
-    /**
-     * Track which exiting children have finished animating out.
-     */
-    const exitComplete = (0,_utils_use_constant_mjs__WEBPACK_IMPORTED_MODULE_4__.useConstant)(() => new Map());
-    /**
-     * Save children to render as React state. To ensure this component is concurrent-safe,
-     * we check for exiting children via an effect.
-     */
-    const [diffedChildren, setDiffedChildren] = (0,react__WEBPACK_IMPORTED_MODULE_1__.useState)(presentChildren);
-    const [renderedChildren, setRenderedChildren] = (0,react__WEBPACK_IMPORTED_MODULE_1__.useState)(presentChildren);
-    (0,_utils_use_isomorphic_effect_mjs__WEBPACK_IMPORTED_MODULE_5__.useIsomorphicLayoutEffect)(() => {
-        isInitialRender.current = false;
-        pendingPresentChildren.current = presentChildren;
-        /**
-         * Update complete status of exiting children.
-         */
-        for (let i = 0; i < renderedChildren.length; i++) {
-            const key = (0,_utils_mjs__WEBPACK_IMPORTED_MODULE_3__.getChildKey)(renderedChildren[i]);
-            if (!presentKeys.includes(key)) {
-                if (exitComplete.get(key) !== true) {
-                    exitComplete.set(key, false);
-                }
-            }
-            else {
-                exitComplete.delete(key);
-            }
-        }
-    }, [renderedChildren, presentKeys.length, presentKeys.join("-")]);
-    const exitingChildren = [];
-    if (presentChildren !== diffedChildren) {
-        let nextChildren = [...presentChildren];
-        /**
-         * Loop through all the currently rendered components and decide which
-         * are exiting.
-         */
-        for (let i = 0; i < renderedChildren.length; i++) {
-            const child = renderedChildren[i];
-            const key = (0,_utils_mjs__WEBPACK_IMPORTED_MODULE_3__.getChildKey)(child);
-            if (!presentKeys.includes(key)) {
-                nextChildren.splice(i, 0, child);
-                exitingChildren.push(child);
-            }
-        }
-        /**
-         * If we're in "wait" mode, and we have exiting children, we want to
-         * only render these until they've all exited.
-         */
-        if (mode === "wait" && exitingChildren.length) {
-            nextChildren = exitingChildren;
-        }
-        setRenderedChildren((0,_utils_mjs__WEBPACK_IMPORTED_MODULE_3__.onlyElements)(nextChildren));
-        setDiffedChildren(presentChildren);
-        /**
-         * Early return to ensure once we've set state with the latest diffed
-         * children, we can immediately re-render.
-         */
-        return;
-    }
-    if ( true &&
-        mode === "wait" &&
-        renderedChildren.length > 1) {
-        console.warn(`You're attempting to animate multiple children within AnimatePresence, but its mode is set to "wait". This will lead to odd visual behaviour.`);
-    }
-    /**
-     * If we've been provided a forceRender function by the LayoutGroupContext,
-     * we can use it to force a re-render amongst all surrounding components once
-     * all components have finished animating out.
-     */
-    const { forceRender } = (0,react__WEBPACK_IMPORTED_MODULE_1__.useContext)(_context_LayoutGroupContext_mjs__WEBPACK_IMPORTED_MODULE_6__.LayoutGroupContext);
-    return ((0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.Fragment, { children: renderedChildren.map((child) => {
-            const key = (0,_utils_mjs__WEBPACK_IMPORTED_MODULE_3__.getChildKey)(child);
-            const isPresent = presentChildren === renderedChildren ||
-                presentKeys.includes(key);
-            const onExit = () => {
-                if (exitComplete.has(key)) {
-                    exitComplete.set(key, true);
-                }
-                else {
-                    return;
-                }
-                let isEveryExitComplete = true;
-                exitComplete.forEach((isExitComplete) => {
-                    if (!isExitComplete)
-                        isEveryExitComplete = false;
-                });
-                if (isEveryExitComplete) {
-                    forceRender === null || forceRender === void 0 ? void 0 : forceRender();
-                    setRenderedChildren(pendingPresentChildren.current);
-                    onExitComplete && onExitComplete();
-                }
-            };
-            return ((0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)(_PresenceChild_mjs__WEBPACK_IMPORTED_MODULE_7__.PresenceChild, { isPresent: isPresent, initial: !isInitialRender.current || initial
-                    ? undefined
-                    : false, custom: isPresent ? undefined : custom, presenceAffectsLayout: presenceAffectsLayout, mode: mode, onExitComplete: isPresent ? undefined : onExit, children: child }, key));
-        }) }));
-};
-
-
-
-
-/***/ }),
-
 /***/ "./node_modules/framer-motion/dist/es/components/AnimatePresence/use-presence.mjs":
 /*!****************************************************************************************!*\
   !*** ./node_modules/framer-motion/dist/es/components/AnimatePresence/use-presence.mjs ***!
@@ -3871,36 +2989,6 @@ function useIsPresent() {
 }
 function isPresent(context) {
     return context === null ? true : context.isPresent;
-}
-
-
-
-
-/***/ }),
-
-/***/ "./node_modules/framer-motion/dist/es/components/AnimatePresence/utils.mjs":
-/*!*********************************************************************************!*\
-  !*** ./node_modules/framer-motion/dist/es/components/AnimatePresence/utils.mjs ***!
-  \*********************************************************************************/
-/***/ ((__unused_webpack___webpack_module__, __webpack_exports__, __webpack_require__) => {
-
-__webpack_require__.r(__webpack_exports__);
-/* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   getChildKey: () => (/* binding */ getChildKey),
-/* harmony export */   onlyElements: () => (/* binding */ onlyElements)
-/* harmony export */ });
-/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "react");
-
-
-const getChildKey = (child) => child.key || "";
-function onlyElements(children) {
-    const filtered = [];
-    // We use forEach here instead of map as map mutates the component key by preprending `.$`
-    react__WEBPACK_IMPORTED_MODULE_0__.Children.forEach(children, (child) => {
-        if ((0,react__WEBPACK_IMPORTED_MODULE_0__.isValidElement)(child))
-            filtered.push(child);
-    });
-    return filtered;
 }
 
 
@@ -15898,26 +14986,6 @@ function resolveMotionValue(value) {
 
 
 
-/***/ }),
-
-/***/ "./node_modules/popmotion/dist/es/utils/wrap.mjs":
-/*!*******************************************************!*\
-  !*** ./node_modules/popmotion/dist/es/utils/wrap.mjs ***!
-  \*******************************************************/
-/***/ ((__unused_webpack___webpack_module__, __webpack_exports__, __webpack_require__) => {
-
-__webpack_require__.r(__webpack_exports__);
-/* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   wrap: () => (/* binding */ wrap)
-/* harmony export */ });
-const wrap = (min, max, v) => {
-    const rangeSize = max - min;
-    return ((((v - min) % rangeSize) + rangeSize) % rangeSize) + min;
-};
-
-
-
-
 /***/ })
 
 /******/ 	});
@@ -15991,36 +15059,37 @@ const wrap = (min, max, v) => {
 var __webpack_exports__ = {};
 // This entry need to be wrapped in an IIFE because it need to be isolated against other modules in the chunk.
 (() => {
-/*!*******************************!*\
-  !*** ./src/main-page/view.js ***!
-  \*******************************/
+/*!*******************************************!*\
+  !*** ./src/products-catalog-page/view.js ***!
+  \*******************************************/
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _wordpress_element__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @wordpress/element */ "@wordpress/element");
 /* harmony import */ var _wordpress_element__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__);
-/* harmony import */ var _component_BannerSlider__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./component/BannerSlider */ "./src/main-page/component/BannerSlider.js");
-/* harmony import */ var _component_CompanyProfile__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./component/CompanyProfile */ "./src/main-page/component/CompanyProfile.js");
-/* harmony import */ var _component_OurProduct__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./component/OurProduct */ "./src/main-page/component/OurProduct.js");
-/* harmony import */ var _component_WhyUs__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./component/WhyUs */ "./src/main-page/component/WhyUs.js");
-/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! react/jsx-runtime */ "react/jsx-runtime");
-/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5___default = /*#__PURE__*/__webpack_require__.n(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__);
+/* harmony import */ var react_dom_client__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react-dom/client */ "./node_modules/react-dom/client.js");
+/* harmony import */ var framer_motion__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! framer-motion */ "./node_modules/framer-motion/dist/es/render/components/motion/proxy.mjs");
+/* harmony import */ var _constanta__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./constanta */ "./src/products-catalog-page/constanta.js");
+/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! react/jsx-runtime */ "react/jsx-runtime");
+/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__);
 
 
 
 
 
-
-const MainPage = () => {
-  const [pageAttributes, setPageAttributes] = (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.useState)(null); // Directly store images in state
+const ProductPage = () => {
+  const [currentPage, setCurrentPage] = (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.useState)(1);
+  const [pageSize, setPageSize] = (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.useState)(8); // Default page size
+  const [pageAttributes, setPageAttributes] = (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.useState)(null);
+  const [jumpPage, setJumpPage] = (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.useState)(""); // For jump to page input
+  const [searchTerm, setSearchTerm] = (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.useState)(""); // New state for search term
 
   (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.useEffect)(() => {
-    // Only access the DOM once during the component's mount phase
-    const container = document.getElementById("main-page");
+    const container = document.getElementById("products-catalog-page");
     if (container) {
       const attributes = container.getAttribute("data-block-attributes");
       if (attributes) {
         try {
           const parsedAttributes = JSON.parse(attributes);
-          setPageAttributes(parsedAttributes); // Directly set images
+          setPageAttributes(parsedAttributes);
         } catch (error) {
           console.error("Failed to parse block attributes:", error);
         }
@@ -16028,42 +15097,223 @@ const MainPage = () => {
     }
   }, []);
 
-  // Return early if images are not yet available
-  if (!pageAttributes) return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)("div", {
-    className: "h-screen w-screen flex justify-center items-center",
-    children: "Loading..."
-  });
-  const {
-    companyProfileDesc,
-    companyProfileImage,
-    images,
-    pdfFile,
-    phoneNumber,
-    message,
-    ourProductsDesc,
-    ourProductsImages
-  } = pageAttributes;
-  const whatsAppUrl = `https://wa.me/${phoneNumber}?text=${encodeURIComponent(message)}`;
-  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsxs)("div", {
-    children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)(_component_BannerSlider__WEBPACK_IMPORTED_MODULE_1__["default"], {
-      banners: images
-    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)(_component_CompanyProfile__WEBPACK_IMPORTED_MODULE_2__["default"], {
-      companyProfileImage: companyProfileImage,
-      companyProfileDesc: companyProfileDesc,
-      pdfFile: pdfFile,
-      whatsAppUrl: whatsAppUrl
-    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)(_component_OurProduct__WEBPACK_IMPORTED_MODULE_3__["default"], {
-      images: ourProductsImages,
-      text: ourProductsDesc
-    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)(_component_WhyUs__WEBPACK_IMPORTED_MODULE_4__["default"], {})]
+  // Memoized filtered products based on search term
+  const filteredProducts = () => {
+    if (!searchTerm) return _constanta__WEBPACK_IMPORTED_MODULE_2__.sampleProducts; // No search term, return all products
+    return _constanta__WEBPACK_IMPORTED_MODULE_2__.sampleProducts.filter(product => product.title.toLowerCase().includes(searchTerm.toLowerCase()) || product.description.toLowerCase().includes(searchTerm.toLowerCase()));
+  };
+  const totalPages = Math.ceil(filteredProducts().length / pageSize);
+  const handlePageChange = pageNumber => {
+    if (pageNumber >= 1 && pageNumber <= totalPages) {
+      setCurrentPage(pageNumber);
+    }
+  };
+  const handleJumpChange = e => {
+    const value = e.target.value;
+    setJumpPage(value);
+  };
+  const handleJumpSubmit = () => {
+    const pageNumber = parseInt(jumpPage, 10);
+    if (pageNumber >= 1 && pageNumber <= totalPages) {
+      setCurrentPage(pageNumber);
+      setJumpPage(""); // Clear the input after jumping
+    } else {
+      alert("Invalid page number");
+    }
+  };
+  const handleSearchChange = e => {
+    setSearchTerm(e.target.value); // Update search term on input change
+    setCurrentPage(1); // Reset to first page when search term changes
+  };
+  const getPaginatedProducts = () => {
+    const startIndex = (currentPage - 1) * pageSize;
+    return filteredProducts().slice(startIndex, startIndex + pageSize);
+  };
+  const containerVariants = {
+    hidden: {
+      opacity: 0
+    },
+    visible: {
+      opacity: 1,
+      transition: {
+        staggerChildren: 0.3,
+        duration: 0.6
+      }
+    }
+  };
+  const itemVariants = {
+    hidden: {
+      opacity: 0,
+      y: 20
+    },
+    visible: {
+      opacity: 1,
+      y: 0,
+      transition: {
+        duration: 0.5,
+        type: "spring",
+        stiffness: 120,
+        damping: 25
+      }
+    },
+    hover: {
+      scale: 1.05,
+      y: -10,
+      transition: {
+        type: "spring",
+        stiffness: 300,
+        damping: 25
+      }
+    }
+  };
+  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsxs)(framer_motion__WEBPACK_IMPORTED_MODULE_4__.motion.div, {
+    className: "not-prose",
+    initial: "hidden",
+    animate: "visible",
+    variants: containerVariants,
+    children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("div", {
+      className: "bg-gray-900 min-h-[560px] flex justify-center items-center text-white",
+      children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsxs)("div", {
+        className: "mx-auto max-w-[1280px]",
+        children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("h1", {
+          className: "text-[36px] font-bold",
+          children: "Header Title"
+        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("p", {
+          children: "Kabel untuk Instalasi Listrik Outdoor, Indoor, dan Bangunan dari Wilson Cables Dapatkan kabel untuk instalasi listrik indoor dan outdoor yang terbaik untuk keperluan aktivitas anda di dalam rumah, gedung, perkantoran dan lain-lainnya. Kabel panel listrik dari Wilson Cables untuk instalasi rumah, outdoor, gedung, bangunan perkantoran, dan lain-lainnya bisa anda lihat semua di kategori ini"
+        })]
+      })
+    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("div", {
+      className: "w-full bg-[#0100B1] text-white",
+      children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsxs)("div", {
+        className: "flex mx-auto max-w-[1280px] gap-16 py-5 font-semibold",
+        children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("div", {
+          className: "bg-red-600 px-4 py-1 rounded-lg",
+          children: "Low Voltage Cables"
+        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("div", {
+          className: "px-4 py-1 rounded-lg",
+          children: "Medium Voltage Cables"
+        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("div", {
+          className: "px-4 py-1 rounded-lg",
+          children: "Fire Resistant Cables"
+        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("div", {
+          className: "px-4 py-1 rounded-lg",
+          children: "Flexible Cables"
+        })]
+      })
+    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("div", {
+      className: "mx-auto max-w-[1280px] my-5",
+      children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("input", {
+        type: "text",
+        placeholder: "Search products...",
+        value: searchTerm,
+        onChange: handleSearchChange,
+        className: "w-full p-3 bg-gray-800 text-white rounded-lg"
+      })
+    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)(framer_motion__WEBPACK_IMPORTED_MODULE_4__.motion.div, {
+      className: "grid mx-auto max-w-[1280px] md:grid-cols-4 gap-5",
+      variants: containerVariants,
+      children: getPaginatedProducts().map(product => /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsxs)(framer_motion__WEBPACK_IMPORTED_MODULE_4__.motion.div, {
+        className: "bg-gray-200 p-5 rounded-lg group relative overflow-hidden cursor-pointer",
+        variants: itemVariants,
+        whileHover: "hover",
+        initial: "hidden",
+        animate: "visible",
+        exit: "hidden",
+        children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("div", {
+          className: "bg-white rounded-lg min-h-[265px] mb-2",
+          children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("img", {
+            src: product.imageUrl,
+            alt: product.title
+          })
+        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("p", {
+          className: "text-[16px] font-bold",
+          children: product.title
+        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("p", {
+          className: "text-[10px] font-semibold mb-2 text-[#0000FE]",
+          children: product.spec
+        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("p", {
+          className: "text-[13px] font-medium",
+          children: product.description
+        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsxs)("div", {
+          className: "absolute bottom-0 left-0 right-0 p-5 bg-gray-200 rounded-b-lg opacity-0 group-hover:opacity-100 transition-opacity duration-300 z-10",
+          children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("p", {
+            className: "text-[13px] font-semibold mb-3",
+            children: product.specDesc
+          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsxs)("div", {
+            className: "flex gap-2 mb-2",
+            children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("button", {
+              className: "text-[10px] font-semibold px-2 py-1 rounded-md bg-[#39A849] w-full text-white",
+              children: "Belanja di Tokopedia"
+            }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("button", {
+              className: "text-[10px] font-semibold px-2 py-1 rounded-md bg-[#EE4D2D] w-full text-white",
+              children: "Belanja di Shopee"
+            })]
+          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("button", {
+            className: "text-[12px] font-semibold px-3 py-2 rounded-md bg-[#0100B1] w-full text-white",
+            children: "Unduh Catalog"
+          })]
+        })]
+      }, product.id))
+    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsxs)("div", {
+      className: "flex justify-center gap-4 my-8",
+      children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsxs)("div", {
+        className: "flex items-center gap-2",
+        children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("label", {
+          htmlFor: "page-size",
+          className: "text-white",
+          children: "Items per page:"
+        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("select", {
+          id: "page-size",
+          value: pageSize,
+          onChange: e => setPageSize(parseInt(e.target.value, 10)),
+          className: "px-3 py-2 bg-gray-800 text-white rounded-lg",
+          children: [8, 16].map(size => /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("option", {
+            value: size,
+            children: size
+          }, size))
+        })]
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("button", {
+        onClick: () => handlePageChange(currentPage - 1),
+        disabled: currentPage === 1,
+        className: "px-4 py-2 bg-gray-800 text-white rounded-lg disabled:opacity-50",
+        children: "Previous"
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsxs)("span", {
+        className: "text-lg",
+        children: ["Page ", currentPage, " of ", totalPages]
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("button", {
+        onClick: () => handlePageChange(currentPage + 1),
+        disabled: currentPage === totalPages,
+        className: "px-4 py-2 bg-gray-800 text-white rounded-lg disabled:opacity-50",
+        children: "Next"
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsxs)("div", {
+        className: "flex items-center gap-2",
+        children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("label", {
+          htmlFor: "jump-to-page",
+          className: "text-white",
+          children: "Jump to page:"
+        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("input", {
+          id: "jump-to-page",
+          type: "number",
+          value: jumpPage,
+          onChange: handleJumpChange,
+          className: "px-3 py-2 bg-gray-800 text-white rounded-lg w-[60px]",
+          min: "1",
+          max: totalPages
+        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("button", {
+          onClick: handleJumpSubmit,
+          className: "px-4 py-2 bg-gray-800 text-white rounded-lg",
+          children: "Go"
+        })]
+      })]
+    })]
   });
 };
 
 // Get the container element and render the block dynamically
-const container = document.getElementById("main-page");
+const container = document.getElementById("products-catalog-page");
 if (container) {
-  const root = (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createRoot)(container);
-  root.render(/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)(MainPage, {}));
+  const root = (0,react_dom_client__WEBPACK_IMPORTED_MODULE_1__.createRoot)(container);
+  root.render(/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)(ProductPage, {}));
 }
 })();
 

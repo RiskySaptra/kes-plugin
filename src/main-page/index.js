@@ -218,7 +218,9 @@ registerBlockType(metadata.name, {
 									placeholder="Enter your text here..."
 									value={companyProfileDesc}
 									onChange={(newText) =>
-										setAttributes({ companyProfileDesc: newText })
+										setAttributes({
+											companyProfileDesc: newText,
+										})
 									}
 								/>
 							</div>
@@ -301,7 +303,9 @@ registerBlockType(metadata.name, {
 								placeholder="Enter your text here..."
 								value={ourProductsDesc}
 								onChange={(newText) =>
-									setAttributes({ ourProductsDesc: newText })
+									setAttributes({
+										ourProductsDesc: newText,
+									})
 								}
 							/>
 						</div>
@@ -353,7 +357,9 @@ registerBlockType(metadata.name, {
 												onChange={(e) => {
 													const updatedImages = [...ourProductsImages];
 													updatedImages[index].description = e.target.value;
-													setAttributes({ ourProductsImages: updatedImages });
+													setAttributes({
+														ourProductsImages: updatedImages,
+													});
 												}}
 												className="w-full mt-1 px-2 py-1 rounded-md border border-gray-300 focus:outline-none focus:ring-2 focus:ring-blue-500"
 											/>

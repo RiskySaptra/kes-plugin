@@ -3,8 +3,8 @@ import { createRoot, useEffect, useState } from "@wordpress/element";
 import BannerCarousel from "./component/BannerSlider";
 import CompanyProfile from "./component/CompanyProfile";
 
-import "./style.scss";
 import OurProducts from "./component/OurProduct";
+import WhyUs from "./component/WhyUs";
 
 const MainPage = () => {
 	const [pageAttributes, setPageAttributes] = useState(null); // Directly store images in state
@@ -36,8 +36,6 @@ const MainPage = () => {
 			</div>
 		);
 
-	console.log(pageAttributes);
-
 	const {
 		companyProfileDesc,
 		companyProfileImage,
@@ -63,6 +61,7 @@ const MainPage = () => {
 				whatsAppUrl={whatsAppUrl}
 			/>
 			<OurProducts images={ourProductsImages} text={ourProductsDesc} />
+			<WhyUs />
 		</div>
 	);
 };

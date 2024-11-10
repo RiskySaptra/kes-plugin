@@ -62,7 +62,11 @@ const OurProducts = ({ text, images }) => {
 									className="col-span-1 relative rounded-lg overflow-hidden"
 									onMouseEnter={() => setActiveImage(index)}
 									whileHover={{ scale: 1.05 }}
-									transition={{ type: "spring", stiffness: 300, damping: 20 }}
+									transition={{
+										type: "spring",
+										stiffness: 300,
+										damping: 20,
+									}}
 								>
 									{/* Image with fade-out effect on hover */}
 									<motion.img

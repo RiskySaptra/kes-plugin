@@ -1,6 +1,6 @@
-/*!*************************************************************************************************************************************************************************************************************************************************!*\
-  !*** css ./node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[4].use[1]!./node_modules/postcss-loader/dist/cjs.js??ruleSet[1].rules[4].use[2]!./node_modules/sass-loader/dist/cjs.js??ruleSet[1].rules[4].use[3]!./src/main-page/style.scss ***!
-  \*************************************************************************************************************************************************************************************************************************************************/
+/*!*************************************************************************************************************************************************************************************************************************************************************!*\
+  !*** css ./node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[4].use[1]!./node_modules/postcss-loader/dist/cjs.js??ruleSet[1].rules[4].use[2]!./node_modules/sass-loader/dist/cjs.js??ruleSet[1].rules[4].use[3]!./src/products-catalog-page/style.scss ***!
+  \*************************************************************************************************************************************************************************************************************************************************************/
 *, ::before, ::after {
   --tw-border-spacing-x: 0;
   --tw-border-spacing-y: 0;
@@ -554,16 +554,16 @@ video {
   bottom: 1rem;
 }
 .left-0 {
-  left: 0px;
-}
-.left-4 {
-  left: 1rem;
-}
-.right-0 {
   right: 0px;
 }
-.right-4 {
+.left-4 {
   right: 1rem;
+}
+.right-0 {
+  left: 0px;
+}
+.right-4 {
+  left: 1rem;
 }
 .top-1\/2 {
   top: 50%;
@@ -578,8 +578,8 @@ video {
   grid-column: span 4 / span 4;
 }
 .mx-auto {
-  margin-left: auto;
   margin-right: auto;
+  margin-left: auto;
 }
 .my-5 {
   margin-top: 1.25rem;
@@ -793,8 +793,8 @@ video {
   border-radius: 0.75rem;
 }
 .rounded-b-lg {
-  border-bottom-right-radius: 0.5rem;
   border-bottom-left-radius: 0.5rem;
+  border-bottom-right-radius: 0.5rem;
 }
 .border {
   border-width: 1px;
@@ -904,28 +904,28 @@ video {
   padding: 2rem;
 }
 .px-1 {
-  padding-left: 0.25rem;
   padding-right: 0.25rem;
+  padding-left: 0.25rem;
 }
 .px-2 {
-  padding-left: 0.5rem;
   padding-right: 0.5rem;
+  padding-left: 0.5rem;
 }
 .px-3 {
-  padding-left: 0.75rem;
   padding-right: 0.75rem;
+  padding-left: 0.75rem;
 }
 .px-4 {
-  padding-left: 1rem;
   padding-right: 1rem;
+  padding-left: 1rem;
 }
 .px-5 {
-  padding-left: 1.25rem;
   padding-right: 1.25rem;
+  padding-left: 1.25rem;
 }
 .px-6 {
-  padding-left: 1.5rem;
   padding-right: 1.5rem;
+  padding-left: 1.5rem;
 }
 .py-1 {
   padding-top: 0.25rem;
@@ -1232,28 +1232,28 @@ video {
   }
 
   .md\:px-0 {
-    padding-left: 0px;
     padding-right: 0px;
+    padding-left: 0px;
   }
 
   .md\:px-10 {
-    padding-left: 2.5rem;
     padding-right: 2.5rem;
+    padding-left: 2.5rem;
   }
 
   .md\:px-20 {
-    padding-left: 5rem;
     padding-right: 5rem;
+    padding-left: 5rem;
   }
 
   .md\:px-8 {
-    padding-left: 2rem;
     padding-right: 2rem;
+    padding-left: 2rem;
   }
 
   .md\:px-\[10\%\] {
-    padding-left: 10%;
     padding-right: 10%;
+    padding-left: 10%;
   }
 
   .md\:py-1 {
@@ -1307,5 +1307,3 @@ video {
     color: rgb(255 255 255 / var(--tw-text-opacity));
   }
 }
-
-/*# sourceMappingURL=style-index.css.map*/

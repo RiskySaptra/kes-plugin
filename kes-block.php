@@ -27,18 +27,9 @@ if ( ! defined( 'ABSPATH' ) ) {
 function kes_internal_block_kes_block_block_init() {
 	// main page
 	register_block_type( __DIR__ . '/build/main-page' );
-
-	// common
-	register_block_type( __DIR__ . '/build/banner-reguler' );
-	
-	// homepage
-	register_block_type( __DIR__ . '/build/banner-carousel' );
-	register_block_type( __DIR__ . '/build/company-profile' );
-	register_block_type( __DIR__ . '/build/our-product' );
-	register_block_type( __DIR__ . '/build/why-us' );
-
+ 
 	// product page
-	register_block_type( __DIR__ . '/build/products-catalog' );
+	register_block_type( __DIR__ . '/build/products-catalog-page' );
 }
 add_action( 'init', 'kes_internal_block_kes_block_block_init' );
 
