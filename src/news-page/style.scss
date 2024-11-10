@@ -1,3 +1,28 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+.truncate-ellipsis-desc {
+	display: -webkit-box;
+	-webkit-line-clamp: 3; /* Limit to 2 lines */
+	-webkit-box-orient: vertical;
+	overflow: hidden;
+	text-overflow: ellipsis;
+}
+
+.truncate-ellipsis-title {
+	display: -webkit-box;
+	-webkit-line-clamp: 1; /* Limit to 2 lines */
+	-webkit-box-orient: vertical;
+	overflow: hidden;
+	text-overflow: ellipsis;
+}
+
+.scrollbar-hidden::-webkit-scrollbar {
+	display: none; /* Hides the scrollbar in Webkit-based browsers (Chrome, Safari, Edge) */
+}
+
+.scrollbar-hidden {
+	-ms-overflow-style: none; /* Hides the scrollbar in Internet Explorer and Edge */
+	scrollbar-width: none; /* Hides the scrollbar in Firefox */
+}
