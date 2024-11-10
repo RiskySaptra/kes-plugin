@@ -1,6 +1,7 @@
 import { useState, useEffect, useMemo } from "@wordpress/element";
 import { createRoot } from "react-dom/client";
 import { motion, AnimatePresence } from "framer-motion";
+import { RichText } from "@wordpress/block-editor";
 
 const CategoryFilter = ({ categories, selectedCategory, onSelectCategory }) => {
 	if (!categories) return "loading...";
@@ -37,7 +38,11 @@ const CategoryFilter = ({ categories, selectedCategory, onSelectCategory }) => {
 		</div>
 	);
 };
-
+const extractImageUrl = (content) => {
+	const regex = /<img [^>]*src="([^"]*)"[^>]*>/;
+	const match = content.match(regex);
+	return match ? match[1] : "";
+};
 const NewsList = ({ newsItems }) => (
 	<AnimatePresence mode="wait">
 		<motion.div
@@ -57,11 +62,11 @@ const NewsList = ({ newsItems }) => (
 				>
 					<img
 						src={
-							news.imageUrl ||
+							extractImageUrl(news.content.rendered) ||
 							"https://via.placeholder.com/300x200?text=Future+of+Education"
 						}
 						alt={news.title.rendered}
-						className="w-full h-40 object-cover rounded-lg mb-4"
+						className="w-full min-h-[200px] object-cover rounded-lg mb-4"
 					/>
 					<h2 className="text-xl font-bold text-gray-900">
 						{news.title.rendered}
@@ -69,7 +74,11 @@ const NewsList = ({ newsItems }) => (
 					<p className="text-gray-600 text-sm mb-2">
 						{new Date(news.date).toLocaleDateString()}
 					</p>
-					<p className="text-gray-700">{news.excerpt.rendered}</p>
+					<RichText.Content
+						tagName="h3"
+						value={news.excerpt.rendered}
+						className="text-xs text-gray-500 truncate-ellipsis-exc"
+					/>
 				</motion.div>
 			))}
 			{newsItems.length === 0 && (
@@ -141,13 +150,17 @@ const Sidebar = ({ latestNews }) => (
 						className="w-24 h-24 object-cover rounded-md mb-2"
 					/>
 					<div>
-						<h3 className="text-md font-semibold">{news.title.rendered}</h3>
+						<h3 className="text-md font-semibold truncate-ellipsis-title ">
+							{news.title.rendered}
+						</h3>
 						<p className="text-xs text-gray-500">
 							{new Date(news.date).toLocaleDateString()}
 						</p>
-						<p className="text-xs text-gray-500 truncate-ellipsis-desc">
-							{news.excerpt.rendered}
-						</p>
+						<RichText.Content
+							tagName="h3"
+							value={news.excerpt.rendered}
+							className="text-xs text-gray-500 truncate-ellipsis-desc"
+						/>
 					</div>
 				</motion.div>
 			))}

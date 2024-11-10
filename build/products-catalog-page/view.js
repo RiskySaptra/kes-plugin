@@ -15248,6 +15248,10 @@ const ProductPage = () => {
       setCurrentPage(pageNumber);
     }
   };
+  const handlePageSize = pagesize => {
+    setPageSize(pagesize);
+    setCurrentPage(1);
+  };
   return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsxs)(framer_motion__WEBPACK_IMPORTED_MODULE_4__.motion.div, {
     initial: {
       opacity: 0
@@ -15287,7 +15291,7 @@ const ProductPage = () => {
       currentPage: currentPage,
       totalPages: totalPages,
       pageSize: pageSize,
-      setPageSize: setPageSize,
+      setPageSize: handlePageSize,
       onPageChange: handlePageChange
     })]
   });

@@ -57,6 +57,10 @@ const ProductPage = () => {
 			setCurrentPage(pageNumber);
 		}
 	};
+	const handlePageSize = (pagesize) => {
+		setPageSize(pagesize);
+		setCurrentPage(1);
+	};
 
 	return (
 		<motion.div
@@ -90,7 +94,7 @@ const ProductPage = () => {
 				currentPage={currentPage}
 				totalPages={totalPages}
 				pageSize={pageSize}
-				setPageSize={setPageSize}
+				setPageSize={handlePageSize}
 				onPageChange={handlePageChange}
 			/>
 		</motion.div>
