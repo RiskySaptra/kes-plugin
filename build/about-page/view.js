@@ -147,6 +147,7 @@ __webpack_require__.r(__webpack_exports__);
 
 
 
+
 const AboutPage = () => {
   const [pageAttributes, setPageAttributes] = (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.useState)(null);
   (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.useEffect)(() => {
@@ -162,8 +163,33 @@ const AboutPage = () => {
       }
     }
   }, []);
-  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("div", {
-    children: "start About"
+  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)("div", {
+    children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)(Header, {}), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)("div", {
+      className: "mx-auto max-w-[1280px] grid md:grid-cols-2",
+      children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)("div", {
+        children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("p", {
+          children: "Profil Perusahaan\u2028PT KMI Electric Solution"
+        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("p", {
+          children: "'brr"
+        })]
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)("div", {
+        className: "relative h-[500px] w-[500px]",
+        children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("div", {
+          className: "h-[300px] w-[300px] bg-black absolute top-10 right-10 transform -translate-x-1 translate-y-1 rounded-lg shadow-lg"
+        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("div", {
+          className: "h-[300px] w-[300px] bg-gray-200 absolute bottom-1/2 left-1/2 transform -translate-x-1/2 translate-y-1/2 rounded-lg shadow-lg"
+        })]
+      })]
+    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)("div", {
+      className: "grid grid-flow-col grid-col-2",
+      children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("div", {
+        className: "bg-black",
+        children: "a"
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("div", {
+        className: "bg-red-200",
+        children: "b"
+      })]
+    })]
   });
 };
 
@@ -173,6 +199,18 @@ if (container) {
   const root = (0,react_dom_client__WEBPACK_IMPORTED_MODULE_1__.createRoot)(container);
   root.render(/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)(AboutPage, {}));
 }
+const Header = () => /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("div", {
+  className: "bg-gray-900 min-h-[560px] flex justify-center items-center text-white",
+  children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)("div", {
+    className: "mx-auto max-w-[1280px]",
+    children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("h1", {
+      className: "text-[36px] font-bold",
+      children: "Header Title"
+    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("p", {
+      children: "Kabel untuk Instalasi Listrik Outdoor, Indoor, dan Bangunan dari Wilson Cables. Dapatkan kabel untuk instalasi listrik indoor dan outdoor yang terbaik untuk keperluan aktivitas anda di dalam rumah, gedung, perkantoran, dan lain-lainnya."
+    })]
+  })
+});
 })();
 
 /******/ })()
