@@ -1,7 +1,8 @@
 export const sampleProducts = [
 	{
 		id: 1,
-		imageUrl: "image1.jpg",
+		imageUrl:
+			"https://www.fraction9coffee.com/cdn/shop/t/23/assets/placeholder_600x.png?v=113555733946226816651714543406",
 		title: "Kabel NYAF",
 		description:
 			"Kabel tembaga serabut dengan isolasi PVC berbagai warna seperti biru, merah, hitam, kuning, kuning-hijau.",
@@ -15,7 +16,8 @@ export const sampleProducts = [
 	},
 	{
 		id: 2,
-		imageUrl: "image2.jpg",
+		imageUrl:
+			"https://www.fraction9coffee.com/cdn/shop/t/23/assets/placeholder_600x.png?v=113555733946226816651714543406",
 		title: "Kabel Tembaga",
 		description:
 			"Kabel tembaga berkualitas tinggi untuk penggunaan rumah dan industri.",
@@ -28,7 +30,8 @@ export const sampleProducts = [
 	},
 	{
 		id: 3,
-		imageUrl: "image3.jpg",
+		imageUrl:
+			"https://www.fraction9coffee.com/cdn/shop/t/23/assets/placeholder_600x.png?v=113555733946226816651714543406",
 		title: "Kabel PVC",
 		description:
 			"Kabel dengan isolasi PVC untuk instalasi listrik indoor dan outdoor.",
@@ -42,7 +45,8 @@ export const sampleProducts = [
 	},
 	{
 		id: 4,
-		imageUrl: "image4.jpg",
+		imageUrl:
+			"https://www.fraction9coffee.com/cdn/shop/t/23/assets/placeholder_600x.png?v=113555733946226816651714543406",
 		title: "Kabel NYAF 2",
 		description:
 			"Kabel fleksibel dengan lapisan PVC yang cocok untuk panel listrik.",
@@ -56,7 +60,8 @@ export const sampleProducts = [
 	},
 	{
 		id: 5,
-		imageUrl: "image5.jpg",
+		imageUrl:
+			"https://www.fraction9coffee.com/cdn/shop/t/23/assets/placeholder_600x.png?v=113555733946226816651714543406",
 		title: "Kabel Listrik Panel",
 		description: "Kabel listrik untuk panel distribusi dengan pelindung PVC.",
 		spec: "NYAF 3X1.5 mm 500V",
@@ -68,7 +73,8 @@ export const sampleProducts = [
 	},
 	{
 		id: 6,
-		imageUrl: "image6.jpg",
+		imageUrl:
+			"https://www.fraction9coffee.com/cdn/shop/t/23/assets/placeholder_600x.png?v=113555733946226816651714543406",
 		title: "Kabel Shielded",
 		description:
 			"Kabel tembaga terkelupas dan dilapisi isolasi PVC untuk proteksi tambahan.",
@@ -82,7 +88,8 @@ export const sampleProducts = [
 	},
 	{
 		id: 7,
-		imageUrl: "image7.jpg",
+		imageUrl:
+			"https://www.fraction9coffee.com/cdn/shop/t/23/assets/placeholder_600x.png?v=113555733946226816651714543406",
 		title: "Kabel Solar Panel",
 		description:
 			"Kabel tahan cuaca yang cocok untuk penggunaan di sistem tenaga surya.",
@@ -95,7 +102,8 @@ export const sampleProducts = [
 	},
 	{
 		id: 8,
-		imageUrl: "image8.jpg",
+		imageUrl:
+			"https://www.fraction9coffee.com/cdn/shop/t/23/assets/placeholder_600x.png?v=113555733946226816651714543406",
 		title: "Kabel Kontrol",
 		description:
 			"Kabel kontrol dengan beberapa konduktor untuk penggunaan industri.",
@@ -109,7 +117,8 @@ export const sampleProducts = [
 	},
 	{
 		id: 9,
-		imageUrl: "image9.jpg",
+		imageUrl:
+			"https://www.fraction9coffee.com/cdn/shop/t/23/assets/placeholder_600x.png?v=113555733946226816651714543406",
 		title: "Kabel Tahan Api",
 		description:
 			"Kabel listrik dengan isolasi tahan api untuk instalasi gedung.",
@@ -122,7 +131,8 @@ export const sampleProducts = [
 	},
 	{
 		id: 10,
-		imageUrl: "image10.jpg",
+		imageUrl:
+			"https://www.fraction9coffee.com/cdn/shop/t/23/assets/placeholder_600x.png?v=113555733946226816651714543406",
 		title: "Kabel NYY",
 		description: "Kabel NYY dengan pelindung isolasi untuk aplikasi outdoor.",
 		spec: "NYY 2X1.5 mm",
@@ -134,7 +144,8 @@ export const sampleProducts = [
 	},
 	{
 		id: 11,
-		imageUrl: "image11.jpg",
+		imageUrl:
+			"https://www.fraction9coffee.com/cdn/shop/t/23/assets/placeholder_600x.png?v=113555733946226816651714543406",
 		title: "Kabel Flex",
 		description: "Kabel fleksibel untuk instalasi elektronik dan peralatan.",
 		spec: "Flex 3X0.75 mm",
@@ -146,7 +157,8 @@ export const sampleProducts = [
 	},
 	{
 		id: 12,
-		imageUrl: "image12.jpg",
+		imageUrl:
+			"https://www.fraction9coffee.com/cdn/shop/t/23/assets/placeholder_600x.png?v=113555733946226816651714543406",
 		title: "Kabel Suplai Daya",
 		description: "Kabel daya untuk panel distribusi dan perangkat berat.",
 		spec: "NYA 4X2.5 mm",
@@ -158,7 +170,8 @@ export const sampleProducts = [
 	},
 	{
 		id: 13,
-		imageUrl: "image13.jpg",
+		imageUrl:
+			"https://www.fraction9coffee.com/cdn/shop/t/23/assets/placeholder_600x.png?v=113555733946226816651714543406",
 		title: "Kabel Instalasi Rumah",
 		description: "Kabel untuk instalasi listrik di rumah dengan isolasi PVC.",
 		spec: "NYAF 3X1.5 mm 500V",
@@ -170,7 +183,8 @@ export const sampleProducts = [
 	},
 	{
 		id: 13,
-		imageUrl: "image13.jpg",
+		imageUrl:
+			"https://www.fraction9coffee.com/cdn/shop/t/23/assets/placeholder_600x.png?v=113555733946226816651714543406",
 		title: "Kabel Instalasi Rumah",
 		description: "Kabel untuk instalasi listrik di rumah dengan isolasi PVC.",
 		spec: "NYAF 3X1.5 mm 500V",
@@ -182,7 +196,8 @@ export const sampleProducts = [
 	},
 	{
 		id: 13,
-		imageUrl: "image13.jpg",
+		imageUrl:
+			"https://www.fraction9coffee.com/cdn/shop/t/23/assets/placeholder_600x.png?v=113555733946226816651714543406",
 		title: "Kabel Instalasi Rumah",
 		description: "Kabel untuk instalasi listrik di rumah dengan isolasi PVC.",
 		spec: "NYAF 3X1.5 mm 500V",
@@ -194,7 +209,8 @@ export const sampleProducts = [
 	},
 	{
 		id: 13,
-		imageUrl: "image13.jpg",
+		imageUrl:
+			"https://www.fraction9coffee.com/cdn/shop/t/23/assets/placeholder_600x.png?v=113555733946226816651714543406",
 		title: "Kabel Instalasi Rumah",
 		description: "Kabel untuk instalasi listrik di rumah dengan isolasi PVC.",
 		spec: "NYAF 3X1.5 mm 500V",
@@ -206,7 +222,8 @@ export const sampleProducts = [
 	},
 	{
 		id: 13,
-		imageUrl: "image13.jpg",
+		imageUrl:
+			"https://www.fraction9coffee.com/cdn/shop/t/23/assets/placeholder_600x.png?v=113555733946226816651714543406",
 		title: "Kabel Instalasi Rumah",
 		description: "Kabel untuk instalasi listrik di rumah dengan isolasi PVC.",
 		spec: "NYAF 3X1.5 mm 500V",
@@ -218,7 +235,8 @@ export const sampleProducts = [
 	},
 	{
 		id: 13,
-		imageUrl: "image13.jpg",
+		imageUrl:
+			"https://www.fraction9coffee.com/cdn/shop/t/23/assets/placeholder_600x.png?v=113555733946226816651714543406",
 		title: "Kabel Instalasi Rumah",
 		description: "Kabel untuk instalasi listrik di rumah dengan isolasi PVC.",
 		spec: "NYAF 3X1.5 mm 500V",
@@ -230,7 +248,8 @@ export const sampleProducts = [
 	},
 	{
 		id: 13,
-		imageUrl: "image13.jpg",
+		imageUrl:
+			"https://www.fraction9coffee.com/cdn/shop/t/23/assets/placeholder_600x.png?v=113555733946226816651714543406",
 		title: "Kabel Instalasi Rumah",
 		description: "Kabel untuk instalasi listrik di rumah dengan isolasi PVC.",
 		spec: "NYAF 3X1.5 mm 500V",
@@ -242,7 +261,8 @@ export const sampleProducts = [
 	},
 	{
 		id: 13,
-		imageUrl: "image13.jpg",
+		imageUrl:
+			"https://www.fraction9coffee.com/cdn/shop/t/23/assets/placeholder_600x.png?v=113555733946226816651714543406",
 		title: "Kabel Instalasi Rumah",
 		description: "Kabel untuk instalasi listrik di rumah dengan isolasi PVC.",
 		spec: "NYAF 3X1.5 mm 500V",
@@ -254,7 +274,8 @@ export const sampleProducts = [
 	},
 	{
 		id: 13,
-		imageUrl: "image13.jpg",
+		imageUrl:
+			"https://www.fraction9coffee.com/cdn/shop/t/23/assets/placeholder_600x.png?v=113555733946226816651714543406",
 		title: "Kabel Instalasi Rumah",
 		description: "Kabel untuk instalasi listrik di rumah dengan isolasi PVC.",
 		spec: "NYAF 3X1.5 mm 500V",
@@ -266,7 +287,8 @@ export const sampleProducts = [
 	},
 	{
 		id: 13,
-		imageUrl: "image13.jpg",
+		imageUrl:
+			"https://www.fraction9coffee.com/cdn/shop/t/23/assets/placeholder_600x.png?v=113555733946226816651714543406",
 		title: "Kabel Instalasi Rumah",
 		description: "Kabel untuk instalasi listrik di rumah dengan isolasi PVC.",
 		spec: "NYAF 3X1.5 mm 500V",
@@ -278,7 +300,8 @@ export const sampleProducts = [
 	},
 	{
 		id: 13,
-		imageUrl: "image13.jpg",
+		imageUrl:
+			"https://www.fraction9coffee.com/cdn/shop/t/23/assets/placeholder_600x.png?v=113555733946226816651714543406",
 		title: "Kabel Instalasi Rumah",
 		description: "Kabel untuk instalasi listrik di rumah dengan isolasi PVC.",
 		spec: "NYAF 3X1.5 mm 500V",
@@ -290,7 +313,8 @@ export const sampleProducts = [
 	},
 	{
 		id: 13,
-		imageUrl: "image13.jpg",
+		imageUrl:
+			"https://www.fraction9coffee.com/cdn/shop/t/23/assets/placeholder_600x.png?v=113555733946226816651714543406",
 		title: "Kabel Instalasi Rumah",
 		description: "Kabel untuk instalasi listrik di rumah dengan isolasi PVC.",
 		spec: "NYAF 3X1.5 mm 500V",
@@ -302,7 +326,8 @@ export const sampleProducts = [
 	},
 	{
 		id: 13,
-		imageUrl: "image13.jpg",
+		imageUrl:
+			"https://www.fraction9coffee.com/cdn/shop/t/23/assets/placeholder_600x.png?v=113555733946226816651714543406",
 		title: "Kabel Instalasi Rumah",
 		description: "Kabel untuk instalasi listrik di rumah dengan isolasi PVC.",
 		spec: "NYAF 3X1.5 mm 500V",
@@ -314,7 +339,8 @@ export const sampleProducts = [
 	},
 	{
 		id: 13,
-		imageUrl: "image13.jpg",
+		imageUrl:
+			"https://www.fraction9coffee.com/cdn/shop/t/23/assets/placeholder_600x.png?v=113555733946226816651714543406",
 		title: "Kabel Instalasi Rumah",
 		description: "Kabel untuk instalasi listrik di rumah dengan isolasi PVC.",
 		spec: "NYAF 3X1.5 mm 500V",

@@ -292,7 +292,7 @@ __webpack_require__.r(__webpack_exports__);
 
 const OurProducts = ({
   text,
-  images
+  images = []
 }) => {
   const [activeImage, setActiveImage] = (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.useState)(0);
   return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("div", {
@@ -367,7 +367,7 @@ const OurProducts = ({
                 alt: images[activeImage].alt || "Image placeholder"
               })
             }, activeImage)
-          }), images.length > 0 ? images.map((image, index) => /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)(framer_motion__WEBPACK_IMPORTED_MODULE_3__.motion.div, {
+          }), images && images.length > 0 ? images.map((image, index) => /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)(framer_motion__WEBPACK_IMPORTED_MODULE_3__.motion.div, {
             className: "col-span-1 relative rounded-lg overflow-hidden",
             onMouseEnter: () => setActiveImage(index),
             whileHover: {
@@ -16013,8 +16013,6 @@ const MainPage = () => {
   const [pageAttributes, setPageAttributes] = (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.useState)(null); // Directly store images in state
 
   (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.useEffect)(() => {
-    // Only access the DOM once during the component's mount phase
-    const container = document.getElementById("main-page");
     if (container) {
       const attributes = container.getAttribute("data-block-attributes");
       if (attributes) {
@@ -16043,6 +16041,7 @@ const MainPage = () => {
     ourProductsDesc,
     ourProductsImages
   } = pageAttributes;
+  console.log(pageAttributes);
   const whatsAppUrl = `https://wa.me/${phoneNumber}?text=${encodeURIComponent(message)}`;
   return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsxs)("div", {
     children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)(_component_BannerSlider__WEBPACK_IMPORTED_MODULE_1__["default"], {

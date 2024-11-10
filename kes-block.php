@@ -30,6 +30,17 @@ function kes_internal_block_kes_block_block_init() {
  
 	// product page
 	register_block_type( __DIR__ . '/build/products-catalog-page' );
+
+	// about page
+	register_block_type( __DIR__ . '/build/about-page' );
+
+	// contact us
+	register_block_type( __DIR__ . '/build/contact-us-page' );
+
+	// news
+	register_block_type( __DIR__ . '/build/news-page' );
+
+
 }
 add_action( 'init', 'kes_internal_block_kes_block_block_init' );
 

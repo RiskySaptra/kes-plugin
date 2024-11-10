@@ -1,0 +1,20 @@
+{
+  "$schema": "https://schemas.wp.org/trunk/block.json",
+  "apiVersion": 3,
+  "name": "kes-internal-block/news-page-block",
+  "version": "0.1.0",
+  "title": "News Page Block",
+  "category": "theme",
+  "icon": "smiley",
+  "description": "Custom kes internal block",
+  "example": {},
+  "supports": {
+    "html": false
+  },
+  "textdomain": "kes-block",
+  "editorScript": "file:./index.js",
+  "editorStyle": "file:./index.css",
+  "style": "file:./style-index.css",
+  "viewScript": "file:./view.js",
+  "render": "file:./render.php"
+}

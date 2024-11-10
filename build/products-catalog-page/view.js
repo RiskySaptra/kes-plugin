@@ -14,7 +14,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ });
 const sampleProducts = [{
   id: 1,
-  imageUrl: "image1.jpg",
+  imageUrl: "https://www.fraction9coffee.com/cdn/shop/t/23/assets/placeholder_600x.png?v=113555733946226816651714543406",
   title: "Kabel NYAF",
   description: "Kabel tembaga serabut dengan isolasi PVC berbagai warna seperti biru, merah, hitam, kuning, kuning-hijau.",
   spec: "NYAF 1X0.75 mm (fx) 500V SNI04-6629.3 :C10",
@@ -25,7 +25,7 @@ const sampleProducts = [{
   catalogLink: "#"
 }, {
   id: 2,
-  imageUrl: "image2.jpg",
+  imageUrl: "https://www.fraction9coffee.com/cdn/shop/t/23/assets/placeholder_600x.png?v=113555733946226816651714543406",
   title: "Kabel Tembaga",
   description: "Kabel tembaga berkualitas tinggi untuk penggunaan rumah dan industri.",
   spec: "NYA 1X2.5 mm 500V",
@@ -36,7 +36,7 @@ const sampleProducts = [{
   catalogLink: "#"
 }, {
   id: 3,
-  imageUrl: "image3.jpg",
+  imageUrl: "https://www.fraction9coffee.com/cdn/shop/t/23/assets/placeholder_600x.png?v=113555733946226816651714543406",
   title: "Kabel PVC",
   description: "Kabel dengan isolasi PVC untuk instalasi listrik indoor dan outdoor.",
   spec: "PVC 1X4 mm 600V",
@@ -47,7 +47,7 @@ const sampleProducts = [{
   catalogLink: "#"
 }, {
   id: 4,
-  imageUrl: "image4.jpg",
+  imageUrl: "https://www.fraction9coffee.com/cdn/shop/t/23/assets/placeholder_600x.png?v=113555733946226816651714543406",
   title: "Kabel NYAF 2",
   description: "Kabel fleksibel dengan lapisan PVC yang cocok untuk panel listrik.",
   spec: "NYAF 2X0.75 mm 500V",
@@ -58,7 +58,7 @@ const sampleProducts = [{
   catalogLink: "#"
 }, {
   id: 5,
-  imageUrl: "image5.jpg",
+  imageUrl: "https://www.fraction9coffee.com/cdn/shop/t/23/assets/placeholder_600x.png?v=113555733946226816651714543406",
   title: "Kabel Listrik Panel",
   description: "Kabel listrik untuk panel distribusi dengan pelindung PVC.",
   spec: "NYAF 3X1.5 mm 500V",
@@ -69,7 +69,7 @@ const sampleProducts = [{
   catalogLink: "#"
 }, {
   id: 6,
-  imageUrl: "image6.jpg",
+  imageUrl: "https://www.fraction9coffee.com/cdn/shop/t/23/assets/placeholder_600x.png?v=113555733946226816651714543406",
   title: "Kabel Shielded",
   description: "Kabel tembaga terkelupas dan dilapisi isolasi PVC untuk proteksi tambahan.",
   spec: "Shielded Cable 2X1 mm",
@@ -80,7 +80,7 @@ const sampleProducts = [{
   catalogLink: "#"
 }, {
   id: 7,
-  imageUrl: "image7.jpg",
+  imageUrl: "https://www.fraction9coffee.com/cdn/shop/t/23/assets/placeholder_600x.png?v=113555733946226816651714543406",
   title: "Kabel Solar Panel",
   description: "Kabel tahan cuaca yang cocok untuk penggunaan di sistem tenaga surya.",
   spec: "Kabel PV 6mm 1000V",
@@ -91,7 +91,7 @@ const sampleProducts = [{
   catalogLink: "#"
 }, {
   id: 8,
-  imageUrl: "image8.jpg",
+  imageUrl: "https://www.fraction9coffee.com/cdn/shop/t/23/assets/placeholder_600x.png?v=113555733946226816651714543406",
   title: "Kabel Kontrol",
   description: "Kabel kontrol dengan beberapa konduktor untuk penggunaan industri.",
   spec: "Kontrol 5X0.75 mm",
@@ -102,7 +102,7 @@ const sampleProducts = [{
   catalogLink: "#"
 }, {
   id: 9,
-  imageUrl: "image9.jpg",
+  imageUrl: "https://www.fraction9coffee.com/cdn/shop/t/23/assets/placeholder_600x.png?v=113555733946226816651714543406",
   title: "Kabel Tahan Api",
   description: "Kabel listrik dengan isolasi tahan api untuk instalasi gedung.",
   spec: "Kabel Tahan Api 1X2.5 mm",
@@ -113,7 +113,7 @@ const sampleProducts = [{
   catalogLink: "#"
 }, {
   id: 10,
-  imageUrl: "image10.jpg",
+  imageUrl: "https://www.fraction9coffee.com/cdn/shop/t/23/assets/placeholder_600x.png?v=113555733946226816651714543406",
   title: "Kabel NYY",
   description: "Kabel NYY dengan pelindung isolasi untuk aplikasi outdoor.",
   spec: "NYY 2X1.5 mm",
@@ -124,7 +124,7 @@ const sampleProducts = [{
   catalogLink: "#"
 }, {
   id: 11,
-  imageUrl: "image11.jpg",
+  imageUrl: "https://www.fraction9coffee.com/cdn/shop/t/23/assets/placeholder_600x.png?v=113555733946226816651714543406",
   title: "Kabel Flex",
   description: "Kabel fleksibel untuk instalasi elektronik dan peralatan.",
   spec: "Flex 3X0.75 mm",
@@ -135,7 +135,7 @@ const sampleProducts = [{
   catalogLink: "#"
 }, {
   id: 12,
-  imageUrl: "image12.jpg",
+  imageUrl: "https://www.fraction9coffee.com/cdn/shop/t/23/assets/placeholder_600x.png?v=113555733946226816651714543406",
   title: "Kabel Suplai Daya",
   description: "Kabel daya untuk panel distribusi dan perangkat berat.",
   spec: "NYA 4X2.5 mm",
@@ -146,7 +146,7 @@ const sampleProducts = [{
   catalogLink: "#"
 }, {
   id: 13,
-  imageUrl: "image13.jpg",
+  imageUrl: "https://www.fraction9coffee.com/cdn/shop/t/23/assets/placeholder_600x.png?v=113555733946226816651714543406",
   title: "Kabel Instalasi Rumah",
   description: "Kabel untuk instalasi listrik di rumah dengan isolasi PVC.",
   spec: "NYAF 3X1.5 mm 500V",
@@ -157,7 +157,7 @@ const sampleProducts = [{
   catalogLink: "#"
 }, {
   id: 13,
-  imageUrl: "image13.jpg",
+  imageUrl: "https://www.fraction9coffee.com/cdn/shop/t/23/assets/placeholder_600x.png?v=113555733946226816651714543406",
   title: "Kabel Instalasi Rumah",
   description: "Kabel untuk instalasi listrik di rumah dengan isolasi PVC.",
   spec: "NYAF 3X1.5 mm 500V",
@@ -168,7 +168,7 @@ const sampleProducts = [{
   catalogLink: "#"
 }, {
   id: 13,
-  imageUrl: "image13.jpg",
+  imageUrl: "https://www.fraction9coffee.com/cdn/shop/t/23/assets/placeholder_600x.png?v=113555733946226816651714543406",
   title: "Kabel Instalasi Rumah",
   description: "Kabel untuk instalasi listrik di rumah dengan isolasi PVC.",
   spec: "NYAF 3X1.5 mm 500V",
@@ -179,7 +179,7 @@ const sampleProducts = [{
   catalogLink: "#"
 }, {
   id: 13,
-  imageUrl: "image13.jpg",
+  imageUrl: "https://www.fraction9coffee.com/cdn/shop/t/23/assets/placeholder_600x.png?v=113555733946226816651714543406",
   title: "Kabel Instalasi Rumah",
   description: "Kabel untuk instalasi listrik di rumah dengan isolasi PVC.",
   spec: "NYAF 3X1.5 mm 500V",
@@ -190,7 +190,7 @@ const sampleProducts = [{
   catalogLink: "#"
 }, {
   id: 13,
-  imageUrl: "image13.jpg",
+  imageUrl: "https://www.fraction9coffee.com/cdn/shop/t/23/assets/placeholder_600x.png?v=113555733946226816651714543406",
   title: "Kabel Instalasi Rumah",
   description: "Kabel untuk instalasi listrik di rumah dengan isolasi PVC.",
   spec: "NYAF 3X1.5 mm 500V",
@@ -201,7 +201,7 @@ const sampleProducts = [{
   catalogLink: "#"
 }, {
   id: 13,
-  imageUrl: "image13.jpg",
+  imageUrl: "https://www.fraction9coffee.com/cdn/shop/t/23/assets/placeholder_600x.png?v=113555733946226816651714543406",
   title: "Kabel Instalasi Rumah",
   description: "Kabel untuk instalasi listrik di rumah dengan isolasi PVC.",
   spec: "NYAF 3X1.5 mm 500V",
@@ -212,7 +212,7 @@ const sampleProducts = [{
   catalogLink: "#"
 }, {
   id: 13,
-  imageUrl: "image13.jpg",
+  imageUrl: "https://www.fraction9coffee.com/cdn/shop/t/23/assets/placeholder_600x.png?v=113555733946226816651714543406",
   title: "Kabel Instalasi Rumah",
   description: "Kabel untuk instalasi listrik di rumah dengan isolasi PVC.",
   spec: "NYAF 3X1.5 mm 500V",
@@ -223,7 +223,7 @@ const sampleProducts = [{
   catalogLink: "#"
 }, {
   id: 13,
-  imageUrl: "image13.jpg",
+  imageUrl: "https://www.fraction9coffee.com/cdn/shop/t/23/assets/placeholder_600x.png?v=113555733946226816651714543406",
   title: "Kabel Instalasi Rumah",
   description: "Kabel untuk instalasi listrik di rumah dengan isolasi PVC.",
   spec: "NYAF 3X1.5 mm 500V",
@@ -234,7 +234,7 @@ const sampleProducts = [{
   catalogLink: "#"
 }, {
   id: 13,
-  imageUrl: "image13.jpg",
+  imageUrl: "https://www.fraction9coffee.com/cdn/shop/t/23/assets/placeholder_600x.png?v=113555733946226816651714543406",
   title: "Kabel Instalasi Rumah",
   description: "Kabel untuk instalasi listrik di rumah dengan isolasi PVC.",
   spec: "NYAF 3X1.5 mm 500V",
@@ -245,7 +245,7 @@ const sampleProducts = [{
   catalogLink: "#"
 }, {
   id: 13,
-  imageUrl: "image13.jpg",
+  imageUrl: "https://www.fraction9coffee.com/cdn/shop/t/23/assets/placeholder_600x.png?v=113555733946226816651714543406",
   title: "Kabel Instalasi Rumah",
   description: "Kabel untuk instalasi listrik di rumah dengan isolasi PVC.",
   spec: "NYAF 3X1.5 mm 500V",
@@ -256,7 +256,7 @@ const sampleProducts = [{
   catalogLink: "#"
 }, {
   id: 13,
-  imageUrl: "image13.jpg",
+  imageUrl: "https://www.fraction9coffee.com/cdn/shop/t/23/assets/placeholder_600x.png?v=113555733946226816651714543406",
   title: "Kabel Instalasi Rumah",
   description: "Kabel untuk instalasi listrik di rumah dengan isolasi PVC.",
   spec: "NYAF 3X1.5 mm 500V",
@@ -267,7 +267,7 @@ const sampleProducts = [{
   catalogLink: "#"
 }, {
   id: 13,
-  imageUrl: "image13.jpg",
+  imageUrl: "https://www.fraction9coffee.com/cdn/shop/t/23/assets/placeholder_600x.png?v=113555733946226816651714543406",
   title: "Kabel Instalasi Rumah",
   description: "Kabel untuk instalasi listrik di rumah dengan isolasi PVC.",
   spec: "NYAF 3X1.5 mm 500V",
@@ -278,7 +278,7 @@ const sampleProducts = [{
   catalogLink: "#"
 }, {
   id: 13,
-  imageUrl: "image13.jpg",
+  imageUrl: "https://www.fraction9coffee.com/cdn/shop/t/23/assets/placeholder_600x.png?v=113555733946226816651714543406",
   title: "Kabel Instalasi Rumah",
   description: "Kabel untuk instalasi listrik di rumah dengan isolasi PVC.",
   spec: "NYAF 3X1.5 mm 500V",
@@ -289,7 +289,7 @@ const sampleProducts = [{
   catalogLink: "#"
 }, {
   id: 13,
-  imageUrl: "image13.jpg",
+  imageUrl: "https://www.fraction9coffee.com/cdn/shop/t/23/assets/placeholder_600x.png?v=113555733946226816651714543406",
   title: "Kabel Instalasi Rumah",
   description: "Kabel untuk instalasi listrik di rumah dengan isolasi PVC.",
   spec: "NYAF 3X1.5 mm 500V",
@@ -371,6 +371,136 @@ module.exports = window["ReactJSXRuntime"];
 /***/ ((module) => {
 
 module.exports = window["wp"]["element"];
+
+/***/ }),
+
+/***/ "./node_modules/@tabler/icons-react/dist/esm/createReactComponent.mjs":
+/*!****************************************************************************!*\
+  !*** ./node_modules/@tabler/icons-react/dist/esm/createReactComponent.mjs ***!
+  \****************************************************************************/
+/***/ ((__unused_webpack___webpack_module__, __webpack_exports__, __webpack_require__) => {
+
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (/* binding */ createReactComponent)
+/* harmony export */ });
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "react");
+/* harmony import */ var _defaultAttributes_mjs__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./defaultAttributes.mjs */ "./node_modules/@tabler/icons-react/dist/esm/defaultAttributes.mjs");
+/**
+ * @license @tabler/icons-react v3.19.0 - MIT
+ *
+ * This source code is licensed under the MIT license.
+ * See the LICENSE file in the root directory of this source tree.
+ */
+
+
+
+
+const createReactComponent = (type, iconName, iconNamePascal, iconNode) => {
+  const Component = (0,react__WEBPACK_IMPORTED_MODULE_0__.forwardRef)(
+    ({ color = "currentColor", size = 24, stroke = 2, title, className, children, ...rest }, ref) => (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(
+      "svg",
+      {
+        ref,
+        ..._defaultAttributes_mjs__WEBPACK_IMPORTED_MODULE_1__["default"][type],
+        width: size,
+        height: size,
+        className: [`tabler-icon`, `tabler-icon-${iconName}`, className].join(" "),
+        ...type === "filled" ? {
+          fill: color
+        } : {
+          strokeWidth: stroke,
+          stroke: color
+        },
+        ...rest
+      },
+      [
+        title && (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("title", { key: "svg-title" }, title),
+        ...iconNode.map(([tag, attrs]) => (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(tag, attrs)),
+        ...Array.isArray(children) ? children : [children]
+      ]
+    )
+  );
+  Component.displayName = `${iconNamePascal}`;
+  return Component;
+};
+
+
+//# sourceMappingURL=createReactComponent.mjs.map
+
+
+/***/ }),
+
+/***/ "./node_modules/@tabler/icons-react/dist/esm/defaultAttributes.mjs":
+/*!*************************************************************************!*\
+  !*** ./node_modules/@tabler/icons-react/dist/esm/defaultAttributes.mjs ***!
+  \*************************************************************************/
+/***/ ((__unused_webpack___webpack_module__, __webpack_exports__, __webpack_require__) => {
+
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (/* binding */ defaultAttributes)
+/* harmony export */ });
+/**
+ * @license @tabler/icons-react v3.19.0 - MIT
+ *
+ * This source code is licensed under the MIT license.
+ * See the LICENSE file in the root directory of this source tree.
+ */
+
+var defaultAttributes = {
+  outline: {
+    xmlns: "http://www.w3.org/2000/svg",
+    width: 24,
+    height: 24,
+    viewBox: "0 0 24 24",
+    fill: "none",
+    stroke: "currentColor",
+    strokeWidth: 2,
+    strokeLinecap: "round",
+    strokeLinejoin: "round"
+  },
+  filled: {
+    xmlns: "http://www.w3.org/2000/svg",
+    width: 24,
+    height: 24,
+    viewBox: "0 0 24 24",
+    fill: "currentColor",
+    stroke: "none"
+  }
+};
+
+
+//# sourceMappingURL=defaultAttributes.mjs.map
+
+
+/***/ }),
+
+/***/ "./node_modules/@tabler/icons-react/dist/esm/icons/IconSearch.mjs":
+/*!************************************************************************!*\
+  !*** ./node_modules/@tabler/icons-react/dist/esm/icons/IconSearch.mjs ***!
+  \************************************************************************/
+/***/ ((__unused_webpack___webpack_module__, __webpack_exports__, __webpack_require__) => {
+
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (/* binding */ IconSearch)
+/* harmony export */ });
+/* harmony import */ var _createReactComponent_mjs__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../createReactComponent.mjs */ "./node_modules/@tabler/icons-react/dist/esm/createReactComponent.mjs");
+/**
+ * @license @tabler/icons-react v3.19.0 - MIT
+ *
+ * This source code is licensed under the MIT license.
+ * See the LICENSE file in the root directory of this source tree.
+ */
+
+
+
+var IconSearch = (0,_createReactComponent_mjs__WEBPACK_IMPORTED_MODULE_0__["default"])("outline", "search", "IconSearch", [["path", { "d": "M10 10m-7 0a7 7 0 1 0 14 0a7 7 0 1 0 -14 0", "key": "svg-0" }], ["path", { "d": "M21 21l-6 -6", "key": "svg-1" }]]);
+
+
+//# sourceMappingURL=IconSearch.mjs.map
+
 
 /***/ }),
 
@@ -15068,6 +15198,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react_dom_client__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react-dom/client */ "./node_modules/react-dom/client.js");
 /* harmony import */ var framer_motion__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! framer-motion */ "./node_modules/framer-motion/dist/es/render/components/motion/proxy.mjs");
 /* harmony import */ var _constanta__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./constanta */ "./src/products-catalog-page/constanta.js");
+/* harmony import */ var _tabler_icons_react__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! @tabler/icons-react */ "./node_modules/@tabler/icons-react/dist/esm/icons/IconSearch.mjs");
 /* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! react/jsx-runtime */ "react/jsx-runtime");
 /* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__);
 
@@ -15075,241 +15206,282 @@ __webpack_require__.r(__webpack_exports__);
 
 
 
+
 const ProductPage = () => {
   const [currentPage, setCurrentPage] = (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.useState)(1);
-  const [pageSize, setPageSize] = (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.useState)(8); // Default page size
-  const [pageAttributes, setPageAttributes] = (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.useState)(null);
-  const [jumpPage, setJumpPage] = (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.useState)(""); // For jump to page input
-  const [searchTerm, setSearchTerm] = (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.useState)(""); // New state for search term
+  const [pageSize, setPageSize] = (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.useState)(8);
+  const [searchTerm, setSearchTerm] = (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.useState)("");
+  const [submitedsearchTerm, setSubmitedsearchTerm] = (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.useState)("");
+  const [selectedFilter, setSelectedFilter] = (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.useState)("All");
 
-  (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.useEffect)(() => {
-    const container = document.getElementById("products-catalog-page");
-    if (container) {
-      const attributes = container.getAttribute("data-block-attributes");
-      if (attributes) {
-        try {
-          const parsedAttributes = JSON.parse(attributes);
-          setPageAttributes(parsedAttributes);
-        } catch (error) {
-          console.error("Failed to parse block attributes:", error);
-        }
-      }
-    }
-  }, []);
+  // Temporary state for filtered products after applying search and filters
+  const filteredProducts = (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.useMemo)(() => {
+    return _constanta__WEBPACK_IMPORTED_MODULE_2__.sampleProducts.filter(product => {
+      return (submitedsearchTerm === "" || product.title.toLowerCase().includes(submitedsearchTerm.toLowerCase()) || product.description.toLowerCase().includes(submitedsearchTerm.toLowerCase())) && (selectedFilter === "All" || product.category === selectedFilter);
+    });
+  }, [submitedsearchTerm, selectedFilter]);
 
-  // Memoized filtered products based on search term
-  const filteredProducts = () => {
-    if (!searchTerm) return _constanta__WEBPACK_IMPORTED_MODULE_2__.sampleProducts; // No search term, return all products
-    return _constanta__WEBPACK_IMPORTED_MODULE_2__.sampleProducts.filter(product => product.title.toLowerCase().includes(searchTerm.toLowerCase()) || product.description.toLowerCase().includes(searchTerm.toLowerCase()));
+  // Calculate total pages based on filtered products and pageSize
+  const totalPages = (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.useMemo)(() => Math.ceil(filteredProducts.length / pageSize), [filteredProducts, pageSize]);
+
+  // Handle filter change and reset currentPage to 1 when filter changes
+  const handleFilterChange = filter => {
+    setSelectedFilter(filter);
+    setCurrentPage(1); // Reset to first page after filter change
   };
-  const totalPages = Math.ceil(filteredProducts().length / pageSize);
+
+  // Handle search term submission (on Enter or search button)
+  const handleSearchSubmit = () => {
+    setSubmitedsearchTerm(searchTerm); // Apply search filter
+    setCurrentPage(1); // Reset to first page after applying search
+  };
+
+  // Get products for the current page
+  const getPaginatedProducts = () => {
+    const startIndex = (currentPage - 1) * pageSize;
+    return filteredProducts.slice(startIndex, startIndex + pageSize);
+  };
+
+  // Handle page change for pagination
   const handlePageChange = pageNumber => {
     if (pageNumber >= 1 && pageNumber <= totalPages) {
       setCurrentPage(pageNumber);
     }
   };
-  const handleJumpChange = e => {
-    const value = e.target.value;
-    setJumpPage(value);
-  };
-  const handleJumpSubmit = () => {
-    const pageNumber = parseInt(jumpPage, 10);
-    if (pageNumber >= 1 && pageNumber <= totalPages) {
-      setCurrentPage(pageNumber);
-      setJumpPage(""); // Clear the input after jumping
-    } else {
-      alert("Invalid page number");
-    }
-  };
-  const handleSearchChange = e => {
-    setSearchTerm(e.target.value); // Update search term on input change
-    setCurrentPage(1); // Reset to first page when search term changes
-  };
-  const getPaginatedProducts = () => {
-    const startIndex = (currentPage - 1) * pageSize;
-    return filteredProducts().slice(startIndex, startIndex + pageSize);
-  };
-  const containerVariants = {
-    hidden: {
+  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsxs)(framer_motion__WEBPACK_IMPORTED_MODULE_4__.motion.div, {
+    initial: {
       opacity: 0
     },
-    visible: {
-      opacity: 1,
-      transition: {
-        staggerChildren: 0.3,
-        duration: 0.6
-      }
-    }
-  };
-  const itemVariants = {
-    hidden: {
-      opacity: 0,
-      y: 20
+    animate: {
+      opacity: 1
     },
-    visible: {
-      opacity: 1,
-      y: 0,
-      transition: {
-        duration: 0.5,
-        type: "spring",
-        stiffness: 120,
-        damping: 25
-      }
+    transition: {
+      duration: 0.5
     },
-    hover: {
-      scale: 1.05,
-      y: -10,
-      transition: {
-        type: "spring",
-        stiffness: 300,
-        damping: 25
-      }
-    }
-  };
-  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsxs)(framer_motion__WEBPACK_IMPORTED_MODULE_4__.motion.div, {
-    className: "not-prose",
-    initial: "hidden",
-    animate: "visible",
-    variants: containerVariants,
-    children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("div", {
-      className: "bg-gray-900 min-h-[560px] flex justify-center items-center text-white",
-      children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsxs)("div", {
-        className: "mx-auto max-w-[1280px]",
-        children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("h1", {
-          className: "text-[36px] font-bold",
-          children: "Header Title"
-        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("p", {
-          children: "Kabel untuk Instalasi Listrik Outdoor, Indoor, dan Bangunan dari Wilson Cables Dapatkan kabel untuk instalasi listrik indoor dan outdoor yang terbaik untuk keperluan aktivitas anda di dalam rumah, gedung, perkantoran dan lain-lainnya. Kabel panel listrik dari Wilson Cables untuk instalasi rumah, outdoor, gedung, bangunan perkantoran, dan lain-lainnya bisa anda lihat semua di kategori ini"
-        })]
-      })
-    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("div", {
-      className: "w-full bg-[#0100B1] text-white",
-      children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsxs)("div", {
-        className: "flex mx-auto max-w-[1280px] gap-16 py-5 font-semibold",
-        children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("div", {
-          className: "bg-red-600 px-4 py-1 rounded-lg",
-          children: "Low Voltage Cables"
-        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("div", {
-          className: "px-4 py-1 rounded-lg",
-          children: "Medium Voltage Cables"
-        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("div", {
-          className: "px-4 py-1 rounded-lg",
-          children: "Fire Resistant Cables"
-        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("div", {
-          className: "px-4 py-1 rounded-lg",
-          children: "Flexible Cables"
-        })]
-      })
-    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("div", {
-      className: "mx-auto max-w-[1280px] my-5",
-      children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("input", {
-        type: "text",
-        placeholder: "Search products...",
-        value: searchTerm,
-        onChange: handleSearchChange,
-        className: "w-full p-3 bg-gray-800 text-white rounded-lg"
-      })
+    children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)(Header, {}), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)(FilterBar, {
+      selectedFilter: selectedFilter,
+      onFilterChange: handleFilterChange
+    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)(SearchBar, {
+      searchTerm: searchTerm,
+      onSearchChange: setSearchTerm,
+      onSearchSubmit: handleSearchSubmit
     }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)(framer_motion__WEBPACK_IMPORTED_MODULE_4__.motion.div, {
-      className: "grid mx-auto max-w-[1280px] md:grid-cols-4 gap-5",
-      variants: containerVariants,
-      children: getPaginatedProducts().map(product => /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsxs)(framer_motion__WEBPACK_IMPORTED_MODULE_4__.motion.div, {
-        className: "bg-gray-200 p-5 rounded-lg group relative overflow-hidden cursor-pointer",
-        variants: itemVariants,
-        whileHover: "hover",
-        initial: "hidden",
-        animate: "visible",
-        exit: "hidden",
-        children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("div", {
-          className: "bg-white rounded-lg min-h-[265px] mb-2",
-          children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("img", {
-            src: product.imageUrl,
-            alt: product.title
-          })
-        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("p", {
-          className: "text-[16px] font-bold",
-          children: product.title
-        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("p", {
-          className: "text-[10px] font-semibold mb-2 text-[#0000FE]",
-          children: product.spec
-        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("p", {
-          className: "text-[13px] font-medium",
-          children: product.description
-        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsxs)("div", {
-          className: "absolute bottom-0 left-0 right-0 p-5 bg-gray-200 rounded-b-lg opacity-0 group-hover:opacity-100 transition-opacity duration-300 z-10",
-          children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("p", {
-            className: "text-[13px] font-semibold mb-3",
-            children: product.specDesc
-          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsxs)("div", {
-            className: "flex gap-2 mb-2",
-            children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("button", {
-              className: "text-[10px] font-semibold px-2 py-1 rounded-md bg-[#39A849] w-full text-white",
-              children: "Belanja di Tokopedia"
-            }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("button", {
-              className: "text-[10px] font-semibold px-2 py-1 rounded-md bg-[#EE4D2D] w-full text-white",
-              children: "Belanja di Shopee"
-            })]
-          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("button", {
-            className: "text-[12px] font-semibold px-3 py-2 rounded-md bg-[#0100B1] w-full text-white",
-            children: "Unduh Catalog"
-          })]
-        })]
-      }, product.id))
-    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsxs)("div", {
-      className: "flex justify-center gap-4 my-8",
-      children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsxs)("div", {
-        className: "flex items-center gap-2",
-        children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("label", {
-          htmlFor: "page-size",
-          className: "text-white",
-          children: "Items per page:"
-        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("select", {
-          id: "page-size",
-          value: pageSize,
-          onChange: e => setPageSize(parseInt(e.target.value, 10)),
-          className: "px-3 py-2 bg-gray-800 text-white rounded-lg",
-          children: [8, 16].map(size => /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("option", {
-            value: size,
-            children: size
-          }, size))
-        })]
-      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("button", {
-        onClick: () => handlePageChange(currentPage - 1),
-        disabled: currentPage === 1,
-        className: "px-4 py-2 bg-gray-800 text-white rounded-lg disabled:opacity-50",
-        children: "Previous"
-      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsxs)("span", {
-        className: "text-lg",
-        children: ["Page ", currentPage, " of ", totalPages]
-      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("button", {
-        onClick: () => handlePageChange(currentPage + 1),
-        disabled: currentPage === totalPages,
-        className: "px-4 py-2 bg-gray-800 text-white rounded-lg disabled:opacity-50",
-        children: "Next"
-      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsxs)("div", {
-        className: "flex items-center gap-2",
-        children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("label", {
-          htmlFor: "jump-to-page",
-          className: "text-white",
-          children: "Jump to page:"
-        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("input", {
-          id: "jump-to-page",
-          type: "number",
-          value: jumpPage,
-          onChange: handleJumpChange,
-          className: "px-3 py-2 bg-gray-800 text-white rounded-lg w-[60px]",
-          min: "1",
-          max: totalPages
-        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("button", {
-          onClick: handleJumpSubmit,
-          className: "px-4 py-2 bg-gray-800 text-white rounded-lg",
-          children: "Go"
-        })]
-      })]
+      // Key for animating each page change
+      initial: {
+        opacity: 0,
+        x: -100
+      } // Slide in from the left
+      ,
+      animate: {
+        opacity: 1,
+        x: 0
+      } // Fade in and slide to center
+      ,
+      transition: {
+        duration: 0.5
+      },
+      children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)(ProductGrid, {
+        products: getPaginatedProducts()
+      })
+    }, currentPage), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)(PaginationControls, {
+      currentPage: currentPage,
+      totalPages: totalPages,
+      pageSize: pageSize,
+      setPageSize: setPageSize,
+      onPageChange: handlePageChange
     })]
   });
 };
-
-// Get the container element and render the block dynamically
+const Header = () => /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("div", {
+  className: "bg-gray-900 min-h-[560px] flex justify-center items-center text-white",
+  children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsxs)("div", {
+    className: "mx-auto max-w-[1280px]",
+    children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("h1", {
+      className: "text-[36px] font-bold",
+      children: "Header Title"
+    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("p", {
+      children: "Kabel untuk Instalasi Listrik Outdoor, Indoor, dan Bangunan dari Wilson Cables. Dapatkan kabel untuk instalasi listrik indoor dan outdoor yang terbaik untuk keperluan aktivitas anda di dalam rumah, gedung, perkantoran, dan lain-lainnya."
+    })]
+  })
+});
+const FilterBar = ({
+  selectedFilter,
+  onFilterChange
+}) => /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("div", {
+  className: "w-full bg-[#0100B1] text-white",
+  children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("div", {
+    className: "flex mx-auto max-w-[1280px] gap-16 py-5 font-semibold",
+    children: ["All", "Low Voltage Cables", "Medium Voltage Cables", "Fire Resistant Cables", "Flexible Cables"].map(filter => /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)(framer_motion__WEBPACK_IMPORTED_MODULE_4__.motion.div, {
+      className: `px-4 py-1 rounded-lg cursor-pointer ${selectedFilter === filter ? "bg-red-600" : ""}`,
+      onClick: () => onFilterChange(filter),
+      whileHover: {
+        scale: 1.1
+      } // Hover effect
+      ,
+      transition: {
+        duration: 0.3
+      },
+      children: filter
+    }, filter))
+  })
+});
+const SearchBar = ({
+  searchTerm,
+  onSearchChange,
+  onSearchSubmit
+}) => /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("div", {
+  className: "mx-auto max-w-[1280px] my-5",
+  children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsxs)("div", {
+    className: "relative",
+    children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("input", {
+      type: "text",
+      placeholder: "Search products...",
+      value: searchTerm,
+      onChange: e => onSearchChange(e.target.value),
+      onKeyDown: e => {
+        if (e.key === "Enter") {
+          onSearchSubmit(); // Apply filter on Enter key press
+        }
+      },
+      className: "w-1/4 pl-10 p-3 bg-gray-100 font-semibold text-gray-600 rounded-lg focus:outline-none focus:ring-0 border-1 border-gray-300"
+    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsxs)("div", {
+      className: "absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-600",
+      children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)(_tabler_icons_react__WEBPACK_IMPORTED_MODULE_5__["default"], {
+        size: 18
+      }), " "]
+    })]
+  })
+});
+const ProductGrid = ({
+  products
+}) => /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)(framer_motion__WEBPACK_IMPORTED_MODULE_4__.motion.div, {
+  className: "grid mx-auto max-w-[1280px] md:grid-cols-4 gap-6",
+  initial: {
+    opacity: 0
+  },
+  animate: {
+    opacity: 1
+  },
+  transition: {
+    duration: 0.8,
+    ease: "easeInOut"
+  } // Smooth transition for grid appearance
+  ,
+  children: products.map((product, index) => /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsxs)(framer_motion__WEBPACK_IMPORTED_MODULE_4__.motion.div, {
+    className: "bg-white p-5 rounded-lg shadow-lg hover:shadow-2xl group relative overflow-hidden",
+    whileHover: {
+      scale: 1.05,
+      y: -10,
+      boxShadow: "0px 15px 30px rgba(0, 0, 0, 0.15)"
+    } // Smooth scaling, upward movement and shadow effect
+    ,
+    transition: {
+      duration: 0.3,
+      type: "spring",
+      stiffness: 300,
+      damping: 25
+    } // Smooth scaling and movement transition
+    ,
+    initial: {
+      opacity: 0,
+      y: 20
+    } // Start with opacity 0 and slight downward position
+    ,
+    animate: {
+      opacity: 1,
+      y: 0
+    },
+    children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("div", {
+      className: "bg-white rounded-lg min-h-[240px] mb-3 overflow-hidden relative",
+      children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)(framer_motion__WEBPACK_IMPORTED_MODULE_4__.motion.img, {
+        src: product.imageUrl,
+        alt: product.title,
+        className: "w-full h-full object-cover",
+        initial: {
+          opacity: 0
+        },
+        animate: {
+          opacity: 1
+        },
+        transition: {
+          duration: 0.5,
+          ease: "easeInOut"
+        } // Fade-in image on load
+      })
+    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("p", {
+      className: "text-lg font-semibold text-gray-800",
+      children: product.title
+    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("p", {
+      className: "text-xs font-medium text-[#0000FE] mb-2",
+      children: product.spec
+    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("p", {
+      className: "text-sm text-gray-600",
+      children: product.description
+    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsxs)("div", {
+      className: "absolute bottom-0 left-0 right-0 p-5 bg-white bg-opacity-80 backdrop-blur-sm rounded-b-lg opacity-0 group-hover:opacity-100 transition-opacity duration-300 z-10",
+      children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("p", {
+        className: "text-sm font-semibold text-gray-700 mb-3",
+        children: product.specDesc
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsxs)("div", {
+        className: "flex gap-2 mb-3",
+        children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("button", {
+          className: "text-xs font-semibold px-4 py-2 rounded-md bg-gradient-to-r from-[#39A849] to-[#27A74C] w-full text-white",
+          children: "Belanja di Tokopedia"
+        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("button", {
+          className: "text-xs font-semibold px-4 py-2 rounded-md bg-gradient-to-r from-[#EE4D2D] to-[#E24339] w-full text-white",
+          children: "Belanja di Shopee"
+        })]
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("button", {
+        className: "text-sm font-semibold px-4 py-2 rounded-md bg-gradient-to-r from-[#0100B1] to-[#005BFF] w-full text-white",
+        children: "Unduh Catalog"
+      })]
+    })]
+  }, product.id + index))
+});
+const PaginationControls = ({
+  currentPage,
+  totalPages,
+  pageSize,
+  setPageSize,
+  onPageChange
+}) => /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsxs)("div", {
+  className: "flex justify-center gap-4 my-8",
+  children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("select", {
+    value: pageSize,
+    onChange: e => setPageSize(parseInt(e.target.value)),
+    className: "px-3 py-2 bg-gray-800 text-white rounded-lg",
+    children: [8, 16].map(size => /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("option", {
+      value: size,
+      children: size
+    }, size))
+  }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)(framer_motion__WEBPACK_IMPORTED_MODULE_4__.motion.button, {
+    onClick: () => onPageChange(currentPage - 1),
+    disabled: currentPage === 1,
+    className: "px-4 py-2 bg-gray-800 text-white rounded-lg",
+    whileHover: {
+      scale: 1.1
+    } // Hover effect for buttons
+    ,
+    transition: {
+      duration: 0.3
+    },
+    children: "Previous"
+  }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsxs)("span", {
+    children: ["Page ", currentPage, " of ", totalPages]
+  }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)(framer_motion__WEBPACK_IMPORTED_MODULE_4__.motion.button, {
+    onClick: () => onPageChange(currentPage + 1),
+    disabled: currentPage === totalPages,
+    className: "px-4 py-2 bg-gray-800 text-white rounded-lg",
+    whileHover: {
+      scale: 1.1
+    } // Hover effect for buttons
+    ,
+    transition: {
+      duration: 0.3
+    },
+    children: "Next"
+  })]
+});
 const container = document.getElementById("products-catalog-page");
 if (container) {
   const root = (0,react_dom_client__WEBPACK_IMPORTED_MODULE_1__.createRoot)(container);

@@ -2,7 +2,7 @@ import { useState } from "@wordpress/element";
 import { motion, AnimatePresence } from "framer-motion";
 import { RichText } from "@wordpress/block-editor";
 
-const OurProducts = ({ text, images }) => {
+const OurProducts = ({ text, images = [] }) => {
 	const [activeImage, setActiveImage] = useState(0);
 
 	return (
@@ -55,7 +55,7 @@ const OurProducts = ({ text, images }) => {
 							)}
 						</AnimatePresence>
 
-						{images.length > 0 ? (
+						{images && images.length > 0 ? (
 							images.map((image, index) => (
 								<motion.div
 									key={index}

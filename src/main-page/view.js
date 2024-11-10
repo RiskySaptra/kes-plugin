@@ -10,9 +10,6 @@ const MainPage = () => {
 	const [pageAttributes, setPageAttributes] = useState(null); // Directly store images in state
 
 	useEffect(() => {
-		// Only access the DOM once during the component's mount phase
-		const container = document.getElementById("main-page");
-
 		if (container) {
 			const attributes = container.getAttribute("data-block-attributes");
 
@@ -46,6 +43,8 @@ const MainPage = () => {
 		ourProductsDesc,
 		ourProductsImages,
 	} = pageAttributes;
+
+	console.log(pageAttributes);
 
 	const whatsAppUrl = `https://wa.me/${phoneNumber}?text=${encodeURIComponent(
 		message,
