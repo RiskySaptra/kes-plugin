@@ -3,6 +3,7 @@ import { createRoot } from "react-dom/client";
 import { motion } from "framer-motion";
 import { sampleProducts } from "./constanta";
 import { IconSearch } from "@tabler/icons-react";
+import HeaderTemplate from "../common_component/HeaderTemplate";
 
 const ProductPage = () => {
 	const [currentPage, setCurrentPage] = useState(1);
@@ -68,7 +69,7 @@ const ProductPage = () => {
 			animate={{ opacity: 1 }}
 			transition={{ duration: 0.5 }}
 		>
-			<Header />
+			<HeaderTemplate />
 			{/* Filter Bar */}
 			<FilterBar
 				selectedFilter={selectedFilter}
@@ -101,23 +102,9 @@ const ProductPage = () => {
 	);
 };
 
-const Header = () => (
-	<div className="bg-gray-900 min-h-[560px] flex justify-center items-center text-white">
-		<div className="mx-auto max-w-[1280px]">
-			<h1 className="text-[36px] font-bold">Header Title</h1>
-			<p>
-				Kabel untuk Instalasi Listrik Outdoor, Indoor, dan Bangunan dari Wilson
-				Cables. Dapatkan kabel untuk instalasi listrik indoor dan outdoor yang
-				terbaik untuk keperluan aktivitas anda di dalam rumah, gedung,
-				perkantoran, dan lain-lainnya.
-			</p>
-		</div>
-	</div>
-);
-
 const FilterBar = ({ selectedFilter, onFilterChange }) => (
-	<div className="w-full bg-[#0100B1] text-white">
-		<div className="flex mx-auto max-w-[1280px] gap-16 py-5 font-semibold">
+	<div className="w-full bg-[#0100B1] text-white py-5">
+		<div className="flex flex-wrap justify-center max-w-[1280px] mx-auto gap-4 font-semibold">
 			{[
 				"All",
 				"Low Voltage Cables",
@@ -127,12 +114,18 @@ const FilterBar = ({ selectedFilter, onFilterChange }) => (
 			].map((filter) => (
 				<motion.div
 					key={filter}
-					className={`px-4 py-1 rounded-lg cursor-pointer ${
-						selectedFilter === filter ? "bg-red-600" : ""
+					className={`px-6 py-2 rounded-full cursor-pointer transition-all duration-300 ${
+						selectedFilter === filter
+							? "bg-red-600 shadow-lg"
+							: "bg-transparent hover:bg-opacity-80"
 					}`}
 					onClick={() => onFilterChange(filter)}
-					whileHover={{ scale: 1.1 }} // Hover effect
-					transition={{ duration: 0.3 }}
+					whileHover={{
+						scale: 1.1,
+						boxShadow: "0px 4px 12px rgba(0, 0, 0, 0.2)",
+					}}
+					whileTap={{ scale: 0.95 }}
+					transition={{ duration: 0.3, ease: "easeOut" }}
 				>
 					{filter}
 				</motion.div>
@@ -145,22 +138,24 @@ const SearchBar = ({ searchTerm, onSearchChange, onSearchSubmit }) => (
 	<div className="mx-auto max-w-[1280px] my-5">
 		<div className="relative">
 			{/* Input field */}
-			<input
-				type="text"
-				placeholder="Search products..."
-				value={searchTerm}
-				onChange={(e) => onSearchChange(e.target.value)}
-				onKeyDown={(e) => {
-					if (e.key === "Enter") {
-						onSearchSubmit(); // Apply filter on Enter key press
-					}
-				}}
-				className="w-1/4 pl-10 p-3 bg-gray-100 font-semibold text-gray-600 rounded-lg focus:outline-none focus:ring-0 border-1 border-gray-300"
-			/>
+			<div className="relative w-1/4">
+				<input
+					type="text"
+					placeholder="Search products..."
+					value={searchTerm}
+					onChange={(e) => onSearchChange(e.target.value)}
+					onKeyDown={(e) => {
+						if (e.key === "Enter") {
+							onSearchSubmit(); // Apply filter on Enter key press
+						}
+					}}
+					className="w-full pl-10 p-3 bg-gray-100 font-semibold text-gray-600 rounded-lg focus:outline-none focus:ring-0 border-1 border-gray-300"
+				/>
 
-			{/* Search icon inside input */}
-			<div className="absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-600">
-				<IconSearch size={18} /> {/* Tabler search icon */}
+				{/* Search icon inside input */}
+				<div className="absolute right-5 top-1/2 transform -translate-y-1/2 text-gray-600">
+					<IconSearch size={18} /> {/* Tabler search icon */}
+				</div>
 			</div>
 		</div>
 	</div>

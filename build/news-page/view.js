@@ -2,6 +2,124 @@
 /******/ 	"use strict";
 /******/ 	var __webpack_modules__ = ({
 
+/***/ "./src/common_component/HeaderTemplate.js":
+/*!************************************************!*\
+  !*** ./src/common_component/HeaderTemplate.js ***!
+  \************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony import */ var framer_motion__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! framer-motion */ "./node_modules/framer-motion/dist/es/render/components/motion/proxy.mjs");
+/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react/jsx-runtime */ "react/jsx-runtime");
+/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__);
+
+
+const HeaderTemplate = () => /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsxs)("div", {
+  className: "relative bg-[#4A4A9B] min-h-[420px] flex justify-center items-center text-white px-6 py-16 overflow-hidden",
+  children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)("img", {
+    src: "https://via.placeholder.com/1200x600.png?text=Your+Company+Image+Here",
+    alt: "Background Placeholder",
+    className: "absolute inset-0 w-full h-full object-cover opacity-40"
+  }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)("div", {
+    className: "absolute inset-0 bg-gradient-to-b from-[#4A4A9B] to-transparent opacity-90"
+  }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)(framer_motion__WEBPACK_IMPORTED_MODULE_1__.motion.div, {
+    initial: {
+      opacity: 0,
+      y: 50
+    },
+    animate: {
+      opacity: 0.3,
+      y: 0
+    },
+    transition: {
+      duration: 2,
+      repeat: Infinity,
+      repeatType: "reverse"
+    },
+    className: "absolute top-1/3 left-1/4 w-32 h-32 bg-indigo-400 rounded-full opacity-30"
+  }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)(framer_motion__WEBPACK_IMPORTED_MODULE_1__.motion.div, {
+    initial: {
+      opacity: 0,
+      x: -50
+    },
+    animate: {
+      opacity: 0.3,
+      x: 0
+    },
+    transition: {
+      duration: 3,
+      repeat: Infinity,
+      repeatType: "reverse"
+    },
+    className: "absolute top-1/2 right-1/3 w-24 h-24 bg-purple-600 rounded-full opacity-40"
+  }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)(framer_motion__WEBPACK_IMPORTED_MODULE_1__.motion.div, {
+    initial: {
+      opacity: 0,
+      y: -50
+    },
+    animate: {
+      opacity: 0.2,
+      y: 0
+    },
+    transition: {
+      duration: 4,
+      repeat: Infinity,
+      repeatType: "reverse"
+    },
+    className: "absolute bottom-1/3 left-2/3 w-20 h-20 bg-pink-500 rounded-full opacity-30"
+  }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsxs)(framer_motion__WEBPACK_IMPORTED_MODULE_1__.motion.div, {
+    initial: {
+      opacity: 0,
+      y: -30
+    },
+    animate: {
+      opacity: 1,
+      y: 0
+    },
+    transition: {
+      duration: 0.8,
+      ease: "easeOut"
+    },
+    className: "relative mx-auto max-w-7xl text-center z-10",
+    children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)(framer_motion__WEBPACK_IMPORTED_MODULE_1__.motion.h1, {
+      initial: {
+        scale: 0.9
+      },
+      animate: {
+        scale: 1
+      },
+      transition: {
+        duration: 0.6,
+        ease: "easeOut"
+      },
+      className: "text-4xl md:text-5xl font-extrabold leading-tight tracking-tight mb-6 text-shadow-lg",
+      style: {
+        textShadow: "0px 4px 6px rgba(0, 0, 0, 0.3)"
+      },
+      children: "Header Title"
+    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)(framer_motion__WEBPACK_IMPORTED_MODULE_1__.motion.p, {
+      initial: {
+        opacity: 0
+      },
+      animate: {
+        opacity: 1
+      },
+      transition: {
+        delay: 0.2,
+        duration: 0.6
+      },
+      className: "text-lg md:text-xl font-light max-w-2xl mx-auto text-gray-200",
+      children: "Kabel untuk Instalasi Listrik Outdoor, Indoor, dan Bangunan dari Wilson Cables. Dapatkan kabel untuk instalasi listrik indoor dan outdoor yang terbaik untuk keperluan aktivitas anda di dalam rumah, gedung, perkantoran, dan lain-lainnya."
+    })]
+  })]
+});
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (HeaderTemplate);
+
+/***/ }),
+
 /***/ "./node_modules/react-dom/client.js":
 /*!******************************************!*\
   !*** ./node_modules/react-dom/client.js ***!
@@ -15165,12 +15283,14 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _wordpress_element__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @wordpress/element */ "@wordpress/element");
 /* harmony import */ var _wordpress_element__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__);
 /* harmony import */ var react_dom_client__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react-dom/client */ "./node_modules/react-dom/client.js");
-/* harmony import */ var framer_motion__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! framer-motion */ "./node_modules/framer-motion/dist/es/render/components/motion/proxy.mjs");
-/* harmony import */ var framer_motion__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! framer-motion */ "./node_modules/framer-motion/dist/es/components/AnimatePresence/index.mjs");
+/* harmony import */ var framer_motion__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! framer-motion */ "./node_modules/framer-motion/dist/es/render/components/motion/proxy.mjs");
+/* harmony import */ var framer_motion__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! framer-motion */ "./node_modules/framer-motion/dist/es/components/AnimatePresence/index.mjs");
 /* harmony import */ var _wordpress_block_editor__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @wordpress/block-editor */ "@wordpress/block-editor");
 /* harmony import */ var _wordpress_block_editor__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_2__);
-/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! react/jsx-runtime */ "react/jsx-runtime");
-/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__);
+/* harmony import */ var _common_component_HeaderTemplate__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../common_component/HeaderTemplate */ "./src/common_component/HeaderTemplate.js");
+/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! react/jsx-runtime */ "react/jsx-runtime");
+/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4___default = /*#__PURE__*/__webpack_require__.n(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__);
+
 
 
 
@@ -15182,9 +15302,9 @@ const CategoryFilter = ({
   onSelectCategory
 }) => {
   if (!categories) return "loading...";
-  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsxs)("div", {
+  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsxs)("div", {
     className: "overflow-x-auto overflow-y-hidden whitespace-nowrap flex justify-start space-x-4 mb-10 px-4 scrollbar-hidden py-2",
-    children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)(framer_motion__WEBPACK_IMPORTED_MODULE_4__.motion.button, {
+    children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(framer_motion__WEBPACK_IMPORTED_MODULE_5__.motion.button, {
       whileHover: {
         scale: 1.1
       },
@@ -15194,7 +15314,7 @@ const CategoryFilter = ({
       className: `px-4 py-2 rounded-lg font-semibold min-w-[135px] ${selectedCategory === -1 ? "bg-blue-600 text-white" : "bg-gray-200 text-gray-700"}`,
       onClick: () => onSelectCategory(-1),
       children: "All Categories"
-    }), categories.map(category => /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)(framer_motion__WEBPACK_IMPORTED_MODULE_4__.motion.button, {
+    }), categories.map(category => /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(framer_motion__WEBPACK_IMPORTED_MODULE_5__.motion.button, {
       whileHover: {
         scale: 1.1
       },
@@ -15214,10 +15334,10 @@ const extractImageUrl = content => {
 };
 const NewsList = ({
   newsItems
-}) => /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)(framer_motion__WEBPACK_IMPORTED_MODULE_5__.AnimatePresence, {
+}) => /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(framer_motion__WEBPACK_IMPORTED_MODULE_6__.AnimatePresence, {
   mode: "wait",
-  children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsxs)(framer_motion__WEBPACK_IMPORTED_MODULE_4__.motion.div, {
-    className: "grid md:grid-cols-2 gap-6",
+  children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsxs)(framer_motion__WEBPACK_IMPORTED_MODULE_5__.motion.div, {
+    className: "grid grid-cols-2 lg:grid-cols-3 gap-6",
     initial: {
       opacity: 0,
       y: 20
@@ -15231,40 +15351,48 @@ const NewsList = ({
       y: 20
     },
     transition: {
-      duration: 0.5,
+      duration: 0.3,
       ease: "easeInOut"
     },
-    children: [newsItems.map((news, index) => /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)(framer_motion__WEBPACK_IMPORTED_MODULE_4__.motion.div, {
-      className: "bg-white shadow-md rounded-lg p-5",
+    children: [newsItems.map((news, index) => /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(framer_motion__WEBPACK_IMPORTED_MODULE_5__.motion.div, {
+      className: "bg-white shadow-md rounded-lg overflow-hidden transform transition-all duration-200 hover:scale-105 hover:shadow-xl",
       whileHover: {
         scale: 1.05,
-        y: -5
+        y: -3
       },
       transition: {
-        duration: 0.3,
+        duration: 0.2,
         ease: "easeInOut"
       },
-      children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsxs)("a", {
+      children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsxs)("a", {
         href: news.link,
         target: "_self",
         rel: "noopener noreferrer",
-        children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("img", {
-          src: extractImageUrl(news.content.rendered) || "https://via.placeholder.com/300x200?text=Future+of+Education",
-          alt: news.title.rendered,
-          className: "w-full min-h-[200px] object-cover rounded-lg mb-4"
-        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("h2", {
-          className: "text-xl font-bold text-gray-900",
-          children: news.title.rendered
-        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("p", {
-          className: "text-gray-600 text-sm mb-2",
-          children: new Date(news.date).toLocaleDateString()
-        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_2__.RichText.Content, {
-          tagName: "h3",
-          value: news.excerpt.rendered,
-          className: "text-xs text-gray-500 truncate-ellipsis-exc"
+        children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsxs)("div", {
+          className: "relative",
+          children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("img", {
+            src: extractImageUrl(news.content.rendered) || "https://via.placeholder.com/300x200?text=Future+of+Education",
+            alt: news.title.rendered,
+            className: "w-full min-h-[200px] object-cover rounded-t-lg"
+          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("div", {
+            className: "absolute inset-0 bg-black opacity-25 rounded-t-lg"
+          })]
+        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsxs)("div", {
+          className: "p-5",
+          children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("h2", {
+            className: "text-xl font-semibold text-gray-800 hover:text-indigo-600 transition-colors",
+            children: news.title.rendered
+          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("p", {
+            className: "text-gray-600 text-sm mb-2",
+            children: new Date(news.date).toLocaleDateString()
+          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_2__.RichText.Content, {
+            tagName: "p",
+            value: news.excerpt.rendered,
+            className: "text-sm text-gray-500 truncate"
+          })]
         })]
       })
-    }, news.id + index)), newsItems.length === 0 && /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("p", {
+    }, news.id + index)), newsItems.length === 0 && /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("p", {
       className: "text-center text-gray-500 col-span-full",
       children: "No news articles available in this category."
     })]
@@ -15274,9 +15402,9 @@ const PaginationControls = ({
   currentPage,
   totalPages,
   onPageChange
-}) => /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsxs)("div", {
+}) => /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsxs)("div", {
   className: "flex justify-center items-center space-x-4 mt-8",
-  children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)(framer_motion__WEBPACK_IMPORTED_MODULE_4__.motion.button, {
+  children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(framer_motion__WEBPACK_IMPORTED_MODULE_5__.motion.button, {
     onClick: () => onPageChange(currentPage - 1),
     disabled: currentPage === 1,
     className: "px-4 py-2 bg-gray-300 text-gray-800 rounded-lg disabled:opacity-50",
@@ -15284,9 +15412,9 @@ const PaginationControls = ({
       scale: 1.1
     },
     children: "Previous"
-  }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsxs)("span", {
+  }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsxs)("span", {
     children: ["Page ", currentPage, " of ", totalPages]
-  }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)(framer_motion__WEBPACK_IMPORTED_MODULE_4__.motion.button, {
+  }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(framer_motion__WEBPACK_IMPORTED_MODULE_5__.motion.button, {
     onClick: () => onPageChange(currentPage + 1),
     disabled: currentPage === totalPages,
     className: "px-4 py-2 bg-gray-300 text-gray-800 rounded-lg disabled:opacity-50",
@@ -15298,12 +15426,12 @@ const PaginationControls = ({
 });
 const Sidebar = ({
   latestNews
-}) => /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsxs)("div", {
+}) => /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsxs)("div", {
   className: "w-1/4 pt-[100px]",
-  children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("h2", {
+  children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("h2", {
     className: "text-2xl font-bold mb-4 truncate-ellipsis-title",
     children: "Latest News"
-  }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)(framer_motion__WEBPACK_IMPORTED_MODULE_4__.motion.div, {
+  }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(framer_motion__WEBPACK_IMPORTED_MODULE_5__.motion.div, {
     className: "space-y-4",
     initial: "hidden",
     animate: "visible",
@@ -15314,7 +15442,7 @@ const Sidebar = ({
         }
       }
     },
-    children: latestNews.map((news, index) => /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)(framer_motion__WEBPACK_IMPORTED_MODULE_4__.motion.div, {
+    children: latestNews.map((news, index) => /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(framer_motion__WEBPACK_IMPORTED_MODULE_5__.motion.div, {
       variants: {
         hidden: {
           opacity: 0,
@@ -15334,23 +15462,23 @@ const Sidebar = ({
         // Slightly enlarge on hover
         boxShadow: "0px 8px 15px rgba(0, 0, 0, 0.2)" // Adds a shadow effect
       },
-      children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsxs)("a", {
+      children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsxs)("a", {
         className: "flex gap-2 p-2 cursor-pointer",
         href: news.link,
         target: "_self",
         rel: "noopener noreferrer",
-        children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("img", {
+        children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("img", {
           src: news.imageUrl || "https://via.placeholder.com/300x200?text=Future+of+Education",
           alt: news.title.rendered,
           className: "w-24 h-24 object-cover rounded-md"
-        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsxs)("div", {
-          children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("h3", {
+        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsxs)("div", {
+          children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("h3", {
             className: "text-md font-semibold truncate-ellipsis-title ",
             children: news.title.rendered
-          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("p", {
+          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("p", {
             className: "text-xs text-gray-500",
             children: new Date(news.date).toLocaleDateString()
-          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_2__.RichText.Content, {
+          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_2__.RichText.Content, {
             tagName: "h3",
             value: news.excerpt.rendered,
             className: "text-xs text-gray-500 truncate-ellipsis-desc"
@@ -15408,49 +15536,37 @@ const NewsHubPage = () => {
       setCurrentPage(newPage);
     }
   };
-  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsxs)(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.Fragment, {
-    children: [error && /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsxs)("p", {
+  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsxs)(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.Fragment, {
+    children: [error && /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsxs)("p", {
       className: "text-red-500",
       children: ["Error: ", error]
-    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)(Header, {}), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsxs)("div", {
+    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(_common_component_HeaderTemplate__WEBPACK_IMPORTED_MODULE_3__["default"], {}), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsxs)("div", {
       className: "mx-auto max-w-[1280px] p-8 flex",
-      children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsxs)("div", {
+      children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsxs)("div", {
         className: "w-3/4 pr-8",
-        children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)(CategoryFilter, {
+        children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(CategoryFilter, {
           categories: categories,
           selectedCategory: selectedCategory,
           onSelectCategory: handleCategoryChange
-        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)(NewsList, {
+        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(NewsList, {
           newsItems: paginatedNews
-        }), totalPages > 1 && /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)(PaginationControls, {
+        }), totalPages > 1 && /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(PaginationControls, {
           currentPage: currentPage,
           totalPages: totalPages,
           onPageChange: handlePageChange
         })]
-      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)(Sidebar, {
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(Sidebar, {
         latestNews: latestNews
       })]
     })]
   });
 };
-const Header = () => /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("div", {
-  className: "bg-gray-900 min-h-[560px] flex justify-center items-center text-white",
-  children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsxs)("div", {
-    className: "mx-auto max-w-[1280px]",
-    children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("h1", {
-      className: "text-[36px] font-bold",
-      children: "Header Title"
-    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("p", {
-      children: "Kabel untuk Instalasi Listrik Outdoor, Indoor, dan Bangunan dari Wilson Cables. Dapatkan kabel untuk instalasi listrik indoor dan outdoor yang terbaik untuk keperluan aktivitas anda di dalam rumah, gedung, perkantoran, dan lain-lainnya."
-    })]
-  })
-});
 
 // Get the container element and render the News Hub Page dynamically
 const container = document.getElementById("news-page");
 if (container) {
   const root = (0,react_dom_client__WEBPACK_IMPORTED_MODULE_1__.createRoot)(container);
-  root.render(/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)(NewsHubPage, {}));
+  root.render(/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(NewsHubPage, {}));
 }
 })();
 

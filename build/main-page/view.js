@@ -192,7 +192,7 @@ const CompanyProfile = ({
       amount: 0.5,
       margin: "100px"
     },
-    className: "mx-auto max-w-[1280px] p-5 md:py-10 md:px-0",
+    className: "mx-auto max-w-7xl p-5 md:py-12 md:px-6",
     children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)(framer_motion__WEBPACK_IMPORTED_MODULE_2__.motion.h2, {
       initial: {
         opacity: 0,
@@ -210,34 +210,33 @@ const CompanyProfile = ({
         amount: 0.5,
         margin: "100px"
       },
-      className: "text-center text-[20px] md:text-[36px] text-[#354052] font-bold mb-6",
+      className: "text-center text-[20px] md:text-[36px] text-[#354052] font-bold not-prose mb-5",
       children: "Profil Perusahaan"
     }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsxs)("div", {
-      className: "flex flex-col md:flex-row rounded-md gap-6 md:gap-8 md:my-4 md:px-8",
+      className: "grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-12",
       children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("div", {
-        className: "md:basis-2/5 flex justify-center items-center md:py-5",
+        className: "flex justify-center items-center md:py-5",
         children: companyProfileImage && companyProfileImage.url ? /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("img", {
           src: companyProfileImage.url,
           alt: companyProfileImage.alt || "Company profile image",
-          className: "rounded-lg w-full h-auto object-cover shadow-md"
+          className: "rounded-lg w-full h-auto object-cover shadow-lg transition-transform transform hover:scale-105"
         }) : /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("div", {
-          className: "w-[590px] h-[337px] bg-slate-800 rounded-lg flex justify-center items-center",
+          className: "w-full h-[337px] bg-slate-800 rounded-lg flex justify-center items-center text-white",
           children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("p", {
-            className: "text-white",
             children: "No Image Selected"
           })
         })
       }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsxs)("div", {
-        className: "md:basis-3/5 flex flex-col justify-center md:px-10",
+        className: "flex flex-col justify-center px-4 md:px-10",
         children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_0__.RichText.Content, {
           tagName: "h3",
           value: companyProfileDesc,
-          className: "text-[14px] md:text-[18px] font-medium leading-relaxed text-gray-700 mb-4"
+          className: "text-base md:text-lg font-medium leading-relaxed text-gray-700 mb-6"
         }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsxs)("div", {
-          className: "flex flex-col md:flex-row mt-6 w-full gap-3 md:gap-4",
+          className: "flex flex-col md:flex-row mt-6 gap-4",
           children: [pdfFile && pdfFile.url ? /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsxs)("a", {
             href: pdfFile.url,
-            className: "bg-blue-600 text-white py-2 md:py-3 px-4 rounded-lg flex items-center gap-2 justify-center hover:bg-blue-700 transition-colors font-medium md:w-[250px] w-full text-[14px] md:text-[16px]",
+            className: "bg-blue-600 text-white py-3 px-6 rounded-lg flex items-center gap-3 justify-center hover:bg-blue-700 transition-all font-medium md:w-[250px] w-full text-sm md:text-base",
             download: true,
             "aria-label": "Download company profile PDF",
             children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)(_tabler_icons_react__WEBPACK_IMPORTED_MODULE_3__["default"], {
@@ -250,7 +249,7 @@ const CompanyProfile = ({
             href: whatsAppUrl,
             target: "_blank",
             rel: "noopener noreferrer",
-            className: "bg-green-500 text-white py-2 md:py-3 px-4 rounded-lg flex items-center gap-2 justify-center hover:bg-green-600 transition-colors font-medium md:w-[250px] w-full text-[14px] md:text-[16px]",
+            className: "bg-green-500 text-white py-3 px-6 rounded-lg flex items-center gap-3 justify-center hover:bg-green-600 transition-all font-medium md:w-[250px] w-full text-sm md:text-base",
             "aria-label": "Contact us on WhatsApp",
             children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)(_tabler_icons_react__WEBPACK_IMPORTED_MODULE_4__["default"], {
               size: 22

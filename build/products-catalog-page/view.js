@@ -2,6 +2,124 @@
 /******/ 	"use strict";
 /******/ 	var __webpack_modules__ = ({
 
+/***/ "./src/common_component/HeaderTemplate.js":
+/*!************************************************!*\
+  !*** ./src/common_component/HeaderTemplate.js ***!
+  \************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony import */ var framer_motion__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! framer-motion */ "./node_modules/framer-motion/dist/es/render/components/motion/proxy.mjs");
+/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react/jsx-runtime */ "react/jsx-runtime");
+/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__);
+
+
+const HeaderTemplate = () => /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsxs)("div", {
+  className: "relative bg-[#4A4A9B] min-h-[420px] flex justify-center items-center text-white px-6 py-16 overflow-hidden",
+  children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)("img", {
+    src: "https://via.placeholder.com/1200x600.png?text=Your+Company+Image+Here",
+    alt: "Background Placeholder",
+    className: "absolute inset-0 w-full h-full object-cover opacity-40"
+  }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)("div", {
+    className: "absolute inset-0 bg-gradient-to-b from-[#4A4A9B] to-transparent opacity-90"
+  }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)(framer_motion__WEBPACK_IMPORTED_MODULE_1__.motion.div, {
+    initial: {
+      opacity: 0,
+      y: 50
+    },
+    animate: {
+      opacity: 0.3,
+      y: 0
+    },
+    transition: {
+      duration: 2,
+      repeat: Infinity,
+      repeatType: "reverse"
+    },
+    className: "absolute top-1/3 left-1/4 w-32 h-32 bg-indigo-400 rounded-full opacity-30"
+  }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)(framer_motion__WEBPACK_IMPORTED_MODULE_1__.motion.div, {
+    initial: {
+      opacity: 0,
+      x: -50
+    },
+    animate: {
+      opacity: 0.3,
+      x: 0
+    },
+    transition: {
+      duration: 3,
+      repeat: Infinity,
+      repeatType: "reverse"
+    },
+    className: "absolute top-1/2 right-1/3 w-24 h-24 bg-purple-600 rounded-full opacity-40"
+  }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)(framer_motion__WEBPACK_IMPORTED_MODULE_1__.motion.div, {
+    initial: {
+      opacity: 0,
+      y: -50
+    },
+    animate: {
+      opacity: 0.2,
+      y: 0
+    },
+    transition: {
+      duration: 4,
+      repeat: Infinity,
+      repeatType: "reverse"
+    },
+    className: "absolute bottom-1/3 left-2/3 w-20 h-20 bg-pink-500 rounded-full opacity-30"
+  }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsxs)(framer_motion__WEBPACK_IMPORTED_MODULE_1__.motion.div, {
+    initial: {
+      opacity: 0,
+      y: -30
+    },
+    animate: {
+      opacity: 1,
+      y: 0
+    },
+    transition: {
+      duration: 0.8,
+      ease: "easeOut"
+    },
+    className: "relative mx-auto max-w-7xl text-center z-10",
+    children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)(framer_motion__WEBPACK_IMPORTED_MODULE_1__.motion.h1, {
+      initial: {
+        scale: 0.9
+      },
+      animate: {
+        scale: 1
+      },
+      transition: {
+        duration: 0.6,
+        ease: "easeOut"
+      },
+      className: "text-4xl md:text-5xl font-extrabold leading-tight tracking-tight mb-6 text-shadow-lg",
+      style: {
+        textShadow: "0px 4px 6px rgba(0, 0, 0, 0.3)"
+      },
+      children: "Header Title"
+    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)(framer_motion__WEBPACK_IMPORTED_MODULE_1__.motion.p, {
+      initial: {
+        opacity: 0
+      },
+      animate: {
+        opacity: 1
+      },
+      transition: {
+        delay: 0.2,
+        duration: 0.6
+      },
+      className: "text-lg md:text-xl font-light max-w-2xl mx-auto text-gray-200",
+      children: "Kabel untuk Instalasi Listrik Outdoor, Indoor, dan Bangunan dari Wilson Cables. Dapatkan kabel untuk instalasi listrik indoor dan outdoor yang terbaik untuk keperluan aktivitas anda di dalam rumah, gedung, perkantoran, dan lain-lainnya."
+    })]
+  })]
+});
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (HeaderTemplate);
+
+/***/ }),
+
 /***/ "./src/products-catalog-page/constanta.js":
 /*!************************************************!*\
   !*** ./src/products-catalog-page/constanta.js ***!
@@ -15196,11 +15314,13 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _wordpress_element__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @wordpress/element */ "@wordpress/element");
 /* harmony import */ var _wordpress_element__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__);
 /* harmony import */ var react_dom_client__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react-dom/client */ "./node_modules/react-dom/client.js");
-/* harmony import */ var framer_motion__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! framer-motion */ "./node_modules/framer-motion/dist/es/render/components/motion/proxy.mjs");
+/* harmony import */ var framer_motion__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! framer-motion */ "./node_modules/framer-motion/dist/es/render/components/motion/proxy.mjs");
 /* harmony import */ var _constanta__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./constanta */ "./src/products-catalog-page/constanta.js");
-/* harmony import */ var _tabler_icons_react__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! @tabler/icons-react */ "./node_modules/@tabler/icons-react/dist/esm/icons/IconSearch.mjs");
-/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! react/jsx-runtime */ "react/jsx-runtime");
-/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__);
+/* harmony import */ var _tabler_icons_react__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! @tabler/icons-react */ "./node_modules/@tabler/icons-react/dist/esm/icons/IconSearch.mjs");
+/* harmony import */ var _common_component_HeaderTemplate__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../common_component/HeaderTemplate */ "./src/common_component/HeaderTemplate.js");
+/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! react/jsx-runtime */ "react/jsx-runtime");
+/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4___default = /*#__PURE__*/__webpack_require__.n(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__);
+
 
 
 
@@ -15252,7 +15372,7 @@ const ProductPage = () => {
     setPageSize(pagesize);
     setCurrentPage(1);
   };
-  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsxs)(framer_motion__WEBPACK_IMPORTED_MODULE_4__.motion.div, {
+  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsxs)(framer_motion__WEBPACK_IMPORTED_MODULE_5__.motion.div, {
     initial: {
       opacity: 0
     },
@@ -15262,14 +15382,14 @@ const ProductPage = () => {
     transition: {
       duration: 0.5
     },
-    children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)(Header, {}), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)(FilterBar, {
+    children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(_common_component_HeaderTemplate__WEBPACK_IMPORTED_MODULE_3__["default"], {}), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(FilterBar, {
       selectedFilter: selectedFilter,
       onFilterChange: handleFilterChange
-    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)(SearchBar, {
+    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(SearchBar, {
       searchTerm: searchTerm,
       onSearchChange: setSearchTerm,
       onSearchSubmit: handleSearchSubmit
-    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)(framer_motion__WEBPACK_IMPORTED_MODULE_4__.motion.div, {
+    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(framer_motion__WEBPACK_IMPORTED_MODULE_5__.motion.div, {
       // Key for animating each page change
       initial: {
         opacity: 0,
@@ -15284,10 +15404,10 @@ const ProductPage = () => {
       transition: {
         duration: 0.5
       },
-      children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)(ProductGrid, {
+      children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(ProductGrid, {
         products: getPaginatedProducts()
       })
-    }, currentPage), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)(PaginationControls, {
+    }, currentPage), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(PaginationControls, {
       currentPage: currentPage,
       totalPages: totalPages,
       pageSize: pageSize,
@@ -15296,34 +15416,26 @@ const ProductPage = () => {
     })]
   });
 };
-const Header = () => /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("div", {
-  className: "bg-gray-900 min-h-[560px] flex justify-center items-center text-white",
-  children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsxs)("div", {
-    className: "mx-auto max-w-[1280px]",
-    children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("h1", {
-      className: "text-[36px] font-bold",
-      children: "Header Title"
-    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("p", {
-      children: "Kabel untuk Instalasi Listrik Outdoor, Indoor, dan Bangunan dari Wilson Cables. Dapatkan kabel untuk instalasi listrik indoor dan outdoor yang terbaik untuk keperluan aktivitas anda di dalam rumah, gedung, perkantoran, dan lain-lainnya."
-    })]
-  })
-});
 const FilterBar = ({
   selectedFilter,
   onFilterChange
-}) => /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("div", {
-  className: "w-full bg-[#0100B1] text-white",
-  children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("div", {
-    className: "flex mx-auto max-w-[1280px] gap-16 py-5 font-semibold",
-    children: ["All", "Low Voltage Cables", "Medium Voltage Cables", "Fire Resistant Cables", "Flexible Cables"].map(filter => /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)(framer_motion__WEBPACK_IMPORTED_MODULE_4__.motion.div, {
-      className: `px-4 py-1 rounded-lg cursor-pointer ${selectedFilter === filter ? "bg-red-600" : ""}`,
+}) => /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("div", {
+  className: "w-full bg-[#0100B1] text-white py-5",
+  children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("div", {
+    className: "flex flex-wrap justify-center max-w-[1280px] mx-auto gap-4 font-semibold",
+    children: ["All", "Low Voltage Cables", "Medium Voltage Cables", "Fire Resistant Cables", "Flexible Cables"].map(filter => /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(framer_motion__WEBPACK_IMPORTED_MODULE_5__.motion.div, {
+      className: `px-6 py-2 rounded-full cursor-pointer transition-all duration-300 ${selectedFilter === filter ? "bg-red-600 shadow-lg" : "bg-transparent hover:bg-opacity-80"}`,
       onClick: () => onFilterChange(filter),
       whileHover: {
-        scale: 1.1
-      } // Hover effect
-      ,
+        scale: 1.1,
+        boxShadow: "0px 4px 12px rgba(0, 0, 0, 0.2)"
+      },
+      whileTap: {
+        scale: 0.95
+      },
       transition: {
-        duration: 0.3
+        duration: 0.3,
+        ease: "easeOut"
       },
       children: filter
     }, filter))
@@ -15333,32 +15445,35 @@ const SearchBar = ({
   searchTerm,
   onSearchChange,
   onSearchSubmit
-}) => /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("div", {
+}) => /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("div", {
   className: "mx-auto max-w-[1280px] my-5",
-  children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsxs)("div", {
+  children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("div", {
     className: "relative",
-    children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("input", {
-      type: "text",
-      placeholder: "Search products...",
-      value: searchTerm,
-      onChange: e => onSearchChange(e.target.value),
-      onKeyDown: e => {
-        if (e.key === "Enter") {
-          onSearchSubmit(); // Apply filter on Enter key press
-        }
-      },
-      className: "w-1/4 pl-10 p-3 bg-gray-100 font-semibold text-gray-600 rounded-lg focus:outline-none focus:ring-0 border-1 border-gray-300"
-    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsxs)("div", {
-      className: "absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-600",
-      children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)(_tabler_icons_react__WEBPACK_IMPORTED_MODULE_5__["default"], {
-        size: 18
-      }), " "]
-    })]
+    children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsxs)("div", {
+      className: "relative w-1/4",
+      children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("input", {
+        type: "text",
+        placeholder: "Search products...",
+        value: searchTerm,
+        onChange: e => onSearchChange(e.target.value),
+        onKeyDown: e => {
+          if (e.key === "Enter") {
+            onSearchSubmit(); // Apply filter on Enter key press
+          }
+        },
+        className: "w-full pl-10 p-3 bg-gray-100 font-semibold text-gray-600 rounded-lg focus:outline-none focus:ring-0 border-1 border-gray-300"
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsxs)("div", {
+        className: "absolute right-5 top-1/2 transform -translate-y-1/2 text-gray-600",
+        children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(_tabler_icons_react__WEBPACK_IMPORTED_MODULE_6__["default"], {
+          size: 18
+        }), " "]
+      })]
+    })
   })
 });
 const ProductGrid = ({
   products
-}) => /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)(framer_motion__WEBPACK_IMPORTED_MODULE_4__.motion.div, {
+}) => /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(framer_motion__WEBPACK_IMPORTED_MODULE_5__.motion.div, {
   className: "grid mx-auto max-w-[1280px] md:grid-cols-4 gap-6",
   initial: {
     opacity: 0
@@ -15371,7 +15486,7 @@ const ProductGrid = ({
     ease: "easeInOut"
   } // Smooth transition for grid appearance
   ,
-  children: products.map((product, index) => /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsxs)(framer_motion__WEBPACK_IMPORTED_MODULE_4__.motion.div, {
+  children: products.map((product, index) => /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsxs)(framer_motion__WEBPACK_IMPORTED_MODULE_5__.motion.div, {
     className: "bg-white p-5 rounded-lg shadow-lg hover:shadow-2xl group relative overflow-hidden",
     whileHover: {
       scale: 1.05,
@@ -15395,9 +15510,9 @@ const ProductGrid = ({
       opacity: 1,
       y: 0
     },
-    children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("div", {
+    children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("div", {
       className: "bg-white rounded-lg min-h-[240px] mb-3 overflow-hidden relative",
-      children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)(framer_motion__WEBPACK_IMPORTED_MODULE_4__.motion.img, {
+      children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(framer_motion__WEBPACK_IMPORTED_MODULE_5__.motion.img, {
         src: product.imageUrl,
         alt: product.title,
         className: "w-full h-full object-cover",
@@ -15412,30 +15527,30 @@ const ProductGrid = ({
           ease: "easeInOut"
         } // Fade-in image on load
       })
-    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("p", {
+    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("p", {
       className: "text-lg font-semibold text-gray-800",
       children: product.title
-    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("p", {
+    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("p", {
       className: "text-xs font-medium text-[#0000FE] mb-2",
       children: product.spec
-    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("p", {
+    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("p", {
       className: "text-sm text-gray-600",
       children: product.description
-    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsxs)("div", {
+    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsxs)("div", {
       className: "absolute bottom-0 left-0 right-0 p-5 bg-white bg-opacity-80 backdrop-blur-sm rounded-b-lg opacity-0 group-hover:opacity-100 transition-opacity duration-300 z-10",
-      children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("p", {
+      children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("p", {
         className: "text-sm font-semibold text-gray-700 mb-3",
         children: product.specDesc
-      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsxs)("div", {
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsxs)("div", {
         className: "flex gap-2 mb-3",
-        children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("button", {
+        children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("button", {
           className: "text-xs font-semibold px-4 py-2 rounded-md bg-gradient-to-r from-[#39A849] to-[#27A74C] w-full text-white",
           children: "Belanja di Tokopedia"
-        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("button", {
+        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("button", {
           className: "text-xs font-semibold px-4 py-2 rounded-md bg-gradient-to-r from-[#EE4D2D] to-[#E24339] w-full text-white",
           children: "Belanja di Shopee"
         })]
-      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("button", {
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("button", {
         className: "text-sm font-semibold px-4 py-2 rounded-md bg-gradient-to-r from-[#0100B1] to-[#005BFF] w-full text-white",
         children: "Unduh Catalog"
       })]
@@ -15448,17 +15563,17 @@ const PaginationControls = ({
   pageSize,
   setPageSize,
   onPageChange
-}) => /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsxs)("div", {
+}) => /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsxs)("div", {
   className: "flex justify-center gap-4 my-8",
-  children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("select", {
+  children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("select", {
     value: pageSize,
     onChange: e => setPageSize(parseInt(e.target.value)),
     className: "px-3 py-2 bg-gray-800 text-white rounded-lg",
-    children: [8, 16].map(size => /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("option", {
+    children: [8, 16].map(size => /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("option", {
       value: size,
       children: size
     }, size))
-  }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)(framer_motion__WEBPACK_IMPORTED_MODULE_4__.motion.button, {
+  }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(framer_motion__WEBPACK_IMPORTED_MODULE_5__.motion.button, {
     onClick: () => onPageChange(currentPage - 1),
     disabled: currentPage === 1,
     className: "px-4 py-2 bg-gray-800 text-white rounded-lg",
@@ -15470,9 +15585,9 @@ const PaginationControls = ({
       duration: 0.3
     },
     children: "Previous"
-  }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsxs)("span", {
+  }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsxs)("span", {
     children: ["Page ", currentPage, " of ", totalPages]
-  }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)(framer_motion__WEBPACK_IMPORTED_MODULE_4__.motion.button, {
+  }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(framer_motion__WEBPACK_IMPORTED_MODULE_5__.motion.button, {
     onClick: () => onPageChange(currentPage + 1),
     disabled: currentPage === totalPages,
     className: "px-4 py-2 bg-gray-800 text-white rounded-lg",
@@ -15489,7 +15604,7 @@ const PaginationControls = ({
 const container = document.getElementById("products-catalog-page");
 if (container) {
   const root = (0,react_dom_client__WEBPACK_IMPORTED_MODULE_1__.createRoot)(container);
-  root.render(/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)(ProductPage, {}));
+  root.render(/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(ProductPage, {}));
 }
 })();
 

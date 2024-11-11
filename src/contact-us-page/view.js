@@ -4,6 +4,7 @@ import { motion } from "framer-motion";
 
 // Tabler Icons
 import { IconAt, IconMapPin, IconPhoneCall } from "@tabler/icons-react";
+import HeaderTemplate from "../common_component/HeaderTemplate";
 
 const ContactUsPage = () => {
 	// State management
@@ -56,7 +57,7 @@ const ContactUsPage = () => {
 
 	return (
 		<>
-			<Header />
+			<HeaderTemplate />
 			<div className="mx-auto max-w-[1280px] grid grid-cols-2 pt-10">
 				{/* Contact Info Section */}
 				<motion.div
@@ -229,17 +230,3 @@ if (container) {
 	const root = createRoot(container);
 	root.render(<ContactUsPage />);
 }
-
-const Header = () => (
-	<div className="bg-gray-900 min-h-[560px] flex justify-center items-center text-white">
-		<div className="mx-auto max-w-[1280px]">
-			<h1 className="text-[36px] font-bold">Header Title</h1>
-			<p>
-				Kabel untuk Instalasi Listrik Outdoor, Indoor, dan Bangunan dari Wilson
-				Cables. Dapatkan kabel untuk instalasi listrik indoor dan outdoor yang
-				terbaik untuk keperluan aktivitas anda di dalam rumah, gedung,
-				perkantoran, dan lain-lainnya.
-			</p>
-		</div>
-	</div>
-);

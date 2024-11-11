@@ -2,6 +2,7 @@ import { useEffect, useState } from "@wordpress/element";
 import { createRoot } from "react-dom/client";
 
 import { motion } from "framer-motion";
+import HeaderTemplate from "../common_component/HeaderTemplate";
 
 const AboutPage = () => {
 	const [pageAttributes, setPageAttributes] = useState(null);
@@ -22,7 +23,7 @@ const AboutPage = () => {
 
 	return (
 		<div>
-			<Header />
+			<HeaderTemplate />
 			<div className="mx-auto max-w-[1280px] grid md:grid-cols-2">
 				<div>
 					<p>Profil Perusahaan PT KMI Electric Solution</p>
@@ -47,17 +48,3 @@ if (container) {
 	const root = createRoot(container);
 	root.render(<AboutPage />);
 }
-
-const Header = () => (
-	<div className="bg-gray-900 min-h-[560px] flex justify-center items-center text-white">
-		<div className="mx-auto max-w-[1280px]">
-			<h1 className="text-[36px] font-bold">Header Title</h1>
-			<p>
-				Kabel untuk Instalasi Listrik Outdoor, Indoor, dan Bangunan dari Wilson
-				Cables. Dapatkan kabel untuk instalasi listrik indoor dan outdoor yang
-				terbaik untuk keperluan aktivitas anda di dalam rumah, gedung,
-				perkantoran, dan lain-lainnya.
-			</p>
-		</div>
-	</div>
-);

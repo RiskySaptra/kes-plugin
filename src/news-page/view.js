@@ -2,6 +2,7 @@ import { useState, useEffect, useMemo } from "@wordpress/element";
 import { createRoot } from "react-dom/client";
 import { motion, AnimatePresence } from "framer-motion";
 import { RichText } from "@wordpress/block-editor";
+import HeaderTemplate from "../common_component/HeaderTemplate";
 
 const CategoryFilter = ({ categories, selectedCategory, onSelectCategory }) => {
 	if (!categories) return "loading...";
@@ -47,43 +48,53 @@ const NewsList = ({ newsItems }) => (
 	<AnimatePresence mode="wait">
 		<motion.div
 			key={newsItems.map((news) => news.id).join("-")}
-			className="grid md:grid-cols-2 gap-6"
+			className="grid grid-cols-2 lg:grid-cols-3 gap-6"
 			initial={{ opacity: 0, y: 20 }}
 			animate={{ opacity: 1, y: 0 }}
 			exit={{ opacity: 0, y: 20 }}
-			transition={{ duration: 0.5, ease: "easeInOut" }}
+			transition={{ duration: 0.3, ease: "easeInOut" }}
 		>
 			{newsItems.map((news, index) => (
 				<motion.div
 					key={news.id + index}
-					className="bg-white shadow-md rounded-lg p-5"
-					whileHover={{ scale: 1.05, y: -5 }}
-					transition={{ duration: 0.3, ease: "easeInOut" }}
+					className="bg-white shadow-md rounded-lg overflow-hidden transform transition-all duration-200 hover:scale-105 hover:shadow-xl"
+					whileHover={{ scale: 1.05, y: -3 }}
+					transition={{ duration: 0.2, ease: "easeInOut" }}
 				>
 					{/* Wrap the card with a link to news.url */}
 					<a href={news.link} target="_self" rel="noopener noreferrer">
-						<img
-							src={
-								extractImageUrl(news.content.rendered) ||
-								"https://via.placeholder.com/300x200?text=Future+of+Education"
-							}
-							alt={news.title.rendered}
-							className="w-full min-h-[200px] object-cover rounded-lg mb-4"
-						/>
-						<h2 className="text-xl font-bold text-gray-900">
-							{news.title.rendered}
-						</h2>
-						<p className="text-gray-600 text-sm mb-2">
-							{new Date(news.date).toLocaleDateString()}
-						</p>
-						<RichText.Content
-							tagName="h3"
-							value={news.excerpt.rendered}
-							className="text-xs text-gray-500 truncate-ellipsis-exc"
-						/>
+						<div className="relative">
+							{/* Post Thumbnail */}
+							<img
+								src={
+									extractImageUrl(news.content.rendered) ||
+									"https://via.placeholder.com/300x200?text=Future+of+Education"
+								}
+								alt={news.title.rendered}
+								className="w-full min-h-[200px] object-cover rounded-t-lg"
+							/>
+							{/* Dark overlay effect */}
+							<div className="absolute inset-0 bg-black opacity-25 rounded-t-lg"></div>
+						</div>
+
+						<div className="p-5">
+							<h2 className="text-xl font-semibold text-gray-800 hover:text-indigo-600 transition-colors">
+								{news.title.rendered}
+							</h2>
+							<p className="text-gray-600 text-sm mb-2">
+								{new Date(news.date).toLocaleDateString()}
+							</p>
+							{/* Excerpt text */}
+							<RichText.Content
+								tagName="p"
+								value={news.excerpt.rendered}
+								className="text-sm text-gray-500 truncate"
+							/>
+						</div>
 					</a>
 				</motion.div>
 			))}
+
 			{newsItems.length === 0 && (
 				<p className="text-center text-gray-500 col-span-full">
 					No news articles available in this category.
@@ -262,7 +273,7 @@ const NewsHubPage = () => {
 	return (
 		<>
 			{error && <p className="text-red-500">Error: {error}</p>}
-			<Header />
+			<HeaderTemplate />
 			<div className="mx-auto max-w-[1280px] p-8 flex">
 				<div className="w-3/4 pr-8">
 					<CategoryFilter
@@ -284,20 +295,6 @@ const NewsHubPage = () => {
 		</>
 	);
 };
-
-const Header = () => (
-	<div className="bg-gray-900 min-h-[560px] flex justify-center items-center text-white">
-		<div className="mx-auto max-w-[1280px]">
-			<h1 className="text-[36px] font-bold">Header Title</h1>
-			<p>
-				Kabel untuk Instalasi Listrik Outdoor, Indoor, dan Bangunan dari Wilson
-				Cables. Dapatkan kabel untuk instalasi listrik indoor dan outdoor yang
-				terbaik untuk keperluan aktivitas anda di dalam rumah, gedung,
-				perkantoran, dan lain-lainnya.
-			</p>
-		</div>
-	</div>
-);
 
 // Get the container element and render the News Hub Page dynamically
 const container = document.getElementById("news-page");
