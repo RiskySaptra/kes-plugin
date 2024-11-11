@@ -60,25 +60,28 @@ const NewsList = ({ newsItems }) => (
 					whileHover={{ scale: 1.05, y: -5 }}
 					transition={{ duration: 0.3, ease: "easeInOut" }}
 				>
-					<img
-						src={
-							extractImageUrl(news.content.rendered) ||
-							"https://via.placeholder.com/300x200?text=Future+of+Education"
-						}
-						alt={news.title.rendered}
-						className="w-full min-h-[200px] object-cover rounded-lg mb-4"
-					/>
-					<h2 className="text-xl font-bold text-gray-900">
-						{news.title.rendered}
-					</h2>
-					<p className="text-gray-600 text-sm mb-2">
-						{new Date(news.date).toLocaleDateString()}
-					</p>
-					<RichText.Content
-						tagName="h3"
-						value={news.excerpt.rendered}
-						className="text-xs text-gray-500 truncate-ellipsis-exc"
-					/>
+					{/* Wrap the card with a link to news.url */}
+					<a href={news.link} target="_self" rel="noopener noreferrer">
+						<img
+							src={
+								extractImageUrl(news.content.rendered) ||
+								"https://via.placeholder.com/300x200?text=Future+of+Education"
+							}
+							alt={news.title.rendered}
+							className="w-full min-h-[200px] object-cover rounded-lg mb-4"
+						/>
+						<h2 className="text-xl font-bold text-gray-900">
+							{news.title.rendered}
+						</h2>
+						<p className="text-gray-600 text-sm mb-2">
+							{new Date(news.date).toLocaleDateString()}
+						</p>
+						<RichText.Content
+							tagName="h3"
+							value={news.excerpt.rendered}
+							className="text-xs text-gray-500 truncate-ellipsis-exc"
+						/>
+					</a>
 				</motion.div>
 			))}
 			{newsItems.length === 0 && (
@@ -134,34 +137,44 @@ const Sidebar = ({ latestNews }) => (
 			{latestNews.map((news, index) => (
 				<motion.div
 					key={news.id + index}
-					className="flex gap-2"
 					variants={{
 						hidden: { opacity: 0, x: -20 },
 						visible: { opacity: 1, x: 0 },
 					}}
 					transition={{ duration: 0.4, ease: "easeInOut" }}
+					whileHover={{
+						scale: 1.05, // Slightly enlarge on hover
+						boxShadow: "0px 8px 15px rgba(0, 0, 0, 0.2)", // Adds a shadow effect
+					}}
 				>
-					<img
-						src={
-							news.imageUrl ||
-							"https://via.placeholder.com/300x200?text=Future+of+Education"
-						}
-						alt={news.title.rendered}
-						className="w-24 h-24 object-cover rounded-md mb-2"
-					/>
-					<div>
-						<h3 className="text-md font-semibold truncate-ellipsis-title ">
-							{news.title.rendered}
-						</h3>
-						<p className="text-xs text-gray-500">
-							{new Date(news.date).toLocaleDateString()}
-						</p>
-						<RichText.Content
-							tagName="h3"
-							value={news.excerpt.rendered}
-							className="text-xs text-gray-500 truncate-ellipsis-desc"
+					<a
+						className="flex gap-2 p-2 cursor-pointer"
+						href={news.link}
+						target="_self"
+						rel="noopener noreferrer"
+					>
+						<img
+							src={
+								news.imageUrl ||
+								"https://via.placeholder.com/300x200?text=Future+of+Education"
+							}
+							alt={news.title.rendered}
+							className="w-24 h-24 object-cover rounded-md"
 						/>
-					</div>
+						<div>
+							<h3 className="text-md font-semibold truncate-ellipsis-title ">
+								{news.title.rendered}
+							</h3>
+							<p className="text-xs text-gray-500">
+								{new Date(news.date).toLocaleDateString()}
+							</p>
+							<RichText.Content
+								tagName="h3"
+								value={news.excerpt.rendered}
+								className="text-xs text-gray-500 truncate-ellipsis-desc"
+							/>
+						</div>
+					</a>
 				</motion.div>
 			))}
 		</motion.div>

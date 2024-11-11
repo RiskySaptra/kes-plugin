@@ -15234,7 +15234,7 @@ const NewsList = ({
       duration: 0.5,
       ease: "easeInOut"
     },
-    children: [newsItems.map((news, index) => /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsxs)(framer_motion__WEBPACK_IMPORTED_MODULE_4__.motion.div, {
+    children: [newsItems.map((news, index) => /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)(framer_motion__WEBPACK_IMPORTED_MODULE_4__.motion.div, {
       className: "bg-white shadow-md rounded-lg p-5",
       whileHover: {
         scale: 1.05,
@@ -15244,21 +15244,26 @@ const NewsList = ({
         duration: 0.3,
         ease: "easeInOut"
       },
-      children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("img", {
-        src: extractImageUrl(news.content.rendered) || "https://via.placeholder.com/300x200?text=Future+of+Education",
-        alt: news.title.rendered,
-        className: "w-full min-h-[200px] object-cover rounded-lg mb-4"
-      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("h2", {
-        className: "text-xl font-bold text-gray-900",
-        children: news.title.rendered
-      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("p", {
-        className: "text-gray-600 text-sm mb-2",
-        children: new Date(news.date).toLocaleDateString()
-      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_2__.RichText.Content, {
-        tagName: "h3",
-        value: news.excerpt.rendered,
-        className: "text-xs text-gray-500 truncate-ellipsis-exc"
-      })]
+      children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsxs)("a", {
+        href: news.link,
+        target: "_self",
+        rel: "noopener noreferrer",
+        children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("img", {
+          src: extractImageUrl(news.content.rendered) || "https://via.placeholder.com/300x200?text=Future+of+Education",
+          alt: news.title.rendered,
+          className: "w-full min-h-[200px] object-cover rounded-lg mb-4"
+        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("h2", {
+          className: "text-xl font-bold text-gray-900",
+          children: news.title.rendered
+        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("p", {
+          className: "text-gray-600 text-sm mb-2",
+          children: new Date(news.date).toLocaleDateString()
+        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_2__.RichText.Content, {
+          tagName: "h3",
+          value: news.excerpt.rendered,
+          className: "text-xs text-gray-500 truncate-ellipsis-exc"
+        })]
+      })
     }, news.id + index)), newsItems.length === 0 && /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("p", {
       className: "text-center text-gray-500 col-span-full",
       children: "No news articles available in this category."
@@ -15309,8 +15314,7 @@ const Sidebar = ({
         }
       }
     },
-    children: latestNews.map((news, index) => /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsxs)(framer_motion__WEBPACK_IMPORTED_MODULE_4__.motion.div, {
-      className: "flex gap-2",
+    children: latestNews.map((news, index) => /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)(framer_motion__WEBPACK_IMPORTED_MODULE_4__.motion.div, {
       variants: {
         hidden: {
           opacity: 0,
@@ -15325,23 +15329,34 @@ const Sidebar = ({
         duration: 0.4,
         ease: "easeInOut"
       },
-      children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("img", {
-        src: news.imageUrl || "https://via.placeholder.com/300x200?text=Future+of+Education",
-        alt: news.title.rendered,
-        className: "w-24 h-24 object-cover rounded-md mb-2"
-      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsxs)("div", {
-        children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("h3", {
-          className: "text-md font-semibold truncate-ellipsis-title ",
-          children: news.title.rendered
-        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("p", {
-          className: "text-xs text-gray-500",
-          children: new Date(news.date).toLocaleDateString()
-        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_2__.RichText.Content, {
-          tagName: "h3",
-          value: news.excerpt.rendered,
-          className: "text-xs text-gray-500 truncate-ellipsis-desc"
+      whileHover: {
+        scale: 1.05,
+        // Slightly enlarge on hover
+        boxShadow: "0px 8px 15px rgba(0, 0, 0, 0.2)" // Adds a shadow effect
+      },
+      children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsxs)("a", {
+        className: "flex gap-2 p-2 cursor-pointer",
+        href: news.link,
+        target: "_self",
+        rel: "noopener noreferrer",
+        children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("img", {
+          src: news.imageUrl || "https://via.placeholder.com/300x200?text=Future+of+Education",
+          alt: news.title.rendered,
+          className: "w-24 h-24 object-cover rounded-md"
+        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsxs)("div", {
+          children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("h3", {
+            className: "text-md font-semibold truncate-ellipsis-title ",
+            children: news.title.rendered
+          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("p", {
+            className: "text-xs text-gray-500",
+            children: new Date(news.date).toLocaleDateString()
+          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_2__.RichText.Content, {
+            tagName: "h3",
+            value: news.excerpt.rendered,
+            className: "text-xs text-gray-500 truncate-ellipsis-desc"
+          })]
         })]
-      })]
+      })
     }, news.id + index))
   })]
 });
