@@ -23,7 +23,7 @@ export const sampleNewsData = [
 		description: "Innovative education methods that are transforming schools.",
 		date: "2024-11-05",
 		category: "Education",
-		imageUrl: "https://via.placeholder.com/300x200?text=Future+of+Education",
+		imageUrl: "https://via.placeholder.com/300x200?text=Image+Placeholder",
 	},
 	{
 		id: 3,
@@ -31,7 +31,7 @@ export const sampleNewsData = [
 		description: "Innovative education methods that are transforming schools.",
 		date: "2024-11-05",
 		category: "Education",
-		imageUrl: "https://via.placeholder.com/300x200?text=Future+of+Education",
+		imageUrl: "https://via.placeholder.com/300x200?text=Image+Placeholder",
 	},
 	{
 		id: 3,
@@ -39,7 +39,7 @@ export const sampleNewsData = [
 		description: "Innovative education methods that are transforming schools.",
 		date: "2024-11-05",
 		category: "Education",
-		imageUrl: "https://via.placeholder.com/300x200?text=Future+of+Education",
+		imageUrl: "https://via.placeholder.com/300x200?text=Image+Placeholder",
 	},
 	{
 		id: 3,
@@ -47,7 +47,7 @@ export const sampleNewsData = [
 		description: "Innovative education methods that are transforming schools.",
 		date: "2024-11-05",
 		category: "Education",
-		imageUrl: "https://via.placeholder.com/300x200?text=Future+of+Education",
+		imageUrl: "https://via.placeholder.com/300x200?text=Image+Placeholder",
 	},
 	{
 		id: 3,
@@ -55,7 +55,7 @@ export const sampleNewsData = [
 		description: "Innovative education methods that are transforming schools.",
 		date: "2024-11-05",
 		category: "Education",
-		imageUrl: "https://via.placeholder.com/300x200?text=Future+of+Education",
+		imageUrl: "https://via.placeholder.com/300x200?text=Image+Placeholder",
 	},
 	{
 		id: 3,
@@ -63,7 +63,7 @@ export const sampleNewsData = [
 		description: "Innovative education methods that are transforming schools.",
 		date: "2024-11-05",
 		category: "Education",
-		imageUrl: "https://via.placeholder.com/300x200?text=Future+of+Education",
+		imageUrl: "https://via.placeholder.com/300x200?text=Image+Placeholder",
 	},
 	{
 		id: 3,
@@ -71,7 +71,7 @@ export const sampleNewsData = [
 		description: "Innovative education methods that are transforming schools.",
 		date: "2024-11-05",
 		category: "Education",
-		imageUrl: "https://via.placeholder.com/300x200?text=Future+of+Education",
+		imageUrl: "https://via.placeholder.com/300x200?text=Image+Placeholder",
 	},
 	{
 		id: 3,
@@ -79,7 +79,7 @@ export const sampleNewsData = [
 		description: "Innovative education methods that are transforming schools.",
 		date: "2024-11-05",
 		category: "Education",
-		imageUrl: "https://via.placeholder.com/300x200?text=Future+of+Education",
+		imageUrl: "https://via.placeholder.com/300x200?text=Image+Placeholder",
 	},
 	{
 		id: 3,
@@ -87,7 +87,7 @@ export const sampleNewsData = [
 		description: "Innovative education methods that are transforming schools.",
 		date: "2024-11-05",
 		category: "Education",
-		imageUrl: "https://via.placeholder.com/300x200?text=Future+of+Education",
+		imageUrl: "https://via.placeholder.com/300x200?text=Image+Placeholder",
 	},
 	{
 		id: 3,
@@ -95,7 +95,7 @@ export const sampleNewsData = [
 		description: "Innovative education methods that are transforming schools.",
 		date: "2024-11-05",
 		category: "Education",
-		imageUrl: "https://via.placeholder.com/300x200?text=Future+of+Education",
+		imageUrl: "https://via.placeholder.com/300x200?text=Image+Placeholder",
 	},
 	{
 		id: 3,
@@ -103,7 +103,7 @@ export const sampleNewsData = [
 		description: "Innovative education methods that are transforming schools.",
 		date: "2024-11-05",
 		category: "Education",
-		imageUrl: "https://via.placeholder.com/300x200?text=Future+of+Education",
+		imageUrl: "https://via.placeholder.com/300x200?text=Image+Placeholder",
 	},
 	{
 		id: 3,
@@ -111,7 +111,7 @@ export const sampleNewsData = [
 		description: "Innovative education methods that are transforming schools.",
 		date: "2024-11-05",
 		category: "Education",
-		imageUrl: "https://via.placeholder.com/300x200?text=Future+of+Education",
+		imageUrl: "https://via.placeholder.com/300x200?text=Image+Placeholder",
 	},
 	{
 		id: 3,
@@ -119,7 +119,7 @@ export const sampleNewsData = [
 		description: "Innovative education methods that are transforming schools.",
 		date: "2024-11-05",
 		category: "Education",
-		imageUrl: "https://via.placeholder.com/300x200?text=Future+of+Education",
+		imageUrl: "https://via.placeholder.com/300x200?text=Image+Placeholder",
 	},
 	{
 		id: 3,
@@ -127,7 +127,7 @@ export const sampleNewsData = [
 		description: "Innovative education methods that are transforming schools.",
 		date: "2024-11-05",
 		category: "Education",
-		imageUrl: "https://via.placeholder.com/300x200?text=Future+of+Education",
+		imageUrl: "https://via.placeholder.com/300x200?text=Image+Placeholder",
 	},
 	{
 		id: 3,
@@ -135,7 +135,7 @@ export const sampleNewsData = [
 		description: "Innovative education methods that are transforming schools.",
 		date: "2024-11-05",
 		category: "Education",
-		imageUrl: "https://via.placeholder.com/300x200?text=Future+of+Education",
+		imageUrl: "https://via.placeholder.com/300x200?text=Image+Placeholder",
 	},
 	{
 		id: 3,
@@ -143,7 +143,7 @@ export const sampleNewsData = [
 		description: "Innovative education methods that are transforming schools.",
 		date: "2024-11-05",
 		category: "Education",
-		imageUrl: "https://via.placeholder.com/300x200?text=Future+of+Education",
+		imageUrl: "https://via.placeholder.com/300x200?text=Image+Placeholder",
 	},
 	{
 		id: 3,
@@ -151,7 +151,7 @@ export const sampleNewsData = [
 		description: "Innovative education methods that are transforming schools.",
 		date: "2024-11-05",
 		category: "Education",
-		imageUrl: "https://via.placeholder.com/300x200?text=Future+of+Education",
+		imageUrl: "https://via.placeholder.com/300x200?text=Image+Placeholder",
 	},
 	{
 		id: 3,
@@ -159,7 +159,7 @@ export const sampleNewsData = [
 		description: "Innovative education methods that are transforming schools.",
 		date: "2024-11-05",
 		category: "Education",
-		imageUrl: "https://via.placeholder.com/300x200?text=Future+of+Education",
+		imageUrl: "https://via.placeholder.com/300x200?text=Image+Placeholder",
 	},
 	{
 		id: 3,
@@ -167,7 +167,7 @@ export const sampleNewsData = [
 		description: "Innovative education methods that are transforming schools.",
 		date: "2024-11-05",
 		category: "Education",
-		imageUrl: "https://via.placeholder.com/300x200?text=Future+of+Education",
+		imageUrl: "https://via.placeholder.com/300x200?text=Image+Placeholder",
 	},
 	{
 		id: 3,
@@ -175,7 +175,7 @@ export const sampleNewsData = [
 		description: "Innovative education methods that are transforming schools.",
 		date: "2024-11-05",
 		category: "Education",
-		imageUrl: "https://via.placeholder.com/300x200?text=Future+of+Education",
+		imageUrl: "https://via.placeholder.com/300x200?text=Image+Placeholder",
 	},
 	{
 		id: 3,
@@ -183,7 +183,7 @@ export const sampleNewsData = [
 		description: "Innovative education methods that are transforming schools.",
 		date: "2024-11-05",
 		category: "Education",
-		imageUrl: "https://via.placeholder.com/300x200?text=Future+of+Education",
+		imageUrl: "https://via.placeholder.com/300x200?text=Image+Placeholder",
 	},
 	{
 		id: 3,
@@ -191,7 +191,7 @@ export const sampleNewsData = [
 		description: "Innovative education methods that are transforming schools.",
 		date: "2024-11-05",
 		category: "Education",
-		imageUrl: "https://via.placeholder.com/300x200?text=Future+of+Education",
+		imageUrl: "https://via.placeholder.com/300x200?text=Image+Placeholder",
 	},
 	// Add more sample news items as needed
 ];

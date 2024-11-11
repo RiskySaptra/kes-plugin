@@ -518,17 +518,17 @@ __webpack_require__.r(__webpack_exports__);
 const FAQAccordion = () => {
   const [activeIndex, setActiveIndex] = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)(null);
   const faqs = [{
-    question: "What is your return policy?",
-    answer: "We offer a 30-day return policy on all items. Products must be in original condition to be eligible for a return."
+    question: "Apa kebijakan pengembalian barang Anda?",
+    answer: "Kami menawarkan kebijakan pengembalian barang dalam 30 hari untuk semua produk. Produk harus dalam kondisi asli untuk memenuhi syarat pengembalian."
   }, {
-    question: "How long does shipping take?",
-    answer: "Shipping typically takes 3-5 business days, depending on your location and shipping method."
+    question: "Berapa lama waktu pengiriman?",
+    answer: "Pengiriman biasanya memakan waktu 3-5 hari kerja, tergantung pada lokasi dan metode pengiriman Anda."
   }, {
-    question: "Do you offer international shipping?",
-    answer: "Yes, we offer international shipping to select countries. Shipping rates will be calculated at checkout."
+    question: "Apakah Anda menawarkan pengiriman internasional?",
+    answer: "Ya, kami menawarkan pengiriman internasional ke negara-negara tertentu. Biaya pengiriman akan dihitung saat checkout."
   }, {
-    question: "Can I change or cancel my order?",
-    answer: "Orders can be changed or canceled within 24 hours of purchase. After that, they are processed and cannot be modified."
+    question: "Bisakah saya mengubah atau membatalkan pesanan saya?",
+    answer: "Pesanan dapat diubah atau dibatalkan dalam waktu 24 jam setelah pembelian. Setelah itu, pesanan akan diproses dan tidak dapat diubah."
   }];
   return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsxs)("div", {
     className: "max-w-7xl mx-auto grid-cols-2 grid py-10",
@@ -553,7 +553,7 @@ const FAQAccordion = () => {
         children: "Pertanyaan Umum"
       })
     }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("div", {
-      className: "space-y-4 ",
+      className: "space-y-4",
       children: faqs.map((faq, index) => /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsxs)(framer_motion__WEBPACK_IMPORTED_MODULE_2__.motion.div, {
         className: "border-b border-gray-200",
         initial: {
