@@ -5,6 +5,10 @@ import CompanyProfile from "./component/CompanyProfile";
 
 import OurProducts from "./component/OurProduct";
 import WhyUs from "./component/WhyUs";
+import ReviewCards from "./component/ReviewCards";
+import FAQAccordion from "./component/FaqAccordion";
+import ClientCompany from "./component/ClientCompany";
+import OurPartner from "./component/OurPartner";
 
 const MainPage = () => {
 	const [pageAttributes, setPageAttributes] = useState(null); // Directly store images in state
@@ -61,6 +65,10 @@ const MainPage = () => {
 			/>
 			<OurProducts images={ourProductsImages} text={ourProductsDesc} />
 			<WhyUs />
+			<OurPartner />
+			<ClientCompany />
+			<ReviewCards />
+			<FAQAccordion />
 		</div>
 	);
 };

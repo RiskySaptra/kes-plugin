@@ -37,7 +37,7 @@ const WhyUs = () => {
 			viewport={{ once: true, amount: 0.5, margin: "100px" }}
 			className="mx-auto max-w-[1280px] md:pt-10 md:pb-14 p-5 md:px-0"
 		>
-			<div className="px-5 md:px-20 pb-14">
+			<div className="px-5 md:px-20">
 				<motion.h3
 					initial={{ opacity: 0, y: -30 }}
 					whileInView={{ opacity: 1, y: 0 }}

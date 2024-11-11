@@ -26,7 +26,7 @@ const AboutPage = () => {
 			<HeaderTemplate />
 			<div className="mx-auto max-w-[1280px] grid md:grid-cols-2">
 				<div>
-					<p>Profil Perusahaan PT KMI Electric Solution</p>
+					<p>Profil Perusahaan PT KMI Electric Solution</p>
 					<p>'brr</p>
 				</div>
 				<div className="relative h-[500px] w-[500px]">

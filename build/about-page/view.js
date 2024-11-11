@@ -14912,7 +14912,7 @@ const AboutPage = () => {
       className: "mx-auto max-w-[1280px] grid md:grid-cols-2",
       children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsxs)("div", {
         children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("p", {
-          children: "Profil Perusahaan\u2028PT KMI Electric Solution"
+          children: "Profil Perusahaan PT KMI Electric Solution"
         }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("p", {
           children: "'brr"
         })]
