@@ -15446,11 +15446,11 @@ const SearchBar = ({
   onSearchChange,
   onSearchSubmit
 }) => /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("div", {
-  className: "mx-auto max-w-[1280px] my-5",
+  className: "mx-auto max-w-[1280px] my-5 px-4",
   children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("div", {
-    className: "relative",
+    className: "relative flex md:justify-start",
     children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsxs)("div", {
-      className: "relative w-1/4",
+      className: "relative w-full sm:w-2/3 md:w-1/2 lg:w-1/3 xl:w-1/4",
       children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("input", {
         type: "text",
         placeholder: "Search products...",
@@ -15461,12 +15461,12 @@ const SearchBar = ({
             onSearchSubmit(); // Apply filter on Enter key press
           }
         },
-        className: "w-full pl-10 p-3 bg-gray-100 font-semibold text-gray-600 rounded-lg focus:outline-none focus:ring-0 border-1 border-gray-300"
-      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsxs)("div", {
+        className: "w-full pl-10 p-3 bg-gray-100 font-semibold text-gray-600 rounded-lg focus:outline-none focus:ring-0 border border-gray-300"
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("div", {
         className: "absolute right-5 top-1/2 transform -translate-y-1/2 text-gray-600",
-        children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(_tabler_icons_react__WEBPACK_IMPORTED_MODULE_6__["default"], {
+        children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(_tabler_icons_react__WEBPACK_IMPORTED_MODULE_6__["default"], {
           size: 18
-        }), " "]
+        })
       })]
     })
   })
@@ -15474,7 +15474,7 @@ const SearchBar = ({
 const ProductGrid = ({
   products
 }) => /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(framer_motion__WEBPACK_IMPORTED_MODULE_5__.motion.div, {
-  className: "grid mx-auto max-w-[1280px] md:grid-cols-4 gap-6",
+  className: "grid mx-auto max-w-[1280px] md:grid-cols-4 gap-6 px-5 md:px-0",
   initial: {
     opacity: 0
   },
@@ -15487,12 +15487,13 @@ const ProductGrid = ({
   } // Smooth transition for grid appearance
   ,
   children: products.map((product, index) => /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsxs)(framer_motion__WEBPACK_IMPORTED_MODULE_5__.motion.div, {
-    className: "bg-white p-5 rounded-lg shadow-lg hover:shadow-2xl group relative overflow-hidden",
+    className: "bg-white p-5 rounded-lg shadow-[0_4px_10px_rgba(1,0,155,0.3)] group relative overflow-hidden",
     whileHover: {
       scale: 1.05,
       y: -10,
-      boxShadow: "0px 15px 30px rgba(0, 0, 0, 0.15)"
+      boxShadow: "0px 15px 30px rgba(1,0,155,0.4)"
     } // Smooth scaling, upward movement and shadow effect
+    // shadow-[0_4px_10px_rgba(1,0,155,0.3)] shadow-[0_10px_15px_rgba(1,0,155,0.4)]
     ,
     transition: {
       duration: 0.3,

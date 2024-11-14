@@ -4,51 +4,51 @@ const ClientCompanyComponent = () => {
 	const companies = [
 		{
 			name: "Company 1",
-			logo: "http://kes-testing.local/wp-content/uploads/2024/11/1017466_720-1.jpg",
+			logo: "https://kabelretail.local/wp-content/uploads/2024/11/PT.KMI-LOGO-1.png",
 		},
 		{
 			name: "Company 2",
-			logo: "http://kes-testing.local/wp-content/uploads/2024/11/1017466_720-1.jpg",
+			logo: "https://kabelretail.local/wp-content/uploads/2024/11/PT.KMI-LOGO-1.png",
 		},
 		{
 			name: "Company 3",
-			logo: "http://kes-testing.local/wp-content/uploads/2024/11/1017466_720-1.jpg",
+			logo: "https://kabelretail.local/wp-content/uploads/2024/11/PT.KMI-LOGO-1.png",
 		},
 		{
 			name: "Company 4",
-			logo: "http://kes-testing.local/wp-content/uploads/2024/11/1017466_720-1.jpg",
+			logo: "https://kabelretail.local/wp-content/uploads/2024/11/PT.KMI-LOGO-1.png",
 		},
 		{
 			name: "Company 5",
-			logo: "http://kes-testing.local/wp-content/uploads/2024/11/1017466_720-1.jpg",
+			logo: "https://kabelretail.local/wp-content/uploads/2024/11/PT.KMI-LOGO-1.png",
 		},
 		{
 			name: "Company 6",
-			logo: "http://kes-testing.local/wp-content/uploads/2024/11/1017466_720-1.jpg",
+			logo: "https://kabelretail.local/wp-content/uploads/2024/11/PT.KMI-LOGO-1.png",
 		},
 		{
 			name: "Company 7",
-			logo: "http://kes-testing.local/wp-content/uploads/2024/11/1017466_720-1.jpg",
+			logo: "https://kabelretail.local/wp-content/uploads/2024/11/PT.KMI-LOGO-1.png",
 		},
 		{
 			name: "Company 8",
-			logo: "http://kes-testing.local/wp-content/uploads/2024/11/1017466_720-1.jpg",
+			logo: "https://kabelretail.local/wp-content/uploads/2024/11/PT.KMI-LOGO-1.png",
 		},
 		{
 			name: "Company 9",
-			logo: "http://kes-testing.local/wp-content/uploads/2024/11/1017466_720-1.jpg",
+			logo: "https://kabelretail.local/wp-content/uploads/2024/11/PT.KMI-LOGO-1.png",
 		},
 		{
 			name: "Company 10",
-			logo: "http://kes-testing.local/wp-content/uploads/2024/11/1017466_720-1.jpg",
+			logo: "https://kabelretail.local/wp-content/uploads/2024/11/PT.KMI-LOGO-1.png",
 		},
 		{
 			name: "Company 11",
-			logo: "http://kes-testing.local/wp-content/uploads/2024/11/1017466_720-1.jpg",
+			logo: "https://kabelretail.local/wp-content/uploads/2024/11/PT.KMI-LOGO-1.png",
 		},
 		{
 			name: "Company 12",
-			logo: "http://kes-testing.local/wp-content/uploads/2024/11/1017466_720-1.jpg",
+			logo: "https://kabelretail.local/wp-content/uploads/2024/11/PT.KMI-LOGO-1.png",
 		},
 	];
 

@@ -14,9 +14,12 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ });
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "react");
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var _tabler_icons_react__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @tabler/icons-react */ "./node_modules/@tabler/icons-react/dist/esm/icons/IconStarFilled.mjs");
+/* harmony import */ var _tabler_icons_react__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @tabler/icons-react */ "./node_modules/@tabler/icons-react/dist/esm/icons/IconStar.mjs");
 /* harmony import */ var _lib_utils__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../lib/utils */ "./src/lib/utils.js");
 /* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! react/jsx-runtime */ "react/jsx-runtime");
 /* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__);
+
 
 
 
@@ -61,6 +64,7 @@ const InfiniteMovingCards = ({
       containerRef.current.style.setProperty("--animation-duration", speedValue);
     }
   };
+  const rating = Math.floor(Math.random() * 5) + 1;
   return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("div", {
     ref: containerRef,
     className: (0,_lib_utils__WEBPACK_IMPORTED_MODULE_1__.cn)("relative z-20", className),
@@ -68,23 +72,35 @@ const InfiniteMovingCards = ({
       ref: scrollerRef,
       className: (0,_lib_utils__WEBPACK_IMPORTED_MODULE_1__.cn)("flex min-w-full gap-4 py-4 w-max flex-nowrap transition-all duration-500", start && "animate-scroll", pauseOnHover && "hover:[animation-play-state:paused]"),
       children: items.map((item, idx) => /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("li", {
-        className: "min-w-[450px] flex items-center justify-center max-w-full relative rounded-2xl border border-slate-700 px-8 py-6 md:w-[450px] bg-gradient-to-b from-slate-800 to-slate-900",
+        className: "min-w-[450px] flex flex-col items-center justify-center max-w-full relative rounded-2xl border px-8 py-6 md:w-[450px] bg-[#01009B] shadow-lg text-gray-100",
         children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)("blockquote", {
+          className: "w-full",
           children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("div", {
             "aria-hidden": "true",
             className: "absolute inset-[-1px] h-full w-full border border-transparent -z-1 pointer-events-none"
-          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("span", {
-            className: "relative z-20 text-sm text-gray-100 leading-[1.6] font-normal",
+          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("p", {
+            className: "relative z-20 text-sm leading-[1.6] font-normal text-center",
             children: `"${item.quote}"`
           }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)("div", {
-            className: "relative z-20 mt-6 flex items-center space-x-2",
+            className: "relative z-20 mt-6 flex flex-col items-center",
             children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("span", {
-              className: "text-sm text-gray-400 font-normal",
+              className: "text-sm font-semibold text-gray-100",
               children: item.name
             }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("span", {
-              className: "text-sm text-gray-400 font-normal",
+              className: "text-xs text-gray-300",
               children: item.title
             })]
+          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("div", {
+            className: "relative z-20 mt-4 flex space-x-1 justify-center",
+            children: [1, 2, 3, 4, 5].map((_, i) => i < rating ? /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)(_tabler_icons_react__WEBPACK_IMPORTED_MODULE_3__["default"], {
+              size: 20 // Adjust size as needed
+              ,
+              className: "text-yellow-300"
+            }, i) : /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)(_tabler_icons_react__WEBPACK_IMPORTED_MODULE_4__["default"], {
+              size: 20,
+              className: "text-yellow-300",
+              strokeWidth: 1.5 // Optional for visibility on outline
+            }, i))
           })]
         })
       }, item.name))
@@ -278,40 +294,40 @@ __webpack_require__.r(__webpack_exports__);
 const ClientCompanyComponent = () => {
   const companies = [{
     name: "Company 1",
-    logo: "http://kes-testing.local/wp-content/uploads/2024/11/1017466_720-1.jpg"
+    logo: "https://kabelretail.local/wp-content/uploads/2024/11/PT.KMI-LOGO-1.png"
   }, {
     name: "Company 2",
-    logo: "http://kes-testing.local/wp-content/uploads/2024/11/1017466_720-1.jpg"
+    logo: "https://kabelretail.local/wp-content/uploads/2024/11/PT.KMI-LOGO-1.png"
   }, {
     name: "Company 3",
-    logo: "http://kes-testing.local/wp-content/uploads/2024/11/1017466_720-1.jpg"
+    logo: "https://kabelretail.local/wp-content/uploads/2024/11/PT.KMI-LOGO-1.png"
   }, {
     name: "Company 4",
-    logo: "http://kes-testing.local/wp-content/uploads/2024/11/1017466_720-1.jpg"
+    logo: "https://kabelretail.local/wp-content/uploads/2024/11/PT.KMI-LOGO-1.png"
   }, {
     name: "Company 5",
-    logo: "http://kes-testing.local/wp-content/uploads/2024/11/1017466_720-1.jpg"
+    logo: "https://kabelretail.local/wp-content/uploads/2024/11/PT.KMI-LOGO-1.png"
   }, {
     name: "Company 6",
-    logo: "http://kes-testing.local/wp-content/uploads/2024/11/1017466_720-1.jpg"
+    logo: "https://kabelretail.local/wp-content/uploads/2024/11/PT.KMI-LOGO-1.png"
   }, {
     name: "Company 7",
-    logo: "http://kes-testing.local/wp-content/uploads/2024/11/1017466_720-1.jpg"
+    logo: "https://kabelretail.local/wp-content/uploads/2024/11/PT.KMI-LOGO-1.png"
   }, {
     name: "Company 8",
-    logo: "http://kes-testing.local/wp-content/uploads/2024/11/1017466_720-1.jpg"
+    logo: "https://kabelretail.local/wp-content/uploads/2024/11/PT.KMI-LOGO-1.png"
   }, {
     name: "Company 9",
-    logo: "http://kes-testing.local/wp-content/uploads/2024/11/1017466_720-1.jpg"
+    logo: "https://kabelretail.local/wp-content/uploads/2024/11/PT.KMI-LOGO-1.png"
   }, {
     name: "Company 10",
-    logo: "http://kes-testing.local/wp-content/uploads/2024/11/1017466_720-1.jpg"
+    logo: "https://kabelretail.local/wp-content/uploads/2024/11/PT.KMI-LOGO-1.png"
   }, {
     name: "Company 11",
-    logo: "http://kes-testing.local/wp-content/uploads/2024/11/1017466_720-1.jpg"
+    logo: "https://kabelretail.local/wp-content/uploads/2024/11/PT.KMI-LOGO-1.png"
   }, {
     name: "Company 12",
-    logo: "http://kes-testing.local/wp-content/uploads/2024/11/1017466_720-1.jpg"
+    logo: "https://kabelretail.local/wp-content/uploads/2024/11/PT.KMI-LOGO-1.png"
   }];
   return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsxs)("div", {
     className: "max-w-5xl mx-auto py-16",
@@ -461,12 +477,12 @@ const CompanyProfile = ({
         children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_0__.RichText.Content, {
           tagName: "h3",
           value: companyProfileDesc,
-          className: "text-base md:text-lg font-medium leading-relaxed text-gray-700 mb-6"
+          className: "text-base md:text-lg font-medium leading-relaxed text-gray-700 mb-6 text-justify"
         }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsxs)("div", {
-          className: "flex flex-col md:flex-row mt-6 gap-4",
+          className: "flex mt-6 gap-4",
           children: [pdfFile && pdfFile.url ? /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsxs)("a", {
             href: pdfFile.url,
-            className: "bg-blue-600 text-white py-3 px-6 rounded-lg flex items-center gap-3 justify-center hover:bg-blue-700 transition-all font-medium md:w-[250px] w-full text-sm md:text-base",
+            className: "bg-blue-600 text-white py-6 px-8 rounded-lg flex items-center gap-3 justify-center hover:bg-blue-700 transition-all font-semibold md:w-[250px] w-full text-sm md:text-base",
             download: true,
             "aria-label": "Download company profile PDF",
             children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)(_tabler_icons_react__WEBPACK_IMPORTED_MODULE_3__["default"], {
@@ -479,7 +495,7 @@ const CompanyProfile = ({
             href: whatsAppUrl,
             target: "_blank",
             rel: "noopener noreferrer",
-            className: "bg-green-500 text-white py-3 px-6 rounded-lg flex items-center gap-3 justify-center hover:bg-green-600 transition-all font-medium md:w-[250px] w-full text-sm md:text-base",
+            className: "bg-green-500 text-white py-6 px-8 rounded-lg flex items-center gap-3 justify-center hover:bg-green-600 transition-all font-semibold md:w-[250px] w-full text-sm md:text-base",
             "aria-label": "Contact us on WhatsApp",
             children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)(_tabler_icons_react__WEBPACK_IMPORTED_MODULE_4__["default"], {
               size: 22
@@ -530,73 +546,76 @@ const FAQAccordion = () => {
     question: "Bisakah saya mengubah atau membatalkan pesanan saya?",
     answer: "Pesanan dapat diubah atau dibatalkan dalam waktu 24 jam setelah pembelian. Setelah itu, pesanan akan diproses dan tidak dapat diubah."
   }];
-  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsxs)("div", {
-    className: "max-w-7xl mx-auto grid-cols-2 grid py-10",
-    children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("div", {
-      className: "flex",
-      children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)(framer_motion__WEBPACK_IMPORTED_MODULE_2__.motion.h2, {
-        initial: {
-          opacity: 0,
-          y: -50
-        },
-        whileInView: {
-          opacity: 1,
-          y: 0
-        },
-        transition: {
-          duration: 0.5
-        },
-        viewport: {
-          once: true
-        },
-        className: "text-left text-[20px] md:text-[36px] text-[#354052] font-bold not-prose mb-5",
-        children: "Pertanyaan Umum"
-      })
-    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("div", {
-      className: "space-y-4",
-      children: faqs.map((faq, index) => /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsxs)(framer_motion__WEBPACK_IMPORTED_MODULE_2__.motion.div, {
-        className: "border-b border-gray-200",
-        initial: {
-          opacity: 0
-        },
-        animate: {
-          opacity: 1
-        },
-        transition: {
-          duration: 0.3
-        },
-        children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)(framer_motion__WEBPACK_IMPORTED_MODULE_2__.motion.div, {
-          onClick: () => setActiveIndex(activeIndex === index ? null : index),
-          className: "cursor-pointer py-4 px-4 bg-gray-100 rounded-md",
-          whileHover: {
-            scale: 1.05
+  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("div", {
+    className: "bg-[#F8F8F9] py-10",
+    children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsxs)("div", {
+      className: "max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-8",
+      children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("div", {
+        className: "flex justify-center",
+        children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)(framer_motion__WEBPACK_IMPORTED_MODULE_2__.motion.h2, {
+          initial: {
+            opacity: 0,
+            y: -50
+          },
+          whileInView: {
+            opacity: 1,
+            y: 0
           },
           transition: {
-            duration: 0.2
+            duration: 0.5
           },
-          children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("h3", {
-            className: "text-xl font-medium",
-            children: faq.question
-          })
-        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)(framer_motion__WEBPACK_IMPORTED_MODULE_2__.motion.div, {
+          viewport: {
+            once: true
+          },
+          className: "text-left text-[20px] md:text-[36px] text-[#33394B] font-bold mb-5",
+          children: "Pertanyaan Umum"
+        })
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("div", {
+        className: "space-y-4",
+        children: faqs.map((faq, index) => /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsxs)(framer_motion__WEBPACK_IMPORTED_MODULE_2__.motion.div, {
+          className: "border-b border-gray-300",
           initial: {
-            height: 0,
             opacity: 0
           },
           animate: {
-            height: activeIndex === index ? "auto" : 0,
-            opacity: activeIndex === index ? 1 : 0
+            opacity: 1
           },
           transition: {
             duration: 0.3
           },
-          className: "overflow-hidden px-4 py-2 bg-gray-50 rounded-md",
-          children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("p", {
-            children: faq.answer
-          })
-        })]
-      }, index))
-    })]
+          children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)(framer_motion__WEBPACK_IMPORTED_MODULE_2__.motion.div, {
+            onClick: () => setActiveIndex(activeIndex === index ? null : index),
+            className: "cursor-pointer py-4 px-4 bg-[#FCFCFD] rounded-md shadow-sm",
+            whileHover: {
+              scale: 1.02
+            },
+            transition: {
+              duration: 0.2
+            },
+            children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("h3", {
+              className: "text-lg font-medium text-[#354052]",
+              children: faq.question
+            })
+          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)(framer_motion__WEBPACK_IMPORTED_MODULE_2__.motion.div, {
+            initial: {
+              height: 0,
+              opacity: 0
+            },
+            animate: {
+              height: activeIndex === index ? "auto" : 0,
+              opacity: activeIndex === index ? 1 : 0
+            },
+            transition: {
+              duration: 0.3
+            },
+            className: "overflow-hidden px-4 py-2 bg-[#F3F4F6] rounded-md text-[#5A6271]",
+            children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("p", {
+              children: faq.answer
+            })
+          })]
+        }, index))
+      })]
+    })
   });
 };
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (FAQAccordion);
@@ -621,13 +640,13 @@ __webpack_require__.r(__webpack_exports__);
 const OurPartner = () => {
   const companies = [{
     name: "Company 1",
-    logo: "http://kes-testing.local/wp-content/uploads/2024/11/1017466_720-1.jpg"
+    logo: "https://kabelretail.local/wp-content/uploads/2024/11/PT.KMI-LOGO-1.png"
   }, {
     name: "Company 2",
-    logo: "http://kes-testing.local/wp-content/uploads/2024/11/1017466_720-1.jpg"
+    logo: "https://kabelretail.local/wp-content/uploads/2024/11/PT.KMI-LOGO-1.png"
   }, {
     name: "Company 3",
-    logo: "http://kes-testing.local/wp-content/uploads/2024/11/1017466_720-1.jpg"
+    logo: "https://kabelretail.local/wp-content/uploads/2024/11/PT.KMI-LOGO-1.png"
   }];
   return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsxs)("div", {
     className: "max-w-5xl mx-auto",
@@ -763,7 +782,7 @@ const OurProducts = ({
       }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_1__.RichText.Content, {
         tagName: "h3",
         value: text,
-        className: "text-[12px] md:text-[18px] font-medium leading-normal not-prose mb-10 text-center"
+        className: "text-[12px] md:text-[18px] font-medium leading-normal not-prose mb-10 text-center md:px-[10%]"
       }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("div", {
         className: "md:px-[10%]",
         children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)("div", {
@@ -1050,7 +1069,7 @@ const WhyUs = () => {
             amount: 0.5,
             margin: "100px"
           },
-          className: "bg-white shadow-lg rounded-3xl flex items-center flex-col p-10 gap-y-6 text-center min-h-[400px] transition-shadow hover:shadow-2xl",
+          className: "bg-white shadow-[0_4px_10px_rgba(1,0,155,0.3)] rounded-3xl flex items-center flex-col p-10 gap-y-6 text-center min-h-[400px] transition-shadow hover:shadow-[0_10px_15px_rgba(1,0,155,0.4)]",
           children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)("div", {
             className: "p-4",
             children: item.icon
@@ -1376,6 +1395,62 @@ var IconShoppingBag = (0,_createReactComponent_mjs__WEBPACK_IMPORTED_MODULE_0__[
 
 
 //# sourceMappingURL=IconShoppingBag.mjs.map
+
+
+/***/ }),
+
+/***/ "./node_modules/@tabler/icons-react/dist/esm/icons/IconStar.mjs":
+/*!**********************************************************************!*\
+  !*** ./node_modules/@tabler/icons-react/dist/esm/icons/IconStar.mjs ***!
+  \**********************************************************************/
+/***/ ((__unused_webpack___webpack_module__, __webpack_exports__, __webpack_require__) => {
+
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (/* binding */ IconStar)
+/* harmony export */ });
+/* harmony import */ var _createReactComponent_mjs__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../createReactComponent.mjs */ "./node_modules/@tabler/icons-react/dist/esm/createReactComponent.mjs");
+/**
+ * @license @tabler/icons-react v3.19.0 - MIT
+ *
+ * This source code is licensed under the MIT license.
+ * See the LICENSE file in the root directory of this source tree.
+ */
+
+
+
+var IconStar = (0,_createReactComponent_mjs__WEBPACK_IMPORTED_MODULE_0__["default"])("outline", "star", "IconStar", [["path", { "d": "M12 17.75l-6.172 3.245l1.179 -6.873l-5 -4.867l6.9 -1l3.086 -6.253l3.086 6.253l6.9 1l-5 4.867l1.179 6.873z", "key": "svg-0" }]]);
+
+
+//# sourceMappingURL=IconStar.mjs.map
+
+
+/***/ }),
+
+/***/ "./node_modules/@tabler/icons-react/dist/esm/icons/IconStarFilled.mjs":
+/*!****************************************************************************!*\
+  !*** ./node_modules/@tabler/icons-react/dist/esm/icons/IconStarFilled.mjs ***!
+  \****************************************************************************/
+/***/ ((__unused_webpack___webpack_module__, __webpack_exports__, __webpack_require__) => {
+
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (/* binding */ IconStarFilled)
+/* harmony export */ });
+/* harmony import */ var _createReactComponent_mjs__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../createReactComponent.mjs */ "./node_modules/@tabler/icons-react/dist/esm/createReactComponent.mjs");
+/**
+ * @license @tabler/icons-react v3.19.0 - MIT
+ *
+ * This source code is licensed under the MIT license.
+ * See the LICENSE file in the root directory of this source tree.
+ */
+
+
+
+var IconStarFilled = (0,_createReactComponent_mjs__WEBPACK_IMPORTED_MODULE_0__["default"])("filled", "star-filled", "IconStarFilled", [["path", { "d": "M8.243 7.34l-6.38 .925l-.113 .023a1 1 0 0 0 -.44 1.684l4.622 4.499l-1.09 6.355l-.013 .11a1 1 0 0 0 1.464 .944l5.706 -3l5.693 3l.1 .046a1 1 0 0 0 1.352 -1.1l-1.091 -6.355l4.624 -4.5l.078 -.085a1 1 0 0 0 -.633 -1.62l-6.38 -.926l-2.852 -5.78a1 1 0 0 0 -1.794 0l-2.853 5.78z", "key": "svg-0" }]]);
+
+
+//# sourceMappingURL=IconStarFilled.mjs.map
 
 
 /***/ }),

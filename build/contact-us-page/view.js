@@ -15137,9 +15137,9 @@ const ContactUsPage = () => {
   };
   return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsxs)(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.Fragment, {
     children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)(_common_component_HeaderTemplate__WEBPACK_IMPORTED_MODULE_2__["default"], {}), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsxs)("div", {
-      className: "mx-auto max-w-[1280px] grid grid-cols-2 pt-10",
+      className: "mx-auto max-w-screen-xl grid grid-cols-1 md:grid-cols-2 pt-10 px-4",
       children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsxs)(framer_motion__WEBPACK_IMPORTED_MODULE_4__.motion.div, {
-        className: "contact-info-section",
+        className: "contact-info-section order-2 md:order-1 py-10",
         initial: {
           opacity: 0,
           x: 50
@@ -15185,8 +15185,8 @@ const ContactUsPage = () => {
             })]
           })]
         })]
-      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsxs)(framer_motion__WEBPACK_IMPORTED_MODULE_4__.motion.div, {
-        className: "form-section",
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)(framer_motion__WEBPACK_IMPORTED_MODULE_4__.motion.div, {
+        className: "form-section order-1 md:order-1",
         initial: {
           opacity: 0,
           x: 50
@@ -15198,18 +15198,7 @@ const ContactUsPage = () => {
         transition: {
           duration: 0.6
         },
-        children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)(framer_motion__WEBPACK_IMPORTED_MODULE_4__.motion.div, {
-          className: "header-container text-center",
-          initial: {
-            opacity: 0
-          },
-          animate: {
-            opacity: 1
-          },
-          transition: {
-            duration: 1
-          }
-        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsxs)(framer_motion__WEBPACK_IMPORTED_MODULE_4__.motion.form, {
+        children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsxs)(framer_motion__WEBPACK_IMPORTED_MODULE_4__.motion.form, {
           className: "bg-white p-6 shadow-lg rounded-lg",
           onSubmit: handleSubmit,
           initial: {
@@ -15321,34 +15310,22 @@ const ContactUsPage = () => {
             },
             children: formStatus
           })]
-        })]
+        })
       }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("div", {
-        className: "mapouter mt-10",
-        style: {
-          position: "relative",
-          textAlign: "right",
-          width: "1280px",
-          height: "400px"
-        },
+        className: "mapouter my-10 w-full h-[400px] md:h-[500px] order-3 md:col-span-2",
         children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsxs)("div", {
-          className: "gmap_canvas",
+          className: "gmap_canvas w-full h-full",
           style: {
             overflow: "hidden",
-            background: "none",
-            width: "1280px",
-            height: "400px"
+            background: "none"
           },
           children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("iframe", {
-            className: "gmap_iframe",
+            className: "gmap_iframe w-full h-full",
             frameBorder: "0",
             scrolling: "no",
             marginHeight: "0",
             marginWidth: "0",
             src: "https://maps.google.com/maps?width=1280&height=400&hl=en&q=Jakrata&t=&z=14&ie=UTF8&iwloc=B&output=embed",
-            style: {
-              width: "1280px",
-              height: "400px"
-            },
             title: "Google Map"
           }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("a", {
             href: "https://sprunkin.com/",

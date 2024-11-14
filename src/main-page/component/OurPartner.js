@@ -4,15 +4,15 @@ const OurPartner = () => {
 	const companies = [
 		{
 			name: "Company 1",
-			logo: "http://kes-testing.local/wp-content/uploads/2024/11/1017466_720-1.jpg",
+			logo: "https://kabelretail.local/wp-content/uploads/2024/11/PT.KMI-LOGO-1.png",
 		},
 		{
 			name: "Company 2",
-			logo: "http://kes-testing.local/wp-content/uploads/2024/11/1017466_720-1.jpg",
+			logo: "https://kabelretail.local/wp-content/uploads/2024/11/PT.KMI-LOGO-1.png",
 		},
 		{
 			name: "Company 3",
-			logo: "http://kes-testing.local/wp-content/uploads/2024/11/1017466_720-1.jpg",
+			logo: "https://kabelretail.local/wp-content/uploads/2024/11/PT.KMI-LOGO-1.png",
 		},
 	];
 

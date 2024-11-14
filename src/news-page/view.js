@@ -48,7 +48,7 @@ const NewsList = ({ newsItems }) => (
 	<AnimatePresence mode="wait">
 		<motion.div
 			key={newsItems.map((news) => news.id).join("-")}
-			className="grid grid-cols-2 lg:grid-cols-3 gap-6"
+			className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 px-5 md:px-0"
 			initial={{ opacity: 0, y: 20 }}
 			animate={{ opacity: 1, y: 0 }}
 			exit={{ opacity: 0, y: 20 }}
@@ -57,7 +57,7 @@ const NewsList = ({ newsItems }) => (
 			{newsItems.map((news, index) => (
 				<motion.div
 					key={news.id + index}
-					className="bg-white shadow-md rounded-lg overflow-hidden transform transition-all duration-200 hover:scale-105 hover:shadow-xl"
+					className="bg-white shadow-[0_4px_10px_rgba(1,0,155,0.3)] rounded-lg overflow-hidden transform transition-all duration-200 hover:scale-105 hover:shadow-[0_10px_15px_rgba(1,0,155,0.4)]"
 					whileHover={{ scale: 1.05, y: -3 }}
 					transition={{ duration: 0.2, ease: "easeInOut" }}
 				>
@@ -78,7 +78,7 @@ const NewsList = ({ newsItems }) => (
 						</div>
 
 						<div className="p-5">
-							<h2 className="text-xl font-semibold text-gray-800 hover:text-indigo-600 transition-colors">
+							<h2 className="text-lg sm:text-xl font-semibold text-gray-800 hover:text-indigo-600 transition-colors">
 								{news.title.rendered}
 							</h2>
 							<p className="text-gray-600 text-sm mb-2">
@@ -129,7 +129,7 @@ const PaginationControls = ({ currentPage, totalPages, onPageChange }) => (
 );
 
 const Sidebar = ({ latestNews }) => (
-	<div className="w-1/4 pt-[100px]">
+	<div className="md:pt-[100px] px-5 md:px-0">
 		<h2 className="text-2xl font-bold mb-4 truncate-ellipsis-title">
 			Latest News
 		</h2>
@@ -155,34 +155,34 @@ const Sidebar = ({ latestNews }) => (
 					transition={{ duration: 0.4, ease: "easeInOut" }}
 					whileHover={{
 						scale: 1.05, // Slightly enlarge on hover
-						boxShadow: "0px 8px 15px rgba(0, 0, 0, 0.2)", // Adds a shadow effect
+						boxShadow: "0px 8px 15px rgba(1,0,155,0.4)", // Adds a shadow effect
 					}}
 				>
 					<a
-						className="flex gap-2 p-2 cursor-pointer"
+						className="flex gap-3 sm:gap-4 p-2 cursor-pointer hover:bg-gray-100 transition-all duration-300 rounded-lg"
 						href={news.link}
 						target="_self"
 						rel="noopener noreferrer"
 					>
 						<img
 							src={
-								news.imageUrl ||
+								extractImageUrl(news.content.rendered) ||
 								"https://via.placeholder.com/300x200?text=Future+of+Education"
 							}
 							alt={news.title.rendered}
 							className="w-24 h-24 object-cover rounded-md"
 						/>
-						<div>
-							<h3 className="text-md font-semibold truncate-ellipsis-title ">
+						<div className="flex flex-col p-3 bg-white rounded-lg transition-all duration-300 w-full">
+							<h3 className="text-md sm:text-lg font-semibold text-gray-800 line-clamp-2 hover:text-blue-600 transition-colors duration-300">
 								{news.title.rendered}
 							</h3>
-							<p className="text-xs text-gray-500">
+							<p className="text-xs text-gray-500 mb-2">
 								{new Date(news.date).toLocaleDateString()}
 							</p>
 							<RichText.Content
-								tagName="h3"
+								tagName="p"
 								value={news.excerpt.rendered}
-								className="text-xs text-gray-500 truncate-ellipsis-desc"
+								className="text-xs sm:text-sm text-gray-600 line-clamp-2 sm:line-clamp-3"
 							/>
 						</div>
 					</a>
@@ -274,8 +274,8 @@ const NewsHubPage = () => {
 		<>
 			{error && <p className="text-red-500">Error: {error}</p>}
 			<HeaderTemplate />
-			<div className="mx-auto max-w-[1280px] p-8 flex">
-				<div className="w-3/4 pr-8">
+			<div className="mx-auto max-w-[1280px] md:p-8 flex flex-col md:flex-row">
+				<div className="w-full md:w-3/4 md:pr-8">
 					<CategoryFilter
 						categories={categories}
 						selectedCategory={selectedCategory}
@@ -290,7 +290,9 @@ const NewsHubPage = () => {
 						/>
 					)}
 				</div>
-				<Sidebar latestNews={latestNews} />
+				<div className="w-full md:w-1/4 mt-4 md:mt-0">
+					<Sidebar latestNews={latestNews} />
+				</div>
 			</div>
 		</>
 	);

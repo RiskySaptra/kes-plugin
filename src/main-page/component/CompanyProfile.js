@@ -50,16 +50,16 @@ const CompanyProfile = ({
 					<RichText.Content
 						tagName="h3"
 						value={companyProfileDesc}
-						className="text-base md:text-lg font-medium leading-relaxed text-gray-700 mb-6"
+						className="text-base md:text-lg font-medium leading-relaxed text-gray-700 mb-6 text-justify"
 					/>
 
 					{/* Action Buttons */}
-					<div className="flex flex-col md:flex-row mt-6 gap-4">
+					<div className="flex mt-6 gap-4">
 						{/* PDF Download Button */}
 						{pdfFile && pdfFile.url ? (
 							<a
 								href={pdfFile.url}
-								className="bg-blue-600 text-white py-3 px-6 rounded-lg flex items-center gap-3 justify-center hover:bg-blue-700 transition-all font-medium md:w-[250px] w-full text-sm md:text-base"
+								className="bg-blue-600 text-white py-6 px-8 rounded-lg flex items-center gap-3 justify-center hover:bg-blue-700 transition-all font-semibold md:w-[250px] w-full text-sm md:text-base"
 								download
 								aria-label="Download company profile PDF"
 							>
@@ -76,7 +76,7 @@ const CompanyProfile = ({
 								href={whatsAppUrl}
 								target="_blank"
 								rel="noopener noreferrer"
-								className="bg-green-500 text-white py-3 px-6 rounded-lg flex items-center gap-3 justify-center hover:bg-green-600 transition-all font-medium md:w-[250px] w-full text-sm md:text-base"
+								className="bg-green-500 text-white py-6 px-8 rounded-lg flex items-center gap-3 justify-center hover:bg-green-600 transition-all font-semibold md:w-[250px] w-full text-sm md:text-base"
 								aria-label="Contact us on WhatsApp"
 							>
 								<IconBrandWhatsapp size={22} />

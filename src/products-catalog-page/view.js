@@ -135,10 +135,10 @@ const FilterBar = ({ selectedFilter, onFilterChange }) => (
 );
 
 const SearchBar = ({ searchTerm, onSearchChange, onSearchSubmit }) => (
-	<div className="mx-auto max-w-[1280px] my-5">
-		<div className="relative">
+	<div className="mx-auto max-w-[1280px] my-5 px-4">
+		<div className="relative flex md:justify-start">
 			{/* Input field */}
-			<div className="relative w-1/4">
+			<div className="relative w-full sm:w-2/3 md:w-1/2 lg:w-1/3 xl:w-1/4">
 				<input
 					type="text"
 					placeholder="Search products..."
@@ -149,12 +149,12 @@ const SearchBar = ({ searchTerm, onSearchChange, onSearchSubmit }) => (
 							onSearchSubmit(); // Apply filter on Enter key press
 						}
 					}}
-					className="w-full pl-10 p-3 bg-gray-100 font-semibold text-gray-600 rounded-lg focus:outline-none focus:ring-0 border-1 border-gray-300"
+					className="w-full pl-10 p-3 bg-gray-100 font-semibold text-gray-600 rounded-lg focus:outline-none focus:ring-0 border border-gray-300"
 				/>
 
 				{/* Search icon inside input */}
 				<div className="absolute right-5 top-1/2 transform -translate-y-1/2 text-gray-600">
-					<IconSearch size={18} /> {/* Tabler search icon */}
+					<IconSearch size={18} />
 				</div>
 			</div>
 		</div>
@@ -163,7 +163,7 @@ const SearchBar = ({ searchTerm, onSearchChange, onSearchSubmit }) => (
 
 const ProductGrid = ({ products }) => (
 	<motion.div
-		className="grid mx-auto max-w-[1280px] md:grid-cols-4 gap-6"
+		className="grid mx-auto max-w-[1280px] md:grid-cols-4 gap-6 px-5 md:px-0"
 		initial={{ opacity: 0 }}
 		animate={{ opacity: 1 }}
 		transition={{ duration: 0.8, ease: "easeInOut" }} // Smooth transition for grid appearance
@@ -171,12 +171,13 @@ const ProductGrid = ({ products }) => (
 		{products.map((product, index) => (
 			<motion.div
 				key={product.id + index}
-				className="bg-white p-5 rounded-lg shadow-lg hover:shadow-2xl group relative overflow-hidden"
+				className="bg-white p-5 rounded-lg shadow-[0_4px_10px_rgba(1,0,155,0.3)] group relative overflow-hidden"
 				whileHover={{
 					scale: 1.05,
 					y: -10,
-					boxShadow: "0px 15px 30px rgba(0, 0, 0, 0.15)",
+					boxShadow: "0px 15px 30px rgba(1,0,155,0.4)",
 				}} // Smooth scaling, upward movement and shadow effect
+				// shadow-[0_4px_10px_rgba(1,0,155,0.3)] shadow-[0_10px_15px_rgba(1,0,155,0.4)]
 				transition={{
 					duration: 0.3,
 					type: "spring",

@@ -19,11 +19,11 @@ __webpack_require__.r(__webpack_exports__);
 
 const AboutSection = () => {
   return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)("div", {
-    className: "bg-gradient-to-r from-[#0f0c29] via-[#302b63] to-[#24243e] py-20",
+    className: "py-10 md:py-20",
     children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsxs)("div", {
-      className: "max-w-7xl mx-auto flex flex-col-reverse md:flex-row items-center space-x-12",
+      className: "max-w-7xl mx-auto flex flex-col-reverse md:flex-row items-center justify-center gap-12 md:space-x-12 px-5 md:px-0",
       children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsxs)(framer_motion__WEBPACK_IMPORTED_MODULE_1__.motion.div, {
-        className: "flex-1 text-center md:text-left text-white",
+        className: "flex-1 text-left",
         initial: {
           opacity: 0,
           x: -50
@@ -37,17 +37,17 @@ const AboutSection = () => {
           ease: "easeOut"
         },
         children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)("h2", {
-          className: "text-5xl font-bold mb-6 text-white",
+          className: "text-5xl font-bold mb-6 text-gray-800",
           children: "PT KMI Electric Solution"
         }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)("p", {
-          className: "text-lg text-gray-300 leading-relaxed mb-6",
+          className: "text-lg text-gray-800 leading-relaxed mb-6",
           children: "PT KMI Electric Solution (PT KES) berdedikasi menjadi mitra terpercaya dalam distribusi kabel dan fitting, menawarkan solusi retail yang inovatif, berkelanjutan, dan berkualitas tinggi. Sejak didirikan, kami telah berkomitmen untuk menyediakan produk dan layanan unggulan yang dirancang untuk memenuhi kebutuhan sektor konstruksi electrical di Indonesia."
         }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)("p", {
-          className: "text-lg text-gray-300 leading-relaxed mb-6",
+          className: "text-lg text-gray-800 leading-relaxed mb-6",
           children: "Dengan semangat profesionalisme dan layanan yang selalu mengutamakan kepuasan pelanggan, kami terus berinovasi untuk mendorong kemajuan bisnis yang berkelanjutan."
         })]
       }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)(framer_motion__WEBPACK_IMPORTED_MODULE_1__.motion.div, {
-        className: "flex-1",
+        className: "flex",
         initial: {
           opacity: 0,
           x: 50
@@ -64,10 +64,8 @@ const AboutSection = () => {
           src: "https://images.unsplash.com/photo-1476231682828-37e571bc172f?q=80&w=3474&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" // Replace with your image path
           ,
           alt: "PT KMI Electric Solution",
-          width: 500 // Adjust image width
-          ,
-          height: 400 // Adjust image height
-          ,
+          width: 500,
+          height: 400,
           className: "rounded-lg shadow-xl transition-transform duration-500 hover:scale-105"
         })
       })]
@@ -213,11 +211,11 @@ __webpack_require__.r(__webpack_exports__);
 
 const RetailSection = () => {
   return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)("div", {
-    className: "min-h-screen bg-gradient-to-r from-[#0f0c29] via-[#302b63] to-[#24243e] flex items-center justify-center py-16 px-4",
+    className: "min-h-screen bg-gradient-to-r flex items-center justify-center md:py-16 px-4",
     children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsxs)("div", {
-      className: "max-w-7xl mx-auto text-center text-white",
+      className: "max-w-7xl mx-auto text-center text-gray-800",
       children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsxs)(framer_motion__WEBPACK_IMPORTED_MODULE_1__.motion.h1, {
-        className: "text-6xl md:text-5xl font-extrabold tracking-tight mb-6 text-shadow-lg",
+        className: "text-4xl md:text-5xl lg:text-6xl font-extrabold tracking-tight mb-10 text-shadow-lg",
         style: {
           textShadow: "0px 4px 6px rgba(0, 0, 0, 0.3)"
         },
@@ -234,13 +232,13 @@ const RetailSection = () => {
           ease: "easeOut"
         },
         children: ["Our Core Values: ", /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)("span", {
-          className: "text-[#8e44ad]",
+          className: "text-[#0100B1]",
           children: "RETAIL"
         })]
       }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)("div", {
-        className: "grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-6 gap-12",
+        className: "grid grid-cols-1 gap-6 lg:gap-12",
         children: ["R", "E", "T", "A", "I", "L"].map((letter, index) => /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsxs)(framer_motion__WEBPACK_IMPORTED_MODULE_1__.motion.div, {
-          className: "flex flex-col items-center justify-center bg-gradient-to-r from-[#8e44ad] to-[#e74c3c] text-white p-10 rounded-3xl shadow-xl hover:scale-105 transition-transform duration-300 ease-in-out",
+          className: "flex gap-6 sm:gap-x-6 justify-center min-h-[105px] items-center bg-[#0100B1] text-white px-5 rounded-3xl shadow-xl hover:scale-105 transition-transform duration-300 ease-in-out",
           initial: {
             opacity: 0,
             scale: 0.8
@@ -256,7 +254,10 @@ const RetailSection = () => {
             ease: "easeOut"
           },
           children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)(framer_motion__WEBPACK_IMPORTED_MODULE_1__.motion.h2, {
-            className: "text-6xl font-extrabold tracking-widest",
+            className: "text-4xl sm:text-6xl font-extrabold tracking-widest",
+            style: {
+              flexBasis: "80px"
+            },
             whileHover: {
               scale: 1.2,
               rotate: 5,
@@ -267,7 +268,10 @@ const RetailSection = () => {
             },
             children: letter
           }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsxs)(framer_motion__WEBPACK_IMPORTED_MODULE_1__.motion.p, {
-            className: "text-sm mt-4",
+            className: "text-xl sm:text-2xl mt-2 sm:ml-6 text-left",
+            style: {
+              flexBasis: "calc(100% - 80px)"
+            },
             initial: {
               opacity: 0,
               y: 20
@@ -473,7 +477,7 @@ const LayoutGrid = ({
   return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("div", {
     className: "relative",
     children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)("div", {
-      className: "w-full min-h-screen py-10 grid grid-cols-1 md:grid-cols-3 max-w-7xl mx-auto gap-4",
+      className: "w-full min-h-screen py-10 grid md:grid-cols-3 max-w-7xl mx-auto gap-4",
       children: [cards.map((card, i) => /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("div", {
         className: (0,_lib_utils__WEBPACK_IMPORTED_MODULE_1__.cn)(card.className, ""),
         children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)(framer_motion__WEBPACK_IMPORTED_MODULE_3__.motion.div, {

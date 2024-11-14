@@ -58,10 +58,10 @@ const ContactUsPage = () => {
 	return (
 		<>
 			<HeaderTemplate />
-			<div className="mx-auto max-w-[1280px] grid grid-cols-2 pt-10">
+			<div className="mx-auto max-w-screen-xl grid grid-cols-1 md:grid-cols-2 pt-10 px-4">
 				{/* Contact Info Section */}
 				<motion.div
-					className="contact-info-section"
+					className="contact-info-section order-2 md:order-1 py-10"
 					initial={{ opacity: 0, x: 50 }}
 					animate={{ opacity: 1, x: 0 }}
 					transition={{ duration: 0.6 }}
@@ -83,25 +83,14 @@ const ContactUsPage = () => {
 						</li>
 					</ul>
 				</motion.div>
-				{/* Contact Form Section with animations */}
+
+				{/* Contact Form Section */}
 				<motion.div
-					className="form-section"
+					className="form-section order-1 md:order-1"
 					initial={{ opacity: 0, x: 50 }}
 					animate={{ opacity: 1, x: 0 }}
 					transition={{ duration: 0.6 }}
 				>
-					<motion.div
-						className="header-container text-center"
-						initial={{ opacity: 0 }}
-						animate={{ opacity: 1 }}
-						transition={{ duration: 1 }}
-					>
-						{/* <h1 className="text-4xl font-bold">Contact Us</h1>
-				<p className="mt-4 text-lg">
-					We'd love to hear from you! Please fill out the form below.
-				</p> */}
-					</motion.div>
-
 					<motion.form
 						className="bg-white p-6 shadow-lg rounded-lg"
 						onSubmit={handleSubmit}
@@ -182,32 +171,18 @@ const ContactUsPage = () => {
 					</motion.form>
 				</motion.div>
 
-				<div
-					className="mapouter mt-10"
-					style={{
-						position: "relative",
-						textAlign: "right",
-						width: "1280px",
-						height: "400px",
-					}}
-				>
+				<div className="mapouter my-10 w-full h-[400px] md:h-[500px] order-3 md:col-span-2">
 					<div
-						className="gmap_canvas"
-						style={{
-							overflow: "hidden",
-							background: "none",
-							width: "1280px",
-							height: "400px",
-						}}
+						className="gmap_canvas w-full h-full"
+						style={{ overflow: "hidden", background: "none" }}
 					>
 						<iframe
-							className="gmap_iframe"
+							className="gmap_iframe w-full h-full"
 							frameBorder="0"
 							scrolling="no"
 							marginHeight="0"
 							marginWidth="0"
 							src="https://maps.google.com/maps?width=1280&height=400&hl=en&q=Jakrata&t=&z=14&ie=UTF8&iwloc=B&output=embed"
-							style={{ width: "1280px", height: "400px" }}
 							title="Google Map"
 						></iframe>
 						<a

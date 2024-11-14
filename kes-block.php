@@ -1,6 +1,6 @@
 <?php
 /**
- * Plugin Name:       Static-kes-block
+ * Plugin Name:       KES Internal Block
  * Description:       Custom kes internal block
  * Requires at least: 6.6
  * Requires PHP:      7.2

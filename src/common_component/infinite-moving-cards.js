@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from "react";
+import { IconStar, IconStarFilled } from "@tabler/icons-react";
 import { cn } from "../lib/utils";
 
 export const InfiniteMovingCards = ({
@@ -57,6 +58,8 @@ export const InfiniteMovingCards = ({
 		}
 	};
 
+	const rating = Math.floor(Math.random() * 5) + 1;
+
 	return (
 		<div ref={containerRef} className={cn("relative z-20", className)}>
 			<ul
@@ -70,23 +73,45 @@ export const InfiniteMovingCards = ({
 				{items.map((item, idx) => (
 					<li
 						key={item.name}
-						className="min-w-[450px] flex items-center justify-center max-w-full relative rounded-2xl border border-slate-700 px-8 py-6 md:w-[450px] bg-gradient-to-b from-slate-800 to-slate-900"
+						className="min-w-[450px] flex flex-col items-center justify-center max-w-full relative rounded-2xl border px-8 py-6 md:w-[450px] bg-[#01009B] shadow-lg text-gray-100"
 					>
-						<blockquote>
+						<blockquote className="w-full">
 							<div
 								aria-hidden="true"
 								className="absolute inset-[-1px] h-full w-full border border-transparent -z-1 pointer-events-none"
 							></div>
-							<span className="relative z-20 text-sm text-gray-100 leading-[1.6] font-normal">
+
+							{/* Quote Text */}
+							<p className="relative z-20 text-sm leading-[1.6] font-normal text-center">
 								{`"${item.quote}"`}
-							</span>
-							<div className="relative z-20 mt-6 flex items-center space-x-2">
-								<span className="text-sm text-gray-400 font-normal">
+							</p>
+
+							{/* Reviewer Info */}
+							<div className="relative z-20 mt-6 flex flex-col items-center">
+								<span className="text-sm font-semibold text-gray-100">
 									{item.name}
 								</span>
-								<span className="text-sm text-gray-400 font-normal">
-									{item.title}
-								</span>
+								<span className="text-xs text-gray-300">{item.title}</span>
+							</div>
+
+							{/* Star Rating */}
+							<div className="relative z-20 mt-4 flex space-x-1 justify-center">
+								{[1, 2, 3, 4, 5].map((_, i) =>
+									i < rating ? (
+										<IconStarFilled
+											key={i}
+											size={20} // Adjust size as needed
+											className="text-yellow-300"
+										/>
+									) : (
+										<IconStar
+											key={i}
+											size={20}
+											className="text-yellow-300"
+											strokeWidth={1.5} // Optional for visibility on outline
+										/>
+									),
+								)}
 							</div>
 						</blockquote>
 					</li>

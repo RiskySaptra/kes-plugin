@@ -60,7 +60,7 @@ const WhyUs = () => {
 								amount: 0.5,
 								margin: "100px",
 							}}
-							className="bg-white shadow-lg rounded-3xl flex items-center flex-col p-10 gap-y-6 text-center min-h-[400px] transition-shadow hover:shadow-2xl"
+							className="bg-white shadow-[0_4px_10px_rgba(1,0,155,0.3)] rounded-3xl flex items-center flex-col p-10 gap-y-6 text-center min-h-[400px] transition-shadow hover:shadow-[0_10px_15px_rgba(1,0,155,0.4)]"
 						>
 							<div className="p-4">{item.icon}</div>
 							<p className="text-[20px] font-bold">{item.title}</p>
