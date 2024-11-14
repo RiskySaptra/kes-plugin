@@ -15,7 +15,7 @@
 		"start": "wp-scripts start"
 	},
 	"devDependencies": {
-		"@wordpress/scripts": "^30.3.0"
+		"@wordpress/scripts": "^30.4.0"
 	},
 	"dependencies": {
 		"@tabler/icons-react": "^3.19.0",

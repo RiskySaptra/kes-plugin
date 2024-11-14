@@ -1,10 +1,11 @@
+const { color } = require("framer-motion");
 const {
 	default: flattenColorPalette,
 } = require("tailwindcss/lib/util/flattenColorPalette");
 
 /** @type {import('tailwindcss').Config} */
 module.exports = {
-	content: ["./src/**/*.{js,jsx,ts,tsx}"],
+	content: ["./src/**/*.{js,jsx,ts,tsx}", "./src/**/**/*.{js,jsx,ts,tsx}"],
 	theme: {
 		extend: {
 			animation: {
@@ -17,6 +18,13 @@ module.exports = {
 						transform: "translate(calc(-50% - 0.5rem))",
 					},
 				},
+			},
+			colors: {
+				mainColor: "#01009B",
+			},
+			boxShadow: {
+				customShadow: "0 10px 15px rgba(1,0,155,0.4)",
+				customShadowLg: "0 4px 10px rgba(1,0,155,0.3)",
 			},
 		},
 	},
