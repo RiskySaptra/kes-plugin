@@ -86,15 +86,18 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
 /* harmony export */ });
-/* harmony import */ var _common_component_LayoutGrid__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../../common_component/LayoutGrid */ "./src/common_component/LayoutGrid.js");
 /* harmony import */ var framer_motion__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! framer-motion */ "./node_modules/framer-motion/dist/es/render/components/motion/proxy.mjs");
+/* harmony import */ var _common_component_HorizontalSlider__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../../common_component/HorizontalSlider */ "./src/common_component/HorizontalSlider.js");
 /* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react/jsx-runtime */ "react/jsx-runtime");
 /* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__);
 
 
 
-const Gallery = () => {
+const Gallery = ({
+  items
+}) => {
   return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsxs)("div", {
+    className: "max-w-7xl mx-auto",
     children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)(framer_motion__WEBPACK_IMPORTED_MODULE_2__.motion.h2, {
       initial: {
         opacity: 0,
@@ -112,85 +115,12 @@ const Gallery = () => {
       },
       className: "text-center text-[20px] md:text-[36px] text-[#354052] font-bold not-prose mt-10",
       children: "Dokumentasi pengiriman kabel kami ke berbagai proyek"
-    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)(_common_component_LayoutGrid__WEBPACK_IMPORTED_MODULE_0__.LayoutGrid, {
-      cards: cards
+    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)(_common_component_HorizontalSlider__WEBPACK_IMPORTED_MODULE_0__["default"], {
+      items: items
     })]
   });
 };
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (Gallery);
-const SkeletonOne = () => {
-  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsxs)("div", {
-    children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("p", {
-      className: "font-bold md:text-4xl text-xl text-white",
-      children: "House in the woods"
-    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("p", {
-      className: "font-normal text-base text-white"
-    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("p", {
-      className: "font-normal text-base my-4 max-w-lg text-neutral-200",
-      children: "A serene and tranquil retreat, this house in the woods offers a peaceful escape from the hustle and bustle of city life."
-    })]
-  });
-};
-const SkeletonTwo = () => {
-  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsxs)("div", {
-    children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("p", {
-      className: "font-bold md:text-4xl text-xl text-white",
-      children: "House above the clouds"
-    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("p", {
-      className: "font-normal text-base text-white"
-    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("p", {
-      className: "font-normal text-base my-4 max-w-lg text-neutral-200",
-      children: "Perched high above the world, this house offers breathtaking views and a unique living experience. It's a place where the sky meets home, and tranquility is a way of life."
-    })]
-  });
-};
-const SkeletonThree = () => {
-  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsxs)("div", {
-    children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("p", {
-      className: "font-bold md:text-4xl text-xl text-white",
-      children: "Greens all over"
-    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("p", {
-      className: "font-normal text-base text-white"
-    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("p", {
-      className: "font-normal text-base my-4 max-w-lg text-neutral-200",
-      children: "A house surrounded by greenery and nature's beauty. It's the perfect place to relax, unwind, and enjoy life."
-    })]
-  });
-};
-const SkeletonFour = () => {
-  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsxs)("div", {
-    children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("p", {
-      className: "font-bold md:text-4xl text-xl text-white",
-      children: "Rivers are serene"
-    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("p", {
-      className: "font-normal text-base text-white"
-    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("p", {
-      className: "font-normal text-base my-4 max-w-lg text-neutral-200",
-      children: "A house by the river is a place of peace and tranquility. It's the perfect place to relax, unwind, and enjoy life."
-    })]
-  });
-};
-const cards = [{
-  id: 1,
-  content: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)(SkeletonOne, {}),
-  className: "md:col-span-2",
-  thumbnail: "https://images.unsplash.com/photo-1476231682828-37e571bc172f?q=80&w=3474&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
-}, {
-  id: 2,
-  content: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)(SkeletonTwo, {}),
-  className: "col-span-1",
-  thumbnail: "https://images.unsplash.com/photo-1464457312035-3d7d0e0c058e?q=80&w=3540&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
-}, {
-  id: 3,
-  content: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)(SkeletonThree, {}),
-  className: "col-span-1",
-  thumbnail: "https://images.unsplash.com/photo-1588880331179-bc9b93a8cb5e?q=80&w=3540&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
-}, {
-  id: 4,
-  content: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)(SkeletonFour, {}),
-  className: "md:col-span-2",
-  thumbnail: "https://images.unsplash.com/photo-1475070929565-c985b496cb9f?q=80&w=3540&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
-}];
 
 /***/ }),
 
@@ -211,7 +141,7 @@ __webpack_require__.r(__webpack_exports__);
 
 const RetailSection = () => {
   return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)("div", {
-    className: "min-h-screen bg-gradient-to-r flex items-center justify-center md:py-16 px-4",
+    className: "pb-5 md:pb-20",
     children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsxs)("div", {
       className: "max-w-7xl mx-auto text-center text-gray-800",
       children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsxs)(framer_motion__WEBPACK_IMPORTED_MODULE_1__.motion.h1, {
@@ -438,116 +368,164 @@ const HeaderTemplate = () => /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED
 
 /***/ }),
 
-/***/ "./src/common_component/LayoutGrid.js":
-/*!********************************************!*\
-  !*** ./src/common_component/LayoutGrid.js ***!
-  \********************************************/
+/***/ "./src/common_component/HorizontalSlider.js":
+/*!**************************************************!*\
+  !*** ./src/common_component/HorizontalSlider.js ***!
+  \**************************************************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   LayoutGrid: () => (/* binding */ LayoutGrid)
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
 /* harmony export */ });
-/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "react");
-/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
-/* harmony import */ var framer_motion__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! framer-motion */ "./node_modules/framer-motion/dist/es/render/components/motion/proxy.mjs");
+/* harmony import */ var _wordpress_element__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @wordpress/element */ "@wordpress/element");
+/* harmony import */ var _wordpress_element__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__);
 /* harmony import */ var _lib_utils__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../lib/utils */ "./src/lib/utils.js");
 /* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! react/jsx-runtime */ "react/jsx-runtime");
 /* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__);
-"use client";
 
 
 
-
-
-const LayoutGrid = ({
-  cards
+const HorizontalSlider = ({
+  items,
+  speed = "normal",
+  direction = "left",
+  pauseOnHover = true,
+  loop = false
 }) => {
-  console.log(cards);
-  const [selected, setSelected] = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)(null);
-  const [lastSelected, setLastSelected] = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)(null);
-  const handleClick = card => {
-    setLastSelected(selected);
-    setSelected(card);
+  const containerRef = (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.useRef)(null);
+  const scrollerRef = (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.useRef)(null);
+  const [start, setStart] = (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.useState)(false);
+  const [isDragging, setIsDragging] = (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.useState)(false);
+  const [startX, setStartX] = (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.useState)(0);
+  const [scrollLeft, setScrollLeft] = (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.useState)(0);
+  (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.useEffect)(() => {
+    if (loop) {
+      setupAnimation();
+    }
+    const container = containerRef.current;
+    if (container) {
+      container.addEventListener("scroll", handleScrollEnd);
+    }
+    return () => {
+      if (container) {
+        container.removeEventListener("scroll", handleScrollEnd);
+      }
+    };
+  }, [loop]);
+  const setupAnimation = () => {
+    if (containerRef.current && scrollerRef.current) {
+      const scrollerContent = Array.from(scrollerRef.current.children);
+
+      // Clone items for seamless infinite scrolling
+      scrollerContent.forEach(item => {
+        const duplicatedItem = item.cloneNode(true);
+        scrollerRef.current.appendChild(duplicatedItem);
+      });
+      setAnimationDirection();
+      setAnimationSpeed();
+      setStart(true); // Start animation
+    }
   };
-  const handleOutsideClick = () => {
-    setLastSelected(selected);
-    setSelected(null);
+  const setAnimationDirection = () => {
+    if (containerRef.current) {
+      const directionValue = direction === "left" ? "forwards" : "reverse";
+      containerRef.current.style.setProperty("--animation-direction", directionValue);
+    }
+  };
+  const setAnimationSpeed = () => {
+    if (containerRef.current) {
+      const speedValue = {
+        fast: "20s",
+        normal: "40s",
+        slow: "80s"
+      }[speed] || "40s";
+      containerRef.current.style.setProperty("--animation-duration", speedValue);
+    }
+  };
+  const handleMouseDown = e => {
+    setIsDragging(true);
+    setStartX(e.clientX);
+    setScrollLeft(containerRef.current.scrollLeft);
+  };
+  const handleMouseMove = e => {
+    if (!isDragging) return;
+    const moveX = e.clientX - startX;
+    containerRef.current.scrollLeft = scrollLeft - moveX;
+  };
+  const handleMouseUp = () => {
+    setIsDragging(false);
+  };
+  const handleTouchStart = e => {
+    setIsDragging(true);
+    setStartX(e.touches[0].clientX);
+    setScrollLeft(containerRef.current.scrollLeft);
+  };
+  const handleTouchMove = e => {
+    if (!isDragging) return;
+    const moveX = e.touches[0].clientX - startX;
+    containerRef.current.scrollLeft = scrollLeft - moveX;
+  };
+  const handleTouchEnd = () => {
+    setIsDragging(false);
+  };
+  const handleScrollEnd = () => {
+    if (isDragging) return;
+    const container = containerRef.current;
+    const scrollerItems = scrollerRef.current.children;
+    const containerWidth = container.offsetWidth;
+
+    // Find the closest child to the center
+    let closestItem = null;
+    let closestOffset = Infinity;
+    Array.from(scrollerItems).forEach(item => {
+      const itemCenter = item.offsetLeft + item.offsetWidth / 2 - container.scrollLeft;
+      const offsetFromCenter = Math.abs(containerWidth / 2 - itemCenter);
+      if (offsetFromCenter < closestOffset) {
+        closestOffset = offsetFromCenter;
+        closestItem = item;
+      }
+    });
+    if (closestItem) {
+      container.scrollTo({
+        left: closestItem.offsetLeft - containerWidth / 2 + closestItem.offsetWidth / 2,
+        behavior: "smooth"
+      });
+    }
   };
   return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("div", {
     className: "relative",
-    children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)("div", {
-      className: "w-full min-h-screen py-10 grid md:grid-cols-3 max-w-7xl mx-auto gap-4",
-      children: [cards.map((card, i) => /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("div", {
-        className: (0,_lib_utils__WEBPACK_IMPORTED_MODULE_1__.cn)(card.className, ""),
-        children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)(framer_motion__WEBPACK_IMPORTED_MODULE_3__.motion.div, {
-          onClick: () => handleClick(card),
-          className: (0,_lib_utils__WEBPACK_IMPORTED_MODULE_1__.cn)(card.className, "relative overflow-hidden", selected?.id === card.id ? "rounded-lg cursor-pointer absolute inset-0 h-1/2 max-w-7xl m-auto z-50 flex justify-center items-center flex-wrap flex-col" : lastSelected?.id === card.id ? "z-40 bg-white rounded-xl h-full w-full" : "bg-white rounded-xl h-full w-full"),
-          layoutId: `card-${card.id}`,
-          children: [selected?.id === card.id && /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)(SelectedCard, {
-            selected: selected
-          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)(ImageComponent, {
-            card: card
-          })]
-        })
-      }, i)), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)(framer_motion__WEBPACK_IMPORTED_MODULE_3__.motion.div, {
-        onClick: handleOutsideClick,
-        className: (0,_lib_utils__WEBPACK_IMPORTED_MODULE_1__.cn)("absolute h-full w-full left-0 top-0 z-10", selected?.id ? "pointer-events-auto" : "pointer-events-none"),
-        animate: {
-          opacity: selected?.id ? 0.3 : 0
-        }
-      })]
+    children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("div", {
+      ref: containerRef,
+      className: "overflow-hidden relative",
+      style: {
+        "--animation-duration": "40s",
+        "--animation-direction": "forwards"
+      },
+      onMouseDown: handleMouseDown,
+      onMouseMove: handleMouseMove,
+      onMouseUp: handleMouseUp,
+      onMouseLeave: handleMouseUp,
+      onTouchStart: handleTouchStart,
+      onTouchMove: handleTouchMove,
+      onTouchEnd: handleTouchEnd,
+      children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("div", {
+        ref: scrollerRef,
+        className: (0,_lib_utils__WEBPACK_IMPORTED_MODULE_1__.cn)("flex min-w-full gap-12 py-4 w-max flex-nowrap transition-all duration-500 md:justify-between px-10", start && "animate-scroll", pauseOnHover && "hover:[animation-play-state:paused]"),
+        children: items.map((item, index) => /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("div", {
+          className: "flex-shrink-0 flex justify-center items-center max-w-[300px]",
+          children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("img", {
+            src: item.logo,
+            alt: item.name,
+            className: "object-contain transition-transform duration-300 hover:scale-105 hover:opacity-90 select-none",
+            draggable: "false"
+          })
+        }, index))
+      })
     })
   });
 };
-const ImageComponent = ({
-  card
-}) => {
-  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)(framer_motion__WEBPACK_IMPORTED_MODULE_3__.motion.img, {
-    layoutId: `image-${card.id}-image`,
-    src: card.thumbnail,
-    height: "500",
-    width: "500",
-    className: (0,_lib_utils__WEBPACK_IMPORTED_MODULE_1__.cn)("object-cover object-top absolute inset-0 h-full w-full transition duration-200"),
-    alt: "thumbnail"
-  });
-};
-const SelectedCard = ({
-  selected
-}) => {
-  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)("div", {
-    className: "bg-transparent h-full w-full flex flex-col justify-end rounded-lg shadow-2xl relative z-[60]",
-    children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)(framer_motion__WEBPACK_IMPORTED_MODULE_3__.motion.div, {
-      initial: {
-        opacity: 0
-      },
-      animate: {
-        opacity: 0.6
-      },
-      className: "absolute inset-0 h-full w-full bg-black opacity-60 z-10"
-    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)(framer_motion__WEBPACK_IMPORTED_MODULE_3__.motion.div, {
-      layoutId: `content-${selected?.id}`,
-      initial: {
-        opacity: 0,
-        y: 100
-      },
-      animate: {
-        opacity: 1,
-        y: 0
-      },
-      exit: {
-        opacity: 0,
-        y: 100
-      },
-      transition: {
-        duration: 0.3,
-        ease: "easeInOut"
-      },
-      className: "relative px-8 pb-4 z-[70]",
-      children: selected?.content
-    })]
-  });
-};
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (HorizontalSlider);
 
 /***/ }),
 
@@ -17943,6 +17921,31 @@ __webpack_require__.r(__webpack_exports__);
 
 
 
+const companies = [{
+  name: "Company 1",
+  logo: "http://kis-theme.local/wp-content/uploads/2024/10/majestic-mountain-peak-tranquil-winter-landscape-generated-by-ai-scaled.jpg"
+}, {
+  name: "Company 2",
+  logo: "http://kis-theme.local/wp-content/uploads/2024/10/majestic-mountain-peak-tranquil-winter-landscape-generated-by-ai-scaled.jpg"
+}, {
+  name: "Company 3",
+  logo: "http://kis-theme.local/wp-content/uploads/2024/10/majestic-mountain-peak-tranquil-winter-landscape-generated-by-ai-scaled.jpg"
+}, {
+  name: "Company 3",
+  logo: "http://kis-theme.local/wp-content/uploads/2024/10/majestic-mountain-peak-tranquil-winter-landscape-generated-by-ai-scaled.jpg"
+}, {
+  name: "Company 1",
+  logo: "http://kis-theme.local/wp-content/uploads/2024/10/majestic-mountain-peak-tranquil-winter-landscape-generated-by-ai-scaled.jpg"
+}, {
+  name: "Company 2",
+  logo: "http://kis-theme.local/wp-content/uploads/2024/10/majestic-mountain-peak-tranquil-winter-landscape-generated-by-ai-scaled.jpg"
+}, {
+  name: "Company 3",
+  logo: "http://kis-theme.local/wp-content/uploads/2024/10/majestic-mountain-peak-tranquil-winter-landscape-generated-by-ai-scaled.jpg"
+}, {
+  name: "Company 3",
+  logo: "http://kis-theme.local/wp-content/uploads/2024/10/majestic-mountain-peak-tranquil-winter-landscape-generated-by-ai-scaled.jpg"
+}];
 const AboutPage = () => {
   const [pageAttributes, setPageAttributes] = (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.useState)(null);
   (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.useEffect)(() => {
@@ -17959,7 +17962,9 @@ const AboutPage = () => {
     }
   }, []);
   return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsxs)("div", {
-    children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)(_common_component_HeaderTemplate__WEBPACK_IMPORTED_MODULE_2__["default"], {}), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)(_components_AboutUs__WEBPACK_IMPORTED_MODULE_4__["default"], {}), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)(_components_RetailSection__WEBPACK_IMPORTED_MODULE_3__["default"], {}), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)(_components_Gallery__WEBPACK_IMPORTED_MODULE_5__["default"], {})]
+    children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)(_common_component_HeaderTemplate__WEBPACK_IMPORTED_MODULE_2__["default"], {}), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)(_components_AboutUs__WEBPACK_IMPORTED_MODULE_4__["default"], {}), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)(_components_RetailSection__WEBPACK_IMPORTED_MODULE_3__["default"], {}), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)(_components_Gallery__WEBPACK_IMPORTED_MODULE_5__["default"], {
+      items: companies
+    })]
   });
 };
 

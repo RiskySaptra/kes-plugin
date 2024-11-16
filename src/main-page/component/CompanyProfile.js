@@ -45,7 +45,7 @@ const CompanyProfile = ({
 				</div>
 
 				{/* Text Section */}
-				<div className="flex flex-col justify-center px-4 md:px-10">
+				<div className="flex flex-col justify-center md:px-10">
 					{/* Company Profile Description */}
 					<RichText.Content
 						tagName="h3"
@@ -54,7 +54,7 @@ const CompanyProfile = ({
 					/>
 
 					{/* Action Buttons */}
-					<div className="flex mt-6 gap-4">
+					<div className="flex flex-col md:flex-row mt-6 gap-4">
 						{/* PDF Download Button */}
 						{pdfFile && pdfFile.url ? (
 							<a

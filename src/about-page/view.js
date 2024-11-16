@@ -5,6 +5,41 @@ import RetailSection from "./components/RetailSection";
 import AboutSection from "./components/AboutUs";
 import Gallery from "./components/Gallery";
 
+const companies = [
+	{
+		name: "Company 1",
+		logo: "http://kis-theme.local/wp-content/uploads/2024/10/majestic-mountain-peak-tranquil-winter-landscape-generated-by-ai-scaled.jpg",
+	},
+	{
+		name: "Company 2",
+		logo: "http://kis-theme.local/wp-content/uploads/2024/10/majestic-mountain-peak-tranquil-winter-landscape-generated-by-ai-scaled.jpg",
+	},
+	{
+		name: "Company 3",
+		logo: "http://kis-theme.local/wp-content/uploads/2024/10/majestic-mountain-peak-tranquil-winter-landscape-generated-by-ai-scaled.jpg",
+	},
+	{
+		name: "Company 3",
+		logo: "http://kis-theme.local/wp-content/uploads/2024/10/majestic-mountain-peak-tranquil-winter-landscape-generated-by-ai-scaled.jpg",
+	},
+	{
+		name: "Company 1",
+		logo: "http://kis-theme.local/wp-content/uploads/2024/10/majestic-mountain-peak-tranquil-winter-landscape-generated-by-ai-scaled.jpg",
+	},
+	{
+		name: "Company 2",
+		logo: "http://kis-theme.local/wp-content/uploads/2024/10/majestic-mountain-peak-tranquil-winter-landscape-generated-by-ai-scaled.jpg",
+	},
+	{
+		name: "Company 3",
+		logo: "http://kis-theme.local/wp-content/uploads/2024/10/majestic-mountain-peak-tranquil-winter-landscape-generated-by-ai-scaled.jpg",
+	},
+	{
+		name: "Company 3",
+		logo: "http://kis-theme.local/wp-content/uploads/2024/10/majestic-mountain-peak-tranquil-winter-landscape-generated-by-ai-scaled.jpg",
+	},
+];
+
 const AboutPage = () => {
 	const [pageAttributes, setPageAttributes] = useState(null);
 
@@ -28,7 +63,7 @@ const AboutPage = () => {
 			<HeaderTemplate />
 			<AboutSection />
 			<RetailSection />
-			<Gallery />
+			<Gallery items={companies} />
 		</div>
 	);
 };

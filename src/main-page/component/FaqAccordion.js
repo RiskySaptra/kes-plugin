@@ -28,7 +28,7 @@ const FAQAccordion = () => {
 	];
 
 	return (
-		<div className="bg-[#F8F8F9] py-10">
+		<div className="py-10">
 			<div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-8">
 				<div className="flex justify-center">
 					<motion.h2
@@ -41,11 +41,11 @@ const FAQAccordion = () => {
 						Pertanyaan Umum
 					</motion.h2>
 				</div>
-				<div className="space-y-4">
+				<div className="px-5 md:px-0 text-white">
 					{faqs.map((faq, index) => (
 						<motion.div
 							key={index}
-							className="border-b border-gray-300"
+							className="rounded-md"
 							initial={{ opacity: 0 }}
 							animate={{ opacity: 1 }}
 							transition={{ duration: 0.3 }}
@@ -54,13 +54,14 @@ const FAQAccordion = () => {
 								onClick={() =>
 									setActiveIndex(activeIndex === index ? null : index)
 								}
-								className="cursor-pointer py-4 px-4 bg-[#FCFCFD] rounded-md shadow-sm"
-								whileHover={{ scale: 1.02 }}
+								className={`cursor-pointer py-4 px-4 rounded-t-md transition-all ${
+									activeIndex === index
+										? "bg-[#0100B1] text-white"
+										: "bg-white text-gray-900"
+								}`}
 								transition={{ duration: 0.2 }}
 							>
-								<h3 className="text-lg font-medium text-[#354052]">
-									{faq.question}
-								</h3>
+								<h3 className="text-lg font-medium">{faq.question}</h3>
 							</motion.div>
 							<motion.div
 								initial={{ height: 0, opacity: 0 }}
@@ -69,7 +70,9 @@ const FAQAccordion = () => {
 									opacity: activeIndex === index ? 1 : 0,
 								}}
 								transition={{ duration: 0.3 }}
-								className="overflow-hidden px-4 py-2 bg-[#F3F4F6] rounded-md text-[#5A6271]"
+								className={`overflow-hidden bg-[#0100B1] rounded-b-md ${
+									activeIndex === index ? "py-2 px-4" : ""
+								}`}
 							>
 								<p>{faq.answer}</p>
 							</motion.div>

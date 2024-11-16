@@ -2,7 +2,7 @@ import { motion } from "framer-motion";
 
 const RetailSection = () => {
 	return (
-		<div className="min-h-screen bg-gradient-to-r flex items-center justify-center md:py-16 px-4">
+		<div className="pb-5 md:pb-20">
 			<div className="max-w-7xl mx-auto text-center text-gray-800">
 				{/* Acronym Header */}
 				<motion.h1

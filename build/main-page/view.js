@@ -2,6 +2,167 @@
 /******/ 	"use strict";
 /******/ 	var __webpack_modules__ = ({
 
+/***/ "./src/common_component/HorizontalSlider.js":
+/*!**************************************************!*\
+  !*** ./src/common_component/HorizontalSlider.js ***!
+  \**************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony import */ var _wordpress_element__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @wordpress/element */ "@wordpress/element");
+/* harmony import */ var _wordpress_element__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var _lib_utils__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../lib/utils */ "./src/lib/utils.js");
+/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! react/jsx-runtime */ "react/jsx-runtime");
+/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__);
+
+
+
+const HorizontalSlider = ({
+  items,
+  speed = "normal",
+  direction = "left",
+  pauseOnHover = true,
+  loop = false
+}) => {
+  const containerRef = (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.useRef)(null);
+  const scrollerRef = (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.useRef)(null);
+  const [start, setStart] = (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.useState)(false);
+  const [isDragging, setIsDragging] = (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.useState)(false);
+  const [startX, setStartX] = (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.useState)(0);
+  const [scrollLeft, setScrollLeft] = (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.useState)(0);
+  (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.useEffect)(() => {
+    if (loop) {
+      setupAnimation();
+    }
+    const container = containerRef.current;
+    if (container) {
+      container.addEventListener("scroll", handleScrollEnd);
+    }
+    return () => {
+      if (container) {
+        container.removeEventListener("scroll", handleScrollEnd);
+      }
+    };
+  }, [loop]);
+  const setupAnimation = () => {
+    if (containerRef.current && scrollerRef.current) {
+      const scrollerContent = Array.from(scrollerRef.current.children);
+
+      // Clone items for seamless infinite scrolling
+      scrollerContent.forEach(item => {
+        const duplicatedItem = item.cloneNode(true);
+        scrollerRef.current.appendChild(duplicatedItem);
+      });
+      setAnimationDirection();
+      setAnimationSpeed();
+      setStart(true); // Start animation
+    }
+  };
+  const setAnimationDirection = () => {
+    if (containerRef.current) {
+      const directionValue = direction === "left" ? "forwards" : "reverse";
+      containerRef.current.style.setProperty("--animation-direction", directionValue);
+    }
+  };
+  const setAnimationSpeed = () => {
+    if (containerRef.current) {
+      const speedValue = {
+        fast: "20s",
+        normal: "40s",
+        slow: "80s"
+      }[speed] || "40s";
+      containerRef.current.style.setProperty("--animation-duration", speedValue);
+    }
+  };
+  const handleMouseDown = e => {
+    setIsDragging(true);
+    setStartX(e.clientX);
+    setScrollLeft(containerRef.current.scrollLeft);
+  };
+  const handleMouseMove = e => {
+    if (!isDragging) return;
+    const moveX = e.clientX - startX;
+    containerRef.current.scrollLeft = scrollLeft - moveX;
+  };
+  const handleMouseUp = () => {
+    setIsDragging(false);
+  };
+  const handleTouchStart = e => {
+    setIsDragging(true);
+    setStartX(e.touches[0].clientX);
+    setScrollLeft(containerRef.current.scrollLeft);
+  };
+  const handleTouchMove = e => {
+    if (!isDragging) return;
+    const moveX = e.touches[0].clientX - startX;
+    containerRef.current.scrollLeft = scrollLeft - moveX;
+  };
+  const handleTouchEnd = () => {
+    setIsDragging(false);
+  };
+  const handleScrollEnd = () => {
+    if (isDragging) return;
+    const container = containerRef.current;
+    const scrollerItems = scrollerRef.current.children;
+    const containerWidth = container.offsetWidth;
+
+    // Find the closest child to the center
+    let closestItem = null;
+    let closestOffset = Infinity;
+    Array.from(scrollerItems).forEach(item => {
+      const itemCenter = item.offsetLeft + item.offsetWidth / 2 - container.scrollLeft;
+      const offsetFromCenter = Math.abs(containerWidth / 2 - itemCenter);
+      if (offsetFromCenter < closestOffset) {
+        closestOffset = offsetFromCenter;
+        closestItem = item;
+      }
+    });
+    if (closestItem) {
+      container.scrollTo({
+        left: closestItem.offsetLeft - containerWidth / 2 + closestItem.offsetWidth / 2,
+        behavior: "smooth"
+      });
+    }
+  };
+  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("div", {
+    className: "relative",
+    children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("div", {
+      ref: containerRef,
+      className: "overflow-hidden relative",
+      style: {
+        "--animation-duration": "40s",
+        "--animation-direction": "forwards"
+      },
+      onMouseDown: handleMouseDown,
+      onMouseMove: handleMouseMove,
+      onMouseUp: handleMouseUp,
+      onMouseLeave: handleMouseUp,
+      onTouchStart: handleTouchStart,
+      onTouchMove: handleTouchMove,
+      onTouchEnd: handleTouchEnd,
+      children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("div", {
+        ref: scrollerRef,
+        className: (0,_lib_utils__WEBPACK_IMPORTED_MODULE_1__.cn)("flex min-w-full gap-12 py-4 w-max flex-nowrap transition-all duration-500 md:justify-between px-10", start && "animate-scroll", pauseOnHover && "hover:[animation-play-state:paused]"),
+        children: items.map((item, index) => /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("div", {
+          className: "flex-shrink-0 flex justify-center items-center max-w-[300px]",
+          children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("img", {
+            src: item.logo,
+            alt: item.name,
+            className: "object-contain transition-transform duration-300 hover:scale-105 hover:opacity-90 select-none",
+            draggable: "false"
+          })
+        }, index))
+      })
+    })
+  });
+};
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (HorizontalSlider);
+
+/***/ }),
+
 /***/ "./src/common_component/infinite-moving-cards.js":
 /*!*******************************************************!*\
   !*** ./src/common_component/infinite-moving-cards.js ***!
@@ -286,52 +447,54 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
 /* harmony export */ });
-/* harmony import */ var framer_motion__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! framer-motion */ "./node_modules/framer-motion/dist/es/render/components/motion/proxy.mjs");
-/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react/jsx-runtime */ "react/jsx-runtime");
-/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var framer_motion__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! framer-motion */ "./node_modules/framer-motion/dist/es/render/components/motion/proxy.mjs");
+/* harmony import */ var _common_component_HorizontalSlider__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../../common_component/HorizontalSlider */ "./src/common_component/HorizontalSlider.js");
+/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react/jsx-runtime */ "react/jsx-runtime");
+/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__);
+
 
 
 const ClientCompanyComponent = () => {
   const companies = [{
     name: "Company 1",
-    logo: "https://kabelretail.local/wp-content/uploads/2024/11/PT.KMI-LOGO-1.png"
+    logo: "https://kabelretail.co.id/wp-content/uploads/2024/01/download-1.png"
   }, {
     name: "Company 2",
-    logo: "https://kabelretail.local/wp-content/uploads/2024/11/PT.KMI-LOGO-1.png"
+    logo: "https://kabelretail.co.id/wp-content/uploads/2024/01/download-1.png"
   }, {
     name: "Company 3",
-    logo: "https://kabelretail.local/wp-content/uploads/2024/11/PT.KMI-LOGO-1.png"
+    logo: "https://kabelretail.co.id/wp-content/uploads/2024/01/download-1.png"
   }, {
     name: "Company 4",
-    logo: "https://kabelretail.local/wp-content/uploads/2024/11/PT.KMI-LOGO-1.png"
+    logo: "https://kabelretail.co.id/wp-content/uploads/2024/01/download-1.png"
   }, {
     name: "Company 5",
-    logo: "https://kabelretail.local/wp-content/uploads/2024/11/PT.KMI-LOGO-1.png"
+    logo: "https://kabelretail.co.id/wp-content/uploads/2024/01/download-1.png"
   }, {
     name: "Company 6",
-    logo: "https://kabelretail.local/wp-content/uploads/2024/11/PT.KMI-LOGO-1.png"
+    logo: "https://kabelretail.co.id/wp-content/uploads/2024/01/download-1.png"
   }, {
     name: "Company 7",
-    logo: "https://kabelretail.local/wp-content/uploads/2024/11/PT.KMI-LOGO-1.png"
+    logo: "https://kabelretail.co.id/wp-content/uploads/2024/01/download-1.png"
   }, {
     name: "Company 8",
-    logo: "https://kabelretail.local/wp-content/uploads/2024/11/PT.KMI-LOGO-1.png"
+    logo: "https://kabelretail.co.id/wp-content/uploads/2024/01/download-1.png"
   }, {
     name: "Company 9",
-    logo: "https://kabelretail.local/wp-content/uploads/2024/11/PT.KMI-LOGO-1.png"
+    logo: "https://kabelretail.co.id/wp-content/uploads/2024/01/download-1.png"
   }, {
     name: "Company 10",
-    logo: "https://kabelretail.local/wp-content/uploads/2024/11/PT.KMI-LOGO-1.png"
+    logo: "https://kabelretail.co.id/wp-content/uploads/2024/01/download-1.png"
   }, {
     name: "Company 11",
-    logo: "https://kabelretail.local/wp-content/uploads/2024/11/PT.KMI-LOGO-1.png"
+    logo: "https://kabelretail.co.id/wp-content/uploads/2024/01/download-1.png"
   }, {
     name: "Company 12",
-    logo: "https://kabelretail.local/wp-content/uploads/2024/11/PT.KMI-LOGO-1.png"
+    logo: "https://kabelretail.co.id/wp-content/uploads/2024/01/download-1.png"
   }];
-  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsxs)("div", {
-    className: "max-w-5xl mx-auto py-16",
-    children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)(framer_motion__WEBPACK_IMPORTED_MODULE_1__.motion.h2, {
+  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsxs)("div", {
+    className: "max-w-7xl mx-auto py-16",
+    children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)(framer_motion__WEBPACK_IMPORTED_MODULE_2__.motion.h2, {
       initial: {
         opacity: 0,
         y: -50
@@ -348,45 +511,9 @@ const ClientCompanyComponent = () => {
       },
       className: "text-center text-[20px] md:text-[36px] text-[#354052] font-bold not-prose mb-10",
       children: "Klien Kami yang Terpercaya"
-    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)(framer_motion__WEBPACK_IMPORTED_MODULE_1__.motion.div, {
-      className: "grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-8",
-      initial: "hidden",
-      animate: "show",
-      variants: {
-        hidden: {
-          opacity: 0
-        },
-        show: {
-          opacity: 1,
-          transition: {
-            staggerChildren: 0.1
-          }
-        }
-      },
-      children: companies.map((company, index) => /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)(framer_motion__WEBPACK_IMPORTED_MODULE_1__.motion.div, {
-        className: "flex justify-center items-center",
-        variants: {
-          hidden: {
-            opacity: 0,
-            y: 50
-          },
-          show: {
-            opacity: 1,
-            y: 0
-          }
-        },
-        whileHover: {
-          scale: 1.1
-        },
-        whileTap: {
-          scale: 0.95
-        },
-        children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)(framer_motion__WEBPACK_IMPORTED_MODULE_1__.motion.img, {
-          src: company.logo,
-          alt: company.name,
-          className: "max-h-[80px] object-contain transition-all duration-300 hover:opacity-80"
-        })
-      }, index))
+    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)(_common_component_HorizontalSlider__WEBPACK_IMPORTED_MODULE_0__["default"], {
+      items: companies,
+      loop: true
     })]
   });
 };
@@ -473,13 +600,13 @@ const CompanyProfile = ({
           })
         })
       }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsxs)("div", {
-        className: "flex flex-col justify-center px-4 md:px-10",
+        className: "flex flex-col justify-center md:px-10",
         children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_0__.RichText.Content, {
           tagName: "h3",
           value: companyProfileDesc,
           className: "text-base md:text-lg font-medium leading-relaxed text-gray-700 mb-6 text-justify"
         }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsxs)("div", {
-          className: "flex mt-6 gap-4",
+          className: "flex flex-col md:flex-row mt-6 gap-4",
           children: [pdfFile && pdfFile.url ? /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsxs)("a", {
             href: pdfFile.url,
             className: "bg-blue-600 text-white py-6 px-8 rounded-lg flex items-center gap-3 justify-center hover:bg-blue-700 transition-all font-semibold md:w-[250px] w-full text-sm md:text-base",
@@ -547,7 +674,7 @@ const FAQAccordion = () => {
     answer: "Pesanan dapat diubah atau dibatalkan dalam waktu 24 jam setelah pembelian. Setelah itu, pesanan akan diproses dan tidak dapat diubah."
   }];
   return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("div", {
-    className: "bg-[#F8F8F9] py-10",
+    className: "py-10",
     children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsxs)("div", {
       className: "max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-8",
       children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("div", {
@@ -571,9 +698,9 @@ const FAQAccordion = () => {
           children: "Pertanyaan Umum"
         })
       }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("div", {
-        className: "space-y-4",
+        className: "px-5 md:px-0 text-white",
         children: faqs.map((faq, index) => /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsxs)(framer_motion__WEBPACK_IMPORTED_MODULE_2__.motion.div, {
-          className: "border-b border-gray-300",
+          className: "rounded-md",
           initial: {
             opacity: 0
           },
@@ -585,15 +712,12 @@ const FAQAccordion = () => {
           },
           children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)(framer_motion__WEBPACK_IMPORTED_MODULE_2__.motion.div, {
             onClick: () => setActiveIndex(activeIndex === index ? null : index),
-            className: "cursor-pointer py-4 px-4 bg-[#FCFCFD] rounded-md shadow-sm",
-            whileHover: {
-              scale: 1.02
-            },
+            className: `cursor-pointer py-4 px-4 rounded-t-md transition-all ${activeIndex === index ? "bg-[#0100B1] text-white" : "bg-white text-gray-900"}`,
             transition: {
               duration: 0.2
             },
             children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("h3", {
-              className: "text-lg font-medium text-[#354052]",
+              className: "text-lg font-medium",
               children: faq.question
             })
           }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)(framer_motion__WEBPACK_IMPORTED_MODULE_2__.motion.div, {
@@ -608,7 +732,7 @@ const FAQAccordion = () => {
             transition: {
               duration: 0.3
             },
-            className: "overflow-hidden px-4 py-2 bg-[#F3F4F6] rounded-md text-[#5A6271]",
+            className: `overflow-hidden bg-[#0100B1] rounded-b-md ${activeIndex === index ? "py-2 px-4" : ""}`,
             children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("p", {
               children: faq.answer
             })
@@ -632,25 +756,27 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
 /* harmony export */ });
-/* harmony import */ var framer_motion__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! framer-motion */ "./node_modules/framer-motion/dist/es/render/components/motion/proxy.mjs");
-/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react/jsx-runtime */ "react/jsx-runtime");
-/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var framer_motion__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! framer-motion */ "./node_modules/framer-motion/dist/es/render/components/motion/proxy.mjs");
+/* harmony import */ var _common_component_HorizontalSlider__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../../common_component/HorizontalSlider */ "./src/common_component/HorizontalSlider.js");
+/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react/jsx-runtime */ "react/jsx-runtime");
+/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__);
+
 
 
 const OurPartner = () => {
   const companies = [{
     name: "Company 1",
-    logo: "https://kabelretail.local/wp-content/uploads/2024/11/PT.KMI-LOGO-1.png"
+    logo: "https://kabelretail.co.id/wp-content/uploads/2024/01/download-1.png"
   }, {
     name: "Company 2",
-    logo: "https://kabelretail.local/wp-content/uploads/2024/11/PT.KMI-LOGO-1.png"
+    logo: "https://kabelretail.co.id/wp-content/uploads/2024/01/download-1.png"
   }, {
     name: "Company 3",
-    logo: "https://kabelretail.local/wp-content/uploads/2024/11/PT.KMI-LOGO-1.png"
+    logo: "https://kabelretail.co.id/wp-content/uploads/2024/01/download-1.png"
   }];
-  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsxs)("div", {
-    className: "max-w-5xl mx-auto",
-    children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)(framer_motion__WEBPACK_IMPORTED_MODULE_1__.motion.h2, {
+  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsxs)("div", {
+    className: "max-w-7xl mx-auto",
+    children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)(framer_motion__WEBPACK_IMPORTED_MODULE_2__.motion.h2, {
       initial: {
         opacity: 0,
         y: -50
@@ -667,45 +793,8 @@ const OurPartner = () => {
       },
       className: "text-center text-[20px] md:text-[36px] text-[#354052] font-bold not-prose mb-10",
       children: "Kami memasarkan produk dari brand-brand terbaik di bidangnya"
-    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)(framer_motion__WEBPACK_IMPORTED_MODULE_1__.motion.div, {
-      className: "grid grid-cols-2 md:grid-cols-3 gap-8",
-      initial: "hidden",
-      animate: "show",
-      variants: {
-        hidden: {
-          opacity: 0
-        },
-        show: {
-          opacity: 1,
-          transition: {
-            staggerChildren: 0.1
-          }
-        }
-      },
-      children: companies.map((company, index) => /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)(framer_motion__WEBPACK_IMPORTED_MODULE_1__.motion.div, {
-        className: "flex justify-center items-center",
-        variants: {
-          hidden: {
-            opacity: 0,
-            y: 50
-          },
-          show: {
-            opacity: 1,
-            y: 0
-          }
-        },
-        whileHover: {
-          scale: 1.1
-        },
-        whileTap: {
-          scale: 0.95
-        },
-        children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)(framer_motion__WEBPACK_IMPORTED_MODULE_1__.motion.img, {
-          src: company.logo,
-          alt: company.name,
-          className: "max-h-[100px] object-contain transition-all duration-300 hover:opacity-80"
-        })
-      }, index))
+    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)(_common_component_HorizontalSlider__WEBPACK_IMPORTED_MODULE_0__["default"], {
+      items: companies
     })]
   });
 };
