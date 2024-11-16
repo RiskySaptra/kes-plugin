@@ -13,10 +13,12 @@ build/Release
 
 # Dependency directories
 node_modules/
-build
+build 
+
 
 # Optional npm cache directory
 .npm
+
 
 # Optional eslint cache
 .eslintcache
