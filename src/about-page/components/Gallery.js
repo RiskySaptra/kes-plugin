@@ -13,7 +13,7 @@ const Gallery = ({ items }) => {
 			>
 				Dokumentasi pengiriman kabel kami ke berbagai proyek
 			</motion.h2>
-			<HorizontalSlider items={items} />
+			<HorizontalSlider items={items} itemSize="max-w-[400px]" />
 		</div>
 	);
 };
