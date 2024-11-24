@@ -48,7 +48,7 @@ const NewsList = ({ newsItems }) => (
 	<AnimatePresence mode="wait">
 		<motion.div
 			key={newsItems.map((news) => news.id).join("-")}
-			className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 px-5 md:px-0"
+			className="grid grid-cols-1 md:!grid-cols-2 gap-6 px-5 md:px-0"
 			initial={{ opacity: 0, y: 20 }}
 			animate={{ opacity: 1, y: 0 }}
 			exit={{ opacity: 0, y: 20 }}
@@ -274,8 +274,8 @@ const NewsHubPage = () => {
 		<>
 			{error && <p className="text-red-500">Error: {error}</p>}
 			<HeaderTemplate />
-			<div className="mx-auto max-w-[1280px] md:p-8 flex flex-col md:flex-row">
-				<div className="w-full md:w-3/4 md:pr-8">
+			<div className="mx-auto max-w-[1280px] md:p-8 flex flex-col md:!flex-row">
+				<div className="w-full md:!w-3/5">
 					<CategoryFilter
 						categories={categories}
 						selectedCategory={selectedCategory}
@@ -290,7 +290,7 @@ const NewsHubPage = () => {
 						/>
 					)}
 				</div>
-				<div className="w-full md:w-1/4 mt-4 md:mt-0">
+				<div className="w-full md:!w-2/5 mt-4 md:!mt-0">
 					<Sidebar latestNews={latestNews} />
 				</div>
 			</div>
