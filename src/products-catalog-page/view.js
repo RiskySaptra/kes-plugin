@@ -111,6 +111,8 @@ const FilterBar = ({ selectedFilter, onFilterChange }) => (
 				"Medium Voltage Cables",
 				"Fire Resistant Cables",
 				"Flexible Cables",
+				"Jointing",
+				"Fitting dan Accessories",
 			].map((filter) => (
 				<motion.div
 					key={filter}

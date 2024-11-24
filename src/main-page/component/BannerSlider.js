@@ -65,7 +65,7 @@ const BannerCarousel = ({ banners, interval = 2000 }) => {
 
 	return (
 		<div
-			className="relative w-full h-[240px] md:h-screen overflow-hidden"
+			className="relative w-full h-[210px] md:h-screen overflow-hidden"
 			onMouseEnter={handleMouseEnter} // Set hover event handlers
 			onMouseLeave={handleMouseLeave}
 		>
@@ -79,7 +79,7 @@ const BannerCarousel = ({ banners, interval = 2000 }) => {
 					initial="enter"
 					animate="center"
 					exit="exit"
-					className="absolute inset-0 w-full h-full object-cover"
+					className="absolute inset-0 w-full h-full object-fill"
 				/>
 			</AnimatePresence>
 

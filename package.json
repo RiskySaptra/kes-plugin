@@ -25,7 +25,6 @@
 		"lodash-move": "^1.1.1",
 		"popmotion": "^11.0.5",
 		"postcss": "^8.4.47",
-		"react-lottie": "^1.2.4",
 		"sass": "^1.80.3",
 		"tailwind-merge": "^2.5.4",
 		"tailwind-scrollbar-hide": "^1.1.7",

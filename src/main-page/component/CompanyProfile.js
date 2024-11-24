@@ -28,9 +28,9 @@ const CompanyProfile = ({
 			</motion.h2>
 
 			{/* Grid Layout for Image and Text */}
-			<div className="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-12">
+			<div className="grid grid-cols-1 md:grid-cols-2 gap-2 md:!gap-0">
 				{/* Image Section */}
-				<div className="flex justify-center items-center md:py-5">
+				<div className="">
 					{companyProfileImage && companyProfileImage.url ? (
 						<img
 							src={companyProfileImage.url}
@@ -38,7 +38,7 @@ const CompanyProfile = ({
 							className="rounded-lg w-full h-auto object-cover shadow-lg transition-transform transform hover:scale-105"
 						/>
 					) : (
-						<div className="w-full h-[337px] bg-slate-800 rounded-lg flex justify-center items-center text-white">
+						<div className="w-full h-auto bg-slate-800 rounded-lg flex justify-center items-center text-white">
 							<p>No Image Selected</p>
 						</div>
 					)}
@@ -50,7 +50,7 @@ const CompanyProfile = ({
 					<RichText.Content
 						tagName="h3"
 						value={companyProfileDesc}
-						className="text-base md:text-lg font-medium leading-relaxed text-gray-700 mb-6 text-justify"
+						className="text-sm md:!text-lg font-medium leading-relaxed text-gray-700 mb-6 text-justify"
 					/>
 
 					{/* Action Buttons */}
@@ -59,7 +59,7 @@ const CompanyProfile = ({
 						{pdfFile && pdfFile.url ? (
 							<a
 								href={pdfFile.url}
-								className="bg-blue-600 text-white py-6 px-8 rounded-lg flex items-center gap-3 justify-center hover:bg-blue-700 transition-all font-semibold md:w-[250px] w-full text-sm md:text-base"
+								className="bg-[#b71a1d] text-white py-6 px-8 rounded-lg flex items-center gap-3 justify-center hover:bg-[#b71a1d]/80 transition-all font-semibold md:w-[250px] w-full text-sm md:!text-xl"
 								download
 								aria-label="Download company profile PDF"
 							>
@@ -76,7 +76,7 @@ const CompanyProfile = ({
 								href={whatsAppUrl}
 								target="_blank"
 								rel="noopener noreferrer"
-								className="bg-green-500 text-white py-6 px-8 rounded-lg flex items-center gap-3 justify-center hover:bg-green-600 transition-all font-semibold md:w-[250px] w-full text-sm md:text-base"
+								className="bg-[#0003fb] text-white py-6 px-8 rounded-lg flex items-center gap-3 justify-center hover:bg-[#0003fb]/80 transition-all font-semibold md:w-[250px] w-full text-sm md:!text-xl"
 								aria-label="Contact us on WhatsApp"
 							>
 								<IconBrandWhatsapp size={22} />

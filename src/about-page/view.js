@@ -8,35 +8,35 @@ import Gallery from "./components/Gallery";
 const companies = [
 	{
 		name: "Company 1",
-		logo: "http://kis-theme.local/wp-content/uploads/2024/10/majestic-mountain-peak-tranquil-winter-landscape-generated-by-ai-scaled.jpg",
+		logo: "https://kabelretail.co.id/wp-content/uploads/2024/01/WhatsApp-Image-2024-01-17-at-4.36.04-PM-edited-768x768.jpeg",
 	},
 	{
 		name: "Company 2",
-		logo: "http://kis-theme.local/wp-content/uploads/2024/10/majestic-mountain-peak-tranquil-winter-landscape-generated-by-ai-scaled.jpg",
+		logo: "https://kabelretail.co.id/wp-content/uploads/2024/01/WhatsApp-Image-2024-01-17-at-4.36.04-PM-edited-768x768.jpeg",
 	},
 	{
 		name: "Company 3",
-		logo: "http://kis-theme.local/wp-content/uploads/2024/10/majestic-mountain-peak-tranquil-winter-landscape-generated-by-ai-scaled.jpg",
+		logo: "https://kabelretail.co.id/wp-content/uploads/2024/01/WhatsApp-Image-2024-01-17-at-4.36.04-PM-edited-768x768.jpeg",
 	},
 	{
 		name: "Company 3",
-		logo: "http://kis-theme.local/wp-content/uploads/2024/10/majestic-mountain-peak-tranquil-winter-landscape-generated-by-ai-scaled.jpg",
+		logo: "https://kabelretail.co.id/wp-content/uploads/2024/01/WhatsApp-Image-2024-01-17-at-4.36.04-PM-edited-768x768.jpeg",
 	},
 	{
 		name: "Company 1",
-		logo: "http://kis-theme.local/wp-content/uploads/2024/10/majestic-mountain-peak-tranquil-winter-landscape-generated-by-ai-scaled.jpg",
+		logo: "https://kabelretail.co.id/wp-content/uploads/2024/01/WhatsApp-Image-2024-01-17-at-4.36.04-PM-edited-768x768.jpeg",
 	},
 	{
 		name: "Company 2",
-		logo: "http://kis-theme.local/wp-content/uploads/2024/10/majestic-mountain-peak-tranquil-winter-landscape-generated-by-ai-scaled.jpg",
+		logo: "https://kabelretail.co.id/wp-content/uploads/2024/01/WhatsApp-Image-2024-01-17-at-4.36.04-PM-edited-768x768.jpeg",
 	},
 	{
 		name: "Company 3",
-		logo: "http://kis-theme.local/wp-content/uploads/2024/10/majestic-mountain-peak-tranquil-winter-landscape-generated-by-ai-scaled.jpg",
+		logo: "https://kabelretail.co.id/wp-content/uploads/2024/01/WhatsApp-Image-2024-01-17-at-4.36.04-PM-edited-768x768.jpeg",
 	},
 	{
 		name: "Company 3",
-		logo: "http://kis-theme.local/wp-content/uploads/2024/10/majestic-mountain-peak-tranquil-winter-landscape-generated-by-ai-scaled.jpg",
+		logo: "https://kabelretail.co.id/wp-content/uploads/2024/01/WhatsApp-Image-2024-01-17-at-4.36.04-PM-edited-768x768.jpeg",
 	},
 ];
 

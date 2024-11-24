@@ -31,15 +31,15 @@ const OurProducts = ({ text, images = [] }) => {
 				<RichText.Content
 					tagName="h3"
 					value={text}
-					className="text-[12px] md:text-[18px] font-medium leading-normal not-prose mb-10 text-center md:px-[10%]"
+					className="text-justify md:text-center text-sm md:!text-lg font-medium leading-normal not-prose mb-10 md:px-[10%]"
 				/>
 
 				<div className="md:px-[10%]">
-					<div className="grid grid-cols-4 gap-4">
+					<div className="grid grid-cols-2 md:!grid-cols-4 gap-4">
 						<AnimatePresence mode="wait">
 							{images.length > 0 && images[activeImage]?.url && (
 								<motion.div
-									className="col-span-4"
+									className="col-span-2 md:!col-span-4"
 									key={activeImage}
 									initial={{ opacity: 0, scale: 0.95 }}
 									animate={{ opacity: 1, scale: 1 }}
