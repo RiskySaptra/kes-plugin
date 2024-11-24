@@ -86,26 +86,26 @@ const BannerCarousel = ({ banners, interval = 2000 }) => {
 			{/* Navigation Arrows */}
 			<button
 				onClick={() => paginate(-1)}
-				className="absolute top-1/2 left-4 transform -translate-y-1/2 bg-opacity-70 text-white p-3 rounded-full bg-gray-800 hover:bg-opacity-90 focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 transition-all duration-300 sm:p-5 sm:text-3xl text-xl"
+				className="absolute top-1/2 left-4 transform -translate-y-1/2 bg-opacity-70 text-white md:p-3 p-1 rounded-full bg-gray-800 hover:bg-opacity-90 focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 transition-all duration-300 sm:p-5 sm:text-3xl text-xl"
 				aria-label="Previous Banner"
 			>
 				<IconChevronLeft />
 			</button>
 			<button
 				onClick={() => paginate(1)}
-				className="absolute top-1/2 right-4 transform -translate-y-1/2 bg-opacity-70 text-white p-3 rounded-full bg-gray-800 hover:bg-opacity-90 focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 transition-all duration-300 sm:p-5 sm:text-3xl text-xl"
+				className="absolute top-1/2 right-4 transform -translate-y-1/2 bg-opacity-70 text-white md:p-3 p-1 rounded-full bg-gray-800 hover:bg-opacity-90 focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 transition-all duration-300 sm:p-5 sm:text-3xl text-xl"
 				aria-label="Next Banner"
 			>
 				<IconChevronRight />
 			</button>
 
 			{/* Indicator Dots */}
-			<div className="absolute bottom-4 w-full flex justify-center gap-3">
+			<div className="absolute bottom-4 w-full flex justify-center gap-1 md:gap-3">
 				{banners.map((_, index) => (
 					<div
 						key={index}
 						onClick={() => handleIndicatorClick(index)} // Handle dot click
-						className={`w-3 h-3 md:w-4 md:h-4 rounded-full cursor-pointer transition-all duration-300 ease-in-out ${
+						className={`w-1 h-1 md:w-4 md:h-4 rounded-full cursor-pointer transition-all duration-300 ease-in-out ${
 							index === bannerIndex ? "bg-white scale-125" : "bg-gray-400"
 						}`}
 					/>

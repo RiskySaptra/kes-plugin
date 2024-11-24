@@ -1,7 +1,7 @@
 import { motion } from "framer-motion";
 
 const HeaderTemplate = () => (
-	<div className="relative bg-[#4A4A9B] min-h-[420px] flex justify-center items-center text-white px-6 py-16 overflow-hidden">
+	<div className="relative bg-[#4A4A9B] min-h-[210px] md:!min-h-[420px] flex justify-center items-center text-white px-6 py-16 overflow-hidden">
 		{/* Placeholder Image for visual interest */}
 		<img
 			src="https://via.placeholder.com/1200x600.png?text=Your+Company+Image+Here"
@@ -55,10 +55,7 @@ const HeaderTemplate = () => (
 				transition={{ delay: 0.2, duration: 0.6 }}
 				className="text-lg md:text-xl font-light max-w-2xl mx-auto text-gray-200"
 			>
-				Kabel untuk Instalasi Listrik Outdoor, Indoor, dan Bangunan dari Wilson
-				Cables. Dapatkan kabel untuk instalasi listrik indoor dan outdoor yang
-				terbaik untuk keperluan aktivitas anda di dalam rumah, gedung,
-				perkantoran, dan lain-lainnya.
+				Kabel untuk
 			</motion.p>
 		</motion.div>
 	</div>
