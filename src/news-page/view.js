@@ -274,7 +274,7 @@ const NewsHubPage = () => {
 		<>
 			{error && <p className="text-red-500">Error: {error}</p>}
 			<HeaderTemplate />
-			<div className="mx-auto max-w-[1280px] md:p-8 flex flex-col md:!flex-row">
+			<div className="mx-auto max-w-[1280px] md:p-8 flex flex-col md:!flex-row gap-5">
 				<div className="w-full md:!w-3/5">
 					<CategoryFilter
 						categories={categories}
