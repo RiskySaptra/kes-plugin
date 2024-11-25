@@ -58,8 +58,6 @@ export const InfiniteMovingCards = ({
 		}
 	};
 
-	const rating = Math.floor(Math.random() * 5) + 1;
-
 	return (
 		<div ref={containerRef} className={cn("relative z-20", className)}>
 			<ul
@@ -91,27 +89,17 @@ export const InfiniteMovingCards = ({
 								<span className="text-sm font-semibold text-gray-100">
 									{item.name}
 								</span>
-								<span className="text-xs text-gray-300">{item.title}</span>
 							</div>
 
 							{/* Star Rating */}
 							<div className="relative z-20 mt-4 flex space-x-1 justify-center">
-								{[1, 2, 3, 4, 5].map((_, i) =>
-									i < rating ? (
-										<IconStarFilled
-											key={i}
-											size={20} // Adjust size as needed
-											className="text-yellow-300"
-										/>
-									) : (
-										<IconStar
-											key={i}
-											size={20}
-											className="text-yellow-300"
-											strokeWidth={1.5} // Optional for visibility on outline
-										/>
-									),
-								)}
+								{Array.from(Array(item.rating).keys()).map((_, i) => (
+									<IconStarFilled
+										key={i}
+										size={20} // Adjust size as needed
+										className="text-yellow-300"
+									/>
+								))}
 							</div>
 						</blockquote>
 					</li>

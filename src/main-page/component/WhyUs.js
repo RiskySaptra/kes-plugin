@@ -9,21 +9,21 @@ const WhyUs = () => {
 	const items = [
 		{
 			title: "Melayani Pembelian Ecer maupun Grosir",
-			text: "Kami melayani pembelian tanpa minimal qty* dan menerima permintaan kabel potongan dan produksi. Untuk pembelian grosir dan proyek, harga khusus tersedia.",
+			text: "Kami dapat melayani pembelian kabel tanpa minimal kuantiti dan menerima permintaan untuk kabel potongan dan produksi. Tentunya untuk pembelian grosir dan keperluan proyek akan mendapatkan harga khusus (best price).",
 			icon: (
 				<IconShoppingBag size={48} stroke={1.5} className="text-blue-600" />
 			),
 		},
 		{
 			title: "Jaminan Produk Asli, Baru, dan Bergaransi",
-			text: "Produk kami dijamin asli, baru, dan bergaransi, dengan data teknis, TKDN, COO, dan dokumen lainnya yang tersedia jika diperlukan.",
+			text: "Kami dapat memberikan jaminan bahwa produk kami asli, baru, dan bergaransi. Jika diperlukan kami dapat mengeluarkan data teknis kabel (Technical Data Sheet/TDS), Tingkat Komponen Dalam Negeri (TKDN), sertifikat orisinil (COO dan COM), dan segala dokumen lainnnya.",
 			icon: (
 				<IconCertificate size={48} stroke={1.5} className="text-blue-600" />
 			),
 		},
 		{
 			title: "Gratis Biaya Kirim*",
-			text: "Untuk pembelian grosir, kami siap antarkan gratis ke site proyek atau kantor dalam 1-3 hari untuk area Jakarta dan sekitarnya.*",
+			text: "Khusus pembelian grosir, kami siap antarkan langsung ke site proyek, kantor, maupun ekspedisi secara gratis.* Estimasi kirim 1 – 3 hari setelah melakukan transaksi. Khusus untuk area Jakarta dan sekitarnya. *S&K Berlaku",
 			icon: (
 				<IconTruckDelivery size={48} stroke={1.5} className="text-blue-600" />
 			),

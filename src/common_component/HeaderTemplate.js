@@ -1,6 +1,6 @@
 import { motion } from "framer-motion";
 
-const HeaderTemplate = () => (
+const HeaderTemplate = ({ desc = "empty" }) => (
 	<div className="relative bg-[#4A4A9B] min-h-[210px] md:!min-h-[420px] flex justify-center items-center text-white px-6 py-16 overflow-hidden">
 		{/* Placeholder Image for visual interest */}
 		<img
@@ -33,7 +33,7 @@ const HeaderTemplate = () => (
 		/>
 
 		{/* Content with animations */}
-		<motion.div
+		{/* <motion.div
 			initial={{ opacity: 0, y: -30 }}
 			animate={{ opacity: 1, y: 0 }}
 			transition={{ duration: 0.8, ease: "easeOut" }}
@@ -55,9 +55,9 @@ const HeaderTemplate = () => (
 				transition={{ delay: 0.2, duration: 0.6 }}
 				className="text-lg md:text-xl font-light max-w-2xl mx-auto text-gray-200"
 			>
-				Kabel untuk
+				{desc}
 			</motion.p>
-		</motion.div>
+		</motion.div> */}
 	</div>
 );
 

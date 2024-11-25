@@ -6,24 +6,33 @@ const FAQAccordion = () => {
 
 	const faqs = [
 		{
-			question: "Apa kebijakan pengembalian barang Anda?",
+			question:
+				"Produk kabel apa saja yang disediakan oleh PT KMI Electric Solution (KES)?",
 			answer:
-				"Kami menawarkan kebijakan pengembalian barang dalam 30 hari untuk semua produk. Produk harus dalam kondisi asli untuk memenuhi syarat pengembalian.",
+				"Kami menyediakan berbagai jenis kabel listrik, mulai dari kabel bertegangan rendah, medium, hingga berspesifikasi khusus untuk memenuhi kebutuhan retail dan proyek. ",
 		},
 		{
-			question: "Berapa lama waktu pengiriman?",
+			question:
+				"Apa yang membuat PT KMI Electric Solution (KES) berbeda dari distributor kabel lainnya?",
 			answer:
-				"Pengiriman biasanya memakan waktu 3-5 hari kerja, tergantung pada lokasi dan metode pengiriman Anda.",
+				"Kami tidak hanya sebagai distributor resmi namun merupakan anak perusahaan dari PT KMI Wire and Cable Tbk, manufaktur dari produk Kabelmetal Indonesia. Kami dapat menjamin keaslian produk yang dilengkapi dengan sertifikat dan dokumen teknis.",
 		},
 		{
-			question: "Apakah Anda menawarkan pengiriman internasional?",
+			question:
+				"Apakah PT KMI Electric Solution (KES) menerima proyek skala besar?",
 			answer:
-				"Ya, kami menawarkan pengiriman internasional ke negara-negara tertentu. Biaya pengiriman akan dihitung saat checkout.",
+				"Kami berfokus pada penjualan retail dan siap memenuhi segala kebutuhan proyek.",
 		},
 		{
-			question: "Bisakah saya mengubah atau membatalkan pesanan saya?",
+			question: "Bagaimana PT KMI Electric Solution (KES) melayani pengiriman?",
 			answer:
-				"Pesanan dapat diubah atau dibatalkan dalam waktu 24 jam setelah pembelian. Setelah itu, pesanan akan diproses dan tidak dapat diubah.",
+				"Kami selalu mengutamakan kepuasan pelanggan, oleh karena itu, kami siap melayani permintaan pengiriman produk ke area Jadetabek dengan jaminan pengiriman maksimal H+2.",
+		},
+		{
+			question:
+				"Bagaimana cara menghubungi PT KMI Electric Solution (PT KES) untuk informasi lebih lanjut?",
+			answer:
+				"Anda dapat menghubungi tim sales kami (cantumkan no. Luis, Alfian, Ghifar) atau melalui formulir yang tersedia pada bagian kontak.",
 		},
 	];
 
