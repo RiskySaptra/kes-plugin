@@ -8,6 +8,7 @@ const HorizontalSlider = ({
 	pauseOnHover = true,
 	loop = false,
 	itemSize = "max-w-[300px]",
+	maxHeight = "",
 }) => {
 	const containerRef = useRef(null);
 	const scrollerRef = useRef(null);
@@ -173,7 +174,7 @@ const HorizontalSlider = ({
 							<img
 								src={item.logo}
 								alt={item.name}
-								className="object-contain transition-transform duration-300 hover:scale-105 hover:opacity-90 select-none"
+								className={`object-contain transition-transform duration-300 hover:scale-105 hover:opacity-90 select-none ${maxHeight}`}
 								draggable={false}
 							/>
 						</div>

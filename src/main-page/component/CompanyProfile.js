@@ -54,7 +54,7 @@ const CompanyProfile = ({
 					/>
 
 					{/* Action Buttons */}
-					<div className="flex flex-col md:flex-row mt-6 gap-4">
+					<div className="flex flex-col mt-6 gap-4">
 						{/* PDF Download Button */}
 						{pdfFile && pdfFile.url ? (
 							<a

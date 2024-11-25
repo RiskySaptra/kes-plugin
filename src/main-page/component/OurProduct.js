@@ -1,12 +1,18 @@
 import { useState } from "@wordpress/element";
 import { motion, AnimatePresence } from "framer-motion";
 import { RichText } from "@wordpress/block-editor";
+import imageUrl from "../../assets/BACKROUND 3.png";
 
 const OurProducts = ({ text, images = [] }) => {
 	const [activeImage, setActiveImage] = useState(0);
 
 	return (
-		<div className="bg-[#F8F8F9]">
+		<div className="relative">
+			<img
+				src={imageUrl}
+				alt="Static Image"
+				className="absolute w-full h-full -z-10 opacity-50"
+			/>
 			<motion.div
 				initial={{ opacity: 0, y: -50 }}
 				whileInView={{ opacity: 1, y: 0 }}

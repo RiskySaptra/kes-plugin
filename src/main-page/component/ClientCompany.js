@@ -1,57 +1,16 @@
 import { motion } from "framer-motion";
 import HorizontalSlider from "../../common_component/HorizontalSlider";
+import agungPodomoroLand from "../../assets/logo/agung-podomoro-land.png";
+import agungSedayuGroup from "../../assets/logo/agung-sedayu-group.png";
+import alamSutera from "../../assets/logo/alam-sutera.png";
+
+import imageList from "../../common_component/logo";
 
 const ClientCompanyComponent = () => {
-	const companies = [
-		{
-			name: "Company 1",
-			logo: "https://kabelretail.co.id/wp-content/uploads/2024/01/download-1.png",
-		},
-		{
-			name: "Company 2",
-			logo: "https://kabelretail.co.id/wp-content/uploads/2024/01/download-1.png",
-		},
-		{
-			name: "Company 3",
-			logo: "https://kabelretail.co.id/wp-content/uploads/2024/01/download-1.png",
-		},
-		{
-			name: "Company 4",
-			logo: "https://kabelretail.co.id/wp-content/uploads/2024/01/download-1.png",
-		},
-		{
-			name: "Company 5",
-			logo: "https://kabelretail.co.id/wp-content/uploads/2024/01/download-1.png",
-		},
-		{
-			name: "Company 6",
-			logo: "https://kabelretail.co.id/wp-content/uploads/2024/01/download-1.png",
-		},
-		{
-			name: "Company 7",
-			logo: "https://kabelretail.co.id/wp-content/uploads/2024/01/download-1.png",
-		},
-		{
-			name: "Company 8",
-			logo: "https://kabelretail.co.id/wp-content/uploads/2024/01/download-1.png",
-		},
-		{
-			name: "Company 9",
-			logo: "https://kabelretail.co.id/wp-content/uploads/2024/01/download-1.png",
-		},
-		{
-			name: "Company 10",
-			logo: "https://kabelretail.co.id/wp-content/uploads/2024/01/download-1.png",
-		},
-		{
-			name: "Company 11",
-			logo: "https://kabelretail.co.id/wp-content/uploads/2024/01/download-1.png",
-		},
-		{
-			name: "Company 12",
-			logo: "https://kabelretail.co.id/wp-content/uploads/2024/01/download-1.png",
-		},
-	];
+	const companies = imageList.map((image) => ({
+		name: image.name,
+		logo: image.src,
+	}));
 
 	return (
 		<div className="max-w-7xl mx-auto py-16">
@@ -65,7 +24,11 @@ const ClientCompanyComponent = () => {
 				Klien Kami yang Terpercaya
 			</motion.h2>
 
-			<HorizontalSlider items={companies} loop={true} />
+			<HorizontalSlider
+				items={companies}
+				loop={true}
+				maxHeight="max-h-[200px]"
+			/>
 		</div>
 	);
 };
