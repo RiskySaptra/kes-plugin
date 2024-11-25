@@ -1,10 +1,13 @@
 import { motion } from "framer-motion";
 
-const HeaderTemplate = ({ desc = "empty" }) => (
+const HeaderTemplate = ({
+	desc = "empty description",
+	imageUrl = "https://via.placeholder.com/1200x600.png?text=Your+Company+Image+Here",
+}) => (
 	<div className="relative bg-[#4A4A9B] min-h-[210px] md:!min-h-[420px] flex justify-center items-center text-white px-6 py-16 overflow-hidden">
 		{/* Placeholder Image for visual interest */}
 		<img
-			src="https://via.placeholder.com/1200x600.png?text=Your+Company+Image+Here"
+			src={imageUrl}
 			alt="Background Placeholder"
 			className="absolute inset-0 w-full h-full object-cover opacity-40"
 		/>
@@ -13,7 +16,7 @@ const HeaderTemplate = ({ desc = "empty" }) => (
 		<div className="absolute inset-0 bg-gradient-to-b from-[#4A4A9B] to-transparent opacity-90" />
 
 		{/* Animated floating shapes */}
-		<motion.div
+		{/* <motion.div
 			initial={{ opacity: 0, y: 50 }}
 			animate={{ opacity: 0.3, y: 0 }}
 			transition={{ duration: 2, repeat: Infinity, repeatType: "reverse" }}
@@ -30,16 +33,16 @@ const HeaderTemplate = ({ desc = "empty" }) => (
 			animate={{ opacity: 0.2, y: 0 }}
 			transition={{ duration: 4, repeat: Infinity, repeatType: "reverse" }}
 			className="absolute bottom-1/3 left-2/3 w-20 h-20 bg-pink-500 rounded-full opacity-30"
-		/>
+		/> */}
 
 		{/* Content with animations */}
-		{/* <motion.div
+		<motion.div
 			initial={{ opacity: 0, y: -30 }}
 			animate={{ opacity: 1, y: 0 }}
 			transition={{ duration: 0.8, ease: "easeOut" }}
 			className="relative mx-auto max-w-7xl text-center z-10"
 		>
-			<motion.h1
+			{/* <motion.h1
 				initial={{ scale: 0.9 }}
 				animate={{ scale: 1 }}
 				transition={{ duration: 0.6, ease: "easeOut" }}
@@ -47,17 +50,17 @@ const HeaderTemplate = ({ desc = "empty" }) => (
 				style={{ textShadow: "0px 4px 6px rgba(0, 0, 0, 0.3)" }}
 			>
 				Header Title
-			</motion.h1>
+			</motion.h1> */}
 
 			<motion.p
 				initial={{ opacity: 0 }}
 				animate={{ opacity: 1 }}
 				transition={{ delay: 0.2, duration: 0.6 }}
-				className="text-lg md:text-xl font-light max-w-2xl mx-auto text-gray-200"
+				className="text-lg md:text-2xl font-medium mx-auto text-gray-200"
 			>
 				{desc}
 			</motion.p>
-		</motion.div> */}
+		</motion.div>
 	</div>
 );
 

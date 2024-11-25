@@ -5,40 +5,7 @@ import RetailSection from "./components/RetailSection";
 import AboutSection from "./components/AboutUs";
 import Gallery from "./components/Gallery";
 
-const companies = [
-	{
-		name: "Company 1",
-		logo: "https://kabelretail.co.id/wp-content/uploads/2024/01/WhatsApp-Image-2024-01-17-at-4.36.04-PM-edited-768x768.jpeg",
-	},
-	{
-		name: "Company 2",
-		logo: "https://kabelretail.co.id/wp-content/uploads/2024/01/WhatsApp-Image-2024-01-17-at-4.36.04-PM-edited-768x768.jpeg",
-	},
-	{
-		name: "Company 3",
-		logo: "https://kabelretail.co.id/wp-content/uploads/2024/01/WhatsApp-Image-2024-01-17-at-4.36.04-PM-edited-768x768.jpeg",
-	},
-	{
-		name: "Company 3",
-		logo: "https://kabelretail.co.id/wp-content/uploads/2024/01/WhatsApp-Image-2024-01-17-at-4.36.04-PM-edited-768x768.jpeg",
-	},
-	{
-		name: "Company 1",
-		logo: "https://kabelretail.co.id/wp-content/uploads/2024/01/WhatsApp-Image-2024-01-17-at-4.36.04-PM-edited-768x768.jpeg",
-	},
-	{
-		name: "Company 2",
-		logo: "https://kabelretail.co.id/wp-content/uploads/2024/01/WhatsApp-Image-2024-01-17-at-4.36.04-PM-edited-768x768.jpeg",
-	},
-	{
-		name: "Company 3",
-		logo: "https://kabelretail.co.id/wp-content/uploads/2024/01/WhatsApp-Image-2024-01-17-at-4.36.04-PM-edited-768x768.jpeg",
-	},
-	{
-		name: "Company 3",
-		logo: "https://kabelretail.co.id/wp-content/uploads/2024/01/WhatsApp-Image-2024-01-17-at-4.36.04-PM-edited-768x768.jpeg",
-	},
-];
+import imageUrl from "../assets/banner-tentang-kami.jpg";
 
 const AboutPage = () => {
 	const [pageAttributes, setPageAttributes] = useState(null);
@@ -60,7 +27,10 @@ const AboutPage = () => {
 
 	return (
 		<div>
-			<HeaderTemplate />
+			<HeaderTemplate
+				imageUrl={imageUrl}
+				desc="PT KMI Electric Solution (PT KES) hadir sebagai mitra terpercaya bagi setiap pelanggan dalam memenuhi kebutuhan kabel listrik, baik retail maupun proyek."
+			/>
 			<AboutSection />
 			<div className="grid grid-cols-1 md:grid-cols-2 mb-20">
 				<div className="bg-[#0100B1] flex justify-end pb-10 pt-5 md:pr-10 px-5">
@@ -87,7 +57,7 @@ const AboutPage = () => {
 				</div>
 			</div>
 			<RetailSection />
-			<Gallery items={companies} />
+			<Gallery />
 		</div>
 	);
 };

@@ -4,16 +4,35 @@ const RetailSection = () => {
 	return (
 		<div className="pb-5 md:pb-20">
 			<div className="max-w-7xl mx-auto text-center text-gray-800">
-				{/* Acronym Header */}
-				<motion.h1
-					className="text-4xl md:text-5xl lg:text-6xl font-extrabold tracking-tight mb-10 text-shadow-lg"
-					style={{ textShadow: "0px 4px 6px rgba(0, 0, 0, 0.3)" }}
-					initial={{ opacity: 0, y: -50 }}
-					animate={{ opacity: 1, y: 0 }}
-					transition={{ duration: 1.2, ease: "easeOut" }}
-				>
-					Our Core Values: <span className="text-[#0100B1]">RETAIL</span>
-				</motion.h1>
+				<p className="text-base md:!text-2xl font-medium leading-relaxed text-gray-700 mb-6 text-justify">
+					PT KMI Electric Solution berkomitmen menjadi mitra pilihan utama dan
+					terpercaya sebagai penyedia kabel listrik, jointing, serta fitting &
+					accessories. Dengan semangat profesionalisme tinggi melalui jaminan
+					pelayanan terbaik, kami terus berinovasi guna kepuasan pelanggan dan
+					pertumbuhan bisnis yang berkelanjutan.
+				</p>
+
+				<div className="mb-10">
+					<motion.h3
+						className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-extrabold tracking-tight text-gray-900 mb-4"
+						style={{ textShadow: "0px 4px 6px rgba(0, 0, 0, 0.3)" }}
+						initial={{ opacity: 0, y: -50 }}
+						animate={{ opacity: 1, y: 0 }}
+						transition={{ duration: 1.2, ease: "easeOut" }}
+					>
+						Nilai Perusahaan Kami
+					</motion.h3>
+
+					<motion.h3
+						className="text-4xl md:text-5xl lg:text-6xl text-[#0100B1] font-extrabold tracking-tight mb-6"
+						style={{ textShadow: "0px 4px 6px rgba(0, 0, 0, 0.3)" }}
+						initial={{ opacity: 0, y: -50 }}
+						animate={{ opacity: 1, y: 0 }}
+						transition={{ duration: 1.2, ease: "easeOut" }}
+					>
+						R-E-T-A-I-L
+					</motion.h3>
+				</div>
 
 				{/* Acronym Letters */}
 				<div className="grid grid-cols-1 gap-6 lg:gap-12">

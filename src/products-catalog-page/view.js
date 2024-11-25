@@ -4,6 +4,7 @@ import { motion } from "framer-motion";
 import { sampleProducts } from "./constanta";
 import { IconSearch } from "@tabler/icons-react";
 import HeaderTemplate from "../common_component/HeaderTemplate";
+import imageUrl from "../assets/banner-produk.jpg";
 
 const ProductPage = () => {
 	const [currentPage, setCurrentPage] = useState(1);
@@ -69,7 +70,12 @@ const ProductPage = () => {
 			animate={{ opacity: 1 }}
 			transition={{ duration: 0.5 }}
 		>
-			<HeaderTemplate />
+			<HeaderTemplate
+				imageUrl={imageUrl}
+				desc="PT KMI Electric Solution (KES) menyediakan berbagai jenis tipe dan ukuran kabel listrik berkualitas tinggi yang dirancang untuk memenuhi beragam kebutuhan, baik retail, proyek konstruksi, infrastruktur, dan industri.
+Sebagai anak perusahaan dari PT KMI Wire and Cable Tbk sekaligus distributor resmi produk Kabelmetal Indonesia, kami menjamin keaslian produk dengan kualitas berstandar nasional maupun internasional. Kabelmetal Indonesia tersedia dalam berbagai tipe dan ukuran dengan kategori Low Voltage Cables, Flexible Cables, Fire Resistant Cables, dan Medium Voltage Cables, yang dilengkapi dengan sertifikat dan dokumen teknis untuk memastikan kesesuaian produk dengan kebutuhan Anda.
+Varian produk lain yang kami sediakan adalah jointing dengan brand REPL dan fitting & accessories dengan brand SICAME-DERVAUX."
+			/>
 			{/* Filter Bar */}
 			<FilterBar
 				selectedFilter={selectedFilter}

@@ -2,6 +2,8 @@ import { motion } from "framer-motion";
 import StackedCard from "../../common_component/StackedCard";
 import { RichText } from "@wordpress/block-editor";
 
+import { aboutImages } from "../../common_component/logo";
+
 const AboutSection = () => {
 	return (
 		<div className="py-10 md:py-20">
@@ -33,7 +35,7 @@ const AboutSection = () => {
 					/>
 				</motion.div>
 
-				<StackedCard />
+				<StackedCard images={aboutImages} />
 			</div>
 		</div>
 	);

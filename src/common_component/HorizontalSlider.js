@@ -174,7 +174,7 @@ const HorizontalSlider = ({
 							<img
 								src={item.logo}
 								alt={item.name}
-								className={`object-contain transition-transform duration-300 hover:scale-105 hover:opacity-90 select-none ${maxHeight}`}
+								className={`object-contain transition-transform duration-300 hover:scale-105 hover:opacity-90 select-none ${maxHeight} rounded-md`}
 								draggable={false}
 							/>
 						</div>

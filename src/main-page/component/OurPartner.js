@@ -1,22 +1,8 @@
 import { motion } from "framer-motion";
 import HorizontalSlider from "../../common_component/HorizontalSlider";
+import { partnerLogo } from "../../common_component/logo";
 
 const OurPartner = () => {
-	const companies = [
-		{
-			name: "Company 1",
-			logo: "https://kabelretail.co.id/wp-content/uploads/2024/01/download-1.png",
-		},
-		{
-			name: "Company 2",
-			logo: "https://kabelretail.co.id/wp-content/uploads/2024/01/download-1.png",
-		},
-		{
-			name: "Company 3",
-			logo: "https://kabelretail.co.id/wp-content/uploads/2024/01/download-1.png",
-		},
-	];
-
 	return (
 		<div className="max-w-7xl mx-auto">
 			<motion.h2
@@ -29,7 +15,7 @@ const OurPartner = () => {
 				Kami memasarkan produk dari brand-brand terbaik di bidangnya
 			</motion.h2>
 
-			<HorizontalSlider items={companies} />
+			<HorizontalSlider items={partnerLogo} maxHeight="max-h-[200px]" />
 		</div>
 	);
 };

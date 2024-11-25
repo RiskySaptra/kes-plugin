@@ -1,5 +1,6 @@
 import { motion } from "framer-motion";
 import HorizontalSlider from "../../common_component/HorizontalSlider";
+import { galleryImages } from "../../common_component/logo";
 
 const Gallery = ({ items }) => {
 	return (
@@ -13,7 +14,11 @@ const Gallery = ({ items }) => {
 			>
 				Dokumentasi pengiriman kabel kami ke berbagai proyek
 			</motion.h2>
-			<HorizontalSlider items={items} itemSize="max-w-[400px]" />
+			<HorizontalSlider
+				items={galleryImages}
+				itemSize="max-w-[400px]"
+				maxHeight="max-h-[300px]"
+			/>
 		</div>
 	);
 };
