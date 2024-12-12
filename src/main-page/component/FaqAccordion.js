@@ -54,7 +54,7 @@ const FAQAccordion = () => {
 					{faqs.map((faq, index) => (
 						<motion.div
 							key={index}
-							className="rounded-md"
+							className="rounded-md hover:bg-gray-200"
 							initial={{ opacity: 0 }}
 							animate={{ opacity: 1 }}
 							transition={{ duration: 0.3 }}
@@ -63,10 +63,10 @@ const FAQAccordion = () => {
 								onClick={() =>
 									setActiveIndex(activeIndex === index ? null : index)
 								}
-								className={`cursor-pointer py-4 px-4 rounded-t-md transition-all ${
+								className={`cursor-pointer py-4 px-4 transition-all ${
 									activeIndex === index
-										? "bg-[#0100B1] text-white"
-										: "bg-white text-gray-900"
+										? "bg-[#0100B1] text-white rounded-t-md"
+										: "bg-white text-gray-900 hover:bg-gray-300"
 								}`}
 								transition={{ duration: 0.2 }}
 							>

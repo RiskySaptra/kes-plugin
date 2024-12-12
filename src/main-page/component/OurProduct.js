@@ -37,7 +37,7 @@ const OurProducts = ({ text, images = [] }) => {
 				<RichText.Content
 					tagName="h3"
 					value={text}
-					className="text-justify md:text-center text-sm md:!text-lg font-medium leading-normal not-prose mb-10 md:px-[10%]"
+					className="text-center md:text-center text-sm md:!text-lg font-medium leading-normal not-prose mb-10 md:px-[10%]"
 				/>
 
 				<div className="md:px-[10%]">

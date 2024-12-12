@@ -7,7 +7,7 @@ import { aboutImages } from "../../common_component/logo";
 const AboutSection = () => {
 	return (
 		<div className="py-10 md:py-20">
-			<div className="max-w-7xl mx-auto flex flex-col-reverse md:flex-row items-center justify-center gap-12 md:space-x-12 px-5 md:px-0">
+			<div className="max-w-7xl mx-auto flex flex-col-reverse md:flex-row items-center justify-center gap-0 md:space-x-12 px-5 md:px-0">
 				{/* Text Section */}
 				<motion.div
 					className="flex-1 text-left"

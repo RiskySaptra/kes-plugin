@@ -7,10 +7,10 @@ import {
 	IconAt,
 	IconMapPin,
 	IconPhoneCall,
-	IconBrandLinkedin,
 	IconBrandFacebook,
 	IconBrandInstagram,
 	IconBrandTiktok,
+	IconMapPinFilled,
 } from "@tabler/icons-react";
 import HeaderTemplate from "../common_component/HeaderTemplate";
 
@@ -129,14 +129,6 @@ const ContactUsPage = () => {
 						<li className="flex items-center gap-6">
 							{/* Social Media Icons */}
 							<a
-								href="https://www.linkedin.com"
-								target="_blank"
-								rel="noopener noreferrer"
-								className="text-blue-600 hover:text-blue-800"
-							>
-								<IconBrandLinkedin size={24} />
-							</a>
-							<a
 								href="https://www.facebook.com"
 								target="_blank"
 								rel="noopener noreferrer"
@@ -252,25 +244,24 @@ const ContactUsPage = () => {
 				</motion.div>
 
 				<div className="mapouter my-10 w-full h-[400px] md:!h-[500px] order-3 md:col-span-2 relative">
-					<motion.h2
-						initial={{ opacity: 0, y: -50 }}
-						whileInView={{ opacity: 1, y: 0 }}
-						transition={{ duration: 0.5 }}
-						viewport={{ once: true }}
-						className="text-center text-[20px] md:text-[36px] text-[#354052] font-bold not-prose mb-5"
-					>
-						Lokasi PT KMI Electric Solution (PT KES)
-					</motion.h2>
+					<div className="flex items-center justify-center mb-5">
+						<IconMapPinFilled className="text-red-700 mr-2 h-20 w-20" />
+						<motion.h2
+							initial={{ opacity: 0, y: -50 }}
+							whileInView={{ opacity: 1, y: 0 }}
+							transition={{ duration: 0.5 }}
+							viewport={{ once: true }}
+							className="text-center text-[20px] md:text-[36px] text-[#354052] font-bold not-prose"
+						>
+							Lokasi PT KMI Electric Solution (PT KES)
+						</motion.h2>
+					</div>
 					<div
 						className="gmap_canvas w-full h-[80%]"
 						style={{ overflow: "hidden", background: "none" }}
 					>
 						<iframe
 							className="gmap_iframe w-full h-full"
-							frameBorder="0"
-							scrolling="no"
-							marginHeight="0"
-							marginWidth="0"
 							src="https://maps.google.com/maps?width=1280&height=400&hl=en&q=Jakrata&t=&z=14&ie=UTF8&iwloc=B&output=embed"
 							title="Google Map"
 						></iframe>

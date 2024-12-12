@@ -4,7 +4,7 @@ const RetailSection = () => {
 	return (
 		<div className="pb-5 md:pb-20">
 			<div className="max-w-7xl mx-auto text-center text-gray-800">
-				<p className="text-base md:!text-2xl font-medium leading-relaxed text-gray-700 mb-6 text-justify">
+				<p className="text-base md:!text-2xl font-medium leading-relaxed text-gray-700 mb-6 text-center">
 					PT KMI Electric Solution berkomitmen menjadi mitra pilihan utama dan
 					terpercaya sebagai penyedia kabel listrik, jointing, serta fitting &
 					accessories. Dengan semangat profesionalisme tinggi melalui jaminan
@@ -30,7 +30,7 @@ const RetailSection = () => {
 						animate={{ opacity: 1, y: 0 }}
 						transition={{ duration: 1.2, ease: "easeOut" }}
 					>
-						R-E-T-A-I-L
+						R E T A I L
 					</motion.h3>
 				</div>
 

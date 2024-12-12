@@ -59,7 +59,7 @@ const CompanyProfile = ({
 						{pdfFile && pdfFile.url ? (
 							<a
 								href={pdfFile.url}
-								className="bg-[#b71a1d] text-white py-4 md:py-6 px-8 rounded-lg flex items-center gap-3 justify-center hover:bg-[#b71a1d]/80 transition-all font-semibold md:w-[250px] w-full text-sm md:!text-xl"
+								className="bg-[#0003fb] text-white py-4 md:py-6 px-8 rounded-lg flex items-center gap-3 justify-center hover:bg-[#0003fb]/80 transition-all font-semibold md:w-[250px] w-full text-sm md:!text-xl"
 								download
 								aria-label="Download company profile PDF"
 							>
@@ -76,7 +76,7 @@ const CompanyProfile = ({
 								href={whatsAppUrl}
 								target="_blank"
 								rel="noopener noreferrer"
-								className="bg-[#0003fb] text-white py-4 md:py-6 px-8 rounded-lg flex items-center gap-3 justify-center hover:bg-[#0003fb]/80 transition-all font-semibold md:w-[250px] w-full text-sm md:!text-xl"
+								className="bg-[#b71a1d] text-white py-4 md:py-6 px-8 rounded-lg flex items-center gap-3 justify-center hover:bg-[#b71a1d]/80 transition-all font-semibold md:w-[250px] w-full text-sm md:!text-xl"
 								aria-label="Contact us on WhatsApp"
 							>
 								<IconBrandWhatsapp size={22} />
