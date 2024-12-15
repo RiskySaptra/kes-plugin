@@ -3,6 +3,7 @@ import { createRoot } from "react-dom/client";
 import { motion, AnimatePresence } from "framer-motion";
 import { RichText } from "@wordpress/block-editor";
 import HeaderTemplate from "../common_component/HeaderTemplate";
+import imageUrl from "../assets/page-banner/berita.jpeg";
 
 const CategoryFilter = ({ categories, selectedCategory, onSelectCategory }) => {
 	if (!categories) return "loading...";
@@ -273,7 +274,7 @@ const NewsHubPage = () => {
 	return (
 		<>
 			{error && <p className="text-red-500">Error: {error}</p>}
-			<HeaderTemplate desc="Simak berita terbaru mengenai inisiatif, pencapaian, dan komitmen PT KMI Electric Solution (PT KES) dalam menyediakan kabel berkualitas tinggi, jointing, dan fitting & accessories, yang mendukung berbagai proyek konstruksi, infrastruktur, dan industri di Indonesia." />
+			<HeaderTemplate imageUrl={imageUrl} />
 			<div className="mx-auto max-w-[1280px] md:p-8 flex flex-col md:!flex-row gap-5">
 				<div className="w-full md:!w-3/5">
 					<CategoryFilter

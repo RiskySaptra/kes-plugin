@@ -4,7 +4,7 @@ import { motion } from "framer-motion";
 import { sampleProducts } from "./constanta";
 import { IconSearch } from "@tabler/icons-react";
 import HeaderTemplate from "../common_component/HeaderTemplate";
-import imageUrl from "../assets/banner-produk.jpg";
+import imageUrl from "../assets/page-banner/our-product.jpeg";
 
 const ProductPage = () => {
 	const [currentPage, setCurrentPage] = useState(1);

@@ -1,6 +1,7 @@
 import { useEffect, useState } from "@wordpress/element";
 import { createRoot } from "react-dom/client";
 import { motion } from "framer-motion";
+import imageUrl from "../assets/page-banner/contact-us.jpeg";
 
 // Tabler Icons
 import {
@@ -65,7 +66,7 @@ const ContactUsPage = () => {
 
 	return (
 		<>
-			<HeaderTemplate desc="PT KMI Electric Solution (KES) siap membantu Anda dengan segala kebutuhan kabel listrik, jointing, serta fitting & accessories. Tim profesional kami akan dengan senang hati memenuhi kebutuhan Anda dan memberikan solusi terbaik." />
+			<HeaderTemplate imageUrl={imageUrl} />
 			<div className="mx-auto max-w-screen-xl grid grid-cols-1 md:grid-cols-2 pt-10 px-4 gap-5">
 				{/* Contact Info Section */}
 				<motion.div

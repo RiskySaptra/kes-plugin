@@ -5,7 +5,7 @@ import RetailSection from "./components/RetailSection";
 import AboutSection from "./components/AboutUs";
 import Gallery from "./components/Gallery";
 
-import imageUrl from "../assets/banner-tentang-kami.jpg";
+import imageUrl from "../assets/page-banner/about.jpeg";
 
 const AboutPage = () => {
 	const [pageAttributes, setPageAttributes] = useState(null);
