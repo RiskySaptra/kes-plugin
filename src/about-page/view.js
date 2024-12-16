@@ -37,10 +37,8 @@ const AboutPage = () => {
 					<div className="max-w-[640px] text-white">
 						<h2 className="text-[36px] font-semibold">Visi</h2>
 						<p>
-							Memantapkan posisi PT KMI Electric Solution (PT KES) sebagai
-							distributor kabel dan fitting yang maju, tangguh, dan terpercaya
-							dengan memberikan solusi terbaik dalam bidang pembangunan
-							konstruksi electrical di Indonesia
+							Menjadi mitra pilihan utama dan terpercaya bagi para pelanggan
+							retail maupun proyek.
 						</p>
 					</div>
 				</div>
@@ -48,11 +46,18 @@ const AboutPage = () => {
 					<div className="max-w-[640px] text-white">
 						<h2 className="text-[36px] font-semibold">Misi</h2>
 						<p>
-							Memberikan harga dan pelayanan terbaik untuk pelanggan Menjaga
-							hubungan kemitraan yang saling menghargai Mengedepankan kerjasama
-							tim dan budaya kerja profesional Meningkatkan daya saing mengikuti
-							perkembangan teknologi
+							- Konsisten dalam menyediakan produk berkualitas sesuai dengan
+							kebutuhan pelanggan.
 						</p>
+						<p>
+							- Komitmen dalam memberikan pelayanan terbaik melalui jaminan
+							harga yang kompetitif dan kecepatan respon kepada para pelanggan.
+						</p>
+						<p>
+							- Berbudaya kerja profesional dengan mengedepankan sinergi dan
+							komunikasi dalam tim.
+						</p>
+						<p>- Berdaya saing melalui adaptasi perkembangan teknologi.</p>
 					</div>
 				</div>
 			</div>

@@ -32,6 +32,10 @@ const RetailSection = () => {
 					>
 						R E T A I L
 					</motion.h3>
+					<p className="text-base md:!text-2xl font-medium leading-relaxed text-gray-700 mb-6 text-center">
+						cerminan atas komitmen kami terhadap standar profesional yang tinggi
+						dan keunggulan dalam setiap aspek produk maupun layanan kami.
+					</p>
 				</div>
 
 				{/* Acronym Letters */}
@@ -72,38 +76,47 @@ const RetailSection = () => {
 							>
 								{letter === "R" && (
 									<span>
-										<strong>Reliable:</strong> Keandalan adalah landasan utama
-										dalam segala hal yang kami lakukan.
+										<strong>Reliable:</strong> KES berkomitmen menyediakan
+										produk dan layanan yang dapat diandalkan oleh pelanggan,
+										kapan dan di mana pun.
 									</span>
 								)}
 								{letter === "E" && (
 									<span>
-										<strong>Extraordinary:</strong> Kami melampaui ekspektasi
-										pelanggan dengan pendekatan luar biasa.
+										<strong>Extraordinary:</strong> KES berkomitmen untuk tidak
+										hanya memenuhi ekspektasi pelanggan, namun juga melampauinya
+										untuk memberikan nilai tambah bagi setiap kebutuhan retail
+										maupun proyek.
 									</span>
 								)}
 								{letter === "T" && (
 									<span>
-										<strong>Tenacity:</strong> Ketangguhan dalam menghadapi
-										tantangan adalah pilar kesuksesan kami.
+										<strong>Tenacity:</strong> KES berkomitmen untuk tangguh
+										dalam menghadapi berbagai tantangan di masa kini dan yang
+										akan datang.
 									</span>
 								)}
 								{letter === "A" && (
 									<span>
-										<strong>Agile:</strong> Kami cepat dan fleksibel dalam
-										merespons dinamika pasar.
+										<strong>Agile:</strong> KES berkomitmen untuk tetap tanggap
+										dan fleksibel dalam merespons dinamika pasar, mampu
+										memberikan solusi produk dan layanan yang tepat waktu dan
+										relevan bagi setiap pelanggan.
 									</span>
 								)}
 								{letter === "I" && (
 									<span>
-										<strong>Innovative:</strong> Inovasi adalah inti dari visi
-										kami untuk menciptakan solusi baru.
+										<strong>Innovative:</strong> KES berkomitmen menciptakan
+										solusi baru dalam memenuhi setiap kebutuhan pelanggan,
+										mendorong pertumbuhan industri retail dengan berfokus pada
+										efisiensi, kualitas, dan bisnis keberlanjutan.
 									</span>
 								)}
 								{letter === "L" && (
 									<span>
-										<strong>Linkage:</strong> Kami membangun hubungan kuat untuk
-										mencapai keberhasilan jangka panjang.
+										<strong>Linkage:</strong> KES berkomitmen menjaga hubungan
+										baik dalam membangun kemitraan yang saling menguntungkan
+										untuk mendorong pertumbuhan bersama.
 									</span>
 								)}
 							</motion.p>
