@@ -8,22 +8,22 @@ import {
 const WhyUs = () => {
 	const items = [
 		{
-			title: "Melayani Pembelian Ecer maupun Grosir",
-			text: "Kami dapat melayani pembelian kabel tanpa minimal kuantiti dan menerima permintaan untuk kabel potongan dan produksi. Tentunya untuk pembelian grosir dan keperluan proyek akan mendapatkan harga khusus (best price).",
+			title: "Melayani Pembelian Retail Maupun Proyek",
+			text: "Kami dapat melayani pembelian kabel tanpa minimal order, untuk memenuhi kebutuhan retail dan proyek. Kami juga menerima permintaan untuk kabel potongan dan produksi. Tentunya untuk pembelian grosir dan keperluan proyek akan mendapatkan harga khusus (best price).",
 			icon: (
 				<IconShoppingBag size={48} stroke={1.5} className="text-blue-600" />
 			),
 		},
 		{
 			title: "Jaminan Produk Asli, Baru, dan Bergaransi",
-			text: "Kami dapat memberikan jaminan bahwa produk kami asli, baru, dan bergaransi. Jika diperlukan kami dapat mengeluarkan data teknis kabel (Technical Data Sheet/TDS), Tingkat Komponen Dalam Negeri (TKDN), sertifikat orisinil (COO dan COM), dan segala dokumen lainnnya.",
+			text: "Kami memberikan jaminan 100% keaslian produk dan bergaransi, dilengkapi dengan sertifikat dan dokumen teknis lainnya. Jika diperlukan kami dapat mengeluarkan data teknis kabel (Technical Data Sheet/TDS), Tingkat Komponen Dalam Negeri (TKDN), sertifikat orisinil (COO dan COM), dan segala dokumen lainnnya.",
 			icon: (
 				<IconCertificate size={48} stroke={1.5} className="text-blue-600" />
 			),
 		},
 		{
 			title: "Gratis Biaya Kirim*",
-			text: "Khusus pembelian grosir, kami siap antarkan langsung ke site proyek, kantor, maupun ekspedisi secara gratis.* Estimasi kirim 1 – 3 hari setelah melakukan transaksi. Khusus untuk area Jakarta dan sekitarnya. *S&K Berlaku",
+			text: "Kami siap mengantarkan pesanan Anda dengan jaminan pengiriman maksimal H+2 hari kerja setelah transaksi, ke seluruh area Jakarta dan sekitarnya. *S&K Berlaku",
 			icon: (
 				<IconTruckDelivery size={48} stroke={1.5} className="text-blue-600" />
 			),
@@ -45,7 +45,7 @@ const WhyUs = () => {
 					viewport={{ once: true, amount: 0.5, margin: "100px" }}
 					className="text-center text-[20px] md:text-[36px] text-[#354052] font-bold mb-5"
 				>
-					Mengapa Memilih PT KMI Electric Solution?
+					Mengapa Membeli di PT KMI Electric Solution (KES)?
 				</motion.h3>
 				<div className="grid md:grid-cols-3 gap-12 pt-5 pb-10">
 					{items.map((item, index) => (

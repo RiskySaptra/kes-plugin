@@ -84,22 +84,35 @@ export const InfiniteMovingCards = ({
 								{`"${item.quote}"`}
 							</p>
 
-							{/* Reviewer Info */}
-							<div className="relative z-20 mt-6 flex flex-col items-center">
-								<span className="text-sm font-semibold text-gray-100">
-									{item.name}
-								</span>
-							</div>
-
-							{/* Star Rating */}
-							<div className="relative z-20 mt-4 flex space-x-1 justify-center">
-								{Array.from(Array(item.rating).keys()).map((_, i) => (
-									<IconStarFilled
-										key={i}
-										size={20} // Adjust size as needed
-										className="text-yellow-300"
-									/>
-								))}
+							<div className="flex items-center justify-center mt-6">
+								<div className="mr-5 bg-white p-2 rounded-full">
+									{console.log(item.icon)}
+									{item.icon && (
+										<img
+											src={item.icon}
+											alt={item.name}
+											className="w-12 h-12 object-contain"
+										/>
+									)}
+								</div>
+								<div>
+									{/* Reviewer Info */}
+									<div className="relative z-20 flex flex-col items-center">
+										<span className="text-sm font-semibold text-gray-100">
+											{item.name}
+										</span>
+									</div>
+									{/* Star Rating */}
+									<div className="relative z-20 mt-4 flex space-x-1 justify-center">
+										{Array.from(Array(item.rating).keys()).map((_, i) => (
+											<IconStarFilled
+												key={i}
+												size={20} // Adjust size as needed
+												className="text-yellow-300"
+											/>
+										))}
+									</div>
+								</div>
 							</div>
 						</blockquote>
 					</li>

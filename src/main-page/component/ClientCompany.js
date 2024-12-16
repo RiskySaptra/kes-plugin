@@ -13,7 +13,7 @@ const ClientCompanyComponent = () => {
 				viewport={{ once: true }}
 				className="text-center text-[20px] md:text-[36px] text-[#354052] font-bold not-prose mb-10"
 			>
-				Klien Kami yang Terpercaya
+				Klien - Klien Kami
 			</motion.h2>
 
 			<HorizontalSlider

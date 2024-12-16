@@ -1,6 +1,10 @@
 import { motion } from "framer-motion";
 import { InfiniteMovingCards } from "../../common_component/infinite-moving-cards";
 
+import tokopedia from "../../assets/marketplace-icon/tokopedia.png";
+import shopee from "../../assets/marketplace-icon/shopee.png";
+import blibli from "../../assets/marketplace-icon/blibli.png";
+
 const ReviewCards = () => {
 	return (
 		<motion.div
@@ -17,7 +21,8 @@ const ReviewCards = () => {
 				viewport={{ once: true }}
 				className="text-center text-[20px] md:text-[36px] text-[#354052] font-bold not-prose mb-5"
 			>
-				Dengarkan apa yang dikatakan pengguna kami
+				Apa Kata Mereka Tentang Produk Kabelmetal Indonesia dan Pelayanan dari
+				PT KMI Electric Solution?
 			</motion.h2>
 
 			<InfiniteMovingCards
@@ -41,24 +46,28 @@ const testimonials2 = [
 			"Kualitas kabelmetal Indonesia sangat luar biasa, untuk kesekian kali saya tidak kecewa, pengiriman cepat, harga bersahabat, terima kasih.",
 		name: "M***H",
 		rating: 5,
+		icon: tokopedia,
 	},
 	{
 		quote:
 			"Kabelmetal Indonesia merupakan perusahaan profesional yang bergerak di bidang kabel dan produk kabelnya sangat berkualitas dan aman digunakan dalam berbagai bidang instalasi listrik.",
 		name: "Marwih",
 		rating: 5,
+		icon: shopee,
 	},
 	{
 		quote:
 			"Ini yang jual/admin nya sih sumpah the best terbaik banged, fast respon si chat dan sangat membantu sekali, kualitas kabelnya super bagus dan real kualitas bagus. Sangat recomend sekali buat beli di toko ini jangan ragu lagi udah, kualitas pelayan nomer 1.",
 		name: "Yudhistirasepta",
 		rating: 5,
+		icon: tokopedia,
 	},
 	{
 		quote:
 			"Barang sesuai deskripsi produk original kuat, dari brand ternama, kualitas material tidak diragukan, harga juga terjangkau.",
 		name: "Rudy",
 		rating: 5,
+		icon: blibli,
 	},
 ];
 
@@ -68,23 +77,27 @@ const testimonials1 = [
 			"Respon seller cepat, pengiriman barang sesuai jadwal, untuk kualitas barang sesuai yang ditawarkan, material barang tidak kalah dengan brand yang lainnya karena termasuk brand 3 besar",
 		name: "Martin",
 		rating: 5,
+		icon: tokopedia,
 	},
 	{
 		quote:
 			"Barang sesuai deskripsi, pengepakan aman dan baik. Test sambungan kabel full 100m, respon cepat, recommended seller.",
 		name: "Chepy",
 		rating: 5,
+		icon: shopee,
 	},
 	{
 		quote:
 			"Kualitas bagus, seller ramah, barang sesuai deskripsi. Bukan kabel murahan!!!",
 		name: "Aranditarazaq",
 		rating: 5,
+		icon: tokopedia,
 	},
 	{
 		quote:
 			"Barang bagus, tembaga asli. Packing sangat rapi, bagus aman. Produk original barang sesuai deskripsi.",
 		name: "G***r",
 		rating: 5,
+		icon: tokopedia,
 	},
 ];
