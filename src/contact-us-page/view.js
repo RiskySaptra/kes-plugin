@@ -3,6 +3,8 @@ import { createRoot } from "react-dom/client";
 import { motion } from "framer-motion";
 import imageUrl from "../assets/page-banner/contact-us.jpeg";
 
+import imageUrlBg from "../assets/page-background/Kontak.png";
+
 // Tabler Icons
 import {
 	IconAt,
@@ -67,10 +69,15 @@ const ContactUsPage = () => {
 	return (
 		<>
 			<HeaderTemplate imageUrl={imageUrl} />
+			<img
+				src={imageUrlBg}
+				alt="Static Image"
+				className="absolute w-auto h-[230%] -z-30 opacity-50 object-cover"
+			/>
 			<div className="mx-auto max-w-screen-xl grid grid-cols-1 md:grid-cols-2 pt-10 px-4 gap-5">
 				{/* Contact Info Section */}
 				<motion.div
-					className="contact-info-section order-2 md:order-1 py-10 bg-white p-6 shadow-lg rounded-lg"
+					className="contact-info-section order-2 md:order-1 bg-white px-6 pt-7 shadow-lg rounded-lg"
 					initial={{ opacity: 0, x: 50 }}
 					animate={{ opacity: 1, x: 0 }}
 					transition={{ duration: 0.6 }}

@@ -15,6 +15,7 @@ const Gallery = ({ items }) => {
 				Dokumentasi pengiriman kabel kami ke berbagai proyek
 			</motion.h2>
 			<HorizontalSlider
+				loop={true}
 				items={galleryImages}
 				itemSize="max-w-[400px]"
 				maxHeight="max-h-[300px]"

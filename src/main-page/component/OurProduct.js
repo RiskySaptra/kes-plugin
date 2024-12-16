@@ -1,7 +1,10 @@
 import { useState } from "@wordpress/element";
-import { motion, AnimatePresence } from "framer-motion";
+import { motion } from "framer-motion";
 import { RichText } from "@wordpress/block-editor";
 import imageUrl from "../../assets/BACKROUND 3.png";
+
+import { galleryImages } from "../../common_component/logo";
+import HorizontalSlider from "../../common_component/HorizontalSlider";
 
 const OurProducts = ({ text, images = [] }) => {
 	const [activeImage, setActiveImage] = useState(0);
@@ -40,71 +43,12 @@ const OurProducts = ({ text, images = [] }) => {
 					className="text-center md:text-center text-sm md:!text-lg font-medium leading-normal not-prose mb-10 md:px-[10%]"
 				/>
 
-				<div className="md:px-[10%]">
-					<div className="grid grid-cols-2 md:!grid-cols-4 gap-4">
-						<AnimatePresence mode="wait">
-							{images.length > 0 && images[activeImage]?.url && (
-								<motion.div
-									className="col-span-2 md:!col-span-4"
-									key={activeImage}
-									initial={{ opacity: 0, scale: 0.95 }}
-									animate={{ opacity: 1, scale: 1 }}
-									exit={{ opacity: 0, scale: 0.95 }}
-									transition={{ duration: 0.3 }}
-								>
-									<motion.img
-										src={images[activeImage].url}
-										className="w-full rounded-lg not-prose h-[180px] md:h-[580px] object-fill"
-										alt={images[activeImage].alt || "Image placeholder"}
-									/>
-								</motion.div>
-							)}
-						</AnimatePresence>
-
-						{images && images.length > 0 ? (
-							images.map((image, index) => (
-								<motion.div
-									key={index}
-									className="col-span-1 relative rounded-lg overflow-hidden"
-									onMouseEnter={() => setActiveImage(index)}
-									whileHover={{ scale: 1.05 }}
-									transition={{
-										type: "spring",
-										stiffness: 300,
-										damping: 20,
-									}}
-								>
-									{/* Image with fade-out effect on hover */}
-									<motion.img
-										src={image.url}
-										className="w-full h-full object-cover"
-										alt={image.alt || "Image placeholder"}
-										layoutId={`thumbnail-${index}`}
-										initial={{ opacity: 1 }}
-										animate={{ opacity: 1 }}
-										whileHover={{ opacity: 0.3 }} // Fades out the image slightly on hover
-										transition={{ duration: 0.3 }}
-									/>
-
-									{/* Overlay with fade-in and scale effect */}
-									<motion.div
-										className="absolute inset-0 flex justify-center items-center bg-black/50 "
-										initial={{ opacity: 0, scale: 0.95 }}
-										animate={{ opacity: 0 }} // Overlay starts hidden
-										whileHover={{ opacity: 1, scale: 1 }} // Fades in and scales up slightly on hover
-										transition={{ duration: 0.3 }}
-									>
-										<p className="text-center break-words w-full text-[10px] font-semibold text-white md:text-[12px] leading-tight">
-											{image.description}
-										</p>
-									</motion.div>
-								</motion.div>
-							))
-						) : (
-							<p>No images available</p>
-						)}
-					</div>
-				</div>
+				<HorizontalSlider
+					loop={true}
+					items={galleryImages}
+					itemSize="max-w-[400px]"
+					maxHeight="max-h-[300px]"
+				/>
 			</motion.div>
 		</div>
 	);

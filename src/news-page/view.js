@@ -4,6 +4,7 @@ import { motion, AnimatePresence } from "framer-motion";
 import { RichText } from "@wordpress/block-editor";
 import HeaderTemplate from "../common_component/HeaderTemplate";
 import imageUrl from "../assets/page-banner/berita.jpeg";
+import imageUrlBg from "../assets/page-background/Berita.png";
 
 const CategoryFilter = ({ categories, selectedCategory, onSelectCategory }) => {
 	if (!categories) return "loading...";
@@ -275,6 +276,11 @@ const NewsHubPage = () => {
 		<>
 			{error && <p className="text-red-500">Error: {error}</p>}
 			<HeaderTemplate imageUrl={imageUrl} />
+			<img
+				src={imageUrlBg}
+				alt="Static Image"
+				className="absolute w-auto h-[250%] -z-30 opacity-50 object-cover"
+			/>
 			<div className="mx-auto max-w-[1280px] md:p-8 flex flex-col md:!flex-row gap-5">
 				<div className="w-full md:!w-3/5">
 					<CategoryFilter

@@ -5,6 +5,7 @@ import { sampleProducts } from "./constanta";
 import { IconSearch } from "@tabler/icons-react";
 import HeaderTemplate from "../common_component/HeaderTemplate";
 import imageUrl from "../assets/page-banner/our-product.jpeg";
+import imageUrlBg from "../assets/page-background/Produk.png";
 
 const ProductPage = () => {
 	const [currentPage, setCurrentPage] = useState(1);
@@ -80,6 +81,12 @@ Varian produk lain yang kami sediakan adalah jointing dengan brand REPL dan fitt
 			<FilterBar
 				selectedFilter={selectedFilter}
 				onFilterChange={handleFilterChange}
+			/>
+
+			<img
+				src={imageUrlBg}
+				alt="Static Image"
+				className="absolute w-auto h-[200%] -z-30 opacity-50 object-cover"
 			/>
 			{/* Search Bar */}
 			<SearchBar

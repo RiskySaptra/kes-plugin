@@ -4,6 +4,7 @@ import HeaderTemplate from "../common_component/HeaderTemplate";
 import RetailSection from "./components/RetailSection";
 import AboutSection from "./components/AboutUs";
 import Gallery from "./components/Gallery";
+import imageUrlBg from "../assets/page-background/Tentang Kami.png";
 
 import imageUrl from "../assets/page-banner/about.jpeg";
 
@@ -30,6 +31,12 @@ const AboutPage = () => {
 			<HeaderTemplate
 				imageUrl={imageUrl}
 				desc="PT KMI Electric Solution (PT KES) hadir sebagai mitra terpercaya bagi setiap pelanggan dalam memenuhi kebutuhan kabel listrik, baik retail maupun proyek."
+			/>
+
+			<img
+				src={imageUrlBg}
+				alt="Static Image"
+				className="absolute w-auto h-[350%] -z-30 opacity-50 object-cover"
 			/>
 			<AboutSection />
 			<div className="grid grid-cols-1 md:grid-cols-2 mb-20">
