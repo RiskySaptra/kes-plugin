@@ -172,10 +172,12 @@ const ContactUsPage = () => {
 						transition={{ duration: 0.5 }}
 					>
 						<p className="text-[25px] font-bold">
-							Ingin bekerjasama dengan PT KMI Electric Solution?
+							Ingin Bekerja Sama dengan Kami?
 						</p>
 						<p className="mb-5 text-xs">
-							Isi Nama dan Email Anda, tim kami akan menghubungi Anda segera!
+							KES siap memenuhi kebutuhan Anda dengan harga kompetitif,
+							pengiriman cepat, dan tepat waktu. Mohon lengkapi data berikut dan
+							tim profesional kami akan segera menghubungi Anda.
 						</p>
 						<div className="form-group mb-6">
 							<motion.input
