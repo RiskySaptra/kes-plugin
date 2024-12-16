@@ -4,12 +4,12 @@ const HeaderTemplate = ({
 	desc = "empty description",
 	imageUrl = "https://via.placeholder.com/1200x600.png?text=Your+Company+Image+Here",
 }) => (
-	<div className="relative min-h-[120px] md:!min-h-[420px] flex justify-center items-center text-white px-6 py-16 overflow-hidden">
+	<div className="relative flex justify-center items-center text-white overflow-hidden">
 		{/* Placeholder Image for visual interest */}
 		<img
 			src={imageUrl}
 			alt="Background Placeholder"
-			className="absolute inset-0 w-full h-full object-fit md:!object-cover"
+			className=" min-w-full h-full object-contain"
 		/>
 
 		{/* Gradient overlay for readability */}
