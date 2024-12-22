@@ -126,7 +126,10 @@ Varian produk lain yang kami sediakan adalah jointing dengan brand REPL dan fitt
 				animate={{ opacity: 1, x: 0 }} // Fade in and slide to center
 				transition={{ duration: 0.5 }}
 			>
-				<ProductGrid products={getPaginatedProducts()} />
+				<ProductGrid
+					products={getPaginatedProducts()}
+					pdfFile={pageAttributes?.pdfFile}
+				/>
 			</motion.div>
 			{/* Pagination Controls */}
 			<PaginationControls
@@ -201,7 +204,7 @@ const SearchBar = ({ searchTerm, onSearchChange, onSearchSubmit }) => (
 	</div>
 );
 
-const ProductModal = ({ product, onClose }) => {
+const ProductModal = ({ product, onClose, pdfFile }) => {
 	if (!product) return null; // Render nothing if no product is selected
 
 	const handleClickOutside = (e) => {
@@ -216,17 +219,17 @@ const ProductModal = ({ product, onClose }) => {
 			className="fixed inset-0 z-50 flex items-center justify-center bg-black/50"
 			onClick={handleClickOutside}
 		>
-			<div className="bg-white rounded-lg p-6 w-[90%] max-w-2xl relative">
-				<button
+			<div className="bg-white rounded-lg p-6 w-[90%] max-w-2xl relative max-h-[90%] overflow-y-auto scrollbar-hidden">
+				{/* <button
 					className="absolute top-3 right-3 text-gray-500 hover:text-gray-700"
 					onClick={onClose}
 				>
 					&times;
-				</button>
+				</button> */}
 				<img
 					src={product.imageUrl}
 					alt={product.title}
-					className="w-full h-[200px] object-cover rounded-md mb-4"
+					className="w-full h-full object-cover rounded-md mb-4"
 				/>
 				<h2 className="text-xl font-bold mb-2">{product.title}</h2>
 				<p className="text-sm text-gray-800 mb-3">{product.description}</p>
@@ -238,7 +241,7 @@ const ProductModal = ({ product, onClose }) => {
 					value={product.specDesc}
 					className="text-sm font-semibold text-gray-700 mb-3"
 				/>
-				<div className="flex gap-2 mb-3">
+				<div className="flex gap-2 my-3">
 					<button className="text-sm font-semibold px-4 py-2 rounded-md bg-gradient-to-r from-[#39A849] to-[#27A74C] w-full text-white">
 						Belanja di Tokopedia
 					</button>
@@ -246,14 +249,20 @@ const ProductModal = ({ product, onClose }) => {
 						Belanja di Shopee
 					</button>
 				</div>
-				<button className="text-sm font-semibold px-4 py-2 rounded-md bg-gradient-to-r from-[#0100B1] to-[#005BFF] w-full text-white">
-					Unduh Catalog
-				</button>
+				<div className="flex">
+					<a
+						href={pdfFile.url}
+						className="text-sm font-semibold px-4 py-2 rounded-md bg-gradient-to-r from-[#0100B1] to-[#005BFF] w-full text-white text-center"
+						download
+					>
+						Unduh Catalog
+					</a>
+				</div>
 			</div>
 		</div>
 	);
 };
-const ProductGrid = ({ products }) => {
+const ProductGrid = ({ products, pdfFile }) => {
 	const [selectedProduct, setSelectedProduct] = useState(null);
 
 	const closeModal = () => setSelectedProduct(null);
@@ -285,11 +294,11 @@ const ProductGrid = ({ products }) => {
 						animate={{ opacity: 1, y: 0 }}
 						onClick={() => setSelectedProduct(product)}
 					>
-						<div className="bg-white rounded-lg min-h-[240px] mb-3 overflow-hidden relative">
+						<div className="bg-white rounded-lg !max-h-[200px] mb-3 overflow-hidden relative">
 							<motion.img
 								src={product.imageUrl}
 								alt={product.title}
-								className="w-full h-full object-cover"
+								className="w-full h-[200px] object-cover"
 								initial={{ opacity: 0 }}
 								animate={{ opacity: 1 }}
 								transition={{ duration: 0.5, ease: "easeInOut" }}
@@ -307,7 +316,11 @@ const ProductGrid = ({ products }) => {
 			</motion.div>
 
 			{/* Use the modal component */}
-			<ProductModal product={selectedProduct} onClose={closeModal} />
+			<ProductModal
+				product={selectedProduct}
+				pdfFile={pdfFile}
+				onClose={closeModal}
+			/>
 		</>
 	);
 };
