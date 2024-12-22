@@ -50,7 +50,7 @@ const FAQAccordion = () => {
 						Pertanyaan Umum
 					</motion.h2>
 				</div>
-				<div className="px-5 md:px-0 text-white">
+				<div className="px-5 md:px-0 text-white flex flex-col gap-2">
 					{faqs.map((faq, index) => (
 						<motion.div
 							key={index}
@@ -66,7 +66,7 @@ const FAQAccordion = () => {
 								className={`cursor-pointer py-4 px-4 transition-all ${
 									activeIndex === index
 										? "bg-[#0100B1] text-white rounded-t-md"
-										: "bg-white text-gray-900 hover:bg-gray-300"
+										: "bg-transparent text-gray-900 hover:bg-gray-300  border-b-2 border-[#0100B1]"
 								}`}
 								transition={{ duration: 0.2 }}
 							>

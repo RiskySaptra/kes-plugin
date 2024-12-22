@@ -9,12 +9,16 @@ const SCALE_FACTOR = 0.06;
 const StackedCard = ({ images }) => {
 	const [cards, setCards] = React.useState(images);
 
+	React.useEffect(() => {
+		const interval = setInterval(() => {
+			setCards((prevCards) => move(prevCards, 0, prevCards.length - 1));
+		}, 3000); // Adjust the interval time as needed
+
+		return () => clearInterval(interval); // Clean up the interval
+	}, []);
+
 	const moveToEnd = (from) => {
-		if (from === 0) {
-			setCards(move(cards, from, cards.length - 1));
-		} else {
-			setCards(move(cards, from, 0));
-		}
+		setCards(move(cards, from, 0));
 	};
 
 	return (

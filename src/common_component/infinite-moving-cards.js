@@ -86,7 +86,6 @@ export const InfiniteMovingCards = ({
 
 							<div className="flex items-center justify-center mt-6">
 								<div className="mr-5 bg-white p-2 rounded-full">
-									{console.log(item.icon)}
 									{item.icon && (
 										<img
 											src={item.icon}

@@ -73,7 +73,7 @@ const NewsList = ({ newsItems }) => (
 									"https://via.placeholder.com/300x200?text=Future+of+Education"
 								}
 								alt={news.title.rendered}
-								className="w-full min-h-[200px] object-cover rounded-t-lg"
+								className="w-full h-[200px] object-cover rounded-t-lg"
 							/>
 							{/* Dark overlay effect */}
 							<div className="absolute inset-0 bg-black opacity-25 rounded-t-lg"></div>
@@ -273,13 +273,13 @@ const NewsHubPage = () => {
 	};
 
 	return (
-		<>
+		<div className="relative">
 			{error && <p className="text-red-500">Error: {error}</p>}
 			<HeaderTemplate imageUrl={imageUrl} />
 			<img
 				src={imageUrlBg}
 				alt="Static Image"
-				className="absolute w-auto h-[250%] -z-30 opacity-50 object-cover"
+				className="absolute w-full h-[90%] -z-30 opacity-50 object-cover"
 			/>
 			<div className="mx-auto max-w-[1280px] md:p-8 flex flex-col md:!flex-row gap-5">
 				<div className="w-full md:!w-3/5">
@@ -301,7 +301,7 @@ const NewsHubPage = () => {
 					<Sidebar latestNews={latestNews} />
 				</div>
 			</div>
-		</>
+		</div>
 	);
 };
 

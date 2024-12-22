@@ -13,15 +13,15 @@ const RetailSection = () => {
 				</p>
 
 				<div className="mb-10">
-					<motion.h3
-						className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-extrabold tracking-tight text-gray-900 mb-4"
-						style={{ textShadow: "0px 4px 6px rgba(0, 0, 0, 0.3)" }}
+					<motion.h2
 						initial={{ opacity: 0, y: -50 }}
-						animate={{ opacity: 1, y: 0 }}
-						transition={{ duration: 1.2, ease: "easeOut" }}
+						whileInView={{ opacity: 1, y: 0 }}
+						transition={{ duration: 0.5 }}
+						viewport={{ once: true }}
+						className="text-center text-[20px] md:text-[36px] text-[#354052] font-bold not-prose mt-10"
 					>
 						Nilai Perusahaan Kami
-					</motion.h3>
+					</motion.h2>
 
 					<motion.h3
 						className="text-4xl md:text-5xl lg:text-6xl text-[#0100B1] font-extrabold tracking-tight mb-6"

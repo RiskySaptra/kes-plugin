@@ -7,13 +7,14 @@ import imageUrlBg from "../assets/page-background/Kontak.png";
 
 // Tabler Icons
 import {
-	IconAt,
 	IconMapPin,
 	IconPhoneCall,
 	IconBrandFacebook,
 	IconBrandInstagram,
 	IconBrandTiktok,
 	IconMapPinFilled,
+	IconMail,
+	IconWorld,
 } from "@tabler/icons-react";
 import HeaderTemplate from "../common_component/HeaderTemplate";
 
@@ -67,12 +68,12 @@ const ContactUsPage = () => {
 	};
 
 	return (
-		<>
+		<div className="relative">
 			<HeaderTemplate imageUrl={imageUrl} />
 			<img
 				src={imageUrlBg}
 				alt="Static Image"
-				className="absolute w-auto h-[230%] -z-30 opacity-50 object-cover"
+				className="absolute w-full h-[90%] -z-30 opacity-50 object-cover"
 			/>
 			<div className="mx-auto max-w-screen-xl grid grid-cols-1 md:grid-cols-2 pt-10 px-4 gap-5">
 				{/* Contact Info Section */}
@@ -88,7 +89,7 @@ const ContactUsPage = () => {
 						{/* Phone Numbers */}
 						<li className="flex items-center gap-2">
 							<IconPhoneCall size={24} strokeWidth={2} />
-							<span className="text-lg">+6221 4614952</span>
+							<span className="text-lg">+6221 4614952 (Kantor)</span>
 						</li>
 						<li className="flex items-center gap-2">
 							<IconPhoneCall size={24} strokeWidth={2} />
@@ -105,7 +106,7 @@ const ContactUsPage = () => {
 
 						{/* Email */}
 						<li className="flex items-center gap-2">
-							<IconAt size={24} strokeWidth={2} />
+							<IconMail size={24} strokeWidth={2} />
 							<span className="text-lg">sales@kmielectricsolution.co.id</span>
 						</li>
 
@@ -119,13 +120,14 @@ const ContactUsPage = () => {
 
 						{/* Website */}
 						<li className="flex items-center gap-2">
+							<IconWorld size={24} strokeWidth={2} />
 							<span className="text-lg text-blue-600 hover:underline">
 								<a
 									href="https://kabelretail.co.id/"
 									target="_blank"
 									rel="noopener noreferrer"
 								>
-									https://kabelretail.co.id/
+									www.kabelretail.co.id
 								</a>
 							</span>
 						</li>
@@ -192,7 +194,7 @@ const ContactUsPage = () => {
 								name="name"
 								value={formData.name}
 								onChange={handleInputChange}
-								placeholder="Your Name"
+								placeholder="Nama"
 								className="w-full px-4 py-2 border rounded-lg"
 								initial={{ opacity: 0, x: -50 }}
 								animate={{ opacity: 1, x: 0 }}
@@ -206,7 +208,7 @@ const ContactUsPage = () => {
 								name="email"
 								value={formData.email}
 								onChange={handleInputChange}
-								placeholder="Your Email"
+								placeholder="Email"
 								className="w-full px-4 py-2 border rounded-lg"
 								initial={{ opacity: 0, x: -50 }}
 								animate={{ opacity: 1, x: 0 }}
@@ -219,7 +221,7 @@ const ContactUsPage = () => {
 								name="message"
 								value={formData.message}
 								onChange={handleInputChange}
-								placeholder="Your Message"
+								placeholder="Kebutuhan Anda"
 								className="w-full px-4 py-2 border rounded-lg"
 								rows="5"
 								initial={{ opacity: 0, x: -50 }}
@@ -266,15 +268,17 @@ const ContactUsPage = () => {
 							Lokasi PT KMI Electric Solution (PT KES)
 						</motion.h2>
 					</div>
+
 					<div
 						className="gmap_canvas w-full h-[80%]"
 						style={{ overflow: "hidden", background: "none" }}
 					>
 						<iframe
 							className="gmap_iframe w-full h-full"
-							src="https://maps.google.com/maps?width=1280&height=400&hl=en&q=Jakrata&t=&z=14&ie=UTF8&iwloc=B&output=embed"
+							src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3966.5857427465953!2d106.93687387499011!3d-6.186154093801413!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e698b66b7cac7bf%3A0x7b767741fe8aa456!2sPT%20KMI%20Electric%20Solution!5e0!3m2!1sen!2sid!4v1734772796839!5m2!1sen!2sid"
 							title="Google Map"
 						></iframe>
+
 						<a
 							href="https://sprunkin.com/"
 							target="_blank"
@@ -285,7 +289,7 @@ const ContactUsPage = () => {
 					</div>
 				</div>
 			</div>
-		</>
+		</div>
 	);
 };
 

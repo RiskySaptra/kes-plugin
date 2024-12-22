@@ -1,39 +1,63 @@
-import { useEffect, useState, useMemo } from "@wordpress/element";
+import { useState, useMemo, useEffect } from "@wordpress/element";
 import { createRoot } from "react-dom/client";
 import { motion } from "framer-motion";
-import { sampleProducts } from "./constanta";
 import { IconSearch } from "@tabler/icons-react";
 import HeaderTemplate from "../common_component/HeaderTemplate";
+import { RichText } from "@wordpress/block-editor";
+
 import imageUrl from "../assets/page-banner/our-product.jpeg";
 import imageUrlBg from "../assets/page-background/Produk.png";
 
 const ProductPage = () => {
+	const [pageAttributes, setPageAttributes] = useState(null); // Directly store images in state
+
+	useEffect(() => {
+		if (container) {
+			const attributes = container.getAttribute("data-block-attributes");
+
+			if (attributes) {
+				try {
+					const parsedAttributes = JSON.parse(attributes);
+
+					setPageAttributes(parsedAttributes); // Directly set images
+				} catch (error) {
+					console.error("Failed to parse block attributes:", error);
+				}
+			}
+		}
+	}, []);
+
 	const [currentPage, setCurrentPage] = useState(1);
 	const [pageSize, setPageSize] = useState(8);
 	const [searchTerm, setSearchTerm] = useState("");
 	const [submitedsearchTerm, setSubmitedsearchTerm] = useState("");
 	const [selectedFilter, setSelectedFilter] = useState("All");
 
+	console.log(pageAttributes);
+
 	// Temporary state for filtered products after applying search and filters
 	const filteredProducts = useMemo(() => {
-		return sampleProducts.filter((product) => {
-			return (
-				(submitedsearchTerm === "" ||
-					product.title
-						.toLowerCase()
-						.includes(submitedsearchTerm.toLowerCase()) ||
-					product.description
-						.toLowerCase()
-						.includes(submitedsearchTerm.toLowerCase())) &&
-				(selectedFilter === "All" || product.category === selectedFilter)
-			);
-		});
-	}, [submitedsearchTerm, selectedFilter]);
+		if (pageAttributes?.productList) {
+			return pageAttributes?.productList?.filter((product) => {
+				return (
+					(submitedsearchTerm === "" ||
+						product.title
+							.toLowerCase()
+							.includes(submitedsearchTerm.toLowerCase()) ||
+						product.description
+							.toLowerCase()
+							.includes(submitedsearchTerm.toLowerCase())) &&
+					(selectedFilter === "All" || product.category === selectedFilter)
+				);
+			});
+		}
+		return [];
+	}, [submitedsearchTerm, selectedFilter, pageAttributes]);
 
 	// Calculate total pages based on filtered products and pageSize
 	const totalPages = useMemo(
 		() => Math.ceil(filteredProducts.length / pageSize),
-		[filteredProducts, pageSize],
+		[filteredProducts, pageSize, pageAttributes],
 	);
 
 	// Handle filter change and reset currentPage to 1 when filter changes
@@ -70,6 +94,7 @@ const ProductPage = () => {
 			initial={{ opacity: 0 }}
 			animate={{ opacity: 1 }}
 			transition={{ duration: 0.5 }}
+			className="relative"
 		>
 			<HeaderTemplate
 				imageUrl={imageUrl}
@@ -86,7 +111,7 @@ Varian produk lain yang kami sediakan adalah jointing dengan brand REPL dan fitt
 			<img
 				src={imageUrlBg}
 				alt="Static Image"
-				className="absolute w-auto h-[200%] -z-30 opacity-50 object-cover"
+				className="absolute w-full h-[90%] -z-30 opacity-50 object-cover"
 			/>
 			{/* Search Bar */}
 			<SearchBar
@@ -176,68 +201,116 @@ const SearchBar = ({ searchTerm, onSearchChange, onSearchSubmit }) => (
 	</div>
 );
 
-const ProductGrid = ({ products }) => (
-	<motion.div
-		className="grid mx-auto max-w-[1280px] md:grid-cols-4 gap-6 px-5 md:px-0"
-		initial={{ opacity: 0 }}
-		animate={{ opacity: 1 }}
-		transition={{ duration: 0.8, ease: "easeInOut" }} // Smooth transition for grid appearance
-	>
-		{products.map((product, index) => (
-			<motion.div
-				key={product.id + index}
-				className="bg-white p-5 rounded-lg shadow-[0_4px_10px_rgba(1,0,155,0.3)] group relative overflow-hidden"
-				whileHover={{
-					scale: 1.05,
-					y: -10,
-					boxShadow: "0px 15px 30px rgba(1,0,155,0.4)",
-				}} // Smooth scaling, upward movement and shadow effect
-				// shadow-[0_4px_10px_rgba(1,0,155,0.3)] shadow-[0_10px_15px_rgba(1,0,155,0.4)]
-				transition={{
-					duration: 0.3,
-					type: "spring",
-					stiffness: 300,
-					damping: 25,
-				}} // Smooth scaling and movement transition
-				initial={{ opacity: 0, y: 20 }} // Start with opacity 0 and slight downward position
-				animate={{ opacity: 1, y: 0 }}
-			>
-				<div className="bg-white rounded-lg min-h-[240px] mb-3 overflow-hidden relative">
-					<motion.img
-						src={product.imageUrl}
-						alt={product.title}
-						className="w-full h-full object-cover"
-						initial={{ opacity: 0 }}
-						animate={{ opacity: 1 }}
-						transition={{ duration: 0.5, ease: "easeInOut" }} // Fade-in image on load
-					/>
-				</div>
-				<p className="text-lg font-semibold text-gray-800">{product.title}</p>
-				<p className="text-xs font-medium text-[#0000FE] mb-2">
-					{product.spec}
+const ProductModal = ({ product, onClose }) => {
+	if (!product) return null; // Render nothing if no product is selected
+
+	const handleClickOutside = (e) => {
+		// Close the modal if the user clicks outside the content area
+		if (e.target === e.currentTarget) {
+			onClose();
+		}
+	};
+
+	return (
+		<div
+			className="fixed inset-0 z-50 flex items-center justify-center bg-black/50"
+			onClick={handleClickOutside}
+		>
+			<div className="bg-white rounded-lg p-6 w-[90%] max-w-2xl relative">
+				<button
+					className="absolute top-3 right-3 text-gray-500 hover:text-gray-700"
+					onClick={onClose}
+				>
+					&times;
+				</button>
+				<img
+					src={product.imageUrl}
+					alt={product.title}
+					className="w-full h-[200px] object-cover rounded-md mb-4"
+				/>
+				<h2 className="text-xl font-bold mb-2">{product.title}</h2>
+				<p className="text-sm text-gray-800 mb-3">{product.description}</p>
+				<p className="text-sm font-semibold text-gray-700 mb-3">
+					kategori: {product.category}
 				</p>
-				<p className="text-sm text-gray-600">{product.description}</p>
-				{/* Additional Info on Hover */}
-				<div className="absolute bottom-0 left-0 right-0 p-5 bg-white bg-opacity-80 backdrop-blur-sm rounded-b-lg opacity-0 group-hover:opacity-100 transition-opacity duration-300 z-10">
-					<p className="text-sm font-semibold text-gray-700 mb-3">
-						{product.specDesc}
-					</p>
-					<div className="flex gap-2 mb-3">
-						<button className="text-xs font-semibold px-4 py-2 rounded-md bg-gradient-to-r from-[#39A849] to-[#27A74C] w-full text-white">
-							Belanja di Tokopedia
-						</button>
-						<button className="text-xs font-semibold px-4 py-2 rounded-md bg-gradient-to-r from-[#EE4D2D] to-[#E24339] w-full text-white">
-							Belanja di Shopee
-						</button>
-					</div>
-					<button className="text-sm font-semibold px-4 py-2 rounded-md bg-gradient-to-r from-[#0100B1] to-[#005BFF] w-full text-white">
-						Unduh Catalog
+				<RichText.Content
+					tagName="h3"
+					value={product.specDesc}
+					className="text-sm font-semibold text-gray-700 mb-3"
+				/>
+				<div className="flex gap-2 mb-3">
+					<button className="text-sm font-semibold px-4 py-2 rounded-md bg-gradient-to-r from-[#39A849] to-[#27A74C] w-full text-white">
+						Belanja di Tokopedia
+					</button>
+					<button className="text-sm font-semibold px-4 py-2 rounded-md bg-gradient-to-r from-[#EE4D2D] to-[#E24339] w-full text-white">
+						Belanja di Shopee
 					</button>
 				</div>
+				<button className="text-sm font-semibold px-4 py-2 rounded-md bg-gradient-to-r from-[#0100B1] to-[#005BFF] w-full text-white">
+					Unduh Catalog
+				</button>
+			</div>
+		</div>
+	);
+};
+const ProductGrid = ({ products }) => {
+	const [selectedProduct, setSelectedProduct] = useState(null);
+
+	const closeModal = () => setSelectedProduct(null);
+
+	return (
+		<>
+			<motion.div
+				className="grid mx-auto max-w-[1280px] md:grid-cols-4 gap-6 px-5 md:px-0"
+				initial={{ opacity: 0 }}
+				animate={{ opacity: 1 }}
+				transition={{ duration: 0.8, ease: "easeInOut" }}
+			>
+				{products.map((product, index) => (
+					<motion.div
+						key={product.id + index}
+						className="bg-white p-5 rounded-lg shadow-[0_4px_10px_rgba(1,0,155,0.3)] group relative overflow-hidden cursor-pointer"
+						whileHover={{
+							scale: 1.05,
+							y: -10,
+							boxShadow: "0px 15px 30px rgba(1,0,155,0.4)",
+						}}
+						transition={{
+							duration: 0.3,
+							type: "spring",
+							stiffness: 300,
+							damping: 25,
+						}}
+						initial={{ opacity: 0, y: 20 }}
+						animate={{ opacity: 1, y: 0 }}
+						onClick={() => setSelectedProduct(product)}
+					>
+						<div className="bg-white rounded-lg min-h-[240px] mb-3 overflow-hidden relative">
+							<motion.img
+								src={product.imageUrl}
+								alt={product.title}
+								className="w-full h-full object-cover"
+								initial={{ opacity: 0 }}
+								animate={{ opacity: 1 }}
+								transition={{ duration: 0.5, ease: "easeInOut" }}
+							/>
+						</div>
+						<p className="text-lg font-semibold text-gray-800">
+							{product.title}
+						</p>
+						<p className="text-xs font-medium text-[#0000FE] mb-2">
+							{product.spec}
+						</p>
+						<p className="text-sm text-gray-600">{product.description}</p>
+					</motion.div>
+				))}
 			</motion.div>
-		))}
-	</motion.div>
-);
+
+			{/* Use the modal component */}
+			<ProductModal product={selectedProduct} onClose={closeModal} />
+		</>
+	);
+};
 
 const PaginationControls = ({
 	currentPage,

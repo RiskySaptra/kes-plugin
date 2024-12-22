@@ -7,8 +7,20 @@ export const sampleProducts = [
 		description:
 			"Kabel tembaga serabut dengan isolasi PVC berbagai warna seperti biru, merah, hitam, kuning, kuning-hijau.",
 		spec: "NYAF 1X0.75 mm (fx) 500V SNI04-6629.3 :C10",
-		specDesc:
-			"Flexible copper cable with PVC insulation, suitable for general electrical installations.",
+		specDesc: `Spesifikasi :
+		- Merk : Kabelmetal Indonesia
+		- Jenis Kabel : NYM
+		- Tipe Konduktor : Tunggal
+		- Jumlah Konduktor : 3 Inti
+		- Panjang Kabel : 100 Meter
+		- Lebar Diameter : 2.5 mm
+		- Material Konduktor : 99,99% Tembaga Murni
+		- Material Insulasi : PVC
+		- Material Selubung : PVC
+		- Warna Kabel : Putih
+		- Tegangan : 300/500 V
+		- Kuat Arus : 25 A
+		- Standar : SNI 04-6629.4:2006`,
 		category: "Low Voltage Cables",
 		linkTokopedia: "#",
 		linkShopee: "#",
@@ -22,7 +34,8 @@ export const sampleProducts = [
 		description:
 			"Kabel tembaga berkualitas tinggi untuk penggunaan rumah dan industri.",
 		spec: "NYA 1X2.5 mm 500V",
-		specDesc: "High-quality copper cable for residential and industrial use.",
+		specDesc:
+			"Kabel tembaga berkualitas tinggi dengan isolasi PVC yang tahan terhadap tekanan tinggi dan lingkungan industri.",
 		category: "Low Voltage Cables",
 		linkTokopedia: "#",
 		linkShopee: "#",
@@ -37,7 +50,7 @@ export const sampleProducts = [
 			"Kabel dengan isolasi PVC untuk instalasi listrik indoor dan outdoor.",
 		spec: "PVC 1X4 mm 600V",
 		specDesc:
-			"PVC insulated cable for indoor and outdoor electrical installations.",
+			"PVC insulated kabel ideal untuk instalasi listrik baik dalam ruangan maupun luar ruangan dengan perlindungan UV.",
 		category: "Low Voltage Cables",
 		linkTokopedia: "#",
 		linkShopee: "#",
@@ -52,7 +65,7 @@ export const sampleProducts = [
 			"Kabel fleksibel dengan lapisan PVC yang cocok untuk panel listrik.",
 		spec: "NYAF 2X0.75 mm 500V",
 		specDesc:
-			"Flexible cable with PVC insulation, ideal for electrical panel installations.",
+			"Kabel fleksibel dengan isolasi PVC yang cocok untuk instalasi panel listrik dengan fleksibilitas tambahan.",
 		category: "Low Voltage Cables",
 		linkTokopedia: "#",
 		linkShopee: "#",
@@ -65,7 +78,8 @@ export const sampleProducts = [
 		title: "Kabel Listrik Panel",
 		description: "Kabel listrik untuk panel distribusi dengan pelindung PVC.",
 		spec: "NYAF 3X1.5 mm 500V",
-		specDesc: "Electrical cable for distribution panels with PVC insulation.",
+		specDesc:
+			"Kabel listrik untuk distribusi panel dengan isolasi PVC tahan suhu tinggi dan lingkungan industri keras.",
 		category: "Low Voltage Cables",
 		linkTokopedia: "#",
 		linkShopee: "#",
@@ -80,7 +94,7 @@ export const sampleProducts = [
 			"Kabel tembaga terkelupas dan dilapisi isolasi PVC untuk proteksi tambahan.",
 		spec: "Shielded Cable 2X1 mm",
 		specDesc:
-			"Shielded copper cable with PVC insulation for additional protection.",
+			"Kabel shielded dengan isolasi PVC untuk melindungi sinyal dari gangguan elektromagnetik tambahan.",
 		category: "Medium Voltage Cables",
 		linkTokopedia: "#",
 		linkShopee: "#",
@@ -94,7 +108,8 @@ export const sampleProducts = [
 		description:
 			"Kabel tahan cuaca yang cocok untuk penggunaan di sistem tenaga surya.",
 		spec: "Kabel PV 6mm 1000V",
-		specDesc: "Weather-resistant cable for solar panel systems.",
+		specDesc:
+			"Kabel PV dengan tahan cuaca untuk sistem tenaga surya dengan fleksibilitas tinggi.",
 		category: "Medium Voltage Cables",
 		linkTokopedia: "#",
 		linkShopee: "#",
@@ -109,7 +124,7 @@ export const sampleProducts = [
 			"Kabel kontrol dengan beberapa konduktor untuk penggunaan industri.",
 		spec: "Kontrol 5X0.75 mm",
 		specDesc:
-			"Control cable with multiple conductors for industrial applications.",
+			"Kabel kontrol dengan konduktor multiple untuk aplikasi industri dengan ketahanan tinggi terhadap arus listrik.",
 		category: "Medium Voltage Cables",
 		linkTokopedia: "#",
 		linkShopee: "#",
@@ -123,7 +138,8 @@ export const sampleProducts = [
 		description:
 			"Kabel listrik dengan isolasi tahan api untuk instalasi gedung.",
 		spec: "Kabel Tahan Api 1X2.5 mm",
-		specDesc: "Fire-resistant cable for building installations.",
+		specDesc:
+			"Kabel tahan api dengan lapisan isolasi yang dirancang untuk melindungi instalasi dari risiko kebakaran.",
 		category: "Fire Resistant Cables",
 		linkTokopedia: "#",
 		linkShopee: "#",
@@ -136,7 +152,8 @@ export const sampleProducts = [
 		title: "Kabel NYY",
 		description: "Kabel NYY dengan pelindung isolasi untuk aplikasi outdoor.",
 		spec: "NYY 2X1.5 mm",
-		specDesc: "NYY cable with insulation protection for outdoor applications.",
+		specDesc:
+			"Kabel NYY dengan lapisan isolasi yang memberikan perlindungan tambahan terhadap lingkungan luar ruangan.",
 		category: "Low Voltage Cables",
 		linkTokopedia: "#",
 		linkShopee: "#",
@@ -149,7 +166,8 @@ export const sampleProducts = [
 		title: "Kabel Flex",
 		description: "Kabel fleksibel untuk instalasi elektronik dan peralatan.",
 		spec: "Flex 3X0.75 mm",
-		specDesc: "Flexible cable for electronics and equipment installations.",
+		specDesc:
+			"Kabel fleksibel dengan konduktor multi-inti yang cocok untuk instalasi elektronik dengan fleksibilitas tinggi.",
 		category: "Flexible Cables",
 		linkTokopedia: "#",
 		linkShopee: "#",
@@ -162,189 +180,8 @@ export const sampleProducts = [
 		title: "Kabel Suplai Daya",
 		description: "Kabel daya untuk panel distribusi dan perangkat berat.",
 		spec: "NYA 4X2.5 mm",
-		specDesc: "Power supply cable for distribution panels and heavy equipment.",
-		category: "Low Voltage Cables",
-		linkTokopedia: "#",
-		linkShopee: "#",
-		catalogLink: "#",
-	},
-	{
-		id: 13,
-		imageUrl:
-			"https://www.fraction9coffee.com/cdn/shop/t/23/assets/placeholder_600x.png?v=113555733946226816651714543406",
-		title: "Kabel Instalasi Rumah",
-		description: "Kabel untuk instalasi listrik di rumah dengan isolasi PVC.",
-		spec: "NYAF 3X1.5 mm 500V",
-		specDesc: "Cable for home electrical installations with PVC insulation.",
-		category: "Low Voltage Cables",
-		linkTokopedia: "#",
-		linkShopee: "#",
-		catalogLink: "#",
-	},
-	{
-		id: 13,
-		imageUrl:
-			"https://www.fraction9coffee.com/cdn/shop/t/23/assets/placeholder_600x.png?v=113555733946226816651714543406",
-		title: "Kabel Instalasi Rumah",
-		description: "Kabel untuk instalasi listrik di rumah dengan isolasi PVC.",
-		spec: "NYAF 3X1.5 mm 500V",
-		specDesc: "Cable for home electrical installations with PVC insulation.",
-		category: "Low Voltage Cables",
-		linkTokopedia: "#",
-		linkShopee: "#",
-		catalogLink: "#",
-	},
-	{
-		id: 13,
-		imageUrl:
-			"https://www.fraction9coffee.com/cdn/shop/t/23/assets/placeholder_600x.png?v=113555733946226816651714543406",
-		title: "Kabel Instalasi Rumah",
-		description: "Kabel untuk instalasi listrik di rumah dengan isolasi PVC.",
-		spec: "NYAF 3X1.5 mm 500V",
-		specDesc: "Cable for home electrical installations with PVC insulation.",
-		category: "Low Voltage Cables",
-		linkTokopedia: "#",
-		linkShopee: "#",
-		catalogLink: "#",
-	},
-	{
-		id: 13,
-		imageUrl:
-			"https://www.fraction9coffee.com/cdn/shop/t/23/assets/placeholder_600x.png?v=113555733946226816651714543406",
-		title: "Kabel Instalasi Rumah",
-		description: "Kabel untuk instalasi listrik di rumah dengan isolasi PVC.",
-		spec: "NYAF 3X1.5 mm 500V",
-		specDesc: "Cable for home electrical installations with PVC insulation.",
-		category: "Low Voltage Cables",
-		linkTokopedia: "#",
-		linkShopee: "#",
-		catalogLink: "#",
-	},
-	{
-		id: 13,
-		imageUrl:
-			"https://www.fraction9coffee.com/cdn/shop/t/23/assets/placeholder_600x.png?v=113555733946226816651714543406",
-		title: "Kabel Instalasi Rumah",
-		description: "Kabel untuk instalasi listrik di rumah dengan isolasi PVC.",
-		spec: "NYAF 3X1.5 mm 500V",
-		specDesc: "Cable for home electrical installations with PVC insulation.",
-		category: "Low Voltage Cables",
-		linkTokopedia: "#",
-		linkShopee: "#",
-		catalogLink: "#",
-	},
-	{
-		id: 13,
-		imageUrl:
-			"https://www.fraction9coffee.com/cdn/shop/t/23/assets/placeholder_600x.png?v=113555733946226816651714543406",
-		title: "Kabel Instalasi Rumah",
-		description: "Kabel untuk instalasi listrik di rumah dengan isolasi PVC.",
-		spec: "NYAF 3X1.5 mm 500V",
-		specDesc: "Cable for home electrical installations with PVC insulation.",
-		category: "Low Voltage Cables",
-		linkTokopedia: "#",
-		linkShopee: "#",
-		catalogLink: "#",
-	},
-	{
-		id: 13,
-		imageUrl:
-			"https://www.fraction9coffee.com/cdn/shop/t/23/assets/placeholder_600x.png?v=113555733946226816651714543406",
-		title: "Kabel Instalasi Rumah",
-		description: "Kabel untuk instalasi listrik di rumah dengan isolasi PVC.",
-		spec: "NYAF 3X1.5 mm 500V",
-		specDesc: "Cable for home electrical installations with PVC insulation.",
-		category: "Low Voltage Cables",
-		linkTokopedia: "#",
-		linkShopee: "#",
-		catalogLink: "#",
-	},
-	{
-		id: 13,
-		imageUrl:
-			"https://www.fraction9coffee.com/cdn/shop/t/23/assets/placeholder_600x.png?v=113555733946226816651714543406",
-		title: "Kabel Instalasi Rumah",
-		description: "Kabel untuk instalasi listrik di rumah dengan isolasi PVC.",
-		spec: "NYAF 3X1.5 mm 500V",
-		specDesc: "Cable for home electrical installations with PVC insulation.",
-		category: "Low Voltage Cables",
-		linkTokopedia: "#",
-		linkShopee: "#",
-		catalogLink: "#",
-	},
-	{
-		id: 13,
-		imageUrl:
-			"https://www.fraction9coffee.com/cdn/shop/t/23/assets/placeholder_600x.png?v=113555733946226816651714543406",
-		title: "Kabel Instalasi Rumah",
-		description: "Kabel untuk instalasi listrik di rumah dengan isolasi PVC.",
-		spec: "NYAF 3X1.5 mm 500V",
-		specDesc: "Cable for home electrical installations with PVC insulation.",
-		category: "Low Voltage Cables",
-		linkTokopedia: "#",
-		linkShopee: "#",
-		catalogLink: "#",
-	},
-	{
-		id: 13,
-		imageUrl:
-			"https://www.fraction9coffee.com/cdn/shop/t/23/assets/placeholder_600x.png?v=113555733946226816651714543406",
-		title: "Kabel Instalasi Rumah",
-		description: "Kabel untuk instalasi listrik di rumah dengan isolasi PVC.",
-		spec: "NYAF 3X1.5 mm 500V",
-		specDesc: "Cable for home electrical installations with PVC insulation.",
-		category: "Low Voltage Cables",
-		linkTokopedia: "#",
-		linkShopee: "#",
-		catalogLink: "#",
-	},
-	{
-		id: 13,
-		imageUrl:
-			"https://www.fraction9coffee.com/cdn/shop/t/23/assets/placeholder_600x.png?v=113555733946226816651714543406",
-		title: "Kabel Instalasi Rumah",
-		description: "Kabel untuk instalasi listrik di rumah dengan isolasi PVC.",
-		spec: "NYAF 3X1.5 mm 500V",
-		specDesc: "Cable for home electrical installations with PVC insulation.",
-		category: "Low Voltage Cables",
-		linkTokopedia: "#",
-		linkShopee: "#",
-		catalogLink: "#",
-	},
-	{
-		id: 13,
-		imageUrl:
-			"https://www.fraction9coffee.com/cdn/shop/t/23/assets/placeholder_600x.png?v=113555733946226816651714543406",
-		title: "Kabel Instalasi Rumah",
-		description: "Kabel untuk instalasi listrik di rumah dengan isolasi PVC.",
-		spec: "NYAF 3X1.5 mm 500V",
-		specDesc: "Cable for home electrical installations with PVC insulation.",
-		category: "Low Voltage Cables",
-		linkTokopedia: "#",
-		linkShopee: "#",
-		catalogLink: "#",
-	},
-	{
-		id: 13,
-		imageUrl:
-			"https://www.fraction9coffee.com/cdn/shop/t/23/assets/placeholder_600x.png?v=113555733946226816651714543406",
-		title: "Kabel Instalasi Rumah",
-		description: "Kabel untuk instalasi listrik di rumah dengan isolasi PVC.",
-		spec: "NYAF 3X1.5 mm 500V",
-		specDesc: "Cable for home electrical installations with PVC insulation.",
-		category: "Low Voltage Cables",
-		linkTokopedia: "#",
-		linkShopee: "#",
-		catalogLink: "#",
-	},
-	{
-		id: 13,
-		imageUrl:
-			"https://www.fraction9coffee.com/cdn/shop/t/23/assets/placeholder_600x.png?v=113555733946226816651714543406",
-		title: "Kabel Instalasi Rumah",
-		description: "Kabel untuk instalasi listrik di rumah dengan isolasi PVC.",
-		spec: "NYAF 3X1.5 mm 500V",
-		specDesc: "Cable for home electrical installations with PVC insulation.",
+		specDesc:
+			"Kabel suplai daya dengan ketahanan tinggi terhadap beban berat dan suhu tinggi.",
 		category: "Low Voltage Cables",
 		linkTokopedia: "#",
 		linkShopee: "#",

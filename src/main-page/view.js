@@ -13,6 +13,8 @@ import OurPartner from "./component/OurPartner";
 import { motion } from "framer-motion";
 import { IconMapPinFilled } from "@tabler/icons-react";
 
+import imageUrlBg from "../assets/page-background/Produk.png";
+
 const MainPage = () => {
 	const [pageAttributes, setPageAttributes] = useState(null); // Directly store images in state
 
@@ -51,15 +53,22 @@ const MainPage = () => {
 		ourProductsImages,
 	} = pageAttributes;
 
-	console.log(pageAttributes);
+	const handleClick = (url) => {
+		window.open(url, "_blank");
+	};
 
 	const whatsAppUrl = `https://wa.me/${phoneNumber}?text=${encodeURIComponent(
 		message,
 	)}`;
 
 	return (
-		<div>
+		<div className="relative">
 			<BannerCarousel banners={images} />
+			<img
+				src={imageUrlBg}
+				alt="Static Image"
+				className="absolute w-full h-[90%] -z-30 opacity-50 object-cover"
+			/>
 			<CompanyProfile
 				companyProfileImage={companyProfileImage}
 				companyProfileDesc={companyProfileDesc}
@@ -82,25 +91,40 @@ const MainPage = () => {
 				</motion.h2>
 
 				<div className="grid grid-col grid-cols-1 md:!grid-cols-2 gap-5">
-					<div className="py-5 px-10 border rounded-xl flex gap-5	">
-						<div>
+					<div
+						onClick={() =>
+							handleClick(
+								"https://www.google.com/maps/place/Putra+Delima+Mandiri/@-6.1871949,106.6326447,17z/data=!4m6!3m5!1s0x2e69f9c144efd7e1:0x64d952e86dfaf1a8!8m2!3d-6.1872482!4d106.6341897!16s%2Fg%2F11qgmr49x7?entry=ttu&g_ep=EgoyMDI0MTIxMS4wIKXMDSoASAFQAw%3D%3D",
+							)
+						}
+						className="py-5 px-10 border rounded-xl flex gap-5	bg-white cursor-pointer"
+					>
+						<div className="my-auto">
 							<IconMapPinFilled size={30} color="red" />
 						</div>
 
 						<p className="font-md font-semibold">
-							CV Putra Delima Mandiri Jln. Perintis kemerdekaan no.3, Babakan,
-							Tangerang, Bante
+							<span className="font-semibold">CV Putra Delima Mandiri </span>{" "}
+							<br />
+							Jln. Perintis kemerdekaan no.3, Babakan, Tangerang, Banten
 						</p>
 					</div>
 
-					<div className="py-5 px-10 border rounded-xl flex gap-5	">
-						<div>
+					<div
+						onClick={() =>
+							handleClick(
+								"https://www.google.com/maps/place/Centro+Electric/@-6.1915212,106.8468505,17z/data=!4m6!3m5!1s0x2e69f443f2bc8a4f:0xa65a0189bc0466d4!8m2!3d-6.1915425!4d106.8487388!16s%2Fg%2F1q5bqr2r3?authuser=0&hl=en&entry=ttu&g_ep=EgoyMDI0MTIxMS4wIKXMDSoASAFQAw%3D%3D",
+							)
+						}
+						className="py-5 px-10 border rounded-xl flex gap-5	bg-white cursor-pointer"
+					>
+						<div className="my-auto">
 							<IconMapPinFilled size={30} color="red" />
 						</div>
 						<p className="font-md font-semibold">
-							Central Electric - Plaza Kenari Mas Lantai 3 Blok J No.118 - 126,
-							Jl. Kramat Raya No.101, Jakarta Pusat Plaza Kenari Mas -
-							Specialities Trade Mall.
+							<span className="font-semibold">Central Electric</span> <br />{" "}
+							Plaza Kenari Mas Lantai 3 Blok J No.118 - 126, Jl. Kramat Raya
+							No.101, Jakarta Pusat Plaza Kenari Mas - Specialities Trade Mall.
 						</p>
 					</div>
 				</div>

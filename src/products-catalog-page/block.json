@@ -7,7 +7,6 @@
 	"category": "theme",
 	"icon": "smiley",
 	"description": "Custom kes internal block",
-	"example": {},
 	"supports": {
 		"html": false
 	},
