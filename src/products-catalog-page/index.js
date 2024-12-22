@@ -291,7 +291,20 @@ registerBlockType(metadata.name, {
 							options={[
 								{ label: "Low Voltage Cables", value: "Low Voltage Cables" },
 								{ label: "High Voltage Cables", value: "High Voltage Cables" },
-								{ label: "Fiber Optics", value: "Fiber Optics" },
+								{
+									label: "Medium Voltage Cables",
+									value: "Medium Voltage Cables",
+								},
+								{
+									label: "Fire Resistant Cables",
+									value: "Fire Resistant Cables",
+								},
+								{ label: "Flexible Cables", value: "Flexible Cables" },
+								{ label: "Jointing", value: "Jointing" },
+								{
+									label: "Fitting dan Accessories",
+									value: "Fitting dan Accessories",
+								},
 							]}
 							onChange={(value) => handleInputChange("category", value)}
 							className="mb-4"
