@@ -22,7 +22,7 @@ const StackedCard = ({ images }) => {
 	};
 
 	return (
-		<div className="flex items-center justify-start h-[600px] w-[600px]">
+		<div className="flex items-center justify-start h-[600px] w-full pt-20">
 			<ul className="relative w-full max-w-[400px] h-[300px] sm:w-[70%] cursor-pointer">
 				{cards.map((card, index) => {
 					const canDrag = index === 0;

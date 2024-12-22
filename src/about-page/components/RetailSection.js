@@ -33,7 +33,7 @@ const RetailSection = () => {
 						R E T A I L
 					</motion.h3>
 					<p className="text-base md:!text-2xl font-medium leading-relaxed text-gray-700 mb-6 text-center">
-						cerminan atas komitmen kami terhadap standar profesional yang tinggi
+						Cerminan atas komitmen kami terhadap standar profesional yang tinggi
 						dan keunggulan dalam setiap aspek produk maupun layanan kami.
 					</p>
 				</div>

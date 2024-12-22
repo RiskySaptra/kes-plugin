@@ -10,7 +10,7 @@ const AboutSection = ({ about }) => {
 			<div className="max-w-7xl mx-auto flex flex-col-reverse md:flex-row items-center justify-center gap-0 md:space-x-12 px-5 md:px-0">
 				{/* Text Section */}
 				<motion.div
-					className="flex-1 text-left"
+					className="basis-3/5 text-left"
 					initial={{ opacity: 0, x: -50 }}
 					animate={{ opacity: 1, x: 0 }}
 					transition={{ duration: 1.2, ease: "easeOut" }}
@@ -21,11 +21,13 @@ const AboutSection = ({ about }) => {
 					<RichText.Content
 						tagName="h3"
 						value={about}
-						className="text-base md:text-lg font-medium leading-relaxed text-gray-700 mb-6"
+						className="text-base md:text-lg font-medium leading-relaxed text-gray-700 mb-6 text-justify"
 					/>
 				</motion.div>
 
-				<StackedCard images={aboutImages} />
+				<div className="basis-2/5">
+					<StackedCard images={aboutImages} />
+				</div>
 			</div>
 		</div>
 	);
