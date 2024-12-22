@@ -15,11 +15,8 @@ const clientLogo = importImages(
 const partnerLogo = importImages(
 	require.context("../assets/partner-logo", false, /\.(png|jpe?g|svg)$/),
 );
-const galleryImages = importImages(
-	require.context("../assets/gallery", false, /\.(png|jpe?g|svg)$/),
-);
 const aboutImages = importImages(
 	require.context("../assets/about-image", false, /\.(png|jpe?g|svg)$/),
 );
 
-export { clientLogo, partnerLogo, galleryImages, aboutImages };
+export { clientLogo, partnerLogo, aboutImages };

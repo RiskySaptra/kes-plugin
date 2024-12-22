@@ -1,8 +1,9 @@
 import { motion } from "framer-motion";
 import HorizontalSlider from "../../common_component/HorizontalSlider";
-import { galleryImages } from "../../common_component/logo";
 
 const Gallery = ({ items }) => {
+	if (!items) return null;
+
 	return (
 		<div className="max-w-7xl mx-auto">
 			<motion.h2
@@ -16,7 +17,7 @@ const Gallery = ({ items }) => {
 			</motion.h2>
 			<HorizontalSlider
 				loop={true}
-				items={galleryImages}
+				items={items?.map((itm) => ({ logo: itm.url, name: itm.id }))}
 				itemSize="max-w-[400px]"
 				maxHeight="max-h-[300px]"
 			/>
