@@ -13,7 +13,7 @@ import OurPartner from "./component/OurPartner";
 import { motion } from "framer-motion";
 import { IconMapPinFilled } from "@tabler/icons-react";
 
-import imageUrlBg from "../assets/page-background/Produk.png";
+import imageUrlBg from "../assets/page-background/Home Page.jpeg";
 
 const MainPage = () => {
 	const [pageAttributes, setPageAttributes] = useState(null); // Directly store images in state
@@ -67,7 +67,7 @@ const MainPage = () => {
 			<img
 				src={imageUrlBg}
 				alt="Static Image"
-				className="absolute w-full h-[90%] -z-30 opacity-50 object-cover"
+				className="absolute w-screen h-[90%] -z-30 opacity-50 object-fill"
 			/>
 			<CompanyProfile
 				companyProfileImage={companyProfileImage}

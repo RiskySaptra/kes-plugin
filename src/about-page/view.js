@@ -4,7 +4,7 @@ import HeaderTemplate from "../common_component/HeaderTemplate";
 import RetailSection from "./components/RetailSection";
 import AboutSection from "./components/AboutUs";
 import Gallery from "./components/Gallery";
-import imageUrlBg from "../assets/page-background/Tentang Kami.png";
+import imageUrlBg from "../assets/page-background/Tentang Kami.jpeg";
 
 import imageUrl from "../assets/page-banner/about.jpeg";
 
@@ -35,7 +35,7 @@ const AboutPage = () => {
 			<img
 				src={imageUrlBg}
 				alt="Static Image"
-				className="absolute w-full h-[90%] -z-30 opacity-50 object-cover"
+				className="absolute w-screen h-[90%] -z-30 opacity-50 object-fill"
 			/>
 			<AboutSection />
 			<div className="grid grid-cols-1 md:grid-cols-2 mb-20">

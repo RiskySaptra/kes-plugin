@@ -6,7 +6,7 @@ import HeaderTemplate from "../common_component/HeaderTemplate";
 import { RichText } from "@wordpress/block-editor";
 
 import imageUrl from "../assets/page-banner/our-product.jpeg";
-import imageUrlBg from "../assets/page-background/Produk.png";
+import imageUrlBg from "../assets/page-background/Produk.jpeg";
 
 const ProductPage = () => {
 	const [pageAttributes, setPageAttributes] = useState(null); // Directly store images in state
@@ -111,7 +111,7 @@ Varian produk lain yang kami sediakan adalah jointing dengan brand REPL dan fitt
 			<img
 				src={imageUrlBg}
 				alt="Static Image"
-				className="absolute w-full h-[90%] -z-30 opacity-50 object-cover"
+				className="absolute w-screen h-[90%] -z-30 opacity-50 object-fill"
 			/>
 			{/* Search Bar */}
 			<SearchBar
@@ -220,21 +220,18 @@ const ProductModal = ({ product, onClose, pdfFile }) => {
 			onClick={handleClickOutside}
 		>
 			<div className="bg-white rounded-lg p-6 w-[90%] max-w-2xl relative max-h-[90%] overflow-y-auto scrollbar-hidden">
-				{/* <button
-					className="absolute top-3 right-3 text-gray-500 hover:text-gray-700"
-					onClick={onClose}
-				>
-					&times;
-				</button> */}
 				<img
 					src={product.imageUrl}
 					alt={product.title}
 					className="w-full h-full object-cover rounded-md mb-4"
 				/>
 				<h2 className="text-xl font-bold mb-2">{product.title}</h2>
+				<p className="text-xs font-medium text-[#0000FE] mb-2">
+					{product.spec}
+				</p>
 				<p className="text-sm text-gray-800 mb-3">{product.description}</p>
 				<p className="text-sm font-semibold text-gray-700 mb-3">
-					kategori: {product.category}
+					Kategori: {product.category}
 				</p>
 				<RichText.Content
 					tagName="h3"
@@ -310,7 +307,9 @@ const ProductGrid = ({ products, pdfFile }) => {
 						<p className="text-xs font-medium text-[#0000FE] mb-2">
 							{product.spec}
 						</p>
-						<p className="text-sm text-gray-600">{product.description}</p>
+						<p className="text-sm text-gray-600 truncate-ellipsis-desc">
+							{product.description}
+						</p>
 					</motion.div>
 				))}
 			</motion.div>

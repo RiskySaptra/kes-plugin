@@ -10,3 +10,11 @@
 	-ms-overflow-style: none; /* Hides the scrollbar in Internet Explorer and Edge */
 	scrollbar-width: none; /* Hides the scrollbar in Firefox */
 }
+
+.truncate-ellipsis-desc {
+	display: -webkit-box;
+	-webkit-line-clamp: 3; /* Limit to 2 lines */
+	-webkit-box-orient: vertical;
+	overflow: hidden;
+	text-overflow: ellipsis;
+}

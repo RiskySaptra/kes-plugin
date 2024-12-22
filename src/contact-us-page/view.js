@@ -3,7 +3,7 @@ import { createRoot } from "react-dom/client";
 import { motion } from "framer-motion";
 import imageUrl from "../assets/page-banner/contact-us.jpeg";
 
-import imageUrlBg from "../assets/page-background/Kontak.png";
+import imageUrlBg from "../assets/page-background/Kontak.jpeg";
 
 // Tabler Icons
 import {
@@ -16,6 +16,7 @@ import {
 	IconMail,
 	IconWorld,
 } from "@tabler/icons-react";
+
 import HeaderTemplate from "../common_component/HeaderTemplate";
 
 const ContactUsPage = () => {
@@ -73,7 +74,7 @@ const ContactUsPage = () => {
 			<img
 				src={imageUrlBg}
 				alt="Static Image"
-				className="absolute w-full h-[90%] -z-30 opacity-50 object-cover"
+				className="absolute w-screen h-[90%] -z-30 opacity-50 object-fill"
 			/>
 			<div className="mx-auto max-w-screen-xl grid grid-cols-1 md:grid-cols-2 pt-10 px-4 gap-5">
 				{/* Contact Info Section */}
@@ -103,13 +104,11 @@ const ContactUsPage = () => {
 							<IconPhoneCall size={24} strokeWidth={2} />
 							<span className="text-lg">+6281 3345 67695 (Ghifar)</span>
 						</li>
-
 						{/* Email */}
 						<li className="flex items-center gap-2">
 							<IconMail size={24} strokeWidth={2} />
 							<span className="text-lg">sales@kmielectricsolution.co.id</span>
 						</li>
-
 						{/* Address */}
 						<li className="flex items-center gap-2">
 							<IconMapPin size={24} strokeWidth={2} />
@@ -117,7 +116,6 @@ const ContactUsPage = () => {
 								Jl. Raya Bekasi Km 23.1 – Cakung, Jakarta 13910
 							</span>
 						</li>
-
 						{/* Website */}
 						<li className="flex items-center gap-2">
 							<IconWorld size={24} strokeWidth={2} />
@@ -131,7 +129,6 @@ const ContactUsPage = () => {
 								</a>
 							</span>
 						</li>
-
 						{/* Social Media */}
 						<li className="flex items-center gap-2">
 							<span className="text-lg">Follow us:</span>
@@ -139,7 +136,7 @@ const ContactUsPage = () => {
 						<li className="flex items-center gap-6">
 							{/* Social Media Icons */}
 							<a
-								href="https://www.facebook.com"
+								href="https://www.facebook.com/profile.php?id=61565981105742&mibextid=ZbWKwL"
 								target="_blank"
 								rel="noopener noreferrer"
 								className="text-blue-600 hover:text-blue-800"
@@ -147,7 +144,7 @@ const ContactUsPage = () => {
 								<IconBrandFacebook size={24} />
 							</a>
 							<a
-								href="https://www.instagram.com"
+								href="https://www.instagram.com/kes_kabelretail?igsh=MWU3OWN1cWxpYzA2Yg=="
 								target="_blank"
 								rel="noopener noreferrer"
 								className="text-pink-500 hover:text-pink-700"
@@ -155,7 +152,7 @@ const ContactUsPage = () => {
 								<IconBrandInstagram size={24} />
 							</a>
 							<a
-								href="https://www.tiktok.com"
+								href="https://www.tiktok.com/@kes_kabelretail?_t=8sQ2qkaklTs&_r=1"
 								target="_blank"
 								rel="noopener noreferrer"
 								className="text-black hover:text-gray-800"
