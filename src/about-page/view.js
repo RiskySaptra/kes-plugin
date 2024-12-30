@@ -36,12 +36,12 @@ const AboutPage = () => {
 			<img
 				src={imageUrlBg}
 				alt="Static Image"
-				className="absolute w-screen h-[90%] -z-30 opacity-50 object-fill"
+				className="absolute w-screen h-[100%] -z-30 object-fill top-0"
 			/>
 			<AboutSection about={pageAttributes?.about} />
-			<div className="grid grid-cols-1 md:grid-cols-2 mb-20">
-				<div className="bg-[#0100B1] flex justify-end pb-10 pt-5 md:pr-10 px-5">
-					<div className="max-w-[640px] text-white">
+			<div className="grid grid-cols-1 mb-20">
+				<div className="bg-[#0100B1] flex pb-10 pt-5 md:pr-10 px-5">
+					<div className="text-white mx-auto max-w-[1280px]  w-full">
 						<h2 className="text-[36px] font-semibold">Visi</h2>
 						<RichText.Content
 							tagName="p"
@@ -50,14 +50,25 @@ const AboutPage = () => {
 						/>
 					</div>
 				</div>
-				<div className="bg-[#C51714] flex justify-start pb-10 pt-5 md:pl-10 px-5">
-					<div className="max-w-[640px] text-white">
+				<div className="bg-[#C51714] flex pb-10 pt-5 md:pl-10 px-5">
+					<div className="text-white mx-auto max-w-[1280px] w-full">
 						<h2 className="text-[36px] font-semibold">Misi</h2>
-						<RichText.Content
-							tagName="p"
-							value={pageAttributes?.misi}
-							className="text-base md:text-lg font-medium leading-relaxed mb-6"
-						/>
+						<ul class="list-disc ml-5">
+							<li>
+								Konsisten dalam menyediakan produk berkualitas sesuai dengan
+								kebutuhan pelanggan.
+							</li>
+							<li>
+								Komitmen dalam memberikan pelayanan terbaik melalui jaminan
+								harga yang kompetitif dan kecepatan respon kepada para
+								pelanggan.
+							</li>
+							<li>
+								Berbudaya kerja profesional dengan mengedepankan sinergi dan
+								komunikasi dalam tim.
+							</li>
+							<li>Berdaya saing melalui adaptasi perkembangan teknologi.</li>
+						</ul>
 					</div>
 				</div>
 			</div>

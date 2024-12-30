@@ -111,7 +111,7 @@ Varian produk lain yang kami sediakan adalah jointing dengan brand REPL dan fitt
 			<img
 				src={imageUrlBg}
 				alt="Static Image"
-				className="absolute w-screen h-[90%] -z-30 opacity-50 object-fill"
+				className="absolute w-screen h-[100%] -z-30 object-fill top-[20%]"
 			/>
 			{/* Search Bar */}
 			<SearchBar
@@ -238,23 +238,6 @@ const ProductModal = ({ product, onClose, pdfFile }) => {
 					value={product.specDesc}
 					className="text-sm font-semibold text-gray-700 mb-3"
 				/>
-				<div className="flex gap-2 my-3">
-					<button className="text-sm font-semibold px-4 py-2 rounded-md bg-gradient-to-r from-[#39A849] to-[#27A74C] w-full text-white">
-						Belanja di Tokopedia
-					</button>
-					<button className="text-sm font-semibold px-4 py-2 rounded-md bg-gradient-to-r from-[#EE4D2D] to-[#E24339] w-full text-white">
-						Belanja di Shopee
-					</button>
-				</div>
-				<div className="flex">
-					<a
-						href={pdfFile.url}
-						className="text-sm font-semibold px-4 py-2 rounded-md bg-gradient-to-r from-[#0100B1] to-[#005BFF] w-full text-white text-center"
-						download
-					>
-						Unduh Catalog
-					</a>
-				</div>
 			</div>
 		</div>
 	);
@@ -310,6 +293,23 @@ const ProductGrid = ({ products, pdfFile }) => {
 						<p className="text-sm text-gray-600 truncate-ellipsis-desc">
 							{product.description}
 						</p>
+						<div className="flex gap-2 my-3">
+							<button className="text-sm font-semibold px-4 py-2 rounded-md bg-gradient-to-r from-[#39A849] to-[#27A74C] w-full text-white">
+								Belanja di Tokopedia
+							</button>
+							<button className="text-sm font-semibold px-4 py-2 rounded-md bg-gradient-to-r from-[#EE4D2D] to-[#E24339] w-full text-white">
+								Belanja di Shopee
+							</button>
+						</div>
+						<div className="flex">
+							<a
+								href={pdfFile?.url}
+								className="text-sm font-semibold px-4 py-2 rounded-md bg-gradient-to-r from-[#0100B1] to-[#005BFF] w-full text-white text-center"
+								download
+							>
+								Unduh Catalog
+							</a>
+						</div>
 					</motion.div>
 				))}
 			</motion.div>

@@ -67,7 +67,7 @@ const MainPage = () => {
 			<img
 				src={imageUrlBg}
 				alt="Static Image"
-				className="absolute w-screen h-[90%] -z-30 opacity-50 object-fill"
+				className="absolute w-screen h-[100%] -z-30 object-fill top-0"
 			/>
 			<CompanyProfile
 				companyProfileImage={companyProfileImage}
@@ -90,42 +90,67 @@ const MainPage = () => {
 					Lokasi Offline Store
 				</motion.h2>
 
-				<div className="grid grid-col grid-cols-1 md:!grid-cols-2 gap-5">
+				<div className="grid grid-col grid-cols-1 md:!grid-cols-3 gap-5 px-5 md:px-0">
 					<div
-						onClick={() =>
-							handleClick(
-								"https://www.google.com/maps/place/Putra+Delima+Mandiri/@-6.1871949,106.6326447,17z/data=!4m6!3m5!1s0x2e69f9c144efd7e1:0x64d952e86dfaf1a8!8m2!3d-6.1872482!4d106.6341897!16s%2Fg%2F11qgmr49x7?entry=ttu&g_ep=EgoyMDI0MTIxMS4wIKXMDSoASAFQAw%3D%3D",
-							)
-						}
-						className="py-5 px-10 border rounded-xl flex gap-5	bg-white cursor-pointer"
+						// onClick={() =>
+						// 	handleClick(
+						// 		"https://www.google.com/maps/place/Putra+Delima+Mandiri/@-6.1871949,106.6326447,17z/data=!4m6!3m5!1s0x2e69f9c144efd7e1:0x64d952e86dfaf1a8!8m2!3d-6.1872482!4d106.6341897!16s%2Fg%2F11qgmr49x7?entry=ttu&g_ep=EgoyMDI0MTIxMS4wIKXMDSoASAFQAw%3D%3D",
+						// 	)
+						// }
+						className="py-5 px-10 border rounded-xl flex gap-5 bg-white cursor-pointer items-center"
 					>
 						<div className="my-auto">
 							<IconMapPinFilled size={30} color="red" />
 						</div>
-
-						<p className="font-md font-semibold">
-							<span className="font-semibold">CV Putra Delima Mandiri </span>{" "}
-							<br />
-							Jln. Perintis kemerdekaan no.3, Babakan, Tangerang, Banten
-						</p>
+						<div>
+							<p className="text-sm">
+								<span className="font-semibold">CV Putra Delima Mandiri </span>{" "}
+								<br />
+								Jln. Perintis kemerdekaan no.3, Babakan, Tangerang, Banten
+							</p>
+						</div>
 					</div>
 
 					<div
-						onClick={() =>
-							handleClick(
-								"https://www.google.com/maps/place/Centro+Electric/@-6.1915212,106.8468505,17z/data=!4m6!3m5!1s0x2e69f443f2bc8a4f:0xa65a0189bc0466d4!8m2!3d-6.1915425!4d106.8487388!16s%2Fg%2F1q5bqr2r3?authuser=0&hl=en&entry=ttu&g_ep=EgoyMDI0MTIxMS4wIKXMDSoASAFQAw%3D%3D",
-							)
-						}
-						className="py-5 px-10 border rounded-xl flex gap-5	bg-white cursor-pointer"
+						// onClick={() =>
+						// 	handleClick(
+						// 		"https://www.google.com/maps/place/Centro+Electric/@-6.1915212,106.8468505,17z/data=!4m6!3m5!1s0x2e69f443f2bc8a4f:0xa65a0189bc0466d4!8m2!3d-6.1915425!4d106.8487388!16s%2Fg%2F1q5bqr2r3?authuser=0&hl=en&entry=ttu&g_ep=EgoyMDI0MTIxMS4wIKXMDSoASAFQAw%3D%3D",
+						// 	)
+						// }
+						className="py-5 px-10 border rounded-xl flex gap-5 bg-white cursor-pointer items-center"
 					>
 						<div className="my-auto">
 							<IconMapPinFilled size={30} color="red" />
 						</div>
-						<p className="font-md font-semibold">
-							<span className="font-semibold">Central Electric</span> <br />{" "}
-							Plaza Kenari Mas Lantai 3 Blok J No.118 - 126, Jl. Kramat Raya
-							No.101, Jakarta Pusat Plaza Kenari Mas - Specialities Trade Mall.
-						</p>
+						<div>
+							<p className="text-sm">
+								<span className="font-semibold">PT Sukses Mandiri Listrik</span>{" "}
+								<br />
+								Jl. Raya Mayor Oking Jaya Atmaja No.5G, Puspanegara, Kec.
+								Citeureup, Kabupaten Bogor, Jawa Barat 16810
+							</p>
+						</div>
+					</div>
+
+					<div
+						// onClick={() =>
+						// 	handleClick(
+						// 		"https://www.google.com/maps/place/Centro+Electric/@-6.1915212,106.8468505,17z/data=!4m6!3m5!1s0x2e69f443f2bc8a4f:0xa65a0189bc0466d4!8m2!3d-6.1915425!4d106.8487388!16s%2Fg%2F1q5bqr2r3?authuser=0&hl=en&entry=ttu&g_ep=EgoyMDI0MTIxMS4wIKXMDSoASAFQAw%3D%3D",
+						// 	)
+						// }
+						className="py-5 px-10 border rounded-xl flex gap-5 bg-white cursor-pointer items-center"
+					>
+						<div className="my-auto">
+							<IconMapPinFilled size={30} color="red" />
+						</div>
+						<div>
+							<p className="text-sm">
+								<span className="font-semibold">Central Electric</span> <br />{" "}
+								Plaza Kenari Mas Lantai 3 Blok J No.118 - 126, Jl. Kramat Raya
+								No.101, Jakarta Pusat Plaza Kenari Mas - Specialities Trade
+								Mall.
+							</p>
+						</div>
 					</div>
 				</div>
 				{/* <HorizontalSlider

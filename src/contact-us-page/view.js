@@ -15,6 +15,7 @@ import {
 	IconMapPinFilled,
 	IconMail,
 	IconWorld,
+	IconBrandLinkedin,
 } from "@tabler/icons-react";
 
 import HeaderTemplate from "../common_component/HeaderTemplate";
@@ -74,7 +75,8 @@ const ContactUsPage = () => {
 			<img
 				src={imageUrlBg}
 				alt="Static Image"
-				className="absolute w-screen h-[90%] -z-30 opacity-50 object-fill"
+				className="absolute w-screen h-[100%] -z-30 object-fill top-[20%]"
+				s
 			/>
 			<div className="mx-auto max-w-screen-xl grid grid-cols-1 md:grid-cols-2 pt-10 px-4 gap-5">
 				{/* Contact Info Section */}
@@ -84,7 +86,7 @@ const ContactUsPage = () => {
 					animate={{ opacity: 1, x: 0 }}
 					transition={{ duration: 0.6 }}
 				>
-					<h2 className="text-2xl font-semibold">Contact Information</h2>
+					<h2 className="text-2xl font-semibold">Informasi Kontak</h2>
 
 					<ul className="mt-4 space-y-6">
 						{/* Phone Numbers */}
@@ -158,6 +160,14 @@ const ContactUsPage = () => {
 								className="text-black hover:text-gray-800"
 							>
 								<IconBrandTiktok size={24} />
+							</a>
+							<a
+								href="https://www.tiktok.com/@kes_kabelretail?_t=8sQ2qkaklTs&_r=1"
+								target="_blank"
+								rel="noopener noreferrer"
+								className="text-black hover:text-gray-800"
+							>
+								<IconBrandLinkedin size={24} />
 							</a>
 						</li>
 					</ul>

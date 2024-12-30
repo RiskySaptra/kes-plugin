@@ -279,7 +279,7 @@ const NewsHubPage = () => {
 			<img
 				src={imageUrlBg}
 				alt="Static Image"
-				className="absolute w-screen h-[90%] -z-30 opacity-50 object-fill"
+				className="absolute w-screen h-[100%] -z-30 object-fill top-[20%]"
 			/>
 			<div className="mx-auto max-w-[1280px] md:p-8 flex flex-col md:!flex-row gap-5">
 				<div className="w-full md:!w-3/5">
