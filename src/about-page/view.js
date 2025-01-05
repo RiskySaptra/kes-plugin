@@ -40,20 +40,20 @@ const AboutPage = () => {
 			/>
 			<AboutSection about={pageAttributes?.about} />
 			<div className="grid grid-cols-1 mb-20">
-				<div className="bg-[#0100B1] flex pb-10 pt-5 md:pr-10 px-5">
-					<div className="text-white mx-auto max-w-[1280px]  w-full">
+				<div className="bg-[#0100B1] flex pb-10 pt-2 md:pr-10 px-5">
+					<div className="text-white mx-auto max-w-[1280px]  flex flex-col items-center w-full">
 						<h2 className="text-[36px] font-semibold">Visi</h2>
 						<RichText.Content
 							tagName="p"
 							value={pageAttributes?.visi}
-							className="text-base md:text-lg font-medium leading-relaxed mb-6"
+							className="text-base md:!text-xl font-medium leading-relaxed mb-6"
 						/>
 					</div>
 				</div>
-				<div className="bg-[#C51714] flex pb-10 pt-5 md:pl-10 px-5">
-					<div className="text-white mx-auto max-w-[1280px] w-full">
+				<div className="bg-[#C51714] flex pb-10 pt-2 md:pl-10 px-5">
+					<div className="text-white mx-auto max-w-[1280px] flex flex-col items-center w-full">
 						<h2 className="text-[36px] font-semibold">Misi</h2>
-						<ul class="list-disc ml-5">
+						<ul class="list-disc ml-5 text-base md:!text-xl">
 							<li>
 								Konsisten dalam menyediakan produk berkualitas sesuai dengan
 								kebutuhan pelanggan.
