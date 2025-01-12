@@ -15,17 +15,16 @@ import { sampleProducts } from "./constanta";
 
 registerBlockType(metadata.name, {
 	attributes: {
-		pdfFile: {
-			type: "object",
-			default: {
-				id: null,
-				url: "",
-				title: "",
-			},
-		},
 		productList: {
 			type: "array",
-			default: sampleProducts,
+			default: sampleProducts.map((product) => ({
+				...product,
+				pdfFile: {
+					id: null,
+					url: "",
+					title: "",
+				},
+			})),
 		},
 		searchQuery: {
 			type: "string",
@@ -42,8 +41,7 @@ registerBlockType(metadata.name, {
 	},
 
 	edit: ({ attributes, setAttributes }) => {
-		const { productList, pdfFile, searchQuery, currentPage, itemsPerPage } =
-			attributes;
+		const { productList, searchQuery, currentPage, itemsPerPage } = attributes;
 		const [isModalOpen, setIsModalOpen] = useState(false);
 		const [isUpdating, setIsUpdating] = useState(false);
 		const [currentProductIndex, setCurrentProductIndex] = useState(null);
@@ -58,9 +56,12 @@ registerBlockType(metadata.name, {
 			linkTokopedia: "",
 			linkShopee: "",
 			catalogLink: "",
+			pdfFile: {
+				id: null,
+				url: "",
+				title: "",
+			},
 		});
-
-		console.log(attributes);
 
 		const handleInputChange = (field, value) => {
 			setNewProduct({ ...newProduct, [field]: value });
@@ -72,7 +73,7 @@ registerBlockType(metadata.name, {
 				url: file.url,
 				title: file.title,
 			};
-			setAttributes({ pdfFile: selectedFile });
+			setNewProduct({ ...newProduct, pdfFile: selectedFile });
 		};
 
 		const handleModalOpen = (product = null, index = null) => {
@@ -93,6 +94,11 @@ registerBlockType(metadata.name, {
 					linkTokopedia: "",
 					linkShopee: "",
 					catalogLink: "",
+					pdfFile: {
+						id: null,
+						url: "",
+						title: "",
+					},
 				});
 			}
 			setIsModalOpen(true);
@@ -141,39 +147,6 @@ registerBlockType(metadata.name, {
 					>
 						Add Product
 					</Button>
-					<div className="flex justify-center gap-5 items-center">
-						<MediaUpload
-							onSelect={onSelectPdf}
-							allowedTypes={["application/pdf"]}
-							multiple={false}
-							render={({ open }) => (
-								<Button
-									onClick={open}
-									className="bg-indigo-600 text-white px-4 rounded hover:!text-white"
-								>
-									{/* <IconUpload size={20} /> */}
-									{pdfFile && pdfFile.id
-										? "Replace Catalog PDF"
-										: "Upload Catalog PDF"}
-								</Button>
-							)}
-						/>
-
-						{/* Show the PDF title if uploaded */}
-						{pdfFile && pdfFile.id && (
-							<>
-								<a
-									href={pdfFile.url}
-									target="_blank"
-									rel="noopener noreferrer"
-									className="text-sm text-gray-600 hover:underline"
-								>
-									Current File: <strong>{pdfFile.title}</strong>
-								</a>
-								{/* <p className=""></p> */}
-							</>
-						)}
-					</div>
 				</div>
 
 				<TextControl
@@ -194,6 +167,9 @@ registerBlockType(metadata.name, {
 							</th>
 							<th className="border border-gray-300 bg-gray-100 px-4 py-2">
 								Category
+							</th>
+							<th className="border border-gray-300 bg-gray-100 px-4 py-2">
+								Catalog PDF
 							</th>
 							<th className="border border-gray-300 bg-gray-100 px-4 py-2">
 								Actions
@@ -217,6 +193,20 @@ registerBlockType(metadata.name, {
 								</td>
 								<td className="border border-gray-300 px-4">
 									<p>{product.category}</p>
+								</td>
+								<td className="border border-gray-300 px-4">
+									{product.pdfFile.url ? (
+										<a
+											href={product.pdfFile.url}
+											target="_blank"
+											rel="noopener noreferrer"
+											className="text-blue-600 hover:underline"
+										>
+											{product.pdfFile.title}
+										</a>
+									) : (
+										<p>No PDF</p>
+									)}
 								</td>
 								<td className="border border-gray-300 px-4 text-center">
 									<Button onClick={() => handleModalOpen(product, index)}>
@@ -271,6 +261,21 @@ registerBlockType(metadata.name, {
 										/>
 									)}
 								</div>
+							)}
+						/>
+						<MediaUpload
+							onSelect={onSelectPdf}
+							allowedTypes={["application/pdf"]}
+							multiple={false}
+							render={({ open }) => (
+								<Button
+									onClick={open}
+									className="bg-indigo-600 text-white px-4 rounded"
+								>
+									{newProduct.pdfFile && newProduct.pdfFile.id
+										? "Replace Product PDF"
+										: "Upload Product PDF"}
+								</Button>
 							)}
 						/>
 						<TextControl

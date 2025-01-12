@@ -99,8 +99,8 @@ const ProductPage = () => {
 			<HeaderTemplate
 				imageUrl={imageUrl}
 				desc="PT KMI Electric Solution (KES) menyediakan berbagai jenis tipe dan ukuran kabel listrik berkualitas tinggi yang dirancang untuk memenuhi beragam kebutuhan, baik retail, proyek konstruksi, infrastruktur, dan industri.
-Sebagai anak perusahaan dari PT KMI Wire and Cable Tbk sekaligus distributor resmi produk Kabelmetal Indonesia, kami menjamin keaslian produk dengan kualitas berstandar nasional maupun internasional. Kabelmetal Indonesia tersedia dalam berbagai tipe dan ukuran dengan kategori Low Voltage Cables, Flexible Cables, Fire Resistant Cables, dan Medium Voltage Cables, yang dilengkapi dengan sertifikat dan dokumen teknis untuk memastikan kesesuaian produk dengan kebutuhan Anda.
-Varian produk lain yang kami sediakan adalah jointing dengan brand REPL dan fitting & accessories dengan brand SICAME-DERVAUX."
+					Sebagai anak perusahaan dari PT KMI Wire and Cable Tbk sekaligus distributor resmi produk Kabelmetal Indonesia, kami menjamin keaslian produk dengan kualitas berstandar nasional maupun internasional. Kabelmetal Indonesia tersedia dalam berbagai tipe dan ukuran dengan kategori Low Voltage Cables, Flexible Cables, Fire Resistant Cables, dan Medium Voltage Cables, yang dilengkapi dengan sertifikat dan dokumen teknis untuk memastikan kesesuaian produk dengan kebutuhan Anda.
+					Varian produk lain yang kami sediakan adalah jointing dengan brand REPL dan fitting & accessories dengan brand SICAME-DERVAUX."
 			/>
 			{/* Filter Bar */}
 			<FilterBar
@@ -244,7 +244,6 @@ const ProductModal = ({ product, onClose, pdfFile }) => {
 };
 const ProductGrid = ({ products, pdfFile }) => {
 	const [selectedProduct, setSelectedProduct] = useState(null);
-
 	const closeModal = () => setSelectedProduct(null);
 
 	return (
@@ -294,21 +293,37 @@ const ProductGrid = ({ products, pdfFile }) => {
 							{product.description}
 						</p>
 						<div className="flex gap-2 my-3">
-							<button className="text-sm font-semibold px-4 py-2 rounded-md bg-gradient-to-r from-[#39A849] to-[#27A74C] w-full text-white">
+							<button
+								onClick={(e) => {
+									e.stopPropagation();
+									window.open(product.linkTokopedia, "_blank");
+								}}
+								className="text-sm font-semibold px-4 py-2 rounded-md bg-gradient-to-r from-[#39A849] to-[#27A74C] w-full text-white"
+							>
 								Belanja di Tokopedia
 							</button>
-							<button className="text-sm font-semibold px-4 py-2 rounded-md bg-gradient-to-r from-[#EE4D2D] to-[#E24339] w-full text-white">
+							<button
+								onClick={(e) => {
+									e.stopPropagation();
+									window.open(product.linkShopee, "_blank");
+								}}
+								className="text-sm font-semibold px-4 py-2 rounded-md bg-gradient-to-r from-[#EE4D2D] to-[#E24339] w-full text-white"
+							>
 								Belanja di Shopee
 							</button>
 						</div>
 						<div className="flex">
-							<a
-								href={pdfFile?.url}
+							<button
+								onClick={(e) => {
+									e.stopPropagation();
+									if (product.pdfFile?.url) {
+										window.open(product.pdfFile?.url, "_blank");
+									}
+								}}
 								className="text-sm font-semibold px-4 py-2 rounded-md bg-gradient-to-r from-[#0100B1] to-[#005BFF] w-full text-white text-center"
-								download
 							>
 								Unduh Catalog
-							</a>
+							</button>
 						</div>
 					</motion.div>
 				))}
