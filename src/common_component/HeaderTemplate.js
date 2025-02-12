@@ -1,22 +1,22 @@
-import { motion } from "framer-motion";
+import { motion } from 'framer-motion';
 
-const HeaderTemplate = ({
-	desc = "empty description",
-	imageUrl = "https://via.placeholder.com/1200x600.png?text=Your+Company+Image+Here",
-}) => (
+const HeaderTemplate = ( {
+	desc = 'empty description',
+	imageUrl = 'https://via.placeholder.com/1200x600.png?text=Your+Company+Image+Here',
+} ) => (
 	<div className="relative flex justify-center items-center text-white overflow-hidden">
-		{/* Placeholder Image for visual interest */}
+		{ /* Placeholder Image for visual interest */ }
 		<img
-			src={imageUrl}
+			src={ imageUrl }
 			alt="Background Placeholder"
 			className=" min-w-full h-full object-contain"
 		/>
 
-		{/* Gradient overlay for readability */}
-		{/* <div className="absolute inset-0 bg-gradient-to-b from-[#4A4A9B] to-transparent opacity-90" /> */}
+		{ /* Gradient overlay for readability */ }
+		{ /* <div className="absolute inset-0 bg-gradient-to-b from-[#4A4A9B] to-transparent opacity-90" /> */ }
 
-		{/* Animated floating shapes */}
-		{/* <motion.div
+		{ /* Animated floating shapes */ }
+		{ /* <motion.div
 			initial={{ opacity: 0, y: 50 }}
 			animate={{ opacity: 0.3, y: 0 }}
 			transition={{ duration: 2, repeat: Infinity, repeatType: "reverse" }}
@@ -33,10 +33,10 @@ const HeaderTemplate = ({
 			animate={{ opacity: 0.2, y: 0 }}
 			transition={{ duration: 4, repeat: Infinity, repeatType: "reverse" }}
 			className="absolute bottom-1/3 left-2/3 w-20 h-20 bg-pink-500 rounded-full opacity-30"
-		/> */}
+		/> */ }
 
-		{/* Content with animations */}
-		{/* <motion.div
+		{ /* Content with animations */ }
+		{ /* <motion.div
 			initial={{ opacity: 0, y: -30 }}
 			animate={{ opacity: 1, y: 0 }}
 			transition={{ duration: 0.8, ease: "easeOut" }}
@@ -60,7 +60,7 @@ const HeaderTemplate = ({
 			>
 				{desc}
 			</motion.p>
-		</motion.div> */}
+		</motion.div> */ }
 	</div>
 );
 

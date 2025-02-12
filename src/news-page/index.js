@@ -1,12 +1,12 @@
-import { registerBlockType } from "@wordpress/blocks";
-import metadata from "./block.json";
-import { useBlockProps } from "@wordpress/block-editor";
+import { registerBlockType } from '@wordpress/blocks';
+import metadata from './block.json';
+import { useBlockProps } from '@wordpress/block-editor';
 
-import "./style.scss";
+import './style.scss';
 
-registerBlockType(metadata.name, {
-	edit: (props) => {
+registerBlockType( metadata.name, {
+	edit: ( props ) => {
 		const blockProps = useBlockProps();
-		return <div {...blockProps}>Static</div>;
+		return <div { ...blockProps }>Static</div>;
 	},
-});
+} );
