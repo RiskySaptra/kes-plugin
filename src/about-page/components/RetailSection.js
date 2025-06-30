@@ -18,16 +18,23 @@ const RetailSection = ({ ourValues, subDescription }) => {
 					>
 						Nilai Perusahaan Kami
 					</motion.h2>
-
 					<motion.h3
-						className="text-4xl md:text-5xl lg:text-6xl text-[#0100B1] font-extrabold tracking-tight mb-6"
-						style={{ textShadow: "0px 4px 6px rgba(0, 0, 0, 0.3)" }}
+						className="text-4xl md:text-5xl font-extrabold tracking-tight mb-6 text-[#0100B1]"
+						style={{
+							textShadow: `
+							-2px -2px 0 white,  
+							2px -2px 0 white,  
+							-2px  2px 0 white,  
+							2px  2px 0 white
+							`, // Fake outline
+						}}
 						initial={{ opacity: 0, y: -50 }}
 						animate={{ opacity: 1, y: 0 }}
 						transition={{ duration: 1.2, ease: "easeOut" }}
 					>
 						R E T A I L
 					</motion.h3>
+
 					<p className="text-base md:!text-2xl font-medium leading-relaxed text-gray-700 mb-6 text-center">
 						Cerminan atas komitmen kami terhadap standar profesional yang tinggi
 						dan keunggulan dalam setiap aspek produk maupun layanan kami.

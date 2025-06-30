@@ -141,6 +141,10 @@ const HorizontalSlider = ({
 		}
 	};
 
+	const handleClick = (url) => {
+		window.open(url, "_blank");
+	};
+
 	return (
 		<div className="relative">
 			<div
@@ -168,6 +172,11 @@ const HorizontalSlider = ({
 				>
 					{items.map((item, index) => (
 						<div
+							onClick={() => {
+								if (item.url) {
+									handleClick(item.url);
+								}
+							}}
 							key={index}
 							className={`flex-shrink-0 flex justify-center items-center ${itemSize}`}
 						>

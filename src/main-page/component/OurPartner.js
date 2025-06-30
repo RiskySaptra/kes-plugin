@@ -3,6 +3,8 @@ import HorizontalSlider from "../../common_component/HorizontalSlider";
 import { partnerLogo } from "../../common_component/logo";
 
 const OurPartner = () => {
+	console.log(partnerLogo);
+
 	return (
 		<div className="max-w-7xl mx-auto">
 			<motion.h2

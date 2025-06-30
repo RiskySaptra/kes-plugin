@@ -1,41 +1,43 @@
-import { createRoot, useEffect, useState } from "@wordpress/element";
+import { createRoot, useEffect, useState } from '@wordpress/element';
 
-import BannerCarousel from "./component/BannerSlider";
-import CompanyProfile from "./component/CompanyProfile";
+import BannerCarousel from './component/BannerSlider';
+import CompanyProfile from './component/CompanyProfile';
 
-import OurProducts from "./component/OurProduct";
-import WhyUs from "./component/WhyUs";
-import ReviewCards from "./component/ReviewCards";
-import FAQAccordion from "./component/FaqAccordion";
-import ClientCompany from "./component/ClientCompany";
-import OurPartner from "./component/OurPartner";
+import OurProducts from './component/OurProduct';
+import WhyUs from './component/WhyUs';
+import ReviewCards from './component/ReviewCards';
+import FAQAccordion from './component/FaqAccordion';
+import ClientCompany from './component/ClientCompany';
+import OurPartner from './component/OurPartner';
 
-import { motion } from "framer-motion";
-import { IconMapPinFilled } from "@tabler/icons-react";
+import { motion } from 'framer-motion';
+import { IconMapPinFilled } from '@tabler/icons-react';
 
-import imageUrlBg from "../assets/page-background/Home Page.jpeg";
+import imageUrlBg from '../assets/page-background/Home Page.jpeg';
 
 const MainPage = () => {
-	const [pageAttributes, setPageAttributes] = useState(null); // Directly store images in state
+	const [ pageAttributes, setPageAttributes ] = useState( null ); // Directly store images in state
 
-	useEffect(() => {
-		if (container) {
-			const attributes = container.getAttribute("data-block-attributes");
+	useEffect( () => {
+		if ( container ) {
+			const attributes = container.getAttribute(
+				'data-block-attributes'
+			);
 
-			if (attributes) {
+			if ( attributes ) {
 				try {
-					const parsedAttributes = JSON.parse(attributes);
+					const parsedAttributes = JSON.parse( attributes );
 
-					setPageAttributes(parsedAttributes); // Directly set images
-				} catch (error) {
-					console.error("Failed to parse block attributes:", error);
+					setPageAttributes( parsedAttributes ); // Directly set images
+				} catch ( error ) {
+					console.error( 'Failed to parse block attributes:', error );
 				}
 			}
 		}
-	}, []);
+	}, [] );
 
 	// Return early if images are not yet available
-	if (!pageAttributes)
+	if ( ! pageAttributes )
 		return (
 			<div className="h-screen w-screen flex justify-center items-center">
 				Loading...
@@ -53,38 +55,41 @@ const MainPage = () => {
 		ourProductsImages,
 	} = pageAttributes;
 
-	const handleClick = (url) => {
-		window.open(url, "_blank");
+	const handleClick = ( url ) => {
+		window.open( url, '_blank' );
 	};
 
-	const whatsAppUrl = `https://wa.me/${phoneNumber}?text=${encodeURIComponent(
-		message,
-	)}`;
+	const whatsAppUrl = `https://wa.me/${ phoneNumber }?text=${ encodeURIComponent(
+		message
+	) }`;
 
 	return (
 		<div className="relative">
-			<BannerCarousel banners={images} />
+			<BannerCarousel banners={ images } />
 			<img
-				src={imageUrlBg}
+				src={ imageUrlBg }
 				alt="Static Image"
 				className="absolute w-screen h-[100%] -z-30 object-fill top-0"
 			/>
 			<CompanyProfile
-				companyProfileImage={companyProfileImage}
-				companyProfileDesc={companyProfileDesc}
-				pdfFile={pdfFile}
-				whatsAppUrl={whatsAppUrl}
+				companyProfileImage={ companyProfileImage }
+				companyProfileDesc={ companyProfileDesc }
+				pdfFile={ pdfFile }
+				whatsAppUrl={ whatsAppUrl }
 			/>
-			<OurProducts images={ourProductsImages} text={ourProductsDesc} />
+			<OurProducts
+				images={ ourProductsImages }
+				text={ ourProductsDesc }
+			/>
 			<WhyUs />
 			<OurPartner />
 			<ClientCompany />
 			<div className="max-w-7xl mx-auto pb-16">
 				<motion.h2
-					initial={{ opacity: 0, y: -50 }}
-					whileInView={{ opacity: 1, y: 0 }}
-					transition={{ duration: 0.5 }}
-					viewport={{ once: true }}
+					initial={ { opacity: 0, y: -50 } }
+					whileInView={ { opacity: 1, y: 0 } }
+					transition={ { duration: 0.5 } }
+					viewport={ { once: true } }
 					className="text-center text-[20px] md:text-[36px] text-[#354052] font-bold not-prose mb-10"
 				>
 					Lokasi Offline Store
@@ -100,13 +105,16 @@ const MainPage = () => {
 						className="py-5 px-10 border rounded-xl flex gap-5 bg-white cursor-pointer items-center"
 					>
 						<div className="my-auto">
-							<IconMapPinFilled size={30} color="red" />
+							<IconMapPinFilled size={ 30 } color="red" />
 						</div>
 						<div>
 							<p className="text-sm">
-								<span className="font-semibold">CV Putra Delima Mandiri </span>{" "}
+								<span className="font-semibold">
+									CV Putra Delima Mandiri{ ' ' }
+								</span>{ ' ' }
 								<br />
-								Jln. Perintis kemerdekaan no.3, Babakan, Tangerang, Banten
+								Jln. Perintis kemerdekaan no.3, Babakan,
+								Tangerang, Banten
 							</p>
 						</div>
 					</div>
@@ -120,14 +128,16 @@ const MainPage = () => {
 						className="py-5 px-10 border rounded-xl flex gap-5 bg-white cursor-pointer items-center"
 					>
 						<div className="my-auto">
-							<IconMapPinFilled size={30} color="red" />
+							<IconMapPinFilled size={ 30 } color="red" />
 						</div>
 						<div>
 							<p className="text-sm">
-								<span className="font-semibold">PT Sukses Mandiri Listrik</span>{" "}
-								<br />
-								Jl. Raya Mayor Oking Jaya Atmaja No.5G, Puspanegara, Kec.
-								Citeureup, Kabupaten Bogor, Jawa Barat 16810
+								<span className="font-semibold">
+									Central Electric
+								</span>{ ' ' }
+								<br /> Plaza Kenari Mas Lantai 3 Blok J No.118 -
+								126, Jl. Kramat Raya No.101, Jakarta Pusat Plaza
+								Kenari Mas - Specialities Trade Mall.
 							</p>
 						</div>
 					</div>
@@ -141,23 +151,26 @@ const MainPage = () => {
 						className="py-5 px-10 border rounded-xl flex gap-5 bg-white cursor-pointer items-center"
 					>
 						<div className="my-auto">
-							<IconMapPinFilled size={30} color="red" />
+							<IconMapPinFilled size={ 30 } color="red" />
 						</div>
 						<div>
 							<p className="text-sm">
-								<span className="font-semibold">Central Electric</span> <br />{" "}
-								Plaza Kenari Mas Lantai 3 Blok J No.118 - 126, Jl. Kramat Raya
-								No.101, Jakarta Pusat Plaza Kenari Mas - Specialities Trade
-								Mall.
+								<span className="font-semibold">
+									PT Sukses Mandiri Listrik
+								</span>{ ' ' }
+								<br />
+								Jl. Raya Mayor Oking Jaya Atmaja No.5G,
+								Puspanegara, Kec. Citeureup, Kabupaten Bogor,
+								Jawa Barat 16810
 							</p>
 						</div>
 					</div>
 				</div>
-				{/* <HorizontalSlider
+				{ /* <HorizontalSlider
 					items={clientLogo}
 					loop={true}
 					maxHeight="max-h-[200px]"
-				/> */}
+				/> */ }
 			</div>
 			<ReviewCards />
 			<FAQAccordion />
@@ -166,8 +179,8 @@ const MainPage = () => {
 };
 
 // Get the container element and render the block dynamically
-const container = document.getElementById("main-page");
-if (container) {
-	const root = createRoot(container);
-	root.render(<MainPage />);
+const container = document.getElementById( 'main-page' );
+if ( container ) {
+	const root = createRoot( container );
+	root.render( <MainPage /> );
 }
