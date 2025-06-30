@@ -2,57 +2,60 @@ import React from "react";
 import { motion } from "framer-motion";
 import move from "lodash-move";
 
-const CARD_OFFSET = 120; // Adjusted for responsiveness
-const CARD_HORIZONTAL_OFFSET = 100; // Adjusted for responsiveness
+const CARD_OFFSET = 60;
+const CARD_HORIZONTAL_OFFSET = 40;
 const SCALE_FACTOR = 0.06;
 
-const StackedCard = ({ images }) => {
+const StackedCard = ({ images = [] }) => {
 	const [cards, setCards] = React.useState(images);
 
 	React.useEffect(() => {
 		const interval = setInterval(() => {
-			setCards((prevCards) => move(prevCards, 0, prevCards.length - 1));
-		}, 3000); // Adjust the interval time as needed
-
-		return () => clearInterval(interval); // Clean up the interval
+			setCards((prev) => move(prev, 0, prev.length - 1));
+		}, 6000);
+		return () => clearInterval(interval);
 	}, []);
 
-	const moveToEnd = (from) => {
-		setCards(move(cards, from, 0));
+	const handleCardClick = (index) => {
+		if (index !== 0) return;
+		setCards((prev) => move(prev, 0, prev.length - 1));
 	};
 
 	return (
-		<div className="flex items-center justify-start h-[600px] w-full pt-20">
-			<ul className="relative w-full max-w-[400px] h-[300px] sm:w-[70%] cursor-pointer">
+		<div className="flex items-center justify-center h-[300px] md:!h-[500px] w-full md:!pt-20 overflow-hidden relative pl-5">
+			<ul
+				className="relative w-full max-w-sm h-[200px] md:!h-[300px] cursor-pointer"
+				role="list"
+			>
 				{cards.map((card, index) => {
-					const canDrag = index === 0;
+					const isTop = index === 0;
 
 					return (
 						<motion.li
-							key={card.name}
-							className="absolute w-full h-full max-w-[400px] max-h-[300px] rounded-lg list-none"
-							style={{
-								cursor: canDrag ? "grab" : "auto",
-							}}
+							key={card.id}
+							className="absolute w-[80%] md:!w-full h-full rounded-xl overflow-hidden bg-white shadow-2xl"
+							style={{ cursor: isTop ? "grab" : "default" }}
 							animate={{
 								top: index * -CARD_OFFSET,
 								left: index * CARD_HORIZONTAL_OFFSET,
 								scale: 1 - index * SCALE_FACTOR,
-								zIndex: images.length - index,
+								zIndex: cards.length - index,
 							}}
-							whileHover={index === 0 ? { scale: 1.2 } : {}}
-							drag={canDrag ? "y" : false}
-							dragConstraints={{
-								top: 0,
-								bottom: 0,
-							}}
-							onClick={() => moveToEnd(index)}
+							transition={{ type: "spring", stiffness: 100, damping: 20 }}
+							drag={isTop ? "y" : false}
+							dragConstraints={{ top: 0, bottom: 0 }}
+							onClick={() => handleCardClick(index)}
 						>
 							<img
-								src={card.logo}
-								alt={card.name}
-								className="w-full h-full object-fill rounded-lg shadow-2xl"
+								src={card.url}
+								alt={card.alt || `Image ${card.id}`}
+								className="w-full h-full object-cover"
 							/>
+							{card.title && (
+								<div className="absolute bottom-0 w-full bg-black/60 text-white text-sm sm:text-base md:text-lg font-semibold p-2 text-center">
+									{card.title}
+								</div>
+							)}
 						</motion.li>
 					);
 				})}

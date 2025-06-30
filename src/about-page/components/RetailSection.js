@@ -1,15 +1,11 @@
 import { motion } from "framer-motion";
 
-const RetailSection = () => {
+const RetailSection = ({ ourValues, subDescription }) => {
 	return (
 		<div className="pb-5 md:pb-20">
 			<div className="max-w-7xl mx-auto text-center text-gray-800">
 				<p className="text-base md:!text-2xl font-medium leading-relaxed text-gray-700 mb-6 text-center">
-					PT KMI Electric Solution berkomitmen menjadi mitra pilihan utama dan
-					terpercaya sebagai penyedia kabel listrik, jointing, serta fitting &
-					accessories. Dengan semangat profesionalisme tinggi melalui jaminan
-					pelayanan terbaik, kami terus berinovasi guna kepuasan pelanggan dan
-					pertumbuhan bisnis yang berkelanjutan.
+					{subDescription}
 				</p>
 
 				<div className="mb-10">
@@ -40,88 +36,47 @@ const RetailSection = () => {
 
 				{/* Acronym Letters */}
 				<div className="grid grid-cols-1 gap-6 lg:gap-12">
-					{["R", "E", "T", "A", "I", "L"].map((letter, index) => (
-						<motion.div
-							key={letter}
-							className="flex gap-6 sm:gap-x-6 justify-center min-h-[105px] items-center bg-[#0100B1] text-white px-5 rounded-3xl shadow-xl hover:scale-105 transition-transform duration-300 ease-in-out"
-							initial={{ opacity: 0, scale: 0.8 }}
-							animate={{ opacity: 1, scale: 1 }}
-							transition={{
-								duration: 1.2,
-								delay: 0.3 * index, // Stagger animation delay
-								ease: "easeOut",
-							}}
-						>
-							{/* Letter Title */}
-							<motion.h2
-								className="text-4xl sm:text-6xl font-extrabold tracking-widest"
-								style={{ flexBasis: "80px" }}
-								whileHover={{ scale: 1.2, rotate: 5, color: "#fff" }}
-								transition={{ duration: 0.3 }}
-							>
-								{letter}
-							</motion.h2>
+					{ourValues.map((htmlString, index) => {
+						// Extract the first letter inside the <strong> tag
+						const match = htmlString.match(/<strong>(\w)/i);
+						const letter = match ? match[1] : "?";
 
-							{/* Letter Description with flexible flex-basis */}
-							<motion.p
-								className="text-xl sm:text-2xl mt-2 sm:ml-6 text-left"
-								style={{ flexBasis: "calc(100% - 80px)" }}
-								initial={{ opacity: 0, y: 20 }}
-								animate={{ opacity: 1, y: 0 }}
+						return (
+							<motion.div
+								key={index}
+								className="flex gap-6 sm:gap-x-6 justify-center min-h-[105px] items-center bg-[#0100B1] text-white px-5 rounded-3xl shadow-xl hover:scale-105 transition-transform duration-300 ease-in-out"
+								initial={{ opacity: 0, scale: 0.8 }}
+								animate={{ opacity: 1, scale: 1 }}
 								transition={{
 									duration: 1.2,
-									delay: 0.5,
+									delay: 0.3 * index,
 									ease: "easeOut",
 								}}
 							>
-								{letter === "R" && (
-									<span>
-										<strong>Reliable:</strong> KES berkomitmen menyediakan
-										produk dan layanan yang dapat diandalkan oleh pelanggan,
-										kapan dan di mana pun.
-									</span>
-								)}
-								{letter === "E" && (
-									<span>
-										<strong>Extraordinary:</strong> KES berkomitmen untuk tidak
-										hanya memenuhi ekspektasi pelanggan, namun juga melampauinya
-										untuk memberikan nilai tambah bagi setiap kebutuhan retail
-										maupun proyek.
-									</span>
-								)}
-								{letter === "T" && (
-									<span>
-										<strong>Tenacity:</strong> KES berkomitmen untuk tangguh
-										dalam menghadapi berbagai tantangan di masa kini dan yang
-										akan datang.
-									</span>
-								)}
-								{letter === "A" && (
-									<span>
-										<strong>Agile:</strong> KES berkomitmen untuk tetap tanggap
-										dan fleksibel dalam merespons dinamika pasar, mampu
-										memberikan solusi produk dan layanan yang tepat waktu dan
-										relevan bagi setiap pelanggan.
-									</span>
-								)}
-								{letter === "I" && (
-									<span>
-										<strong>Innovative:</strong> KES berkomitmen menciptakan
-										solusi baru dalam memenuhi setiap kebutuhan pelanggan,
-										mendorong pertumbuhan industri retail dengan berfokus pada
-										efisiensi, kualitas, dan bisnis keberlanjutan.
-									</span>
-								)}
-								{letter === "L" && (
-									<span>
-										<strong>Linkage:</strong> KES berkomitmen menjaga hubungan
-										baik dalam membangun kemitraan yang saling menguntungkan
-										untuk mendorong pertumbuhan bersama.
-									</span>
-								)}
-							</motion.p>
-						</motion.div>
-					))}
+								<motion.h2
+									className="text-4xl sm:text-6xl font-extrabold tracking-widest"
+									style={{ flexBasis: "80px" }}
+									whileHover={{ scale: 1.2, rotate: 5, color: "#fff" }}
+									transition={{ duration: 0.3 }}
+								>
+									{letter}
+								</motion.h2>
+
+								<motion.p
+									className="text-xl sm:text-2xl mt-2 sm:ml-6 text-left"
+									style={{ flexBasis: "calc(100% - 80px)" }}
+									initial={{ opacity: 0, y: 20 }}
+									animate={{ opacity: 1, y: 0 }}
+									transition={{
+										duration: 1.2,
+										delay: 0.5,
+										ease: "easeOut",
+									}}
+									dangerouslySetInnerHTML={{ __html: htmlString }}
+								/>
+							</motion.div>
+						);
+					})}
 				</div>
 			</div>
 		</div>
