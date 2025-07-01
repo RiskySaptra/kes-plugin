@@ -1,58 +1,58 @@
-import { registerBlockType } from '@wordpress/blocks';
+import { registerBlockType } from "@wordpress/blocks";
 import {
 	useBlockProps,
 	MediaUpload,
 	MediaUploadCheck,
 	RichText,
-} from '@wordpress/block-editor';
-import { TextControl } from '@wordpress/components';
-import { IconEdit, IconPencilPlus, IconUpload } from '@tabler/icons-react';
+} from "@wordpress/block-editor";
+import { TextControl } from "@wordpress/components";
+import { IconEdit, IconPencilPlus, IconUpload } from "@tabler/icons-react";
 
-import metadata from './block.json';
-import './style.scss';
+import metadata from "./block.json";
+import "./style.scss";
 
-registerBlockType( metadata.name, {
+registerBlockType(metadata.name, {
 	attributes: {
 		images: {
-			type: 'array',
+			type: "array",
 			default: [],
 		},
 		companyProfileImage: {
-			type: 'object',
+			type: "object",
 			default: {
 				id: null,
-				url: '',
-				alt: '',
+				url: "",
+				alt: "",
 			},
 		},
 		pdfFile: {
-			type: 'object',
+			type: "object",
 			default: {
 				id: null,
-				url: '',
-				title: '',
+				url: "",
+				title: "",
 			},
 		},
 		companyProfileDesc: {
-			type: 'string',
+			type: "string",
 		},
 		phoneNumber: {
-			type: 'string',
-			default: '',
+			type: "string",
+			default: "",
 		},
 		message: {
-			type: 'string',
-			default: '',
+			type: "string",
+			default: "",
 		},
 		ourProductsImages: {
-			type: 'array',
+			type: "array",
 			default: [],
 		},
 		ourProductsDesc: {
-			type: 'string',
+			type: "string",
 		},
 	},
-	edit: ( props ) => {
+	edit: (props) => {
 		const {
 			attributes: {
 				images,
@@ -69,103 +69,98 @@ registerBlockType( metadata.name, {
 		const blockProps = useBlockProps();
 
 		// Function to handle image selection
-		const onSelectOurProductsImages = ( newImages ) => {
-			const selectedImages = newImages.map( ( image ) => ( {
+		const onSelectOurProductsImages = (newImages) => {
+			const selectedImages = newImages.map((image) => ({
 				id: image.id,
 				url: image.url,
 				alt: image.alt,
-			} ) );
-			setAttributes( { ourProductsImages: selectedImages } );
+			}));
+			setAttributes({ ourProductsImages: selectedImages });
 		};
 
 		// Function to handle image selection
-		const onSelectImages = ( newImages ) => {
-			const selectedImages = newImages.map( ( image ) => ( {
+		const onSelectImages = (newImages) => {
+			const selectedImages = newImages.map((image) => ({
 				id: image.id,
 				url: image.url,
 				alt: image.alt,
-			} ) );
-			setAttributes( { images: selectedImages } );
+			}));
+			setAttributes({ images: selectedImages });
 		};
 
 		// Function to handle company profile image selection
-		const onSelectImage = ( newImage ) => {
+		const onSelectImage = (newImage) => {
 			const selectedImage = {
 				id: newImage.id,
 				url: newImage.url,
 				alt: newImage.alt,
 			};
-			setAttributes( { companyProfileImage: selectedImage } );
+			setAttributes({ companyProfileImage: selectedImage });
 		};
 
-		const onSelectPdf = ( file ) => {
+		const onSelectPdf = (file) => {
 			const selectedFile = {
 				id: file.id,
 				url: file.url,
 				title: file.title,
 			};
-			setAttributes( { pdfFile: selectedFile } );
+			setAttributes({ pdfFile: selectedFile });
 		};
 
-		const whatsAppUrl = `https://wa.me/${ phoneNumber }?text=${ encodeURIComponent(
-			message
-		) }`;
+		const whatsAppUrl = `https://wa.me/${phoneNumber}?text=${encodeURIComponent(
+			message,
+		)}`;
 
 		return (
-			<div { ...blockProps }>
-				<div className="container p-8 mx-auto bg-gray-50 rounded-lg shadow-lg my-6 not-prose ">
-					{ /* Banner Images Section */ }
+			<div className="contact-form-block p-4 not-prose">
+				<div className="container mx-auto p-6 bg-background rounded-2xl border shadow-sm space-y-6">
+					{/* Banner Images Section */}
 					<p className="text-2xl font-semibold text-gray-800 dark:text-white my-5">
 						Select Banner Images:
 					</p>
 
 					<MediaUploadCheck>
 						<MediaUpload
-							onSelect={ onSelectImages }
+							onSelect={onSelectImages}
 							multiple
 							gallery
-							allowedTypes={ [ 'image' ] }
-							value={ images.map( ( image ) => image.id ) }
-							render={ ( { open } ) => (
+							allowedTypes={["image"]}
+							value={images.map((image) => image.id)}
+							render={({ open }) => (
 								<button
-									onClick={ open }
+									onClick={open}
 									className="mt-3 mb-5 bg-blue-600 text-white py-3 px-6 rounded-lg hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-blue-500 transition duration-300 flex items-center gap-2"
 								>
-									{ images.length > 0 ? (
+									{images.length > 0 ? (
 										<div className="flex gap-2 items-center">
-											Edit Banners{ ' ' }
-											<IconEdit size={ 20 } />
+											Edit Banners <IconEdit size={20} />
 										</div>
 									) : (
 										<div className="flex gap-2 items-center">
-											Add Banners{ ' ' }
-											<IconPencilPlus size={ 20 } />
+											Add Banners <IconPencilPlus size={20} />
 										</div>
-									) }
+									)}
 								</button>
-							) }
+							)}
 						/>
 					</MediaUploadCheck>
 
-					{ /* Image Gallery Section */ }
+					{/* Image Gallery Section */}
 					<div className="overflow-x-auto scrollbar-hide px-2">
 						<div className="flex gap-6 w-max p-5">
-							{ images.map( ( image ) => (
-								<div
-									key={ image.id }
-									className="inline-block relative group"
-								>
+							{images.map((image) => (
+								<div key={image.id} className="inline-block relative group">
 									<img
-										src={ image.url }
-										alt={ image.alt }
+										src={image.url}
+										alt={image.alt}
 										className="rounded-lg w-[280px] h-[180px] object-cover transition-transform duration-300 ease-in-out transform group-hover:scale-105"
 									/>
 								</div>
-							) ) }
+							))}
 						</div>
 					</div>
 
-					{ /* Company Profile Image Section */ }
+					{/* Company Profile Image Section */}
 					<p className="text-2xl font-semibold text-gray-800 dark:text-white my-5">
 						Company Profile:
 					</p>
@@ -173,111 +168,99 @@ registerBlockType( metadata.name, {
 						<div className="not-prose">
 							<p className="font-medium">Selected Image:</p>
 
-							{ /* Display the selected company profile image */ }
-							{ companyProfileImage && companyProfileImage.url ? (
-								<div
-									key={ companyProfileImage.id }
-									className="relative"
-								>
+							{/* Display the selected company profile image */}
+							{companyProfileImage && companyProfileImage.url ? (
+								<div key={companyProfileImage.id} className="relative">
 									<img
-										src={ companyProfileImage.url }
-										alt={ companyProfileImage.alt }
+										src={companyProfileImage.url}
+										alt={companyProfileImage.alt}
 										className="rounded-lg w-[590px] h-[337px] object-cover"
 									/>
 								</div>
 							) : (
 								<div className="w-[590px] h-[337px] bg-slate-800 rounded-xl flex justify-center items-center">
-									<p className="text-white">
-										Upload an image
-									</p>
+									<p className="text-white">Upload an image</p>
 								</div>
-							) }
+							)}
 						</div>
 
-						{ /* Media Upload button for company profile image */ }
+						{/* Media Upload button for company profile image */}
 						<MediaUpload
-							onSelect={ onSelectImage }
-							allowedTypes={ [ 'image' ] }
-							multiple={ false }
-							render={ ( { open } ) => (
+							onSelect={onSelectImage}
+							allowedTypes={["image"]}
+							multiple={false}
+							render={({ open }) => (
 								<button
-									onClick={ open }
+									onClick={open}
 									className="mt-4 bg-blue-500 text-white py-2 px-5 rounded-lg hover:bg-blue-600 focus:outline-none focus:ring-2 focus:ring-blue-500 transition duration-300"
 								>
-									{ companyProfileImage &&
-									companyProfileImage.url ? (
+									{companyProfileImage && companyProfileImage.url ? (
 										<div className="flex gap-2 items-center">
-											Edit Image <IconEdit size={ 20 } />
+											Edit Image <IconEdit size={20} />
 										</div>
 									) : (
 										<div className="flex gap-2 items-center">
-											Add Image{ ' ' }
-											<IconPencilPlus size={ 20 } />
+											Add Image <IconPencilPlus size={20} />
 										</div>
-									) }
+									)}
 								</button>
-							) }
+							)}
 						/>
 					</div>
 
-					{ /* Text Section for Company Description */ }
+					{/* Text Section for Company Description */}
 					<div className="h-full flex flex-col gap-6">
 						<div>
-							<p className="font-medium text-lg">
-								About Company:
-							</p>
+							<p className="font-medium text-lg">About Company:</p>
 							<div className="flex-1 bg-white rounded-lg px-5">
 								<RichText
 									tagName="h3"
 									placeholder="Enter your text here..."
-									value={ companyProfileDesc }
-									onChange={ ( newText ) =>
-										setAttributes( {
+									value={companyProfileDesc}
+									onChange={(newText) =>
+										setAttributes({
 											companyProfileDesc: newText,
-										} )
+										})
 									}
 								/>
 							</div>
 						</div>
 
-						{ /* PDF Upload Section */ }
+						{/* PDF Upload Section */}
 						<div className="flex flex-col justify-end mb-6">
 							<p className="font-medium">Upload a PDF File:</p>
 
 							<MediaUpload
-								onSelect={ onSelectPdf }
-								allowedTypes={ [ 'application/pdf' ] }
-								multiple={ false }
-								render={ ( { open } ) => (
+								onSelect={onSelectPdf}
+								allowedTypes={["application/pdf"]}
+								multiple={false}
+								render={({ open }) => (
 									<button
-										onClick={ open }
+										onClick={open}
 										className="mt-4 bg-blue-500 text-white py-2 px-6 rounded-lg hover:bg-blue-600 flex items-center gap-2"
 									>
-										<IconUpload size={ 20 } />
-										{ pdfFile && pdfFile.id
-											? 'Replace PDF'
-											: 'Upload PDF' }
+										<IconUpload size={20} />
+										{pdfFile && pdfFile.id ? "Replace PDF" : "Upload PDF"}
 									</button>
-								) }
+								)}
 							/>
 
-							{ /* Show the PDF title if uploaded */ }
-							{ pdfFile && pdfFile.id && (
+							{/* Show the PDF title if uploaded */}
+							{pdfFile && pdfFile.id && (
 								<p className="mt-3 text-sm text-gray-600">
-									Uploaded File:{ ' ' }
-									<strong>{ pdfFile.title }</strong>
+									Uploaded File: <strong>{pdfFile.title}</strong>
 								</p>
-							) }
+							)}
 						</div>
 
-						{ /* WhatsApp Section */ }
+						{/* WhatsApp Section */}
 						<div className="p-5 bg-gray-100 rounded-md">
 							<TextControl
 								label="WhatsApp Phone Number"
 								help="Enter the phone number in international format without the + sign."
-								value={ phoneNumber }
-								onChange={ ( newNumber ) =>
-									setAttributes( { phoneNumber: newNumber } )
+								value={phoneNumber}
+								onChange={(newNumber) =>
+									setAttributes({ phoneNumber: newNumber })
 								}
 								placeholder="Example: 628123456789"
 								className="w-full"
@@ -286,46 +269,43 @@ registerBlockType( metadata.name, {
 							<TextControl
 								label="Predefined Message"
 								help="This message will be sent when the user clicks the button."
-								value={ message }
-								onChange={ ( newMessage ) =>
-									setAttributes( { message: newMessage } )
+								value={message}
+								onChange={(newMessage) =>
+									setAttributes({ message: newMessage })
 								}
 								placeholder="Enter your message"
 								className="w-full mt-4"
 							/>
 
-							{ /* Preview Button */ }
-							{ phoneNumber && (
+							{/* Preview Button */}
+							{phoneNumber && (
 								<div className="mt-4">
 									<a
-										href={ whatsAppUrl }
+										href={whatsAppUrl}
 										target="_blank"
 										rel="noopener noreferrer"
 										className="mt-3 bg-blue-500 text-white py-2 px-6 rounded-lg hover:bg-blue-600 flex items-center gap-2"
 									>
-										Preview Contact{ ' ' }
-										<IconUpload size={ 20 } />
+										Preview Contact <IconUpload size={20} />
 									</a>
 								</div>
-							) }
+							)}
 						</div>
 					</div>
 					<div>
 						<p className="text-2xl font-semibold text-gray-800 dark:text-white my-5">
 							Our Product:
 						</p>
-						<p className="font-medium text-lg">
-							Our Product Description:
-						</p>
+						<p className="font-medium text-lg">Our Product Description:</p>
 						<div className="flex-1 bg-white rounded-lg px-5">
 							<RichText
 								tagName="h3"
 								placeholder="Enter your text here..."
-								value={ ourProductsDesc }
-								onChange={ ( newText ) =>
-									setAttributes( {
+								value={ourProductsDesc}
+								onChange={(newText) =>
+									setAttributes({
 										ourProductsDesc: newText,
-									} )
+									})
 								}
 							/>
 						</div>
@@ -335,72 +315,57 @@ registerBlockType( metadata.name, {
 
 						<MediaUploadCheck>
 							<MediaUpload
-								onSelect={ onSelectOurProductsImages }
+								onSelect={onSelectOurProductsImages}
 								multiple
 								gallery
-								allowedTypes={ [ 'image' ] }
-								value={ ourProductsImages.map(
-									( image ) => image.id
-								) }
-								render={ ( { open } ) => (
+								allowedTypes={["image"]}
+								value={ourProductsImages.map((image) => image.id)}
+								render={({ open }) => (
 									<button
-										onClick={ open }
+										onClick={open}
 										className="mt-1 mb-1 bg-blue-500 text-white py-1 px-4 rounded-lg hover:bg-blue-600 inline"
 									>
-										{ ourProductsImages.length > 0 ? (
+										{ourProductsImages.length > 0 ? (
 											<div className="flex gap-1 items-center">
-												Edit Banners{ ' ' }
-												<IconEdit size={ 20 } />
+												Edit Banners <IconEdit size={20} />
 											</div>
 										) : (
 											<div className="flex gap-1 items-center">
-												Add Banners{ ' ' }
-												<IconPencilPlus size={ 20 } />
+												Add Banners <IconPencilPlus size={20} />
 											</div>
-										) }
+										)}
 									</button>
-								) }
+								)}
 							/>
 						</MediaUploadCheck>
 
 						<div className="overflow-x-auto whitespace-nowrap scrollbar-hide mt-5 py-8 px-1">
 							<div className="flex gap-5 w-max">
-								{ ourProductsImages.map( ( image, index ) => (
-									<div
-										key={ image.id }
-										className="inline-block relative"
-									>
+								{ourProductsImages.map((image, index) => (
+									<div key={image.id} className="inline-block relative">
 										<img
-											src={ image.url }
-											alt={ image.alt }
+											src={image.url}
+											alt={image.alt}
 											className="rounded-lg w-[280px] h-[180px] object-center"
 										/>
-										{ /* Description Input for each image */ }
+										{/* Description Input for each image */}
 										<div className="mt-2">
 											<input
 												type="text"
 												placeholder="Enter image description"
-												value={
-													image.description || ''
-												}
-												onChange={ ( e ) => {
-													const updatedImages = [
-														...ourProductsImages,
-													];
-													updatedImages[
-														index
-													].description =
-														e.target.value;
-													setAttributes( {
-														ourProductsImages:
-															updatedImages,
-													} );
-												} }
+												value={image.description || ""}
+												onChange={(e) => {
+													const updatedImages = [...ourProductsImages];
+													updatedImages[index].description = e.target.value;
+													setAttributes({
+														ourProductsImages: updatedImages,
+													});
+												}}
 												className="w-full mt-1 px-2 py-1 rounded-md border border-gray-300 focus:outline-none focus:ring-2 focus:ring-blue-500"
 											/>
 										</div>
 									</div>
-								) ) }
+								))}
 							</div>
 						</div>
 					</div>
@@ -408,4 +373,4 @@ registerBlockType( metadata.name, {
 			</div>
 		);
 	},
-} );
+});

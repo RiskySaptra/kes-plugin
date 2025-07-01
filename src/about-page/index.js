@@ -3,7 +3,6 @@ import {
 	RichText,
 	MediaUpload,
 	MediaUploadCheck,
-	useBlockProps,
 } from "@wordpress/block-editor";
 import { Button } from "@wordpress/components";
 import { IconEdit, IconPencilPlus, IconTrash } from "@tabler/icons-react";
@@ -141,7 +140,6 @@ registerBlockType(metadata.name, {
 			subDescription,
 			ourValues,
 		} = attributes;
-		const blockProps = useBlockProps();
 
 		const updateAttr = (key, value) => setAttributes({ [key]: value });
 

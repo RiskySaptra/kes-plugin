@@ -25,6 +25,7 @@ if ( ! defined( 'ABSPATH' ) ) {
  * @see https://developer.wordpress.org/reference/functions/register_block_type/
  */
 function kes_internal_block_kes_block_block_init() {
+	require_once __DIR__ . '/includes/rest-api-mail.php';
 	// main page
 	register_block_type( __DIR__ . '/build/main-page' );
  
@@ -35,10 +36,11 @@ function kes_internal_block_kes_block_block_init() {
 	register_block_type( __DIR__ . '/build/about-page' );
 
 	// contact us
-	register_block_type( __DIR__ . '/build/contact-us-page' );
+	register_block_type( __DIR__ . '/build/contact-us-page' ); 
 
 	// news
 	register_block_type( __DIR__ . '/build/news-page' );
+	
 
 
 }
